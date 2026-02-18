@@ -7,56 +7,7 @@
   <title>今川大悟 | Web制作・資料作成（クラウドワークス）</title>
   <meta name="description" content="飲食店・個人事業主・プロフィール用途など、目的に合わせたWebページを制作します。ヒアリングで方向性を整理し、構成設計から丁寧に対応。原則24時間以内に返信します。" />
 
-  <!-- 共通CSS（ある前提） -->
   <link rel="stylesheet" href="assets/css/style.css" />
-
-  <!-- トップページだけの補助CSS（共通CSSが未完成でも崩れにくい） -->
-  <style>
-    .hero-layout{
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 20px;
-      align-items:center;
-    }
-    @media (max-width: 900px){
-      .hero-layout{ grid-template-columns:1fr; }
-    }
-    .profile-wrap{ display:flex; justify-content:center; }
-    .profile-img{
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid rgba(255,255,255,.08);
-      box-shadow: 0 15px 40px rgba(0,0,0,.4);
-      background: rgba(255,255,255,.03);
-    }
-    .mini-grid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 14px;
-    }
-    @media (max-width: 900px){
-      .mini-grid{ grid-template-columns: 1fr; }
-    }
-    .kpi{
-      padding: 14px;
-      border-radius: var(--radius);
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.03);
-    }
-    .kpi .label{ font-size: 12px; color: var(--muted); }
-    .kpi .value{ margin-top: 6px; font-size: 16px; font-weight: 800; }
-    .list{
-      margin: 10px 0 0;
-      padding-left: 18px;
-      color: var(--muted);
-    }
-    .list li{ margin: 6px 0; }
-    .linklike{ text-decoration: underline; text-underline-offset: 3px; }
-    .note{ font-size: 13px; color: var(--muted); margin-top: 10px; }
-  </style>
 </head>
 
 <body>
@@ -66,6 +17,7 @@
         <span class="dot" aria-hidden="true"></span>
         <span>今川大悟</span>
       </div>
+
       <nav>
         <a class="active" href="index.html">トップ</a>
         <a href="works.html">制作例</a>
@@ -80,7 +32,13 @@
       <!-- HERO -->
       <section class="hero">
         <div class="hero-inner hero-layout">
-          <div>
+          <!-- 画像（スマホでは最上段に来る） -->
+          <div class="hero-media">
+            <img class="profile-img" src="assets/img/profile.jpg" alt="今川大悟のプロフィール写真">
+          </div>
+
+          <!-- テキスト -->
+          <div class="hero-copy">
             <div class="kicker">
               <span class="pill">Web制作</span>
               <span class="pill">資料作成</span>
@@ -115,15 +73,10 @@
               </div>
             </div>
           </div>
-
-          <div class="profile-wrap">
-            <!-- ここにあなたの写真を置く：assets/img/profile.jpg.png. -->
-            <img class="profile-img" src="assets/img/profile.jpg.png" alt="今川大悟のプロフィール写真">
-          </div>
         </div>
       </section>
 
-      <!-- SERVICES (simple) -->
+      <!-- SERVICES -->
       <section class="section grid">
         <div class="card">
           <h2>できること</h2>
@@ -133,9 +86,7 @@
             <li>文章整理（サービス説明・自己紹介）</li>
             <li>業務改善についてのご相談も承ります</li>
           </ul>
-          <p class="note">
-            ※SEOを意識した構成設計・タグ設計も対応可能です。
-          </p>
+          <p class="note">※SEOを意識した構成設計・タグ設計も対応可能です。</p>
         </div>
 
         <div class="card">
@@ -159,7 +110,7 @@
         <p class="note">※メッセージは原則24時間以内に返信します。</p>
       </section>
 
-      <!-- CTA -->
+      <!-- CONTACT -->
       <section class="section card">
         <h2>お問い合わせ</h2>
         <p class="muted" style="margin:0;">
