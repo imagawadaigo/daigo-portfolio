@@ -1,10 +1,9 @@
 /* =========================
-   Base / Theme (Light glass)
+   Theme (Light glass)
    ========================= */
 :root{
   --bg: #f6f8fc;
 
-  /* glass surfaces */
   --surface: rgba(255,255,255,.72);
   --surface2: rgba(255,255,255,.62);
 
@@ -32,7 +31,6 @@ body{
                "Hiragino Sans", "Noto Sans JP", "Yu Gothic", "Meiryo", sans-serif;
   color:var(--text);
 
-  /* keep your “designed” background, but in light */
   background:
     radial-gradient(1000px 640px at 12% 8%, rgba(79,124,255,.18), transparent 62%),
     radial-gradient(900px 560px at 92% 18%, rgba(52,211,153,.14), transparent 60%),
@@ -68,7 +66,6 @@ header{
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 
-  /* light gradient + subtle border */
   background: linear-gradient(to bottom, rgba(246,248,252,.92), rgba(246,248,252,0));
   border-bottom: 1px solid rgba(15, 23, 42, .06);
 }
@@ -176,8 +173,26 @@ nav a.active{
 
 .muted{ color: var(--muted); }
 
+.list{
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+.list li{ margin: 6px 0; }
+
+.note{
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+.linklike{
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 /* =========================
-   Hero
+   Hero (image emphasized + readable copy)
    ========================= */
 .hero{
   margin-top: 14px;
@@ -191,28 +206,27 @@ nav a.active{
   position: relative;
   overflow: hidden;
 
-  /* background image (optional) */
   background-image: url("../img/hero.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-/* soft glow overlay (keeps your original “designed” feel) */
+/* glow overlay (keeps designed feel) */
 .hero:before{
   content:"";
   position:absolute;
   inset:-2px;
-  background: linear-gradient(120deg, rgba(79,124,255,.14), transparent 35%, rgba(52,211,153,.10));
+  background: linear-gradient(120deg, rgba(79,124,255,.16), transparent 35%, rgba(52,211,153,.12));
   pointer-events:none;
 }
 
-/* white veil so texts stay readable over hero image */
+/* ↓ここが重要：全体を白で潰さない。薄めにする */
 .hero:after{
   content:"";
   position:absolute;
   inset:0;
-  background: rgba(246,248,252,.62);
+  background: rgba(255,255,255,.12); /* 0.62 → 0.12 */
   pointer-events:none;
 }
 
@@ -222,6 +236,41 @@ nav a.active{
   gap: 16px;
 }
 
+/* 2-column layout in hero */
+.hero-layout{
+  display:grid;
+  grid-template-columns: .9fr 1.1fr; /* 画像:文章 */
+  gap: 18px;
+  align-items:center;
+}
+
+.hero-media{
+  display:flex;
+  justify-content:center;
+}
+
+/* profile photo */
+.profile-img{
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(255,255,255,.55);
+  box-shadow: 0 15px 40px rgba(0,0,0,.16);
+  background: rgba(255,255,255,.30);
+}
+
+/* copy panel: readable without killing hero image */
+.hero-copy{
+  border-radius: calc(var(--radius) - 2px);
+  border: 1px solid rgba(255,255,255,.55);
+  background: rgba(255,255,255,.72);
+  box-shadow: 0 12px 30px rgba(15,23,42,.10);
+  padding: 18px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
 .kicker{
   display:flex;
   flex-wrap:wrap;
@@ -229,15 +278,15 @@ nav a.active{
 }
 
 h1{
-  margin: 0;
+  margin: 10px 0 0;
   font-size: clamp(28px, 4.4vw, 44px);
   line-height: 1.18;
   letter-spacing: .01em;
 }
 
 .lead{
-  margin:0;
-  color: var(--muted);
+  margin: 10px 0 0;
+  color: #4b5563; /* slightly darker than muted for readability */
   max-width: 68ch;
   font-size: 16px;
 }
@@ -246,11 +295,27 @@ h1{
   display:flex;
   flex-wrap:wrap;
   gap: 10px;
-  margin-top: 2px;
+  margin-top: 12px;
 }
 
+.mini-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.kpi{
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(15,23,42,.10);
+  background: rgba(255,255,255,.65);
+}
+.kpi .label{ font-size: 12px; color: var(--muted); }
+.kpi .value{ margin-top: 6px; font-size: 15px; font-weight: 800; }
+
 /* =========================
-   Layout grids
+   General grid
    ========================= */
 .grid{
   display:grid;
@@ -260,77 +325,6 @@ h1{
 
 @media (max-width: 900px){
   .grid{ grid-template-columns: 1fr; }
-}
-
-/* =========================
-   Works list
-   ========================= */
-.works{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
-
-@media (max-width: 900px){
-  .works{ grid-template-columns: 1fr; }
-}
-
-.work{
-  padding: 16px;
-  border-radius: var(--radius);
-  border: 1px solid rgba(15, 23, 42, .10);
-
-  background: rgba(255,255,255,.60);
-  position: relative;
-  overflow:hidden;
-
-  min-height: 170px;
-  box-shadow: 0 10px 22px rgba(15,23,42,.06);
-}
-
-.work:before{
-  content:"";
-  position:absolute; inset:0;
-  background: radial-gradient(480px 240px at 30% 20%, rgba(79,124,255,.14), transparent 62%);
-  pointer-events:none;
-}
-
-.work > *{ position:relative; }
-
-.work h3{
-  margin: 10px 0 8px;
-  font-size: 16px;
-}
-
-.work p{
-  margin:0;
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.tagrow{
-  display:flex;
-  flex-wrap:wrap;
-  gap: 8px;
-  margin-top: 10px;
-}
-
-.tag{
-  font-size: 12px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(15, 23, 42, .10);
-  background: rgba(255,255,255,.60);
-  color: var(--muted);
-}
-
-.thumb{
-  width: 100%;
-  height: 140px;
-  border-radius: 14px;
-  border: 1px solid rgba(15, 23, 42, .10);
-  object-fit: cover;
-  background: rgba(255,255,255,.60);
 }
 
 /* =========================
@@ -349,10 +343,43 @@ footer{
 }
 
 /* =========================
-   Mobile
+   Mobile / Responsive
    ========================= */
+@media (max-width: 900px){
+  /* hero becomes 1 column and reorder: photo first */
+  .hero-layout{
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .hero-media{ order: 1; }
+  .hero-copy{ order: 2; }
+
+  /* make photo a bit smaller on mobile */
+  .profile-img{
+    width: 170px;
+    height: 170px;
+  }
+
+  /* mini grid stacks for readability */
+  .mini-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 520px){
-  .hero{ padding: 20px; }
+  .wrap{ padding: 18px 14px 64px; }
+
+  .hero{ padding: 18px; }
+  .hero-copy{ padding: 16px; }
+
+  /* buttons full width */
   .btn{ width:100%; }
-  nav{ display:none; } /* 視認性優先。必要なら後でハンバーガー化 */
+
+  /* nav hidden for clarity (can be hamburger later) */
+  nav{ display:none; }
+
+  /* slight readability tuning */
+  h1{ line-height: 1.22; }
+  .lead{ font-size: 15px; }
 }
