@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>連絡 | 今川大悟</title>
+  <meta name="description" content="今川大悟へのお問い合わせ。Googleフォームからご連絡ください。" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand"><span class="dot"></span><span>今川大悟</span></div>
+      <nav>
+        <a href="index.html">トップ</a>
+        <a href="works.html">制作例</a>
+        <a href="services.html">できること</a>
+        <a href="process.html">流れ</a>
+        <a class="active" href="contact.html">連絡</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-inner">
+          <h1>お問い合わせ</h1>
+          <p class="lead">
+            相談内容はGoogleフォームで受け付けています。<br>
+            目的・納期・参考URL（あれば）を書いてください。原則24時間以内に返信します。
+          </p>
+          <div class="cta">
+            <a class="btn primary" target="_blank" rel="noopener noreferrer"
+               href="https://forms.gle/VzqdTbX2xkR7RJ2N9">
+              Googleフォームを開く
+            </a>
+            <a class="btn" href="index.html">トップへ戻る</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section card">
+        <h2>フォームに書いてほしいこと</h2>
+        <p class="muted" style="margin:0;">
+          ・相談内容（何を作りたいか）<br>
+          ・希望納期<br>
+          ・参考URL（あれば）<br>
+          ・素材の有無（文章/画像/ロゴなど）
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> Daigo Imagawa</div>
+      <div>Googleフォームで受付</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
