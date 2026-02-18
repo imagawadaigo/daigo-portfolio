@@ -3,278 +3,59 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>今川大悟 | ポートフォリオ</title>
-  <meta name="description" content="今川大悟のポートフォリオ。プロフィール/LP制作、資料作成、文章整理。丁寧なヒアリングとスピード対応で、伝わる成果物に落とし込みます。" />
 
+  <title>今川大悟 | Web制作・資料作成（クラウドワークス）</title>
+  <meta name="description" content="飲食店・個人事業主・プロフィール用途など、目的に合わせたWebページを制作します。ヒアリングで方向性を整理し、構成設計から丁寧に対応。原則24時間以内に返信します。" />
+
+  <!-- 共通CSS（ある前提） -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- トップページだけの補助CSS（共通CSSが未完成でも崩れにくい） -->
   <style>
-    :root{
-      --bg:#0b0f14;
-      --surface: rgba(17,24,38,.62);
-      --surface2: rgba(17,24,38,.48);
-      --text:#e6edf6;
-      --muted:#a9b5c7;
-      --line: rgba(255,255,255,.12);
-      --accent:#7aa7ff;
-      --accent2:#8dffd6;
-      --radius:18px;
-      --shadow: 0 18px 60px rgba(0,0,0,.35);
-      --max: 1080px;
-    }
-
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN",
-                   "Hiragino Sans", "Noto Sans JP", "Yu Gothic", "Meiryo", sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(1000px 600px at 12% 8%, rgba(122,167,255,.22), transparent 58%),
-        radial-gradient(900px 550px at 92% 18%, rgba(141,255,214,.14), transparent 60%),
-        radial-gradient(850px 700px at 50% 92%, rgba(122,167,255,.10), transparent 58%),
-        var(--bg);
-      line-height:1.75;
-      letter-spacing: .01em;
-    }
-
-    a{ color:inherit; text-decoration:none; }
-    a:hover{ opacity:.95; }
-    .wrap{ max-width:var(--max); margin:0 auto; padding: 22px 18px 70px; }
-
-    /* Header */
-    header{
-      position: sticky;
-      top:0;
-      z-index: 30;
-      padding: 12px 0 10px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 12px;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      background: linear-gradient(to bottom, rgba(11,15,20,.78), rgba(11,15,20,0));
-    }
-    .brand{
-      display:flex; align-items:center; gap:10px;
-      font-weight:800; letter-spacing:.02em;
-    }
-    .dot{
-      width:10px; height:10px; border-radius:999px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 0 0 5px rgba(122,167,255,.12);
-    }
-    nav{
-      display:flex; flex-wrap:wrap; gap: 10px;
-      font-size: 13px;
-      color: var(--muted);
-      justify-content:flex-end;
-    }
-    nav a{
-      padding: 8px 10px;
-      border-radius:999px;
-      border: 1px solid transparent;
-    }
-    nav a:hover{
-      border-color: var(--line);
-      background: rgba(255,255,255,.04);
-      color: var(--text);
-    }
-
-    /* UI */
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap: 10px;
-      padding: 12px 14px;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      font-weight: 720;
-      font-size: 14px;
-      cursor:pointer;
-      transition: transform .18s ease, opacity .18s ease;
-      user-select:none;
-    }
-    .btn:hover{ transform: translateY(-1px); }
-    .btn.primary{
-      border: none;
-      background: linear-gradient(135deg, rgba(122,167,255,.95), rgba(141,255,214,.85));
-      color: #081019;
-    }
-    .pill{
-      font-size:12px;
-      padding: 6px 10px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      color: var(--muted);
-      white-space:nowrap;
-    }
-
-    /* Hero */
-    .hero{
-      margin-top: 14px;
-      padding: 26px;
-      border-radius: var(--radius);
-      border: 1px solid var(--line);
-      background: var(--surface);
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-    }
-    .hero:before{
-      content:"";
-      position:absolute; inset:-2px;
-      background: linear-gradient(120deg, rgba(122,167,255,.16), transparent 35%, rgba(141,255,214,.10));
-      pointer-events:none;
-    }
-    .hero-inner{ position:relative; display:grid; gap: 16px; }
-    .kicker{ display:flex; flex-wrap:wrap; gap: 8px; }
-
-    h1{
-      margin: 0;
-      font-size: clamp(28px, 4.4vw, 44px);
-      line-height: 1.18;
-      letter-spacing: .01em;
-    }
-    .lead{
-      margin:0;
-      color: var(--muted);
-      max-width: 68ch;
-      font-size: 16px;
-    }
-    .cta{ display:flex; flex-wrap:wrap; gap: 10px; margin-top: 2px; }
-
-    /* Sections */
-    .section{ margin-top: 22px; }
-    .section h2{
-      margin: 0 0 12px;
-      font-size: 18px;
-      letter-spacing: .02em;
-    }
-    .card{
-      border-radius: var(--radius);
-      border: 1px solid var(--line);
-      background: var(--surface2);
-      padding: 18px;
-      box-shadow: 0 10px 35px rgba(0,0,0,.22);
-    }
-    .muted{ color: var(--muted); }
-
-    /* Layout grids */
-    .grid{
+    .hero-layout{
       display:grid;
       grid-template-columns: 1.15fr .85fr;
-      gap: 14px;
+      gap: 20px;
+      align-items:center;
     }
     @media (max-width: 900px){
-      .grid{ grid-template-columns: 1fr; }
+      .hero-layout{ grid-template-columns:1fr; }
     }
-
-    /* Services cards */
-    .svc{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
-      margin-top: 10px;
-    }
-    .svc .item{
-      padding: 12px;
-      border-radius: 14px;
-      border: 1px solid var(--line);
+    .profile-wrap{ display:flex; justify-content:center; }
+    .profile-img{
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid rgba(255,255,255,.08);
+      box-shadow: 0 15px 40px rgba(0,0,0,.4);
       background: rgba(255,255,255,.03);
     }
-    .svc .item strong{ display:block; margin-bottom:4px; }
-    .svc .item span{ color: var(--muted); font-size: 13px; }
-
-    /* Works */
-    .works{
+    .mini-grid{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 12px;
+      margin-top: 14px;
     }
     @media (max-width: 900px){
-      .works{ grid-template-columns: 1fr; }
+      .mini-grid{ grid-template-columns: 1fr; }
     }
-    .work{
-      padding: 16px;
-      border-radius: var(--radius);
-      border: 1px solid var(--line);
-      background: rgba(17,24,38,.55);
-      position: relative;
-      overflow:hidden;
-      min-height: 160px;
-    }
-    .work:before{
-      content:"";
-      position:absolute; inset:0;
-      background: radial-gradient(480px 240px at 30% 20%, rgba(122,167,255,.12), transparent 60%);
-      pointer-events:none;
-    }
-    .work > *{ position:relative; }
-    .work h3{ margin: 8px 0 8px; font-size: 16px; }
-    .work p{ margin:0; color: var(--muted); font-size: 14px; }
-    .tagrow{ display:flex; flex-wrap:wrap; gap: 8px; margin-top: 10px; }
-    .tag{
-      font-size: 12px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      color: var(--muted);
-    }
-    .work a.link{
-      display:inline-flex;
-      margin-top: 12px;
-      font-size: 13px;
-      color: var(--text);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    /* Steps */
-    .steps{
-      display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-    }
-    @media (max-width: 900px){
-      .steps{ grid-template-columns: 1fr; }
-    }
-    .step{
+    .kpi{
       padding: 14px;
       border-radius: var(--radius);
       border: 1px solid var(--line);
-      background: rgba(17,24,38,.55);
+      background: rgba(255,255,255,.03);
     }
-    .num{
-      width: 30px; height: 30px; border-radius: 999px;
-      display:grid; place-items:center;
-      background: rgba(255,255,255,.06);
-      border: 1px solid var(--line);
-      font-weight: 800;
-      margin-bottom: 10px;
-    }
-    .step p{ margin: 0; color: var(--muted); font-size: 14px; }
-
-    /* Footer */
-    footer{
-      margin-top: 26px;
-      padding-top: 16px;
-      border-top: 1px solid var(--line);
+    .kpi .label{ font-size: 12px; color: var(--muted); }
+    .kpi .value{ margin-top: 6px; font-size: 16px; font-weight: 800; }
+    .list{
+      margin: 10px 0 0;
+      padding-left: 18px;
       color: var(--muted);
-      font-size: 13px;
-      display:flex;
-      justify-content:space-between;
-      gap: 10px;
-      flex-wrap:wrap;
     }
-
-    /* Small tweaks for mobile readability */
-    @media (max-width: 520px){
-      .hero{ padding: 20px; }
-      .btn{ width:100%; }
-      nav{ display:none; } /* まずは視認性優先で消す。必要なら戻せる */
-    }
+    .list li{ margin: 6px 0; }
+    .linklike{ text-decoration: underline; text-underline-offset: 3px; }
+    .note{ font-size: 13px; color: var(--muted); margin-top: 10px; }
   </style>
 </head>
 
@@ -286,165 +67,116 @@
         <span>今川大悟</span>
       </div>
       <nav>
-        <a href="#about">自己紹介</a>
-        <a href="#services">できること</a>
-        <a href="#works">制作例</a>
-        <a href="#process">流れ</a>
-        <a href="#contact">連絡</a>
+        <a class="active" href="index.html">トップ</a>
+        <a href="works.html">制作例</a>
+        <a href="services.html">できること</a>
+        <a href="process.html">制作の流れ</a>
+        <a href="about.html">プロフィール</a>
+        <a href="contact.html">連絡</a>
       </nav>
     </header>
 
     <main>
+      <!-- HERO -->
       <section class="hero">
-        <div class="hero-inner">
-          <div class="kicker">
-            <span class="pill">プロフィール/LP（1ページ）</span>
-            <span class="pill">資料作成</span>
-            <span class="pill">返信：原則24h以内</span>
+        <div class="hero-inner hero-layout">
+          <div>
+            <div class="kicker">
+              <span class="pill">Web制作</span>
+              <span class="pill">資料作成</span>
+              <span class="pill">返信：原則24h以内</span>
+            </div>
+
+            <h1>ヒアリングから設計まで、<br>伝わるWebを制作します。</h1>
+
+            <p class="lead">
+              飲食店・個人事業主・プロフィール用途など、目的に合わせたWebページを制作します。<br>
+              まずはヒアリングで方向性を整理し、構成設計から丁寧に対応します。
+            </p>
+
+            <div class="cta">
+              <a class="btn primary" target="_blank" rel="noopener noreferrer"
+                 href="https://forms.gle/VzqdTbX2xkR7RJ2N9">相談する（Googleフォーム）</a>
+              <a class="btn" href="works.html">制作例を見る</a>
+            </div>
+
+            <div class="mini-grid">
+              <div class="kpi">
+                <div class="label">対応</div>
+                <div class="value">Web制作 / 資料作成</div>
+              </div>
+              <div class="kpi">
+                <div class="label">進め方</div>
+                <div class="value">ヒアリング→構成→制作</div>
+              </div>
+              <div class="kpi">
+                <div class="label">連絡</div>
+                <div class="value">原則24h以内返信</div>
+              </div>
+            </div>
           </div>
 
-          <h1>伝わらないを、伝わるに変える。</h1>
-          <p class="lead">
-            今川大悟です。まずは「誰に、何を、どう伝えるか」を整理して、
-            1ページのWebや資料として仕上げます。実績はこれから積み上げる段階ですが、
-            その分、一件一件を丁寧に、スピード感を持って対応します。
-          </p>
-
-          <div class="cta">
-            <!-- ★メールは自分のものに差し替え -->
-            <a class="btn primary" href="#contact">相談する（内容整理から）</a>
-            <a class="btn" href="#works">制作例を見る</a>
+          <div class="profile-wrap">
+            <!-- ここにあなたの写真を置く：assets/img/profile.jpg -->
+            <img class="profile-img" src="assets/img/profile.jpg" alt="今川大悟のプロフィール写真">
           </div>
         </div>
       </section>
 
-      <section id="about" class="section grid">
+      <!-- SERVICES (simple) -->
+      <section class="section grid">
         <div class="card">
-          <h2>自己紹介</h2>
-          <p class="muted">
-            学生団体・イベント企画/運営の経験を通じて、「情報を整理して、人に伝わる形にする」ことを積み重ねてきました。
-            Webページや資料は、見た目だけじゃなく<strong>構成（情報設計）</strong>が命だと思っています。
-          </p>
-          <p class="muted" style="margin:0;">
-            「言いたいことはあるけど、うまくまとまらない」——その状態から一緒に整えます。
-          </p>
-
-          <div style="margin-top:12px; display:flex; flex-wrap:wrap; gap:8px;">
-            <span class="pill">拠点：日本</span>
-            <span class="pill">対応：オンライン中心</span>
-            <span class="pill">やり取り：丁寧＆早め</span>
-          </div>
-        </div>
-
-        <div class="card" id="services">
           <h2>できること</h2>
-          <div class="svc">
-            <div class="item">
-              <strong>プロフィール/LP（1ページ）制作</strong>
-              <span>構成 → 文章整理 → デザイン → 公開まで</span>
-            </div>
-            <div class="item">
-              <strong>資料作成（スライド）</strong>
-              <span>要点整理・見やすさ改善・ストーリー設計</span>
-            </div>
-            <div class="item">
-              <strong>文章の整理・整形</strong>
-              <span>自己紹介文 / サービス説明 / 募集文 など</span>
-            </div>
-          </div>
-          <p class="muted" style="margin:10px 0 0; font-size:13px;">
-            ※まずは小さな案件から、確実に積み上げたいです。
+          <ul class="list">
+            <li>Web制作（店舗サイト / LP / プロフィールサイト）</li>
+            <li>資料作成（営業資料・説明資料）</li>
+            <li>文章整理（サービス説明・自己紹介）</li>
+            <li>業務改善についてのご相談も承ります</li>
+          </ul>
+          <p class="note">
+            ※SEOを意識した構成設計・タグ設計も対応可能です。
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>まず見てほしいもの</h2>
+          <p class="muted" style="margin:0;">
+            具体のアウトプットは <a class="linklike" href="works.html">制作例</a> にまとめます。<br>
+            （和風居酒屋LPなど、順次追加していきます）
           </p>
         </div>
       </section>
 
-      <section id="works" class="section">
-        <h2>制作例（更新していく場所）</h2>
-        <div class="works">
-          <article class="work">
-            <span class="pill">Sample</span>
-            <h3>架空サービスのLP</h3>
-            <p>ターゲット/訴求/導線を整理して、1ページに落とし込みます。</p>
-            <div class="tagrow">
-              <span class="tag">構成設計</span><span class="tag">コピー</span><span class="tag">LP</span>
-            </div>
-            <!-- ★制作したURLができたらここを差し替え -->
-            <a class="link" href="#" onclick="return false;">（公開後）リンクをここに貼る</a>
-          </article>
-
-          <article class="work">
-            <span class="pill">Sample</span>
-            <h3>自己紹介ページ</h3>
-            <p>あなたの強みが伝わるように、情報を整理して見せます。</p>
-            <div class="tagrow">
-              <span class="tag">プロフィール</span><span class="tag">Web</span><span class="tag">文章整理</span>
-            </div>
-            <a class="link" href="#" onclick="return false;">（公開後）リンクをここに貼る</a>
-          </article>
-
-          <article class="work">
-            <span class="pill">Sample</span>
-            <h3>営業/提案資料（10枚）</h3>
-            <p>「何を言うか」より「どう伝わるか」を重視して整えます。</p>
-            <div class="tagrow">
-              <span class="tag">スライド</span><span class="tag">ストーリー</span><span class="tag">整理</span>
-            </div>
-            <a class="link" href="#" onclick="return false;">（公開後）リンク/画像を貼る</a>
-          </article>
-        </div>
-
-        <p class="muted" style="margin:10px 0 0; font-size:13px;">
-          まずはサンプルでOK。公開した制作物を増やすほど、受注率が跳ねます。
-        </p>
-      </section>
-
-      <section id="process" class="section">
+      <!-- PROCESS -->
+      <section class="section card">
         <h2>制作の流れ</h2>
-        <div class="steps">
-          <div class="step">
-            <div class="num">1</div>
-            <p><strong>ヒアリング</strong><br>目的・ターゲット・素材を確認します。</p>
-          </div>
-          <div class="step">
-            <div class="num">2</div>
-            <p><strong>構成提案</strong><br>ページ構成と文章の方向性を作ります。</p>
-          </div>
-          <div class="step">
-            <div class="num">3</div>
-            <p><strong>制作</strong><br>Web/資料を形にして初稿提出します。</p>
-          </div>
-          <div class="step">
-            <div class="num">4</div>
-            <p><strong>修正・納品</strong><br>調整して納品。公開もサポートします。</p>
-          </div>
-        </div>
+        <ul class="list">
+          <li><strong>ヒアリング</strong>：目的・ターゲット・素材を確認</li>
+          <li><strong>構成提案</strong>：見出し・順番・文章の方向性を整理</li>
+          <li><strong>初稿提出</strong>：まず形にして確認（ズレを短距離で調整）</li>
+          <li><strong>修正・納品</strong>：整えて納品（公開まで必要ならサポート）</li>
+        </ul>
+        <p class="note">※メッセージは原則24時間以内に返信します。</p>
       </section>
 
-      <section id="contact" class="section card">
-        <h2>連絡</h2>
-        <p class="muted">
-          「相談希望」と送ってもらえればOKです。<br>
-          目的とざっくりのイメージを教えてください。必要な質問はこちらから投げます。
+      <!-- CTA -->
+      <section class="section card">
+        <h2>お問い合わせ</h2>
+        <p class="muted" style="margin:0;">
+          相談はGoogleフォームで受け付けています。<br>
+          「相談内容」「予算感」「希望納期」が分かればOKです。
         </p>
-
-        <div class="cta">
-          <!-- ★ここを自分のメールに差し替え -->
-          <a class="btn primary"
-             href="mailto:wishdaigo1458@gmail.com?subject=制作相談&body=相談内容：%0D%0A希望納期：%0D%0A参考URL（あれば）：">
-            メールで相談
-          </a>
-          <a class="btn" href="#about">自己紹介へ戻る</a>
+        <div class="cta" style="margin-top:12px;">
+          <a class="btn primary" target="_blank" rel="noopener noreferrer"
+             href="https://forms.gle/VzqdTbX2xkR7RJ2N9">Googleフォームを開く</a>
+          <a class="btn" href="contact.html">連絡ページへ</a>
         </div>
-
-        <p class="muted" style="margin-top:10px; font-size:13px;">
-          ※メールが苦手なら、クラウドワークスのメッセージでもOKにしておくと受注率上がります。
-        </p>
       </section>
     </main>
 
     <footer>
       <div>© <span id="year"></span> Daigo Imagawa</div>
-      <div>HTML/CSSのみで作成（軽量・高速）</div>
+      <div class="small">GitHub Pagesで公開</div>
     </footer>
   </div>
 
