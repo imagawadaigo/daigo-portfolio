@@ -332,6 +332,83 @@ nav a.active {
 }
 nav a.active::after { width: 60%; left: 20%; }
 
+/* Hamburger Button */
+.hamburger {
+  display: none;
+  width: 38px; height: 38px; border-radius: 12px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.5);
+  cursor: pointer; flex-shrink: 0;
+  position: relative;
+  transition: all var(--transition-fast) ease;
+}
+.hamburger:hover { transform: scale(1.06); border-color: var(--accent); }
+.hamburger:active { transform: scale(.95); }
+.hamburger span {
+  display: block; position: absolute; left: 50%; top: 50%;
+  width: 16px; height: 2px; border-radius: 2px;
+  background: var(--text);
+  transition: transform .3s var(--ease-spring), opacity .2s ease;
+}
+.hamburger span:nth-child(1) { transform: translate(-50%, calc(-50% - 4px)); }
+.hamburger span:nth-child(2) { transform: translate(-50%, -50%); }
+.hamburger span:nth-child(3) { transform: translate(-50%, calc(-50% + 4px)); }
+.hamburger.open span:nth-child(1) { transform: translate(-50%, -50%) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: translate(-50%, -50%) scaleX(0); }
+.hamburger.open span:nth-child(3) { transform: translate(-50%, -50%) rotate(-45deg); }
+
+[data-theme="dark"] .hamburger { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.10); }
+[data-theme="dark"] .hamburger span { background: var(--text); }
+
+/* Mobile Menu Overlay */
+.mobile-menu {
+  display: none;
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 29;
+  background: var(--bg-solid);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 80px 24px 40px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity .3s ease, transform .3s var(--ease-out-expo);
+  pointer-events: none;
+}
+.mobile-menu.open {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.mobile-menu a {
+  display: block;
+  width: 100%; max-width: 320px;
+  padding: 14px 20px;
+  border-radius: var(--radius-sm);
+  font-size: 15px; font-weight: 600;
+  color: var(--text);
+  text-align: center;
+  border: 1px solid var(--line-subtle);
+  background: var(--surface);
+  transition: all .2s ease;
+}
+.mobile-menu a:hover, .mobile-menu a.active {
+  border-color: var(--accent);
+  background: rgba(79,124,255,.06);
+  color: var(--accent);
+}
+.mobile-menu a + a { /* stagger animation handled by JS */ }
+
+[data-theme="dark"] .mobile-menu { background: var(--bg-solid); }
+[data-theme="dark"] .mobile-menu a { background: var(--surface); border-color: var(--line); }
+[data-theme="dark"] .mobile-menu a:hover, [data-theme="dark"] .mobile-menu a.active {
+  border-color: var(--accent); background: rgba(79,124,255,.08);
+}
+
 /* ---------- Hero ---------- */
 .hero {
   margin-top: 14px; padding: 32px 28px;
@@ -772,6 +849,7 @@ footer {
   .hero { padding: 18px; }
   .btn { width: 100%; }
   nav { display: none; }
+  .hamburger { display: block; }
   h1 { line-height: 1.22; }
   .scroll-top { bottom: 16px; right: 16px; }
 }
@@ -826,15 +904,30 @@ footer {
       <a href="about.html">プロフィール</a>
       <a href="contact.html">連絡</a>
     </nav>
-    <button class="theme-toggle" id="themeToggle" aria-label="テーマ切替" title="ダーク / ライト切替">
-      <svg class="icon-sun" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-      </svg>
-      <svg class="icon-moon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
-      </svg>
-    </button>
+    <div style="display:flex;gap:8px;align-items:center;">
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+      <button class="theme-toggle" id="themeToggle" aria-label="テーマ切替" title="ダーク / ライト切替">
+        <svg class="icon-sun" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        </svg>
+        <svg class="icon-moon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+        </svg>
+      </button>
+    </div>
   </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a class="active" href="index.html">トップ</a>
+    <a href="works.html">制作例</a>
+    <a href="services.html">できること</a>
+    <a href="process.html">制作の流れ</a>
+    <a href="about.html">プロフィール</a>
+    <a href="contact.html">連絡</a>
+  </div>
 
   <main>
     <!-- HERO -->
@@ -863,7 +956,7 @@ footer {
 
         <div class="hero-media">
           <div class="profile-ring">
-            <img class="profile-img" src="assets/img/profile.jpg.png" alt="今川大悟のプロフィール写真">
+            <img class="profile-img" src="assets/img/profile.jpg" alt="今川大悟のプロフィール写真">
           </div>
           <div class="mini-grid">
             <div class="kpi">
@@ -1102,6 +1195,32 @@ document.querySelectorAll('nav a[href^="#"]').forEach(a => {
     a.classList.add('active');
   });
 });
+
+/* ---- Mobile Hamburger Menu ---- */
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+if (hamburger && mobileMenu) {
+  hamburger.addEventListener('click', () => {
+    const isOpen = hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    // Stagger animation for menu items
+    if (isOpen) {
+      mobileMenu.querySelectorAll('a').forEach((a, i) => {
+        a.style.animation = 'fadeUp .35s ease ' + (i * .06) + 's both';
+      });
+    }
+  });
+  // Close menu when a link is clicked
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+}
 </script>
 </body>
 </html>
