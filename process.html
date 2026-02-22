@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>制作の流れ | 今川大悟 — Web制作・資料作成</title>
+<meta name="description" content="ヒアリングから納品まで、Web制作・資料作成の進め方を4ステップでご紹介。構成提案→初稿提出→修正・納品まで丁寧に伴走します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Noto+Sans+JP:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+/* =============================================
+   Shared Design System (same as index-upgraded)
+   ============================================= */
+:root {
+  --bg: #f6f8fc;
+  --bg-solid: #f6f8fc;
+  --surface: rgba(255,255,255,.72);
+  --surface2: rgba(255,255,255,.58);
+  --glass: rgba(255,255,255,.38);
+  --glass-border: rgba(255,255,255,.40);
+  --glass-strong: rgba(255,255,255,.74);
+  --text: #111827;
+  --text-inv: #f1f5f9;
+  --muted: #6b7280;
+  --accent: #4f7cff;
+  --accent2: #34d399;
+  --accent3: #a78bfa;
+  --line: rgba(15, 23, 42, .10);
+  --line-subtle: rgba(15, 23, 42, .06);
+  --radius: 18px;
+  --radius-sm: 14px;
+  --radius-xs: 10px;
+  --shadow: 0 16px 50px rgba(15, 23, 42, .10);
+  --shadow2: 0 10px 30px rgba(15, 23, 42, .08);
+  --shadow-accent: 0 6px 22px rgba(79,124,255,.25);
+  --max: 1080px;
+  --font: 'Sora', 'Noto Sans JP', sans-serif;
+  --ease-out-expo: cubic-bezier(.16, 1, .3, 1);
+  --ease-bounce: cubic-bezier(.34, 1.56, .64, 1);
+  --ease-spring: cubic-bezier(.22, 1.2, .36, 1);
+  --transition-fast: .18s;
+  --transition-med: .32s;
+  --transition-slow: .55s;
+  color-scheme: light dark;
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  --bg: #0c1220; --bg-solid: #0c1220;
+  --surface: rgba(20, 30, 55, .72); --surface2: rgba(20, 30, 55, .58);
+  --glass: rgba(15, 25, 50, .50); --glass-border: rgba(255,255,255,.08);
+  --glass-strong: rgba(20, 30, 55, .82);
+  --text: #e2e8f0; --text-inv: #111827; --muted: #94a3b8;
+  --line: rgba(255, 255, 255, .08); --line-subtle: rgba(255, 255, 255, .04);
+  --shadow: 0 16px 50px rgba(0, 0, 0, .35); --shadow2: 0 10px 30px rgba(0, 0, 0, .25);
+  --shadow-accent: 0 6px 22px rgba(79,124,255,.20);
+}
+[data-theme="dark"] body { background: var(--bg); }
+[data-theme="dark"] .orb { opacity: .20; }
+[data-theme="dark"] .grain { opacity: .015; }
+[data-theme="dark"] .particle { opacity: .08; }
+[data-theme="dark"] header { background: linear-gradient(to bottom, rgba(12,18,32,.88), rgba(12,18,32,0)); border-bottom-color: rgba(255,255,255,.04); }
+[data-theme="dark"] .card { border-color: rgba(255,255,255,.06); background: var(--surface2); }
+[data-theme="dark"] .pill { border-color: rgba(255,255,255,.10); background: rgba(255,255,255,.06); }
+[data-theme="dark"] .btn { border-color: rgba(255,255,255,.10); background: rgba(255,255,255,.06); color: var(--text); }
+[data-theme="dark"] .btn.primary { background: linear-gradient(135deg, rgba(79,124,255,.85), rgba(52,211,153,.65)); color: #f1f5f9; }
+[data-theme="dark"] nav a:hover { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.08); }
+[data-theme="dark"] nav a.active { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.10); }
+[data-theme="dark"] .theme-toggle { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.10); }
+[data-theme="dark"] footer { border-top-color: rgba(255,255,255,.06); }
+[data-theme="dark"] .cursor-glow { background: radial-gradient(circle, rgba(79,124,255,.04), transparent 60%); }
+[data-theme="dark"] .timeline-line { background: linear-gradient(to bottom, rgba(79,124,255,.18), rgba(52,211,153,.12)); }
+[data-theme="dark"] .timeline-dot-inner { border-color: var(--bg-solid); }
+[data-theme="dark"] .timeline-card { border-color: rgba(255,255,255,.06); background: var(--surface2); }
+[data-theme="dark"] .timeline-card:hover { box-shadow: 0 16px 44px rgba(0,0,0,.3); }
+[data-theme="dark"] .detail-tag { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.08); }
+[data-theme="dark"] .faq-item { border-color: rgba(255,255,255,.06); }
+[data-theme="dark"] .faq-q:hover { background: rgba(255,255,255,.03); }
+[data-theme="dark"] .page-hero { border-color: rgba(255,255,255,.06); background: var(--glass); }
+[data-theme="dark"] .page-hero::after { background: linear-gradient(120deg, rgba(79,124,255,.08), transparent 35%, rgba(52,211,153,.06)); }
+[data-theme="dark"] .cta-banner { border-color: rgba(255,255,255,.06); }
+[data-theme="dark"] .cta-banner::before { background: linear-gradient(135deg, rgba(79,124,255,.08), rgba(52,211,153,.06)); }
+
+/* Reset */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+html, body { height: 100%; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+a:hover { opacity: .96; }
+body {
+  font-family: var(--font); color: var(--text); background: var(--bg);
+  line-height: 1.75; letter-spacing: .01em; overflow-x: hidden;
+  transition: background var(--transition-med) ease, color var(--transition-med) ease;
+}
+
+/* Background */
+.bg-canvas { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+.orb { position: absolute; border-radius: 50%; filter: blur(110px); opacity: .4; will-change: transform; animation: orbDrift 22s ease-in-out infinite; transition: opacity var(--transition-med) ease; }
+.orb--a { width: 650px; height: 650px; background: rgba(79,124,255,.28); top: -8%; left: -6%; animation-duration: 20s; }
+.orb--b { width: 520px; height: 520px; background: rgba(52,211,153,.22); top: 30%; right: -10%; animation-duration: 26s; animation-delay: -7s; }
+.orb--c { width: 480px; height: 480px; background: rgba(167,139,250,.18); bottom: -4%; left: 25%; animation-duration: 24s; animation-delay: -12s; }
+@keyframes orbDrift { 0%,100%{transform:translate(0,0) scale(1)} 33%{transform:translate(50px,-40px) scale(1.06)} 66%{transform:translate(-30px,45px) scale(.94)} }
+
+.grain { position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: .03; transition: opacity var(--transition-med) ease; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size: 200px; }
+
+.particles { position: fixed; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }
+.particle { position: absolute; border-radius: 50%; opacity: .12; animation: pFloat linear infinite; transition: opacity var(--transition-med) ease; }
+@keyframes pFloat { 0%{transform:translateY(105vh) rotate(0);opacity:0} 8%{opacity:.12} 92%{opacity:.12} 100%{transform:translateY(-8vh) rotate(540deg);opacity:0} }
+
+.cursor-glow { position: fixed; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, rgba(79,124,255,.07), transparent 60%); pointer-events: none; z-index: 1; transform: translate(-50%,-50%); transition: left .12s ease, top .12s ease, background var(--transition-med) ease; display: none; }
+
+/* Layout */
+.wrap { position: relative; z-index: 2; max-width: var(--max); margin: 0 auto; padding: 22px 18px 70px; }
+
+/* Header */
+header { position: sticky; top: 0; z-index: 30; padding: 12px 0 10px; display: flex; align-items: center; justify-content: space-between; gap: 12px; backdrop-filter: blur(14px) saturate(1.5); -webkit-backdrop-filter: blur(14px) saturate(1.5); background: linear-gradient(to bottom, rgba(246,248,252,.88), rgba(246,248,252,0)); border-bottom: 1px solid var(--line-subtle); transition: background var(--transition-med) ease, border-color var(--transition-med) ease; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: .02em; }
+.dot { width: 10px; height: 10px; border-radius: 999px; background: linear-gradient(135deg, var(--accent), var(--accent2)); box-shadow: 0 0 0 5px rgba(79,124,255,.12); animation: dotPulse 3s ease-in-out infinite; }
+@keyframes dotPulse { 0%,100%{box-shadow:0 0 0 5px rgba(79,124,255,.12)} 50%{box-shadow:0 0 0 10px rgba(79,124,255,.04)} }
+
+.theme-toggle { width: 38px; height: 38px; border-radius: 12px; border: 1px solid var(--line); background: rgba(255,255,255,.5); cursor: pointer; display: grid; place-items: center; transition: all var(--transition-fast) ease; flex-shrink: 0; position: relative; overflow: hidden; }
+.theme-toggle:hover { transform: scale(1.06); border-color: var(--accent); }
+.theme-toggle:active { transform: scale(.95); }
+.theme-toggle .icon-sun, .theme-toggle .icon-moon { position: absolute; transition: transform .4s var(--ease-spring), opacity .3s ease; }
+.theme-toggle .icon-sun { opacity: 1; transform: rotate(0) scale(1); }
+.theme-toggle .icon-moon { opacity: 0; transform: rotate(-90deg) scale(.5); }
+[data-theme="dark"] .theme-toggle .icon-sun { opacity: 0; transform: rotate(90deg) scale(.5); }
+[data-theme="dark"] .theme-toggle .icon-moon { opacity: 1; transform: rotate(0) scale(1); }
+
+nav { display: flex; flex-wrap: wrap; gap: 6px; font-size: 13px; color: var(--muted); justify-content: flex-end; }
+nav a { padding: 8px 10px; border-radius: 999px; border: 1px solid transparent; transition: all .22s ease; position: relative; }
+nav a::after { content: ''; position: absolute; bottom: 4px; left: 50%; width: 0; height: 2px; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 2px; transition: width .3s var(--ease-out-expo), left .3s var(--ease-out-expo); }
+nav a:hover::after { width: 60%; left: 20%; }
+nav a:hover { border-color: var(--line); background: rgba(255,255,255,.55); color: var(--text); }
+nav a.active { border-color: rgba(15,23,42,.12); background: rgba(255,255,255,.70); color: var(--text); }
+nav a.active::after { width: 60%; left: 20%; }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 18px; border-radius: var(--radius-sm); border: 1px solid var(--line); background: rgba(255,255,255,.60); font-family: var(--font); font-weight: 720; font-size: 14px; cursor: pointer; user-select: none; transition: transform .22s var(--ease-bounce), box-shadow .22s ease, opacity .18s ease, background var(--transition-med) ease, border-color var(--transition-med) ease, color var(--transition-med) ease; position: relative; overflow: hidden; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(15,23,42,.08); opacity: 1; }
+.btn:active { transform: translateY(0) scale(.98); }
+.btn.primary { border: none; background: linear-gradient(135deg, rgba(79,124,255,.95), rgba(52,211,153,.78)); color: #07111f; box-shadow: var(--shadow-accent); }
+.btn.primary:hover { box-shadow: 0 10px 30px rgba(79,124,255,.35); }
+.btn.primary::after { content: ''; position: absolute; top: 0; left: -100%; width: 55%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,.22), transparent); animation: btnShine 5s ease-in-out infinite; }
+@keyframes btnShine { 0%,82%,100%{left:-100%} 90%{left:130%} }
+.btn .ripple { position: absolute; border-radius: 50%; background: rgba(255,255,255,.35); transform: scale(0); animation: rippleOut .5s ease forwards; pointer-events: none; }
+@keyframes rippleOut { to { transform: scale(3); opacity: 0; } }
+
+/* Pill */
+.pill { font-size: 12px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); background: rgba(255,255,255,.60); color: var(--muted); white-space: nowrap; transition: transform .22s ease, background var(--transition-med) ease, border-color var(--transition-med) ease, color var(--transition-med) ease; }
+
+/* Scroll progress */
+.scroll-progress { position: fixed; top: 0; left: 0; z-index: 50; width: 0%; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent3)); transition: width .08s linear; border-radius: 0 2px 2px 0; }
+
+/* Scroll top */
+.scroll-top { position: fixed; bottom: 24px; right: 24px; z-index: 40; width: 42px; height: 42px; border-radius: 14px; background: var(--glass); backdrop-filter: blur(10px); border: 1px solid var(--line); display: grid; place-items: center; cursor: pointer; opacity: 0; transform: translateY(12px) scale(.9); transition: opacity .3s ease, transform .3s var(--ease-spring), background var(--transition-med) ease, border-color var(--transition-med) ease; pointer-events: none; }
+.scroll-top.show { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+.scroll-top:hover { transform: translateY(-2px) scale(1.06); box-shadow: 0 8px 24px rgba(15,23,42,.1); }
+.scroll-top:active { transform: scale(.95); }
+.scroll-top svg { transition: transform .2s ease; }
+.scroll-top:hover svg { transform: translateY(-1px); }
+
+/* Card base */
+.card { border-radius: var(--radius); border: 1px solid var(--line); background: var(--surface2); backdrop-filter: blur(10px); padding: 18px; box-shadow: var(--shadow2); transition: transform .32s var(--ease-spring), box-shadow .32s ease, background var(--transition-med) ease, border-color var(--transition-med) ease; position: relative; overflow: hidden; }
+
+/* Footer */
+footer { margin-top: 26px; padding-top: 16px; border-top: 1px solid var(--line-subtle); color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; transition: border-color var(--transition-med) ease; }
+.small { font-size: 12px; }
+
+.muted { color: var(--muted); }
+.note { font-size: 13px; color: var(--muted); margin-top: 10px; }
+
+/* Selection / Focus */
+::selection { background: rgba(79,124,255,.18); color: var(--text); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+/* Animations */
+@keyframes fadeUp { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+@keyframes scaleIn { from{opacity:0;transform:scale(.92)} to{opacity:1;transform:scale(1)} }
+@keyframes gradShift { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
+
+/* =============================================
+   Page-specific: 制作の流れ
+   ============================================= */
+
+/* Page Hero */
+.page-hero {
+  margin-top: 14px; padding: 36px 28px;
+  border-radius: var(--radius);
+  border: 1px solid var(--glass-border);
+  background: var(--glass);
+  backdrop-filter: blur(20px) saturate(1.3);
+  -webkit-backdrop-filter: blur(20px) saturate(1.3);
+  box-shadow: var(--shadow);
+  position: relative; overflow: hidden;
+  text-align: center;
+  transition: background var(--transition-med) ease, border-color var(--transition-med) ease;
+}
+.page-hero::after {
+  content: ''; position: absolute; inset: -2px;
+  background: linear-gradient(120deg, rgba(79,124,255,.14), transparent 35%, rgba(52,211,153,.10));
+  pointer-events: none; border-radius: var(--radius);
+  transition: background var(--transition-med) ease;
+}
+.page-hero-inner { position: relative; z-index: 2; }
+.page-hero h1 {
+  font-size: clamp(24px, 3.6vw, 36px); font-weight: 800;
+  line-height: 1.25; letter-spacing: -.01em;
+  animation: fadeUp .6s var(--ease-out-expo) .08s both;
+}
+.page-hero h1 .em {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; background-size: 200% 200%;
+  animation: gradShift 6s ease-in-out infinite;
+}
+.page-hero .lead {
+  margin: 10px auto 0; max-width: 54ch;
+  font-size: 15px; color: var(--muted);
+  animation: fadeUp .6s var(--ease-out-expo) .16s both;
+}
+
+/* Section reveal */
+.section {
+  margin-top: 28px; opacity: 0; transform: translateY(28px);
+  transition: opacity var(--transition-slow) ease, transform var(--transition-slow) var(--ease-out-expo);
+}
+.section.visible { opacity: 1; transform: translateY(0); }
+.section h2 {
+  margin: 0 0 16px; font-size: 18px;
+  letter-spacing: .02em; font-weight: 800;
+  position: relative; display: inline-block;
+}
+.section h2::before {
+  content: ''; display: inline-block; width: 8px; height: 8px;
+  border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent2));
+  margin-right: 8px; vertical-align: middle;
+  animation: dotPulse 3s ease-in-out infinite;
+}
+
+/* ---- Timeline ---- */
+.timeline {
+  position: relative;
+  padding: 0 0 0 40px;
+}
+
+/* Vertical line */
+.timeline-line {
+  position: absolute; left: 19px; top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, rgba(79,124,255,.28), rgba(52,211,153,.18), rgba(167,139,250,.14));
+  border-radius: 2px;
+  transition: background var(--transition-med) ease;
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 28px;
+  opacity: 0; transform: translateY(24px);
+  transition: opacity .5s var(--ease-out-expo), transform .5s var(--ease-out-expo);
+}
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-item.visible { opacity: 1; transform: translateY(0); }
+
+/* Timeline dot */
+.timeline-dot {
+  position: absolute; left: -40px; top: 4px;
+  width: 38px; height: 38px;
+  display: grid; place-items: center;
+}
+.timeline-dot-inner {
+  width: 38px; height: 38px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  display: grid; place-items: center;
+  color: #fff; font-weight: 800; font-size: 14px;
+  border: 3px solid var(--bg-solid);
+  box-shadow: 0 4px 14px rgba(79,124,255,.2);
+  transition: transform .35s var(--ease-spring), border-color var(--transition-med) ease;
+}
+.timeline-item:hover .timeline-dot-inner {
+  transform: scale(1.12) rotate(-4deg);
+}
+
+/* Timeline card */
+.timeline-card {
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--surface2);
+  backdrop-filter: blur(10px);
+  padding: 22px;
+  box-shadow: var(--shadow2);
+  transition: transform .32s var(--ease-spring), box-shadow .32s ease,
+              background var(--transition-med) ease, border-color var(--transition-med) ease;
+  position: relative; overflow: hidden;
+}
+.timeline-card::before {
+  content: ''; position: absolute; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  opacity: 0; transition: opacity .3s ease;
+}
+.timeline-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 44px rgba(15,23,42,.10);
+}
+.timeline-card:hover::before { opacity: 1; }
+
+.timeline-card h3 {
+  font-size: 16px; font-weight: 800;
+  margin-bottom: 6px;
+  display: flex; align-items: center; gap: 8px;
+}
+.timeline-card h3 .step-label {
+  font-size: 11px; font-weight: 700;
+  color: var(--accent); text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.timeline-card p {
+  font-size: 14px; color: var(--muted); line-height: 1.7;
+}
+
+/* Detail tags */
+.detail-tags {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin-top: 12px;
+}
+.detail-tag {
+  font-size: 11px; padding: 4px 10px; border-radius: 999px;
+  background: rgba(79,124,255,.06);
+  border: 1px solid rgba(79,124,255,.10);
+  color: var(--accent); font-weight: 600;
+  transition: transform .2s ease, background var(--transition-med) ease, border-color var(--transition-med) ease;
+}
+.detail-tag:hover { transform: translateY(-1px); }
+
+/* Duration badge */
+.duration-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 12px; color: var(--muted); font-weight: 600;
+  margin-top: 10px;
+}
+.duration-badge svg { opacity: .55; }
+
+/* ---- Point Card (横並び) ---- */
+.point-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.point-card {
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--surface2);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  box-shadow: var(--shadow2);
+  text-align: center;
+  transition: transform .32s var(--ease-spring), box-shadow .32s ease,
+              background var(--transition-med) ease, border-color var(--transition-med) ease;
+  position: relative; overflow: hidden;
+}
+.point-card::after {
+  content: ''; position: absolute; top: -50%; left: -50%;
+  width: 100%; height: 100%; border-radius: 50%;
+  background: radial-gradient(circle, rgba(79,124,255,.06), transparent 60%);
+  opacity: 0; transition: opacity .4s ease; pointer-events: none;
+}
+.point-card:hover { transform: translateY(-3px); box-shadow: 0 16px 44px rgba(15,23,42,.10); }
+.point-card:hover::after { opacity: 1; }
+
+.point-icon {
+  width: 48px; height: 48px; border-radius: 14px;
+  background: linear-gradient(135deg, rgba(79,124,255,.08), rgba(52,211,153,.08));
+  border: 1px solid rgba(79,124,255,.10);
+  display: grid; place-items: center;
+  margin: 0 auto 12px;
+  transition: transform .35s var(--ease-spring);
+}
+.point-card:hover .point-icon { transform: scale(1.08) rotate(-3deg); }
+
+.point-card h3 { font-size: 14px; font-weight: 800; margin-bottom: 4px; }
+.point-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+/* ---- FAQ ---- */
+.faq-list { display: grid; gap: 0; }
+.faq-item {
+  border-bottom: 1px solid var(--line-subtle);
+  transition: border-color var(--transition-med) ease;
+}
+.faq-item:last-child { border-bottom: none; }
+
+.faq-q {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 16px 4px; cursor: pointer;
+  font-size: 14px; font-weight: 700;
+  transition: background .2s ease;
+  border-radius: 8px;
+  user-select: none;
+}
+.faq-q:hover { background: rgba(255,255,255,.3); }
+
+.faq-q .q-label {
+  font-size: 13px; font-weight: 800; color: var(--accent);
+  margin-right: 8px; flex-shrink: 0;
+}
+
+.faq-chevron {
+  width: 20px; height: 20px; flex-shrink: 0;
+  transition: transform .3s var(--ease-spring);
+  color: var(--muted);
+}
+.faq-item.open .faq-chevron { transform: rotate(180deg); }
+
+.faq-a {
+  max-height: 0; overflow: hidden;
+  transition: max-height .4s var(--ease-out-expo), padding .3s ease;
+  padding: 0 4px;
+}
+.faq-item.open .faq-a {
+  max-height: 200px;
+  padding: 0 4px 16px;
+}
+.faq-a p {
+  font-size: 13px; color: var(--muted); line-height: 1.7;
+}
+
+/* ---- CTA Banner ---- */
+.cta-banner {
+  text-align: center; padding: 32px 24px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--surface2);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow2);
+  position: relative; overflow: hidden;
+  transition: background var(--transition-med) ease, border-color var(--transition-med) ease;
+}
+.cta-banner::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(79,124,255,.05), rgba(52,211,153,.04));
+  pointer-events: none;
+  transition: background var(--transition-med) ease;
+}
+.cta-banner h2 { position: relative; z-index: 1; }
+.cta-banner h2::before { display: none; }
+.cta-banner p { position: relative; z-index: 1; }
+.cta-banner .cta { position: relative; z-index: 1; justify-content: center; }
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  .point-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+  .wrap { padding: 18px 14px 64px; }
+  .page-hero { padding: 24px 18px; }
+  .btn { width: 100%; }
+  nav { display: none; }
+  .timeline { padding-left: 34px; }
+  .timeline-line { left: 15px; }
+  .timeline-dot { left: -34px; }
+  .timeline-dot-inner { width: 32px; height: 32px; font-size: 12px; }
+  .scroll-top { bottom: 16px; right: 16px; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .orb { animation: none; }
+}
+
+/* Print */
+@media print {
+  .bg-canvas, .grain, .particles, .cursor-glow, .scroll-progress, .scroll-top, .theme-toggle { display: none !important; }
+  body { background: #fff; color: #000; }
+  .timeline-card, .point-card, .card { box-shadow: none; border: 1px solid #ccc; }
+}
+</style>
+</head>
+<body>
+
+<!-- Scroll progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Background -->
+<div class="bg-canvas">
+  <div class="orb orb--a"></div>
+  <div class="orb orb--b"></div>
+  <div class="orb orb--c"></div>
+</div>
+<div class="grain"></div>
+<div class="particles" id="particles"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<div class="wrap">
+
+  <header>
+    <a href="index.html" class="brand">
+      <span class="dot" aria-hidden="true"></span>
+      <span>今川大悟</span>
+    </a>
+    <nav>
+      <a href="index.html">トップ</a>
+      <a href="works.html">制作例</a>
+      <a href="services.html">できること</a>
+      <a class="active" href="process.html">制作の流れ</a>
+      <a href="about.html">プロフィール</a>
+      <a href="contact.html">連絡</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="テーマ切替" title="ダーク / ライト切替">
+      <svg class="icon-sun" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+      </svg>
+      <svg class="icon-moon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+      </svg>
+    </button>
+  </header>
+
+  <main>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="page-hero-inner">
+        <h1><span class="em">制作の流れ</span></h1>
+        <p class="lead">
+          ヒアリングから納品まで、4つのステップで進めます。<br>
+          「何を決めればいいか分からない」という段階からでも大丈夫です。
+        </p>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="section">
+      <h2>4ステップで進行</h2>
+
+      <div class="timeline">
+        <div class="timeline-line"></div>
+
+        <!-- Step 1 -->
+        <div class="timeline-item">
+          <div class="timeline-dot">
+            <div class="timeline-dot-inner">1</div>
+          </div>
+          <div class="timeline-card">
+            <h3>
+              <span class="step-label">Step 01</span>
+              ヒアリング
+            </h3>
+            <p>
+              まずはGoogleフォームまたはメッセージで、目的・ターゲット・ご要望をお聞きします。<br>
+              「何を書けばいいか分からない」という状態でもOK。こちらから質問しながら方向性を整理します。
+            </p>
+            <div class="detail-tags">
+              <span class="detail-tag">目的の確認</span>
+              <span class="detail-tag">ターゲット整理</span>
+              <span class="detail-tag">素材の有無</span>
+              <span class="detail-tag">参考サイト共有</span>
+            </div>
+            <div class="duration-badge">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              目安：1〜2日
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="timeline-item">
+          <div class="timeline-dot">
+            <div class="timeline-dot-inner">2</div>
+          </div>
+          <div class="timeline-card">
+            <h3>
+              <span class="step-label">Step 02</span>
+              構成提案
+            </h3>
+            <p>
+              ヒアリング内容をもとに、ページの構成案を作成します。<br>
+              見出し・順番・文章の方向性をまとめ、「これで進めていいですか？」と確認を取ります。
+            </p>
+            <div class="detail-tags">
+              <span class="detail-tag">見出し設計</span>
+              <span class="detail-tag">セクション構成</span>
+              <span class="detail-tag">文章の方向性</span>
+              <span class="detail-tag">ワイヤーフレーム</span>
+            </div>
+            <div class="duration-badge">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              目安：2〜3日
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="timeline-item">
+          <div class="timeline-dot">
+            <div class="timeline-dot-inner">3</div>
+          </div>
+          <div class="timeline-card">
+            <h3>
+              <span class="step-label">Step 03</span>
+              初稿提出
+            </h3>
+            <p>
+              構成が固まったら、実際のページを制作して初稿としてお見せします。<br>
+              早い段階で形にすることで、イメージのズレを最小限にし、短距離で調整できます。
+            </p>
+            <div class="detail-tags">
+              <span class="detail-tag">デザイン実装</span>
+              <span class="detail-tag">コーディング</span>
+              <span class="detail-tag">プレビュー共有</span>
+              <span class="detail-tag">フィードバック</span>
+            </div>
+            <div class="duration-badge">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              目安：3〜5日
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="timeline-item">
+          <div class="timeline-dot">
+            <div class="timeline-dot-inner">4</div>
+          </div>
+          <div class="timeline-card">
+            <h3>
+              <span class="step-label">Step 04</span>
+              修正・納品
+            </h3>
+            <p>
+              フィードバックをもとに修正し、最終版を納品します。<br>
+              公開作業が必要な場合は、サーバーへのアップロードやドメイン設定もサポート可能です。
+            </p>
+            <div class="detail-tags">
+              <span class="detail-tag">修正対応</span>
+              <span class="detail-tag">最終確認</span>
+              <span class="detail-tag">納品</span>
+              <span class="detail-tag">公開サポート</span>
+            </div>
+            <div class="duration-badge">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              目安：1〜3日
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="note" style="margin-top:18px;">
+        ※全体の目安は 1〜2週間 程度です。内容や規模によって変動します。<br>
+        ※メッセージは原則24時間以内に返信します。
+      </p>
+    </section>
+
+    <!-- ポイント -->
+    <section class="section">
+      <h2>進め方のポイント</h2>
+      <div class="point-grid">
+        <div class="point-card">
+          <div class="point-icon">
+            <svg width="22" height="22" fill="none" stroke="var(--accent)" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+            </svg>
+          </div>
+          <h3>まず相談からでOK</h3>
+          <p>「何を決めればいいか分からない」という段階でも構いません。会話しながら整理します。</p>
+        </div>
+        <div class="point-card">
+          <div class="point-icon">
+            <svg width="22" height="22" fill="none" stroke="var(--accent2)" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+            </svg>
+          </div>
+          <h3>構成→制作の二段階</h3>
+          <p>いきなり作り始めず、まず構成で合意してから制作に入ります。ズレを最小限にする進め方です。</p>
+        </div>
+        <div class="point-card">
+          <div class="point-icon">
+            <svg width="22" height="22" fill="none" stroke="var(--accent3)" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <h3>原則24h以内に返信</h3>
+          <p>連絡が滞ると不安になるもの。メッセージには原則24時間以内に返信するようにしています。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section card">
+      <h2>よくある質問</h2>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <div class="faq-q" tabindex="0" role="button" aria-expanded="false">
+            <div><span class="q-label">Q.</span>費用の目安はどれくらいですか？</div>
+            <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="faq-a">
+            <p>内容・ページ数によりますが、LP1ページで3〜8万円程度が目安です。まずはご相談ください。お見積もりは無料です。</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" tabindex="0" role="button" aria-expanded="false">
+            <div><span class="q-label">Q.</span>素材（写真・文章）がなくても依頼できますか？</div>
+            <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="faq-a">
+            <p>はい、可能です。フリー素材の提案や、文章の整理・ライティングもお手伝いできます。</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" tabindex="0" role="button" aria-expanded="false">
+            <div><span class="q-label">Q.</span>修正は何回までできますか？</div>
+            <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="faq-a">
+            <p>基本的に2〜3回の修正を想定しています。大幅な方向転換がなければ、追加費用なしで対応します。</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" tabindex="0" role="button" aria-expanded="false">
+            <div><span class="q-label">Q.</span>納品後のサポートはありますか？</div>
+            <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="faq-a">
+            <p>納品後1ヶ月間は軽微な修正に無料で対応します。その後の更新・保守もご相談いただけます。</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-banner">
+      <h2 style="font-size:20px;font-weight:800;">まずは気軽にご相談ください</h2>
+      <p class="muted" style="margin:6px 0 0;">
+        「相談内容」「予算感」「希望納期」が分かればOKです。
+      </p>
+      <div class="cta" style="margin-top:16px;justify-content:center;">
+        <a class="btn primary" target="_blank" rel="noopener noreferrer"
+           href="https://forms.gle/VzqdTbX2xkR7RJ2N9">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          相談する（Googleフォーム）
+        </a>
+        <a class="btn" href="contact.html">連絡ページへ</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div>&copy; <span id="year"></span> Daigo Imagawa</div>
+    <div class="small">GitHub Pagesで公開</div>
+  </footer>
+
+</div>
+
+<!-- Scroll to top -->
+<button class="scroll-top" id="scrollTop" aria-label="ページ上部へ">
+  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+    <path d="M18 15l-6-6-6 6"/>
+  </svg>
+</button>
+
+<script>
+/* Year */
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* Theme Toggle */
+const toggle = document.getElementById('themeToggle');
+const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
+const saved = localStorage.getItem('theme');
+if (saved) document.documentElement.setAttribute('data-theme', saved);
+else if (prefersDark) document.documentElement.setAttribute('data-theme', 'dark');
+toggle.addEventListener('click', () => {
+  const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+});
+
+/* Scroll Progress */
+const progressBar = document.getElementById('scrollProgress');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  progressBar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+}, { passive: true });
+
+/* Scroll to Top */
+const scrollBtn = document.getElementById('scrollTop');
+window.addEventListener('scroll', () => {
+  scrollBtn.classList.toggle('show', window.scrollY > 400);
+}, { passive: true });
+scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+/* Section Reveal */
+const sectionIO = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: .12 });
+document.querySelectorAll('.section').forEach(s => sectionIO.observe(s));
+
+/* Timeline Item Stagger */
+const timelineIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('visible');
+  });
+}, { threshold: .15 });
+document.querySelectorAll('.timeline-item').forEach((item, i) => {
+  item.style.transitionDelay = (i * .12) + 's';
+  timelineIO.observe(item);
+});
+
+/* Point Card Stagger */
+const pointIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.querySelectorAll('.point-card').forEach((c, i) => {
+      c.style.animation = 'fadeUp .5s ease ' + (i * .1) + 's both';
+    });
+  });
+}, { threshold: .15 });
+document.querySelectorAll('.point-grid').forEach(g => pointIO.observe(g));
+
+/* FAQ Accordion */
+document.querySelectorAll('.faq-q').forEach(q => {
+  const handler = () => {
+    const item = q.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.faq-item.open').forEach(o => {
+      o.classList.remove('open');
+      o.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+    });
+    // Toggle current
+    if (!isOpen) {
+      item.classList.add('open');
+      q.setAttribute('aria-expanded', 'true');
+    }
+  };
+  q.addEventListener('click', handler);
+  q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handler(); } });
+});
+
+/* Particles */
+const pc = document.getElementById('particles');
+for (let i = 0; i < 14; i++) {
+  const d = document.createElement('div');
+  d.className = 'particle';
+  d.style.left = Math.random() * 100 + '%';
+  d.style.animationDuration = (14 + Math.random() * 16) + 's';
+  d.style.animationDelay = -(Math.random() * 22) + 's';
+  const sz = 2 + Math.random() * 3;
+  d.style.width = d.style.height = sz + 'px';
+  d.style.background = ['var(--accent)', 'var(--accent2)', 'var(--accent3)'][i % 3];
+  pc.appendChild(d);
+}
+
+/* Cursor Glow */
+if (matchMedia('(pointer:fine)').matches) {
+  const g = document.getElementById('cursorGlow');
+  g.style.display = 'block';
+  document.addEventListener('mousemove', e => {
+    g.style.left = e.clientX + 'px';
+    g.style.top = e.clientY + 'px';
+  });
+}
+
+/* Button Ripple */
+document.querySelectorAll('.btn').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    const r = this.getBoundingClientRect();
+    const span = document.createElement('span');
+    span.className = 'ripple';
+    const size = Math.max(r.width, r.height);
+    span.style.width = span.style.height = size + 'px';
+    span.style.left = (e.clientX - r.left - size / 2) + 'px';
+    span.style.top = (e.clientY - r.top - size / 2) + 'px';
+    this.appendChild(span);
+    span.addEventListener('animationend', () => span.remove());
+  });
+});
+</script>
+</body>
+</html>
