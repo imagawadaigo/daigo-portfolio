@@ -54,7 +54,7 @@
 [data-theme="dark"] .work-card:hover{border-color:rgba(255,255,255,.10)}
 [data-theme="dark"] .work-body{background:var(--surface2)}
 [data-theme="dark"] .work-tag{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.08);color:var(--muted)}
-[data-theme="dark"] .work-link{color:var(--accent)}
+[data-theme="dark"] .work-banner-view{background:rgba(0,0,0,.55);border-color:rgba(255,255,255,.10)}
 [data-theme="dark"] .empty-state{border-color:rgba(255,255,255,.06);background:var(--surface2)}
 [data-theme="dark"] .cta-banner{border-color:rgba(255,255,255,.06)}
 [data-theme="dark"] .cta-banner::before{background:linear-gradient(135deg,rgba(79,124,255,.08),rgba(52,211,153,.06))}
@@ -175,18 +175,23 @@ footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--line-subtle);
   display:grid;grid-template-columns:1fr;gap:20px;
 }
 
+/* Card is an <a> tag — entire card is clickable */
 .work-card{
+  display:block;
   border-radius:var(--radius);
   border:1px solid var(--line);
   overflow:hidden;
   box-shadow:var(--shadow2);
   transition:transform .35s var(--ease-spring),box-shadow .35s ease,border-color var(--transition-med) ease;
-  display:grid;grid-template-columns:1fr;
   position:relative;
+  cursor:pointer;
+  text-decoration:none;
+  color:inherit;
 }
 .work-card:hover{
   transform:translateY(-4px);
   box-shadow:0 20px 54px rgba(15,23,42,.14);
+  opacity:1;
 }
 
 /* Banner / Thumbnail area */
@@ -209,6 +214,22 @@ footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--line-subtle);
   content:'';position:absolute;inset:0;
   background:linear-gradient(to top,rgba(0,0,0,.5) 0%,transparent 50%);
   pointer-events:none;
+}
+
+/* "View" indicator — appears on hover */
+.work-banner-view{
+  position:absolute;bottom:16px;right:16px;z-index:3;
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:12px;font-weight:700;color:#fff;
+  padding:8px 14px;border-radius:10px;
+  background:rgba(0,0,0,.45);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.12);
+  opacity:0;transform:translateY(6px);
+  transition:opacity .3s ease,transform .3s var(--ease-spring);
+}
+.work-card:hover .work-banner-view{
+  opacity:1;transform:translateY(0);
 }
 
 /* Badge on banner */
@@ -243,13 +264,23 @@ footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--line-subtle);
   display:flex;align-items:center;gap:8px;
 }
 
+/* Arrow that animates on hover */
+.work-title-arrow{
+  display:inline-flex;margin-left:auto;color:var(--accent);
+  opacity:.4;transition:opacity .2s,transform .2s var(--ease-spring);
+  flex-shrink:0;
+}
+.work-card:hover .work-title-arrow{
+  opacity:1;transform:translateX(3px);
+}
+
 .work-desc{
   font-size:13px;color:var(--muted);line-height:1.7;
   margin-bottom:12px;
 }
 
 .work-tags{
-  display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;
+  display:flex;flex-wrap:wrap;gap:6px;
 }
 .work-tag{
   font-size:11px;padding:4px 10px;border-radius:999px;
@@ -257,25 +288,6 @@ footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--line-subtle);
   color:var(--accent);font-weight:600;
   transition:transform .2s ease,background var(--transition-med) ease,border-color var(--transition-med) ease;
 }
-
-.work-actions{
-  display:flex;flex-wrap:wrap;gap:8px;
-}
-
-.work-link{
-  display:inline-flex;align-items:center;gap:6px;
-  font-size:13px;font-weight:700;color:var(--accent);
-  padding:8px 14px;border-radius:10px;
-  border:1px solid rgba(79,124,255,.12);
-  transition:all .22s ease;
-}
-.work-link:hover{
-  background:rgba(79,124,255,.06);
-  border-color:rgba(79,124,255,.2);
-  transform:translateX(2px);
-}
-.work-link svg{transition:transform .2s ease}
-.work-link:hover svg{transform:translateX(2px)}
 
 /* ---- Empty / Coming Soon state ---- */
 .empty-state{
@@ -369,32 +381,59 @@ footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--line-subtle);
 
       <div class="works-grid" id="worksGrid">
 
-        <!-- ==============================
-             WORK 01: 居酒屋LP
-             ============================== -->
-        <article class="work-card" data-category="web lp">
+        <!--
+        ╔══════════════════════════════════════════════╗
+        ║  制作例カードの追加方法（コピペテンプレート）      ║
+        ╠══════════════════════════════════════════════╣
+        ║                                              ║
+        ║  1. 下の <a class="work-card"> ブロックを      ║
+        ║     まるごとコピーして、この下に貼り付ける       ║
+        ║                                              ║
+        ║  2. 変更する箇所:                              ║
+        ║     - href="..."     → リンク先ファイル名      ║
+        ║     - data-category  → フィルター用カテゴリ      ║
+        ║       (web / lp / doc をスペース区切り)         ║
+        ║     - work-banner-bg の style → 背景色や画像    ║
+        ║       画像の場合: background:url('img/xxx.jpg') ║
+        ║       center/cover no-repeat;                 ║
+        ║     - work-badge     → 左上ラベル(架空/実案件等) ║
+        ║     - work-type      → 右上タイプ(LP/サイト等)  ║
+        ║     - work-title     → タイトル                ║
+        ║     - work-desc      → 説明文                  ║
+        ║     - work-tag       → 技術タグ(増減自由)       ║
+        ║                                              ║
+        ║  3. 不要なら empty-state を削除してOK           ║
+        ╚══════════════════════════════════════════════╝
+        -->
+
+        <!-- ===== WORK 01: 居酒屋LP ===== -->
+        <a class="work-card" href="izakaya-lp.html" target="_blank" data-category="web lp">
           <div class="work-banner">
-            <!-- バナーBG: 居酒屋の雰囲気を色で再現 (実際のスクショに差替可) -->
             <div class="work-banner-bg" style="background:
               linear-gradient(135deg, #0e0b07 0%, #1a1510 40%, #2a1f14 70%, #0e0b07 100%);
               display:flex;align-items:center;justify-content:center;
             ">
-              <!-- Decorative text on banner -->
               <div style="text-align:center;position:relative;z-index:1;">
                 <div style="font-family:'Zen Old Mincho',serif;font-size:clamp(28px,4vw,48px);font-weight:900;color:#f5efe6;letter-spacing:.06em;line-height:1.2;text-shadow:0 4px 20px rgba(0,0,0,.5);">
                   炭火と旬<br><span style="color:#e8a838;">よりみち</span>
                 </div>
                 <div style="margin-top:8px;font-size:12px;color:rgba(245,239,230,.5);letter-spacing:.08em;">名古屋 伏見 — 和食居酒屋LP</div>
               </div>
-              <!-- Decorative amber glow -->
               <div style="position:absolute;bottom:-20%;right:10%;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(232,168,56,.12),transparent 65%);filter:blur(40px);pointer-events:none;"></div>
               <div style="position:absolute;top:10%;left:5%;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(192,57,43,.08),transparent 65%);filter:blur(40px);pointer-events:none;"></div>
             </div>
             <span class="work-badge">架空店舗</span>
             <span class="work-type">LP</span>
+            <div class="work-banner-view">
+              見てみる
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </div>
           </div>
           <div class="work-body">
-            <div class="work-title">炭火と旬 よりみち — 和食居酒屋LP</div>
+            <div class="work-title">
+              炭火と旬 よりみち — 和食居酒屋LP
+              <svg class="work-title-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+            </div>
             <p class="work-desc">
               名古屋・伏見の架空の居酒屋を想定したLP制作例。備長炭の串焼きと旬の鮮魚をウリにした「賑やか系」居酒屋のランディングページです。ダークベースに琥珀色のアクセント、火の粉エフェクト、タブ切り替えメニューなどを実装。
             </p>
@@ -405,18 +444,40 @@ footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--line-subtle);
               <span class="work-tag">レスポンシブ</span>
               <span class="work-tag">アニメーション</span>
             </div>
-            <div class="work-actions">
-              <a href="izakaya-lp.html" class="work-link" target="_blank">
-                LPを見る
-                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              </a>
+          </div>
+        </a>
+
+        <!--
+        ===== ↓ 次の制作例はここに追加 ↓ =====
+
+        <a class="work-card" href="ファイル名.html" target="_blank" data-category="web lp">
+          <div class="work-banner">
+            <div class="work-banner-bg" style="background:#eee;display:flex;align-items:center;justify-content:center;">
+              バナー画像 or テキスト
+            </div>
+            <span class="work-badge">ラベル</span>
+            <span class="work-type">LP</span>
+            <div class="work-banner-view">
+              見てみる
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             </div>
           </div>
-        </article>
+          <div class="work-body">
+            <div class="work-title">
+              タイトル
+              <svg class="work-title-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+            </div>
+            <p class="work-desc">説明文</p>
+            <div class="work-tags">
+              <span class="work-tag">タグ</span>
+            </div>
+          </div>
+        </a>
 
-        <!-- ==============================
-             Coming Soon placeholder
-             ============================== -->
+        ===== ↑ ここまでコピペ ↑ =====
+        -->
+
+        <!-- Coming Soon -->
         <div class="empty-state">
           <div class="empty-icon">
             <svg width="24" height="24" fill="none" stroke="var(--accent)" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
@@ -426,34 +487,6 @@ footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--line-subtle);
         </div>
 
       </div>
-      <!-- /works-grid -->
-
-      <!-- ==============================
-           ↓ 新しい制作例を追加するときはここにコピペ ↓
-
-           <article class="work-card" data-category="web lp">
-             <div class="work-banner">
-               <div class="work-banner-bg" style="background:#eee;">
-                 ← バナー画像やグラデーションを入れる
-               </div>
-               <span class="work-badge">ラベル</span>
-               <span class="work-type">LP</span>
-             </div>
-             <div class="work-body">
-               <div class="work-title">タイトル</div>
-               <p class="work-desc">説明文</p>
-               <div class="work-tags">
-                 <span class="work-tag">タグ</span>
-               </div>
-               <div class="work-actions">
-                 <a href="xxx.html" class="work-link" target="_blank">
-                   見る <svg ...></svg>
-                 </a>
-               </div>
-             </div>
-           </article>
-
-           ============================== -->
 
     </section>
 
@@ -538,20 +571,21 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.classList.add('active');
 
     const filter = btn.dataset.filter;
+    let visibleCount = 0;
     document.querySelectorAll('.work-card').forEach(card => {
       const cats = card.dataset.category || '';
       if (filter === 'all' || cats.includes(filter)) {
         card.style.display = '';
         card.style.animation = 'scaleIn .35s ease both';
+        visibleCount++;
       } else {
         card.style.display = 'none';
       }
     });
 
-    // Show/hide empty state
-    const visible = document.querySelectorAll('.work-card[style=""], .work-card:not([style])');
+    // Show empty state only when no cards match
     const empty = document.querySelector('.empty-state');
-    // Always show empty state for now (few items)
+    if (empty) empty.style.display = visibleCount === 0 ? '' : '';
   });
 });
 
