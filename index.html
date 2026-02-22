@@ -1,138 +1,370 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>今川大悟 | Web制作・資料作成（クラウドワークス）</title>
+<meta name="description" content="飲食店・個人事業主・プロフィール用途など、目的に合わせたWebページを制作します。ヒアリングで方向性を整理し、構成設計から丁寧に対応。原則24時間以内に返信します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Noto+Sans+JP:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f8fc;--surface:rgba(255,255,255,.72);--surface2:rgba(255,255,255,.58);--glass:rgba(255,255,255,.38);--text:#111827;--muted:#6b7280;--accent:#4f7cff;--accent2:#34d399;--accent3:#a78bfa;--line:rgba(15,23,42,.10);--radius:18px;--shadow:0 16px 50px rgba(15,23,42,.10);--shadow2:0 10px 30px rgba(15,23,42,.08);--max:1080px;--font:'Sora','Noto Sans JP',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}html,body{height:100%}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}a:hover{opacity:.96}
+body{font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.75;letter-spacing:.01em;overflow-x:hidden}
 
-  <title>今川大悟 | Web制作・資料作成（クラウドワークス）</title>
-  <meta name="description" content="飲食店・個人事業主・プロフィール用途など、目的に合わせたWebページを制作します。ヒアリングで方向性を整理し、構成設計から丁寧に対応。原則24時間以内に返信します。" />
+.bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none}
+.orb{position:absolute;border-radius:50%;filter:blur(110px);opacity:.4;will-change:transform;animation:orbDrift 22s ease-in-out infinite}
+.orb--a{width:650px;height:650px;background:rgba(79,124,255,.28);top:-8%;left:-6%;animation-duration:20s}
+.orb--b{width:520px;height:520px;background:rgba(52,211,153,.22);top:30%;right:-10%;animation-duration:26s;animation-delay:-7s}
+.orb--c{width:480px;height:480px;background:rgba(167,139,250,.18);bottom:-4%;left:25%;animation-duration:24s;animation-delay:-12s}
+@keyframes orbDrift{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(50px,-40px) scale(1.06)}66%{transform:translate(-30px,45px) scale(.94)}}
 
-  <link rel="stylesheet" href="assets/css/style.css" />
+.grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
+
+.particles{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.particle{position:absolute;border-radius:50%;opacity:.12;animation:pFloat linear infinite}
+@keyframes pFloat{0%{transform:translateY(105vh) rotate(0);opacity:0}8%{opacity:.12}92%{opacity:.12}100%{transform:translateY(-8vh) rotate(540deg);opacity:0}}
+
+.cursor-glow{position:fixed;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(79,124,255,.07),transparent 60%);pointer-events:none;z-index:1;transform:translate(-50%,-50%);transition:left .12s ease,top .12s ease;display:none}
+
+.wrap{position:relative;z-index:2;max-width:var(--max);margin:0 auto;padding:22px 18px 70px}
+
+header{position:sticky;top:0;z-index:30;padding:12px 0 10px;display:flex;align-items:center;justify-content:space-between;gap:12px;backdrop-filter:blur(14px) saturate(1.5);-webkit-backdrop-filter:blur(14px) saturate(1.5);background:linear-gradient(to bottom,rgba(246,248,252,.88),rgba(246,248,252,0));border-bottom:1px solid rgba(15,23,42,.06)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.02em}
+.dot{width:10px;height:10px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 0 0 5px rgba(79,124,255,.12);animation:dotPulse 3s ease-in-out infinite}
+@keyframes dotPulse{0%,100%{box-shadow:0 0 0 5px rgba(79,124,255,.12)}50%{box-shadow:0 0 0 10px rgba(79,124,255,.04)}}
+
+nav{display:flex;flex-wrap:wrap;gap:6px;font-size:13px;color:var(--muted);justify-content:flex-end}
+nav a{padding:8px 10px;border-radius:999px;border:1px solid transparent;transition:all .2s ease}
+nav a:hover{border-color:rgba(15,23,42,.10);background:rgba(255,255,255,.55);color:var(--text)}
+nav a.active{border-color:rgba(15,23,42,.12);background:rgba(255,255,255,.70);color:var(--text)}
+
+.hero{margin-top:14px;padding:32px 28px;border-radius:var(--radius);border:1px solid rgba(255,255,255,.40);background:var(--glass);backdrop-filter:blur(20px) saturate(1.3);-webkit-backdrop-filter:blur(20px) saturate(1.3);box-shadow:var(--shadow),inset 0 1px 0 rgba(255,255,255,.6);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 49.6%,rgba(79,124,255,.03) 49.6%,rgba(79,124,255,.03) 50.4%,transparent 50.4%),linear-gradient(0deg,transparent 49.6%,rgba(79,124,255,.03) 49.6%,rgba(79,124,255,.03) 50.4%,transparent 50.4%);background-size:72px 72px;mask-image:radial-gradient(ellipse 60% 55% at 75% 25%,black,transparent);-webkit-mask-image:radial-gradient(ellipse 60% 55% at 75% 25%,black,transparent);pointer-events:none}
+.hero::after{content:'';position:absolute;inset:-2px;background:linear-gradient(120deg,rgba(79,124,255,.14),transparent 35%,rgba(52,211,153,.10));pointer-events:none;border-radius:var(--radius)}
+
+.hero-inner{position:relative;z-index:2;display:grid;gap:16px}
+.hero-layout{display:grid;grid-template-columns:1fr;gap:18px}
+.hero-copy{max-width:760px}
+.kicker{display:flex;flex-wrap:wrap;gap:8px}
+
+.pill{font-size:12px;padding:6px 12px;border-radius:999px;border:1px solid rgba(15,23,42,.10);background:rgba(255,255,255,.60);color:var(--muted);white-space:nowrap;animation:fadeUp .5s ease both}
+.pill:nth-child(2){animation-delay:.06s}.pill:nth-child(3){animation-delay:.12s}
+
+h1{margin:10px 0 0;font-size:clamp(26px,4.2vw,42px);font-weight:800;line-height:1.2;letter-spacing:-.01em;animation:fadeUp .6s ease .08s both}
+h1 .em{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background-size:200% 200%;animation:gradShift 6s ease-in-out infinite}
+@keyframes gradShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+
+.lead{margin:10px 0 0;color:rgba(17,24,39,.75);max-width:60ch;font-size:15px;text-shadow:0 1px 0 rgba(255,255,255,.5);animation:fadeUp .6s ease .14s both}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;animation:fadeUp .6s ease .2s both}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:14px;border:1px solid rgba(15,23,42,.12);background:rgba(255,255,255,.60);font-family:var(--font);font-weight:720;font-size:14px;cursor:pointer;user-select:none;transition:transform .22s cubic-bezier(.34,1.56,.64,1),box-shadow .22s ease,opacity .18s ease;position:relative;overflow:hidden}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(15,23,42,.08);opacity:1}
+.btn.primary{border:none;background:linear-gradient(135deg,rgba(79,124,255,.95),rgba(52,211,153,.78));color:#07111f;box-shadow:0 6px 22px rgba(79,124,255,.25)}
+.btn.primary:hover{box-shadow:0 10px 30px rgba(79,124,255,.35)}
+.btn.primary::after{content:'';position:absolute;top:0;left:-100%;width:55%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);animation:btnShine 5s ease-in-out infinite}
+@keyframes btnShine{0%,82%,100%{left:-100%}90%{left:130%}}
+
+.hero-media{display:grid;grid-template-columns:240px 1fr;gap:18px;align-items:center;padding-top:6px;animation:fadeUp .7s ease .26s both}
+
+.profile-ring{width:220px;height:220px;border-radius:50%;padding:4px;background:linear-gradient(135deg,var(--accent),var(--accent2),var(--accent3));background-size:300% 300%;animation:gradShift 7s ease-in-out infinite;position:relative}
+.profile-ring::before{content:'';position:absolute;inset:-5px;border-radius:50%;background:inherit;filter:blur(14px);opacity:.35;z-index:-1}
+.profile-img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:4px solid rgba(255,255,255,.55);box-shadow:0 15px 40px rgba(0,0,0,.16);background:rgba(255,255,255,.30)}
+
+.mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.kpi{padding:12px;border-radius:14px;border:1px solid rgba(255,255,255,.55);background:rgba(255,255,255,.62);backdrop-filter:blur(6px);box-shadow:0 10px 22px rgba(15,23,42,.06);transition:transform .3s ease,box-shadow .3s ease}
+.kpi:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(15,23,42,.08)}
+.kpi .label{font-size:12px;color:var(--muted)}
+.kpi .value{margin-top:6px;font-size:15px;font-weight:800}
+
+.section{margin-top:22px;opacity:0;transform:translateY(28px);transition:opacity .55s ease,transform .55s ease}
+.section.visible{opacity:1;transform:translateY(0)}
+.section h2{margin:0 0 12px;font-size:18px;letter-spacing:.02em;font-weight:800}
+
+.grid{display:grid;grid-template-columns:1.15fr .85fr;gap:14px}
+.card{border-radius:var(--radius);border:1px solid rgba(15,23,42,.10);background:var(--surface2);backdrop-filter:blur(10px);padding:18px;box-shadow:var(--shadow2);transition:transform .3s ease,box-shadow .3s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 16px 44px rgba(15,23,42,.10)}
+
+.muted{color:var(--muted)}
+.list{margin:10px 0 0;padding-left:18px;color:var(--muted)}
+.list li{margin:6px 0;transition:color .2s ease}
+.list li:hover{color:var(--text)}
+.list li strong{color:var(--text);font-weight:700}
+.note{font-size:13px;color:var(--muted);margin-top:10px}
+.linklike{text-decoration:underline;text-underline-offset:3px;color:var(--accent);font-weight:600;transition:color .2s}
+.linklike:hover{color:var(--text)}
+
+.process-steps{display:grid;gap:0;margin:14px 0 0;counter-reset:step}
+.step{display:grid;grid-template-columns:48px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid rgba(15,23,42,.06);transition:background .2s}
+.step:last-child{border-bottom:none}
+.step:hover{background:rgba(255,255,255,.3);border-radius:12px;margin:0 -8px;padding:14px 8px}
+.step-num{counter-increment:step;width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,rgba(79,124,255,.08),rgba(52,211,153,.08));border:1px solid rgba(79,124,255,.12);display:grid;place-items:center;font-size:14px;font-weight:800;color:var(--accent)}
+.step-num::before{content:counter(step)}
+.step-content h3{font-size:14px;font-weight:700;margin-bottom:2px}
+.step-content p{font-size:13px;color:var(--muted)}
+
+.contact-card{text-align:center;padding:28px;position:relative;overflow:hidden}
+.contact-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(79,124,255,.04),rgba(52,211,153,.04));pointer-events:none}
+
+footer{margin-top:26px;padding-top:16px;border-top:1px solid rgba(15,23,42,.08);color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.small{font-size:12px}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:900px){
+  .grid{grid-template-columns:1fr}
+  .hero-media{grid-template-columns:1fr;justify-items:center;gap:12px}
+  .profile-ring{width:170px;height:170px}
+  .hero-copy{max-width:none;border-radius:calc(var(--radius) - 2px);border:1px solid rgba(255,255,255,.55);background:rgba(255,255,255,.74);box-shadow:0 12px 30px rgba(15,23,42,.10);padding:16px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);text-align:center}
+  .mini-grid{grid-template-columns:1fr}
+  .lead{color:#4b5563;text-shadow:none;font-size:15px}
+  .hero-inner{display:flex;flex-direction:column}
+  .hero-media{order:-1}
+  .kicker,.cta{justify-content:center}
+}
+@media(max-width:520px){
+  .wrap{padding:18px 14px 64px}
+  .hero{padding:18px}
+  .btn{width:100%}
+  nav{display:none}
+  h1{line-height:1.22}
+}
+</style>
 </head>
-
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <span class="dot" aria-hidden="true"></span>
-        <span>今川大悟</span>
-      </div>
 
-      <nav>
-        <a class="active" href="index.html">トップ</a>
-        <a href="works.html">制作例</a>
-        <a href="services.html">できること</a>
-        <a href="process.html">制作の流れ</a>
-        <a href="about.html">プロフィール</a>
-        <a href="contact.html">連絡</a>
-      </nav>
-    </header>
+<div class="bg-canvas">
+  <div class="orb orb--a"></div>
+  <div class="orb orb--b"></div>
+  <div class="orb orb--c"></div>
+</div>
+<div class="grain"></div>
+<div class="particles" id="particles"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
 
-    <main>
-      <!-- HERO -->
-      <section class="hero">
-        <div class="hero-inner hero-layout">
-          <!-- PCでは先に文章（旧デザインの綺麗な順番） -->
-          <div class="hero-copy">
-            <div class="kicker">
-              <span class="pill">Web制作</span>
-              <span class="pill">資料作成</span>
-              <span class="pill">返信：原則24h以内</span>
-            </div>
+<div class="wrap">
 
-            <h1>ヒアリングから設計まで、<br>伝わるWebを制作します。</h1>
+  <header>
+    <div class="brand">
+      <span class="dot" aria-hidden="true"></span>
+      <span>今川大悟</span>
+    </div>
+    <nav>
+      <a class="active" href="index.html">トップ</a>
+      <a href="works.html">制作例</a>
+      <a href="services.html">できること</a>
+      <a href="process.html">制作の流れ</a>
+      <a href="about.html">プロフィール</a>
+      <a href="contact.html">連絡</a>
+    </nav>
+  </header>
 
-            <p class="lead">
-              飲食店・個人事業主・プロフィール用途など、目的に合わせたWebページを制作します。<br>
-              まずはヒアリングで方向性を整理し、構成設計から丁寧に対応します。
-            </p>
-
-            <div class="cta">
-              <a class="btn primary" target="_blank" rel="noopener noreferrer"
-                 href="https://forms.gle/VzqdTbX2xkR7RJ2N9">相談する（Googleフォーム）</a>
-              <a class="btn" href="works.html">制作例を見る</a>
-            </div>
-
-            <div class="mini-grid">
-              <div class="kpi">
-                <div class="label">対応</div>
-                <div class="value">Web制作 / 資料作成</div>
-              </div>
-              <div class="kpi">
-                <div class="label">進め方</div>
-                <div class="value">ヒアリング→構成→制作</div>
-              </div>
-              <div class="kpi">
-                <div class="label">連絡</div>
-                <div class="value">原則24h以内返信</div>
-              </div>
-            </div>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner hero-layout">
+        <div class="hero-copy">
+          <div class="kicker">
+            <span class="pill">Web制作</span>
+            <span class="pill">資料作成</span>
+            <span class="pill">返信：原則24h以内</span>
           </div>
-
-          <!-- 写真 -->
-          <div class="hero-media">
-            <img class="profile-img" src="assets/img/profile.jpg.png" alt="今川大悟のプロフィール写真">
-          </div>
-        </div>
-      </section>
-
-      <!-- SERVICES -->
-      <section class="section grid">
-        <div class="card">
-          <h2>できること</h2>
-          <ul class="list">
-            <li>Web制作（店舗サイト / LP / プロフィールサイト）</li>
-            <li>資料作成（営業資料・説明資料）</li>
-            <li>文章整理（サービス説明・自己紹介）</li>
-            <li>業務改善についてのご相談も承ります</li>
-          </ul>
-          <p class="note">※SEOを意識した構成設計・タグ設計も対応可能です。</p>
-        </div>
-
-        <div class="card">
-          <h2>まず見てほしいもの</h2>
-          <p class="muted" style="margin:0;">
-            具体のアウトプットは <a class="linklike" href="works.html">制作例</a> にまとめます。<br>
-            （和風居酒屋LPなど、順次追加していきます）
+          <h1><span class="em">ヒアリング</span>から設計まで、<br>伝わるWebを制作します。</h1>
+          <p class="lead">
+            飲食店・個人事業主・プロフィール用途など、目的に合わせたWebページを制作します。<br>
+            まずはヒアリングで方向性を整理し、構成設計から丁寧に対応します。
           </p>
+          <div class="cta">
+            <a class="btn primary" target="_blank" rel="noopener noreferrer"
+               href="https://forms.gle/VzqdTbX2xkR7RJ2N9">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              相談する（Googleフォーム）
+            </a>
+            <a class="btn" href="works.html">制作例を見る</a>
+          </div>
         </div>
-      </section>
 
-      <!-- PROCESS -->
-      <section class="section card">
-        <h2>制作の流れ</h2>
+        <div class="hero-media">
+          <div class="profile-ring">
+            <img class="profile-img" src="assets/img/profile.jpg" alt="今川大悟のプロフィール写真">
+          </div>
+          <div class="mini-grid">
+            <div class="kpi">
+              <div class="label">対応</div>
+              <div class="value">Web制作 / 資料作成</div>
+            </div>
+            <div class="kpi">
+              <div class="label">進め方</div>
+              <div class="value">ヒアリング→構成→制作</div>
+            </div>
+            <div class="kpi">
+              <div class="label">連絡</div>
+              <div class="value">原則24h以内返信</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section grid">
+      <div class="card">
+        <h2>できること</h2>
         <ul class="list">
-          <li><strong>ヒアリング</strong>：目的・ターゲット・素材を確認</li>
-          <li><strong>構成提案</strong>：見出し・順番・文章の方向性を整理</li>
-          <li><strong>初稿提出</strong>：まず形にして確認（ズレを短距離で調整）</li>
-          <li><strong>修正・納品</strong>：整えて納品（公開まで必要ならサポート）</li>
+          <li>Web制作（店舗サイト / LP / プロフィールサイト）</li>
+          <li>資料作成（営業資料・説明資料）</li>
+          <li>文章整理（サービス説明・自己紹介）</li>
+          <li>業務改善についてのご相談も承ります</li>
         </ul>
-        <p class="note">※メッセージは原則24時間以内に返信します。</p>
-      </section>
-
-      <!-- CONTACT -->
-      <section class="section card">
-        <h2>お問い合わせ</h2>
+        <p class="note">※SEOを意識した構成設計・タグ設計も対応可能です。</p>
+      </div>
+      <div class="card">
+        <h2>まず見てほしいもの</h2>
         <p class="muted" style="margin:0;">
-          相談はGoogleフォームで受け付けています。<br>
-          「相談内容」「予算感」「希望納期」が分かればOKです。
+          具体のアウトプットは <a class="linklike" href="works.html">制作例</a> にまとめます。<br>
+          （和風居酒屋LPなど、順次追加していきます）
         </p>
-        <div class="cta" style="margin-top:12px;">
-          <a class="btn primary" target="_blank" rel="noopener noreferrer"
-             href="https://forms.gle/VzqdTbX2xkR7RJ2N9">Googleフォームを開く</a>
-          <a class="btn" href="contact.html">連絡ページへ</a>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section card">
+      <h2>制作の流れ</h2>
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <h3>ヒアリング</h3>
+            <p>目的・ターゲット・素材を確認</p>
+          </div>
         </div>
-      </section>
-    </main>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <h3>構成提案</h3>
+            <p>見出し・順番・文章の方向性を整理</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <h3>初稿提出</h3>
+            <p>まず形にして確認（ズレを短距離で調整）</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num"></div>
+          <div class="step-content">
+            <h3>修正・納品</h3>
+            <p>整えて納品（公開まで必要ならサポート）</p>
+          </div>
+        </div>
+      </div>
+      <p class="note">※メッセージは原則24時間以内に返信します。</p>
+    </section>
 
-    <footer>
-      <div>© <span id="year"></span> Daigo Imagawa</div>
-      <div class="small">GitHub Pagesで公開</div>
-    </footer>
-  </div>
+    <!-- CONTACT -->
+    <section class="section card contact-card">
+      <h2>お問い合わせ</h2>
+      <p class="muted" style="margin:0;">
+        相談はGoogleフォームで受け付けています。<br>
+        「相談内容」「予算感」「希望納期」が分かればOKです。
+      </p>
+      <div class="cta" style="margin-top:14px;justify-content:center;">
+        <a class="btn primary" target="_blank" rel="noopener noreferrer"
+           href="https://forms.gle/VzqdTbX2xkR7RJ2N9">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Googleフォームを開く
+        </a>
+        <a class="btn" href="contact.html">連絡ページへ</a>
+      </div>
+    </section>
+  </main>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <footer>
+    <div>© <span id="year"></span> Daigo Imagawa</div>
+    <div class="small">GitHub Pagesで公開</div>
+  </footer>
+
+</div>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: .12 });
+document.querySelectorAll('.section').forEach(s => io.observe(s));
+
+const stepIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.querySelectorAll('.step').forEach((s, i) => {
+      s.style.animation = 'fadeUp .5s ease ' + (i * .1) + 's both';
+    });
+  });
+}, { threshold: .15 });
+document.querySelectorAll('.process-steps').forEach(s => stepIO.observe(s));
+
+const pc = document.getElementById('particles');
+for (let i = 0; i < 14; i++) {
+  const d = document.createElement('div');
+  d.className = 'particle';
+  d.style.left = Math.random() * 100 + '%';
+  d.style.animationDuration = (14 + Math.random() * 16) + 's';
+  d.style.animationDelay = -(Math.random() * 22) + 's';
+  const sz = 2 + Math.random() * 3;
+  d.style.width = d.style.height = sz + 'px';
+  d.style.background = ['var(--accent)', 'var(--accent2)', 'var(--accent3)'][i % 3];
+  pc.appendChild(d);
+}
+
+if (matchMedia('(pointer:fine)').matches) {
+  const g = document.getElementById('cursorGlow');
+  g.style.display = 'block';
+  document.addEventListener('mousemove', e => {
+    g.style.left = e.clientX + 'px';
+    g.style.top = e.clientY + 'px';
+  });
+}
+
+document.querySelectorAll('nav a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.querySelectorAll('nav a').forEach(n => n.classList.remove('active'));
+    a.classList.add('active');
+  });
+});
+
+if (matchMedia('(pointer:fine)').matches) {
+  const hero = document.querySelector('.hero');
+  hero.addEventListener('mousemove', e => {
+    const r = hero.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - .5;
+    const y = (e.clientY - r.top) / r.height - .5;
+    hero.style.transform = 'perspective(1200px) rotateY(' + (x * 1.6) + 'deg) rotateX(' + (-y * 1.6) + 'deg)';
+  });
+  hero.addEventListener('mouseleave', () => {
+    hero.style.transition = 'transform .4s ease';
+    hero.style.transform = 'perspective(1200px) rotateY(0) rotateX(0)';
+    setTimeout(() => hero.style.transition = '', 400);
+  });
+}
+
+const kpiIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.querySelectorAll('.kpi').forEach((k, i) => {
+      k.style.animation = 'fadeUp .5s ease ' + (i * .08) + 's both';
+    });
+  });
+}, { threshold: .2 });
+document.querySelectorAll('.mini-grid').forEach(g => kpiIO.observe(g));
+</script>
 </body>
 </html>
