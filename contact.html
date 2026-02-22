@@ -1,62 +1,513 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>連絡 | 今川大悟</title>
-  <meta name="description" content="今川大悟へのお問い合わせ。Googleフォームからご連絡ください。" />
-  <link rel="stylesheet" href="assets/css/style.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>連絡 | 今川大悟 — Web制作・資料作成</title>
+<meta name="description" content="今川大悟への制作依頼・ご相談はこちら。Googleフォーム、クラウドワークス、各種SNSからお気軽にご連絡ください。原則24時間以内に返信します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Noto+Sans+JP:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+/* =============================================
+   Shared Design System
+   ============================================= */
+:root{
+  --bg:#f6f8fc;--bg-solid:#f6f8fc;
+  --surface:rgba(255,255,255,.72);--surface2:rgba(255,255,255,.58);
+  --glass:rgba(255,255,255,.38);--glass-border:rgba(255,255,255,.40);--glass-strong:rgba(255,255,255,.74);
+  --text:#111827;--text-inv:#f1f5f9;--muted:#6b7280;
+  --accent:#4f7cff;--accent2:#34d399;--accent3:#a78bfa;
+  --line:rgba(15,23,42,.10);--line-subtle:rgba(15,23,42,.06);
+  --radius:18px;--radius-sm:14px;--radius-xs:10px;
+  --shadow:0 16px 50px rgba(15,23,42,.10);--shadow2:0 10px 30px rgba(15,23,42,.08);
+  --shadow-accent:0 6px 22px rgba(79,124,255,.25);
+  --max:1080px;--font:'Sora','Noto Sans JP',sans-serif;
+  --ease-out-expo:cubic-bezier(.16,1,.3,1);--ease-bounce:cubic-bezier(.34,1.56,.64,1);--ease-spring:cubic-bezier(.22,1.2,.36,1);
+  --transition-fast:.18s;--transition-med:.32s;--transition-slow:.55s;
+  color-scheme:light dark;
+}
+[data-theme="dark"]{
+  --bg:#0c1220;--bg-solid:#0c1220;
+  --surface:rgba(20,30,55,.72);--surface2:rgba(20,30,55,.58);
+  --glass:rgba(15,25,50,.50);--glass-border:rgba(255,255,255,.08);--glass-strong:rgba(20,30,55,.82);
+  --text:#e2e8f0;--text-inv:#111827;--muted:#94a3b8;
+  --line:rgba(255,255,255,.08);--line-subtle:rgba(255,255,255,.04);
+  --shadow:0 16px 50px rgba(0,0,0,.35);--shadow2:0 10px 30px rgba(0,0,0,.25);
+  --shadow-accent:0 6px 22px rgba(79,124,255,.20);
+}
+[data-theme="dark"] body{background:var(--bg)}
+[data-theme="dark"] .orb{opacity:.20}
+[data-theme="dark"] .grain{opacity:.015}
+[data-theme="dark"] .particle{opacity:.08}
+[data-theme="dark"] header{background:linear-gradient(to bottom,rgba(12,18,32,.88),rgba(12,18,32,0));border-bottom-color:rgba(255,255,255,.04)}
+[data-theme="dark"] .pill{border-color:rgba(255,255,255,.10);background:rgba(255,255,255,.06)}
+[data-theme="dark"] .btn{border-color:rgba(255,255,255,.10);background:rgba(255,255,255,.06);color:var(--text)}
+[data-theme="dark"] .btn.primary{background:linear-gradient(135deg,rgba(79,124,255,.85),rgba(52,211,153,.65));color:#f1f5f9}
+[data-theme="dark"] nav a:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.08)}
+[data-theme="dark"] nav a.active{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.10)}
+[data-theme="dark"] .theme-toggle{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.10)}
+[data-theme="dark"] footer{border-top-color:rgba(255,255,255,.06)}
+[data-theme="dark"] .cursor-glow{background:radial-gradient(circle,rgba(79,124,255,.04),transparent 60%)}
+[data-theme="dark"] .page-hero{border-color:rgba(255,255,255,.06);background:var(--glass)}
+[data-theme="dark"] .page-hero::after{background:linear-gradient(120deg,rgba(79,124,255,.08),transparent 35%,rgba(52,211,153,.06))}
+[data-theme="dark"] .contact-card{border-color:rgba(255,255,255,.06);background:var(--surface)}
+[data-theme="dark"] .contact-card:hover{border-color:rgba(255,255,255,.10)}
+[data-theme="dark"] .contact-card .card-icon{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.08)}
+[data-theme="dark"] .note-card{border-color:rgba(255,255,255,.06);background:var(--surface2)}
+[data-theme="dark"] .note-item{border-color:rgba(255,255,255,.04)}
+[data-theme="dark"] .hamburger{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.10)}
+[data-theme="dark"] .hamburger span{background:var(--text)}
+[data-theme="dark"] .mobile-menu{background:var(--bg-solid)}
+[data-theme="dark"] .mobile-menu a{background:var(--surface);border-color:var(--line)}
+[data-theme="dark"] .mobile-menu a:hover,[data-theme="dark"] .mobile-menu a.active{border-color:var(--accent);background:rgba(79,124,255,.08)}
+
+/* Reset */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}html,body{height:100%}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}a:hover{opacity:.96}
+body{font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.75;letter-spacing:.01em;overflow-x:hidden;transition:background var(--transition-med) ease,color var(--transition-med) ease}
+
+/* BG */
+.bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none}
+.orb{position:absolute;border-radius:50%;filter:blur(110px);opacity:.4;will-change:transform;animation:orbDrift 22s ease-in-out infinite;transition:opacity var(--transition-med) ease}
+.orb--a{width:650px;height:650px;background:rgba(79,124,255,.28);top:-8%;left:-6%;animation-duration:20s}
+.orb--b{width:520px;height:520px;background:rgba(52,211,153,.22);top:30%;right:-10%;animation-duration:26s;animation-delay:-7s}
+.orb--c{width:480px;height:480px;background:rgba(167,139,250,.18);bottom:-4%;left:25%;animation-duration:24s;animation-delay:-12s}
+@keyframes orbDrift{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(50px,-40px) scale(1.06)}66%{transform:translate(-30px,45px) scale(.94)}}
+.grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.03;transition:opacity var(--transition-med) ease;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
+.particles{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.particle{position:absolute;border-radius:50%;opacity:.12;animation:pFloat linear infinite;transition:opacity var(--transition-med) ease}
+@keyframes pFloat{0%{transform:translateY(105vh) rotate(0);opacity:0}8%{opacity:.12}92%{opacity:.12}100%{transform:translateY(-8vh) rotate(540deg);opacity:0}}
+.cursor-glow{position:fixed;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(79,124,255,.07),transparent 60%);pointer-events:none;z-index:1;transform:translate(-50%,-50%);transition:left .12s ease,top .12s ease,background var(--transition-med) ease;display:none}
+
+.wrap{position:relative;z-index:2;max-width:var(--max);margin:0 auto;padding:22px 18px 70px}
+
+/* Header */
+header{position:sticky;top:0;z-index:30;padding:12px 0 10px;display:flex;align-items:center;justify-content:space-between;gap:12px;backdrop-filter:blur(14px) saturate(1.5);-webkit-backdrop-filter:blur(14px) saturate(1.5);background:linear-gradient(to bottom,rgba(246,248,252,.88),rgba(246,248,252,0));border-bottom:1px solid var(--line-subtle);transition:background var(--transition-med) ease,border-color var(--transition-med) ease}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.02em}
+.dot{width:10px;height:10px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 0 0 5px rgba(79,124,255,.12);animation:dotPulse 3s ease-in-out infinite}
+@keyframes dotPulse{0%,100%{box-shadow:0 0 0 5px rgba(79,124,255,.12)}50%{box-shadow:0 0 0 10px rgba(79,124,255,.04)}}
+.theme-toggle{width:38px;height:38px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.5);cursor:pointer;display:grid;place-items:center;transition:all var(--transition-fast) ease;flex-shrink:0;position:relative;overflow:hidden}
+.theme-toggle:hover{transform:scale(1.06);border-color:var(--accent)}.theme-toggle:active{transform:scale(.95)}
+.theme-toggle .icon-sun,.theme-toggle .icon-moon{position:absolute;transition:transform .4s var(--ease-spring),opacity .3s ease}
+.theme-toggle .icon-sun{opacity:1;transform:rotate(0) scale(1)}.theme-toggle .icon-moon{opacity:0;transform:rotate(-90deg) scale(.5)}
+[data-theme="dark"] .theme-toggle .icon-sun{opacity:0;transform:rotate(90deg) scale(.5)}
+[data-theme="dark"] .theme-toggle .icon-moon{opacity:1;transform:rotate(0) scale(1)}
+nav{display:flex;flex-wrap:wrap;gap:6px;font-size:13px;color:var(--muted);justify-content:flex-end}
+nav a{padding:8px 10px;border-radius:999px;border:1px solid transparent;transition:all .22s ease;position:relative}
+nav a::after{content:'';position:absolute;bottom:4px;left:50%;width:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:2px;transition:width .3s var(--ease-out-expo),left .3s var(--ease-out-expo)}
+nav a:hover::after{width:60%;left:20%}
+nav a:hover{border-color:var(--line);background:rgba(255,255,255,.55);color:var(--text)}
+nav a.active{border-color:rgba(15,23,42,.12);background:rgba(255,255,255,.70);color:var(--text)}
+nav a.active::after{width:60%;left:20%}
+
+/* Hamburger */
+.hamburger{display:none;width:38px;height:38px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.5);cursor:pointer;flex-shrink:0;position:relative;transition:all var(--transition-fast) ease}
+.hamburger:hover{transform:scale(1.06);border-color:var(--accent)}.hamburger:active{transform:scale(.95)}
+.hamburger span{display:block;position:absolute;left:50%;top:50%;width:16px;height:2px;border-radius:2px;background:var(--text);transition:transform .3s var(--ease-spring),opacity .2s ease}
+.hamburger span:nth-child(1){transform:translate(-50%,calc(-50% - 4px))}
+.hamburger span:nth-child(2){transform:translate(-50%,-50%)}
+.hamburger span:nth-child(3){transform:translate(-50%,calc(-50% + 4px))}
+.hamburger.open span:nth-child(1){transform:translate(-50%,-50%) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0;transform:translate(-50%,-50%) scaleX(0)}
+.hamburger.open span:nth-child(3){transform:translate(-50%,-50%) rotate(-45deg)}
+
+/* Mobile Menu */
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:29;background:var(--bg-solid);flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:80px 24px 40px;opacity:0;transform:translateY(-10px);transition:opacity .3s ease,transform .3s var(--ease-out-expo);pointer-events:none}
+.mobile-menu.open{display:flex;opacity:1;transform:translateY(0);pointer-events:auto}
+.mobile-menu a{display:block;width:100%;max-width:320px;padding:14px 20px;border-radius:var(--radius-sm);font-size:15px;font-weight:600;color:var(--text);text-align:center;border:1px solid var(--line-subtle);background:var(--surface);transition:all .2s ease}
+.mobile-menu a:hover,.mobile-menu a.active{border-color:var(--accent);background:rgba(79,124,255,.06);color:var(--accent)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:var(--radius-sm);border:1px solid var(--line);background:rgba(255,255,255,.60);font-family:var(--font);font-weight:720;font-size:14px;cursor:pointer;user-select:none;transition:transform .22s var(--ease-bounce),box-shadow .22s ease,opacity .18s ease,background var(--transition-med) ease,border-color var(--transition-med) ease,color var(--transition-med) ease;position:relative;overflow:hidden}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(15,23,42,.08);opacity:1}.btn:active{transform:translateY(0) scale(.98)}
+.btn.primary{border:none;background:linear-gradient(135deg,rgba(79,124,255,.95),rgba(52,211,153,.78));color:#07111f;box-shadow:var(--shadow-accent)}
+.btn.primary:hover{box-shadow:0 10px 30px rgba(79,124,255,.35)}
+.btn.primary::after{content:'';position:absolute;top:0;left:-100%;width:55%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);animation:btnShine 5s ease-in-out infinite}
+@keyframes btnShine{0%,82%,100%{left:-100%}90%{left:130%}}
+.btn .ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.35);transform:scale(0);animation:rippleOut .5s ease forwards;pointer-events:none}
+@keyframes rippleOut{to{transform:scale(3);opacity:0}}
+
+.scroll-progress{position:fixed;top:0;left:0;z-index:50;width:0%;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent3));transition:width .08s linear;border-radius:0 2px 2px 0}
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:40;width:42px;height:42px;border-radius:14px;background:var(--glass);backdrop-filter:blur(10px);border:1px solid var(--line);display:grid;place-items:center;cursor:pointer;opacity:0;transform:translateY(12px) scale(.9);transition:opacity .3s ease,transform .3s var(--ease-spring),background var(--transition-med) ease,border-color var(--transition-med) ease;pointer-events:none}
+.scroll-top.show{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
+.scroll-top:hover{transform:translateY(-2px) scale(1.06);box-shadow:0 8px 24px rgba(15,23,42,.1)}.scroll-top:active{transform:scale(.95)}
+.scroll-top svg{transition:transform .2s ease}.scroll-top:hover svg{transform:translateY(-1px)}
+
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--line-subtle);color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;transition:border-color var(--transition-med) ease}
+.small{font-size:12px}.muted{color:var(--muted)}
+
+::selection{background:rgba(79,124,255,.18);color:var(--text)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes scaleIn{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
+@keyframes gradShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+
+/* =============================================
+   Page: 連絡（Contact）
+   ============================================= */
+
+.page-hero{
+  margin-top:14px;padding:36px 28px;border-radius:var(--radius);
+  border:1px solid var(--glass-border);background:var(--glass);
+  backdrop-filter:blur(20px) saturate(1.3);-webkit-backdrop-filter:blur(20px) saturate(1.3);
+  box-shadow:var(--shadow);position:relative;overflow:hidden;text-align:center;
+  transition:background var(--transition-med) ease,border-color var(--transition-med) ease;
+}
+.page-hero::after{content:'';position:absolute;inset:-2px;background:linear-gradient(120deg,rgba(79,124,255,.14),transparent 35%,rgba(52,211,153,.10));pointer-events:none;border-radius:var(--radius);transition:background var(--transition-med) ease}
+.page-hero-inner{position:relative;z-index:2}
+.page-hero h1{font-size:clamp(24px,3.6vw,36px);font-weight:800;line-height:1.25;letter-spacing:-.01em;animation:fadeUp .6s var(--ease-out-expo) .08s both}
+.page-hero h1 .em{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background-size:200% 200%;animation:gradShift 6s ease-in-out infinite}
+.page-hero .lead{margin:10px auto 0;max-width:54ch;font-size:15px;color:var(--muted);animation:fadeUp .6s var(--ease-out-expo) .16s both}
+
+/* Section */
+.section{margin-top:28px;opacity:0;transform:translateY(28px);transition:opacity var(--transition-slow) ease,transform var(--transition-slow) var(--ease-out-expo)}
+.section.visible{opacity:1;transform:translateY(0)}
+.section h2{margin:0 0 16px;font-size:18px;letter-spacing:.02em;font-weight:800;position:relative;display:inline-block}
+.section h2::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));margin-right:8px;vertical-align:middle;animation:dotPulse 3s ease-in-out infinite}
+
+/* Contact Cards */
+.contact-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:16px;
+}
+
+.contact-card{
+  border-radius:var(--radius);border:1px solid var(--line);
+  background:var(--surface);backdrop-filter:blur(10px);
+  padding:28px 24px;
+  display:flex;flex-direction:column;gap:12px;
+  transition:transform .3s var(--ease-spring),box-shadow .3s,border-color var(--transition-med) ease,background var(--transition-med) ease;
+  text-decoration:none;color:inherit;position:relative;overflow:hidden;
+}
+.contact-card:hover{
+  transform:translateY(-3px);box-shadow:var(--shadow);opacity:1;
+}
+.contact-card::before{
+  content:'';position:absolute;top:0;left:0;width:100%;height:3px;
+  border-radius:var(--radius) var(--radius) 0 0;
+  opacity:0;transition:opacity .3s;
+}
+.contact-card:hover::before{opacity:1}
+
+.contact-card.card-form::before{background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.contact-card.card-cw::before{background:linear-gradient(90deg,#00a960,#4dc870)}
+.contact-card.card-ig::before{background:linear-gradient(90deg,#f58529,#dd2a7b,#8134af)}
+.contact-card.card-line::before{background:#06c755}
+
+.card-icon{
+  width:44px;height:44px;border-radius:12px;
+  background:rgba(79,124,255,.06);border:1px solid rgba(79,124,255,.08);
+  display:grid;place-items:center;
+  transition:transform .3s var(--ease-spring),background var(--transition-med) ease,border-color var(--transition-med) ease;
+}
+.contact-card:hover .card-icon{transform:scale(1.06)}
+
+.card-label{font-size:11px;color:var(--muted);font-weight:600;letter-spacing:.04em}
+.card-title{font-size:17px;font-weight:800}
+.card-desc{font-size:13px;color:var(--muted);line-height:1.7}
+.card-action{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:13px;font-weight:700;color:var(--accent);
+  margin-top:auto;
+}
+.card-action svg{transition:transform .2s ease}
+.contact-card:hover .card-action svg{transform:translateX(3px)}
+
+/* Primary card (Google Form) - bigger */
+.contact-card.card-primary{
+  grid-column:1 / -1;
+  padding:36px 32px;
+  text-align:center;
+  align-items:center;
+}
+.contact-card.card-primary .card-icon{
+  width:56px;height:56px;border-radius:16px;
+  background:linear-gradient(135deg,rgba(79,124,255,.08),rgba(52,211,153,.06));
+  border-color:rgba(79,124,255,.12);
+}
+
+/* Note card */
+.note-card{
+  margin-top:20px;
+  border-radius:var(--radius);border:1px solid var(--line);
+  background:var(--surface2);backdrop-filter:blur(8px);
+  padding:24px;
+  transition:background var(--transition-med) ease,border-color var(--transition-med) ease;
+}
+.note-card h3{font-size:14px;font-weight:800;margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.note-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.note-item{
+  padding:12px 0;border-bottom:1px solid var(--line-subtle);
+  display:flex;align-items:baseline;gap:10px;
+  font-size:13px;
+  transition:border-color var(--transition-med) ease;
+}
+.note-item:nth-last-child(-n+2){border-bottom:none}
+.note-label{font-weight:700;color:var(--text);white-space:nowrap;min-width:100px}
+.note-value{color:var(--muted)}
+
+/* ---- Responsive ---- */
+@media(max-width:520px){
+  .wrap{padding:18px 14px 64px}
+  .page-hero{padding:24px 18px}
+  nav{display:none}
+  .hamburger{display:block}
+  .btn{width:100%}
+  .contact-grid{grid-template-columns:1fr}
+  .note-grid{grid-template-columns:1fr}
+  .scroll-top{bottom:16px;right:16px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.orb{animation:none}}
+@media print{.bg-canvas,.grain,.particles,.cursor-glow,.scroll-progress,.scroll-top,.theme-toggle,.hamburger{display:none!important}body{background:#fff;color:#000}.contact-card{box-shadow:none;border:1px solid #ccc}}
+</style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand"><span class="dot"></span><span>今川大悟</span></div>
-      <nav>
-        <a href="index.html">トップ</a>
-        <a href="works.html">制作例</a>
-        <a href="services.html">できること</a>
-        <a href="process.html">流れ</a>
-        <a class="active" href="contact.html">連絡</a>
-      </nav>
-    </header>
 
-    <main>
-      <section class="hero">
-        <div class="hero-inner">
-          <h1>お問い合わせ</h1>
-          <p class="lead">
-            相談内容はGoogleフォームで受け付けています。<br>
-            目的・納期・参考URL（あれば）を書いてください。原則24時間以内に返信します。
-          </p>
-          <div class="cta">
-            <a class="btn primary" target="_blank" rel="noopener noreferrer"
-               href="https://forms.gle/VzqdTbX2xkR7RJ2N9">
-              Googleフォームを開く
-            </a>
-            <a class="btn" href="index.html">トップへ戻る</a>
-          </div>
-        </div>
-      </section>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="bg-canvas"><div class="orb orb--a"></div><div class="orb orb--b"></div><div class="orb orb--c"></div></div>
+<div class="grain"></div>
+<div class="particles" id="particles"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
 
-      <section class="section card">
-        <h2>フォームに書いてほしいこと</h2>
-        <p class="muted" style="margin:0;">
-          ・相談内容（何を作りたいか）<br>
-          ・希望納期<br>
-          ・参考URL（あれば）<br>
-          ・素材の有無（文章/画像/ロゴなど）
-        </p>
-      </section>
-    </main>
+<div class="wrap">
 
-    <footer>
-      <div>© <span id="year"></span> Daigo Imagawa</div>
-      <div>Googleフォームで受付</div>
-    </footer>
+  <header>
+    <a href="index.html" class="brand"><span class="dot" aria-hidden="true"></span><span>今川大悟</span></a>
+    <nav>
+      <a href="index.html">トップ</a>
+      <a href="works.html">制作例</a>
+      <a href="services.html">できること</a>
+      <a href="process.html">制作の流れ</a>
+      <a href="about.html">プロフィール</a>
+      <a class="active" href="contact.html">連絡</a>
+    </nav>
+    <div style="display:flex;gap:8px;align-items:center;">
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+      <button class="theme-toggle" id="themeToggle" aria-label="テーマ切替" title="ダーク / ライト切替">
+        <svg class="icon-sun" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg class="icon-moon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">トップ</a>
+    <a href="works.html">制作例</a>
+    <a href="services.html">できること</a>
+    <a href="process.html">制作の流れ</a>
+    <a href="about.html">プロフィール</a>
+    <a class="active" href="contact.html">連絡</a>
   </div>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <main>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="page-hero-inner">
+        <h1><span class="em">お問い合わせ</span></h1>
+        <p class="lead">
+          制作のご依頼・ご相談はお気軽にどうぞ。<br>
+          原則24時間以内に返信します。
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Methods -->
+    <section class="section">
+      <h2>連絡方法</h2>
+
+      <div class="contact-grid">
+
+        <!-- Google Form (Primary) -->
+        <a class="contact-card card-primary card-form" href="https://forms.gle/VzqdTbX2xkR7RJ2N9" target="_blank" rel="noopener noreferrer">
+          <div class="card-icon">
+            <svg width="22" height="22" fill="none" stroke="var(--accent)" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="card-label">おすすめ</div>
+          <div class="card-title">Googleフォームで相談する</div>
+          <div class="card-desc">
+            制作のご依頼・ご相談はこちらから。<br>
+            「まだ具体的じゃないけど…」という段階でも大丈夫です。<br>
+            内容を確認のうえ、原則24時間以内に返信します。
+          </div>
+          <div class="card-action">
+            フォームを開く
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </div>
+        </a>
+
+        <!-- CrowdWorks -->
+        <a class="contact-card card-cw" href="https://crowdworks.jp/public/employees/6829155?ref=share_url_wkprofile" target="_blank" rel="noopener noreferrer">
+          <div class="card-icon" style="background:rgba(0,169,96,.06);border-color:rgba(0,169,96,.1);">
+            <svg width="20" height="20" fill="none" stroke="#00a960" stroke-width="2" viewBox="0 0 24 24"><path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>
+          </div>
+          <div class="card-label">クラウドソーシング</div>
+          <div class="card-title">CrowdWorks</div>
+          <div class="card-desc">クラウドワークス経由でのご依頼も承ります。実績・評価もご確認いただけます。</div>
+          <div class="card-action" style="color:#00a960;">
+            プロフィールを見る
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </div>
+        </a>
+
+        <!-- Instagram -->
+        <a class="contact-card card-ig" href="#" target="_blank" rel="noopener noreferrer">
+          <div class="card-icon" style="background:rgba(225,48,108,.06);border-color:rgba(225,48,108,.1);">
+            <svg width="18" height="18" fill="none" stroke="#e1306c" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </div>
+          <div class="card-label">SNS</div>
+          <div class="card-title">Instagram</div>
+          <div class="card-desc">DMでもお気軽にどうぞ。制作事例や日常の発信もしています。</div>
+          <div class="card-action" style="color:#e1306c;">
+            フォローする
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Notes -->
+      <div class="note-card">
+        <h3>
+          <svg width="16" height="16" fill="none" stroke="var(--accent)" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+          ご連絡にあたって
+        </h3>
+        <div class="note-grid">
+          <div class="note-item">
+            <span class="note-label">返信</span>
+            <span class="note-value">原則24時間以内</span>
+          </div>
+          <div class="note-item">
+            <span class="note-label">対応時間</span>
+            <span class="note-value">平日 10:00 – 20:00</span>
+          </div>
+          <div class="note-item">
+            <span class="note-label">相談料</span>
+            <span class="note-value">無料（お見積もりまで）</span>
+          </div>
+          <div class="note-item">
+            <span class="note-label">対応範囲</span>
+            <span class="note-value">Web制作・資料作成・構成設計</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <div>&copy; <span id="year"></span> Daigo Imagawa</div>
+    <div class="small">GitHub Pagesで公開</div>
+  </footer>
+
+</div>
+
+<button class="scroll-top" id="scrollTop" aria-label="ページ上部へ">
+  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* Theme */
+const toggle = document.getElementById('themeToggle');
+const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
+const saved = localStorage.getItem('theme');
+if (saved) document.documentElement.setAttribute('data-theme', saved);
+else if (prefersDark) document.documentElement.setAttribute('data-theme', 'dark');
+toggle.addEventListener('click', () => {
+  const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+});
+
+/* Scroll Progress */
+const progressBar = document.getElementById('scrollProgress');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  progressBar.style.width = (h > 0 ? (scrollY / h) * 100 : 0) + '%';
+}, { passive: true });
+
+/* Scroll Top */
+const scrollBtn = document.getElementById('scrollTop');
+window.addEventListener('scroll', () => { scrollBtn.classList.toggle('show', scrollY > 400); }, { passive: true });
+scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+/* Section Reveal */
+const sectionIO = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: .12 });
+document.querySelectorAll('.section').forEach(s => sectionIO.observe(s));
+
+/* Contact card stagger */
+const cardIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.querySelectorAll('.contact-card').forEach((c, i) => {
+      c.style.animation = 'fadeUp .5s ease ' + (i * .1) + 's both';
+    });
+  });
+}, { threshold: .1 });
+document.querySelectorAll('.contact-grid').forEach(g => cardIO.observe(g));
+
+/* Hamburger */
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+if (hamburger && mobileMenu) {
+  hamburger.addEventListener('click', () => {
+    const isOpen = hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    if (isOpen) {
+      mobileMenu.querySelectorAll('a').forEach((a, i) => {
+        a.style.animation = 'fadeUp .35s ease ' + (i * .06) + 's both';
+      });
+    }
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+}
+
+/* Particles */
+const pc = document.getElementById('particles');
+for (let i = 0; i < 14; i++) {
+  const d = document.createElement('div'); d.className = 'particle';
+  d.style.left = Math.random() * 100 + '%';
+  d.style.animationDuration = (14 + Math.random() * 16) + 's';
+  d.style.animationDelay = -(Math.random() * 22) + 's';
+  const sz = 2 + Math.random() * 3; d.style.width = d.style.height = sz + 'px';
+  d.style.background = ['var(--accent)', 'var(--accent2)', 'var(--accent3)'][i % 3];
+  pc.appendChild(d);
+}
+
+/* Cursor Glow */
+if (matchMedia('(pointer:fine)').matches) {
+  const g = document.getElementById('cursorGlow'); g.style.display = 'block';
+  document.addEventListener('mousemove', e => { g.style.left = e.clientX + 'px'; g.style.top = e.clientY + 'px'; });
+}
+
+/* Button Ripple */
+document.querySelectorAll('.btn').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    const r = this.getBoundingClientRect(); const span = document.createElement('span');
+    span.className = 'ripple'; const size = Math.max(r.width, r.height);
+    span.style.width = span.style.height = size + 'px';
+    span.style.left = (e.clientX - r.left - size / 2) + 'px';
+    span.style.top = (e.clientY - r.top - size / 2) + 'px';
+    this.appendChild(span); span.addEventListener('animationend', () => span.remove());
+  });
+});
+</script>
 </body>
 </html>
