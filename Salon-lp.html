@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LUIRE（ルイール）｜名古屋 栄のプライベートヘアサロン</title>
+<meta name="description" content="名古屋・栄の完全予約制プライベートヘアサロン LUIRE。マンツーマン施術で、あなただけの時間を。カット・カラー・トリートメントのご予約はこちら。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+/* =============================================
+   LUIRE — Hair Salon LP
+   Aesthetic: 洗練・上品・フェミニン
+   Charcoal + soft pink + gold accent
+   ============================================= */
+:root{
+  --bg:#f9f7f5;
+  --bg2:#f3f0ec;
+  --white:#ffffff;
+  --surface:rgba(255,255,255,.9);
+  --text:#2a2a2a;
+  --text2:#4a4a4a;
+  --muted:#8a8580;
+  --charcoal:#2a2a2a;
+  --pink:#c9a0a0;
+  --pink-soft:rgba(201,160,160,.10);
+  --pink-light:#e8d4d4;
+  --gold:#b09060;
+  --gold-soft:rgba(176,144,96,.08);
+  --line:rgba(42,42,42,.07);
+  --line2:rgba(42,42,42,.04);
+  --radius:12px;
+  --radius-sm:8px;
+  --shadow:0 20px 56px rgba(42,42,42,.06);
+  --shadow2:0 8px 24px rgba(42,42,42,.04);
+  --font-display:'Cormorant Garamond',serif;
+  --font-body:'Noto Sans JP',sans-serif;
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --ease-spring:cubic-bezier(.22,1.2,.36,1);
+  --max:980px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+body{font-family:var(--font-body);color:var(--text);background:var(--bg);line-height:1.85;letter-spacing:.02em;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(201,160,160,.2);color:var(--text)}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px;position:relative;z-index:1}
+
+/* ---- Top Bar ---- */
+.top-bar{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(249,247,245,.88);backdrop-filter:blur(14px) saturate(1.3);-webkit-backdrop-filter:blur(14px) saturate(1.3);border-bottom:1px solid var(--line);transition:box-shadow .3s}
+.top-bar.scrolled{box-shadow:0 2px 16px rgba(42,42,42,.04)}
+.top-bar-inner{max-width:var(--max);margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:58px}
+.logo{font-family:var(--font-display);font-size:22px;font-weight:600;color:var(--charcoal);letter-spacing:.12em}
+.top-nav{display:flex;gap:2px}
+.top-nav a{font-size:11px;padding:7px 12px;color:var(--muted);font-weight:500;letter-spacing:.04em;border-radius:6px;transition:all .2s}
+.top-nav a:hover{color:var(--text);background:rgba(42,42,42,.03)}
+.top-cta-link{font-size:11px;font-weight:700;padding:9px 20px;border-radius:6px;background:var(--charcoal);color:#fff;letter-spacing:.04em;transition:transform .2s var(--ease-spring),box-shadow .2s}
+.top-cta-link:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(42,42,42,.15)}
+
+/* ---- Hero ---- */
+.hero{min-height:100vh;min-height:100dvh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:58px}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(160deg,var(--bg) 0%,var(--pink-light) 30%,var(--bg2) 60%,var(--bg) 100%)}
+.hero-blob1{position:absolute;top:10%;right:-5%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(201,160,160,.1),transparent 60%);filter:blur(60px)}
+.hero-blob2{position:absolute;bottom:-10%;left:10%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(176,144,96,.06),transparent 60%);filter:blur(60px)}
+/* Subtle line decoration */
+.hero::after{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,160,160,.12),transparent);pointer-events:none}
+
+.hero-content{position:relative;z-index:1;max-width:var(--max);margin:0 auto;padding:0 24px;text-align:center}
+
+.hero-eyebrow{font-family:var(--font-display);font-size:13px;font-weight:400;color:var(--pink);letter-spacing:.2em;margin-bottom:16px;animation:fadeUp .7s var(--ease-out) .1s both}
+
+.hero h1{font-family:var(--font-display);font-size:clamp(42px,8vw,80px);font-weight:300;line-height:1.1;letter-spacing:.08em;color:var(--charcoal);animation:fadeUp .8s var(--ease-out) .25s both}
+
+.hero-tagline{margin-top:16px;font-size:14px;color:var(--muted);font-weight:300;letter-spacing:.06em;animation:fadeUp .8s var(--ease-out) .4s both}
+
+.hero-divider{width:40px;height:1px;background:var(--pink);margin:24px auto;animation:fadeUp .8s var(--ease-out) .5s both}
+
+.hero-desc{font-size:13px;color:var(--text2);max-width:40ch;margin:0 auto;line-height:2;animation:fadeUp .8s var(--ease-out) .55s both}
+
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:28px;animation:fadeUp .8s var(--ease-out) .65s both}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 28px;border-radius:6px;font-family:var(--font-body);font-weight:600;font-size:12px;cursor:pointer;border:none;user-select:none;letter-spacing:.04em;transition:transform .22s var(--ease-spring),box-shadow .2s}
+.btn:hover{transform:translateY(-2px)}.btn:active{transform:scale(.97)}
+.btn-dark{background:var(--charcoal);color:#fff;box-shadow:0 4px 18px rgba(42,42,42,.12)}
+.btn-dark:hover{box-shadow:0 8px 26px rgba(42,42,42,.18)}
+.btn-pink{background:var(--pink);color:#fff;box-shadow:0 4px 18px rgba(201,160,160,.2)}
+.btn-pink:hover{box-shadow:0 8px 26px rgba(201,160,160,.28)}
+.btn-ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+.btn-ghost:hover{border-color:rgba(42,42,42,.15);background:rgba(42,42,42,.02)}
+
+/* ---- Sections ---- */
+.section{padding:80px 0;opacity:0;transform:translateY(28px);transition:opacity .6s var(--ease-out),transform .6s var(--ease-out)}
+.section.visible{opacity:1;transform:translateY(0)}
+
+.section-label{font-family:var(--font-display);font-size:13px;font-weight:400;color:var(--pink);letter-spacing:.18em;margin-bottom:6px}
+.section-title{font-family:var(--font-display);font-size:clamp(24px,4vw,34px);font-weight:300;letter-spacing:.06em;color:var(--charcoal);margin-bottom:8px}
+.section-lead{font-size:13px;color:var(--muted);max-width:48ch;margin-bottom:36px;letter-spacing:.02em}
+.section-center{text-align:center}
+.section-center .section-lead{margin-left:auto;margin-right:auto}
+
+.divider{height:1px;border:none;margin:0;background:linear-gradient(90deg,transparent,var(--line),transparent)}
+
+/* ---- Concept ---- */
+.concept-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.concept-card{text-align:center;padding:32px 20px;border-radius:var(--radius);background:var(--white);border:1px solid var(--line);transition:transform .3s var(--ease-spring),box-shadow .3s}
+.concept-card:hover{transform:translateY(-3px);box-shadow:var(--shadow2)}
+.concept-icon{width:48px;height:48px;border-radius:50%;background:var(--pink-soft);border:1px solid rgba(201,160,160,.12);display:grid;place-items:center;margin:0 auto 14px;transition:transform .3s var(--ease-spring)}
+.concept-card:hover .concept-icon{transform:scale(1.08)}
+.concept-card h3{font-family:var(--font-display);font-size:18px;font-weight:600;letter-spacing:.06em;margin-bottom:6px;color:var(--charcoal)}
+.concept-card p{font-size:12px;color:var(--muted);line-height:1.75}
+
+/* ---- Menu ---- */
+.menu-grid{display:grid;grid-template-columns:1fr;gap:0}
+.menu-item{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--line2);transition:padding .2s}
+.menu-item:last-child{border-bottom:none}
+.menu-item:hover{padding-left:8px}
+.menu-name{font-size:14px;font-weight:600}
+.menu-name small{display:block;font-size:11px;color:var(--muted);font-weight:400;margin-top:2px}
+.menu-price{font-family:var(--font-display);font-size:18px;font-weight:600;color:var(--charcoal);letter-spacing:.04em;white-space:nowrap}
+.menu-price span{font-size:11px;font-weight:400;color:var(--muted);margin-left:2px}
+
+.menu-category{margin-top:28px}
+.menu-category:first-child{margin-top:0}
+.menu-category-title{font-family:var(--font-display);font-size:15px;font-weight:600;letter-spacing:.1em;color:var(--pink);margin-bottom:4px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.menu-note{font-size:11px;color:var(--muted);margin-top:16px}
+
+/* ---- Stylist ---- */
+.stylist-card{display:grid;grid-template-columns:200px 1fr;gap:28px;align-items:center;background:var(--white);border-radius:var(--radius);border:1px solid var(--line);padding:32px;box-shadow:var(--shadow2)}
+.stylist-photo{width:100%;aspect-ratio:3/4;border-radius:var(--radius-sm);background:linear-gradient(145deg,var(--pink-light),var(--bg2));display:grid;place-items:center;font-size:40px;opacity:.15}
+.stylist-info h3{font-family:var(--font-display);font-size:22px;font-weight:600;letter-spacing:.06em;color:var(--charcoal);margin-bottom:2px}
+.stylist-info .role{font-size:11px;color:var(--pink);font-weight:500;letter-spacing:.08em;margin-bottom:12px}
+.stylist-info p{font-size:13px;color:var(--text2);line-height:1.85}
+.stylist-sns{display:flex;gap:8px;margin-top:14px}
+.stylist-sns a{width:34px;height:34px;border-radius:50%;background:var(--pink-soft);border:1px solid rgba(201,160,160,.1);display:grid;place-items:center;color:var(--pink);transition:transform .2s var(--ease-spring),background .2s}
+.stylist-sns a:hover{transform:scale(1.08);background:rgba(201,160,160,.15)}
+
+/* ---- Access ---- */
+.access-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.access-map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3;background:var(--bg2);display:grid;place-items:center;color:var(--muted);font-size:12px;text-align:center}
+.access-map svg{margin:0 auto 6px;opacity:.3}
+.info-table{width:100%}
+.info-table tr{border-bottom:1px solid var(--line2)}
+.info-table tr:last-child{border-bottom:none}
+.info-table th{text-align:left;padding:10px 12px 10px 0;font-size:11px;font-weight:600;color:var(--pink);white-space:nowrap;width:72px;vertical-align:top;letter-spacing:.04em}
+.info-table td{padding:10px 0;font-size:12px;color:var(--text2);line-height:1.7}
+
+/* ---- CTA ---- */
+.cta-section{text-align:center;padding:72px 0;position:relative}
+.cta-card{background:var(--charcoal);border-radius:16px;padding:48px 32px;color:#fff;position:relative;overflow:hidden;box-shadow:0 24px 60px rgba(42,42,42,.12)}
+.cta-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,160,160,.08),transparent 40%,rgba(176,144,96,.05));pointer-events:none}
+.cta-card::after{content:'';position:absolute;top:-30%;right:-10%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(201,160,160,.06),transparent 60%);filter:blur(40px);pointer-events:none}
+.cta-inner{position:relative;z-index:1}
+.cta-section .section-label{color:rgba(255,255,255,.4);letter-spacing:.2em}
+.cta-section .section-title{color:#fff;letter-spacing:.08em}
+.cta-lead{font-size:13px;color:rgba(255,255,255,.5);margin:8px auto 24px;max-width:40ch}
+.cta-buttons{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.cta-phone{font-family:var(--font-display);font-size:clamp(20px,4vw,30px);font-weight:600;color:#fff;letter-spacing:.06em;display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:4px}
+.cta-phone-note{font-size:11px;color:rgba(255,255,255,.35);margin-bottom:20px}
+
+/* ---- Footer ---- */
+.lp-footer{padding:24px 0;text-align:center;color:var(--muted);font-size:11px;border-top:1px solid var(--line2)}
+.footer-logo{font-family:var(--font-display);font-size:16px;color:var(--charcoal);font-weight:600;margin-bottom:2px;letter-spacing:.12em}
+
+/* ---- Animations ---- */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* ---- Responsive ---- */
+@media(max-width:768px){
+  .concept-grid{grid-template-columns:1fr}
+  .stylist-card{grid-template-columns:1fr;text-align:center}
+  .stylist-photo{max-width:180px;margin:0 auto}
+  .stylist-sns{justify-content:center}
+  .access-grid{grid-template-columns:1fr}
+  .top-nav{display:none}
+  .section{padding:56px 0}
+}
+@media(max-width:480px){
+  .btn{width:100%}
+  .hero-actions{flex-direction:column;align-items:center}
+  .hero-actions .btn{width:100%;max-width:300px}
+  .cta-buttons{flex-direction:column;align-items:center}
+  .cta-buttons .btn{width:100%;max-width:300px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+.scroll-progress{position:fixed;top:58px;left:0;z-index:49;width:0%;height:1px;background:linear-gradient(90deg,var(--pink),var(--gold));transition:width .08s linear}
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Top Bar -->
+<nav class="top-bar" id="topBar">
+  <div class="top-bar-inner">
+    <a href="#" class="logo">LUIRE</a>
+    <div class="top-nav">
+      <a href="#concept">Concept</a>
+      <a href="#menu">Menu</a>
+      <a href="#stylist">Stylist</a>
+      <a href="#access">Access</a>
+    </div>
+    <a href="#reserve" class="top-cta-link">ご予約</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-blob1"></div>
+  <div class="hero-blob2"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Private Hair Salon</div>
+    <h1>LUIRE</h1>
+    <p class="hero-tagline">あなただけの時間を、あなただけの空間で。</p>
+    <div class="hero-divider"></div>
+    <p class="hero-desc">
+      名古屋・栄の隠れ家プライベートサロン。<br>
+      マンツーマン施術だから、周りを気にせずリラックス。<br>
+      一人ひとりの髪質と向き合い、理想のスタイルをつくります。
+    </p>
+    <div class="hero-actions">
+      <a href="#reserve" class="btn btn-dark">ご予約はこちら</a>
+      <a href="#menu" class="btn btn-ghost">メニューを見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- Concept -->
+<hr class="divider">
+<section class="section section-center" id="concept">
+  <div class="wrap">
+    <div class="section-label">Concept</div>
+    <div class="section-title">大切にしていること</div>
+    <p class="section-lead">
+      「また来たい」と思っていただける場所であるために。
+    </p>
+    <div class="concept-grid">
+      <div class="concept-card">
+        <div class="concept-icon">
+          <svg width="20" height="20" fill="none" stroke="var(--pink)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <h3>Private</h3>
+        <p>完全予約制・一人ひとりにゆったりとした時間を。他のお客様と重ならない空間で、心からリラックスしていただけます。</p>
+      </div>
+      <div class="concept-card">
+        <div class="concept-icon">
+          <svg width="20" height="20" fill="none" stroke="var(--pink)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Quality</h3>
+        <p>厳選したオーガニック薬剤と丁寧なカウンセリング。髪のダメージを最小限に抑えながら、理想の仕上がりを追求します。</p>
+      </div>
+      <div class="concept-card">
+        <div class="concept-icon">
+          <svg width="20" height="20" fill="none" stroke="var(--pink)" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        </div>
+        <h3>Comfort</h3>
+        <p>居心地のよさは、技術と同じくらい大切。BGM、アロマ、お飲み物まで、五感でくつろげる空間をご用意しています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Menu -->
+<hr class="divider">
+<section class="section" id="menu">
+  <div class="wrap">
+    <div class="section-label">Menu</div>
+    <div class="section-title">メニュー・料金</div>
+    <p class="section-lead">すべてのメニューにカウンセリング・シャンプー・ブローが含まれます。</p>
+
+    <div class="menu-category">
+      <div class="menu-category-title">CUT</div>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="menu-name">カット<small>シャンプー・ブロー込み</small></div><div class="menu-price">¥6,600</div></div>
+        <div class="menu-item"><div class="menu-name">前髪カット</div><div class="menu-price">¥1,100</div></div>
+      </div>
+    </div>
+
+    <div class="menu-category">
+      <div class="menu-category-title">COLOR</div>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="menu-name">カット + カラー<small>オーガニックカラー使用</small></div><div class="menu-price">¥13,200</div></div>
+        <div class="menu-item"><div class="menu-name">リタッチカラー<small>根元のみ</small></div><div class="menu-price">¥6,600</div></div>
+        <div class="menu-item"><div class="menu-name">ハイライト / バレイヤージュ</div><div class="menu-price">¥8,800<span>〜</span></div></div>
+      </div>
+    </div>
+
+    <div class="menu-category">
+      <div class="menu-category-title">TREATMENT</div>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="menu-name">トリートメント<small>TOKIOインカラミ</small></div><div class="menu-price">¥5,500</div></div>
+        <div class="menu-item"><div class="menu-name">ヘッドスパ<small>30分コース</small></div><div class="menu-price">¥4,400</div></div>
+        <div class="menu-item"><div class="menu-name">髪質改善トリートメント</div><div class="menu-price">¥16,500</div></div>
+      </div>
+    </div>
+
+    <p class="menu-note">※表示価格はすべて税込です。髪の長さ・状態により料金が変わる場合があります。初回の方は10%OFFでご案内しています。</p>
+  </div>
+</section>
+
+<!-- Stylist -->
+<hr class="divider">
+<section class="section" id="stylist">
+  <div class="wrap">
+    <div class="section-label">Stylist</div>
+    <div class="section-title">スタイリスト</div>
+    <p class="section-lead">LUIREでは、オーナースタイリストが最初から最後まで担当します。</p>
+
+    <div class="stylist-card">
+      <div class="stylist-photo">💇‍♀️</div>
+      <div class="stylist-info">
+        <h3>Mana Yoshida</h3>
+        <div class="role">Owner Stylist</div>
+        <p>
+          都内の有名サロンで8年間の経験を積んだ後、地元名古屋で独立。<br>
+          「似合わせ」と「ダメージレス」にこだわり、お客様一人ひとりの髪質・骨格・ライフスタイルに合わせたスタイルをご提案します。<br><br>
+          得意スタイルは、透明感のあるカラーと柔らかいレイヤースタイル。
+          髪のお悩みは何でもご相談ください。
+        </p>
+        <div class="stylist-sns">
+          <a href="#" aria-label="Instagram">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="LINE">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Access -->
+<hr class="divider">
+<section class="section" id="access">
+  <div class="wrap">
+    <div class="section-label">Access</div>
+    <div class="section-title">サロン情報</div>
+    <div class="access-grid">
+      <div class="access-map">
+        <div>
+          <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Google Maps<br><span style="font-size:10px;opacity:.5">（実装時に差し替え）</span>
+        </div>
+      </div>
+      <table class="info-table">
+        <tr><th>店名</th><td>LUIRE（ルイール）</td></tr>
+        <tr><th>住所</th><td>〒460-0000<br>愛知県名古屋市中区栄○丁目○-○<br>○○ビル 3F</td></tr>
+        <tr><th>最寄駅</th><td>地下鉄東山線・名城線「栄駅」8番出口 徒歩4分</td></tr>
+        <tr><th>営業時間</th><td>10:00 – 20:00（最終受付 18:30）</td></tr>
+        <tr><th>定休日</th><td>毎週月曜日 + 第2・第4火曜日</td></tr>
+        <tr><th>予約</th><td>完全予約制</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section cta-section" id="reserve">
+  <div class="wrap">
+    <div class="cta-card">
+      <div class="cta-inner">
+        <div class="section-label">Reservation</div>
+        <div class="section-title">ご予約・お問い合わせ</div>
+        <p class="cta-lead">完全予約制です。お電話またはウェブからご予約ください。</p>
+        <a href="tel:052-000-9876" class="cta-phone">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          052-000-9876
+        </a>
+        <p class="cta-phone-note">受付時間 10:00 – 19:00（月曜定休）</p>
+        <div class="cta-buttons">
+          <a href="#" class="btn btn-pink">ホットペッパーで予約</a>
+          <a href="#" class="btn" style="background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.15);">LINEで予約・相談</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="lp-footer">
+  <div class="wrap">
+    <div class="footer-logo">LUIRE</div>
+    <p>&copy; <span id="year"></span> LUIRE Hair Salon — Sample by Daigo Imagawa</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement.scrollHeight-window.innerHeight;
+  document.getElementById('scrollProgress').style.width=(h>0?(scrollY/h)*100:0)+'%';
+  document.getElementById('topBar').classList.toggle('scrolled',scrollY>40);
+},{passive:true});
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1});
+document.querySelectorAll('.section').forEach(s=>io.observe(s));
+const cIO=new IntersectionObserver(entries=>{entries.forEach(e=>{if(!e.isIntersecting)return;e.target.querySelectorAll('.concept-card').forEach((c,i)=>{c.style.animation='fadeUp .5s ease '+(i*.1)+'s both'})})},{threshold:.12});
+document.querySelectorAll('.concept-grid').forEach(g=>cIO.observe(g));
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t){const y=t.getBoundingClientRect().top+window.scrollY-66;window.scrollTo({top:y,behavior:'smooth'})}})});
+</script>
+</body>
+</html>
