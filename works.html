@@ -154,156 +154,34 @@ footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--line-subtle);
 .section h2::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));margin-right:8px;vertical-align:middle;animation:dotPulse 3s ease-in-out infinite}
 
 /* Filter bar */
-.filter-bar{
-  display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px;
-}
-.filter-btn{
-  padding:7px 16px;border-radius:999px;
-  font-size:12px;font-weight:700;
-  border:1px solid var(--line);background:transparent;
-  color:var(--muted);cursor:pointer;font-family:var(--font);
-  transition:all .22s ease;
-}
+.filter-bar{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.filter-btn{padding:7px 16px;border-radius:999px;font-size:12px;font-weight:700;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;font-family:var(--font);transition:all .22s ease}
 .filter-btn:hover{color:var(--text);border-color:rgba(15,23,42,.15);background:rgba(255,255,255,.4)}
-.filter-btn.active{
-  background:rgba(79,124,255,.08);border-color:rgba(79,124,255,.15);
-  color:var(--accent);
-}
+.filter-btn.active{background:rgba(79,124,255,.08);border-color:rgba(79,124,255,.15);color:var(--accent)}
 
-/* ---- Work Cards (Banner style) ---- */
-.works-grid{
-  display:grid;grid-template-columns:1fr;gap:20px;
-}
+/* Work Cards */
+.works-grid{display:grid;grid-template-columns:1fr;gap:20px}
+.work-card{display:block;border-radius:var(--radius);border:1px solid var(--line);overflow:hidden;box-shadow:var(--shadow2);transition:transform .35s var(--ease-spring),box-shadow .35s ease,border-color var(--transition-med) ease;position:relative;cursor:pointer;text-decoration:none;color:inherit}
+.work-card:hover{transform:translateY(-4px);box-shadow:0 20px 54px rgba(15,23,42,.14);opacity:1}
+.work-banner{position:relative;aspect-ratio:16 / 7;overflow:hidden;background:#1a1510}
+.work-banner-bg{position:absolute;inset:0;transition:transform .5s var(--ease-out-expo)}
+.work-card:hover .work-banner-bg{transform:scale(1.04)}
+.work-banner::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.5) 0%,transparent 50%);pointer-events:none}
+.work-banner-view{position:absolute;bottom:16px;right:16px;z-index:3;display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#fff;padding:8px 14px;border-radius:10px;background:rgba(0,0,0,.45);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.12);opacity:0;transform:translateY(6px);transition:opacity .3s ease,transform .3s var(--ease-spring)}
+.work-card:hover .work-banner-view{opacity:1;transform:translateY(0)}
+.work-badge{position:absolute;top:14px;left:14px;z-index:2;font-size:11px;font-weight:700;padding:5px 12px;border-radius:8px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.4);color:#fff;letter-spacing:.02em}
+.work-type{position:absolute;top:14px;right:14px;z-index:2;font-size:10px;font-weight:700;padding:4px 10px;border-radius:6px;background:rgba(79,124,255,.85);color:#fff;letter-spacing:.04em}
+.work-body{padding:20px 22px;background:var(--surface2);backdrop-filter:blur(10px);transition:background var(--transition-med) ease}
+.work-title{font-size:17px;font-weight:800;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.work-title-arrow{display:inline-flex;margin-left:auto;color:var(--accent);opacity:.4;transition:opacity .2s,transform .2s var(--ease-spring);flex-shrink:0}
+.work-card:hover .work-title-arrow{opacity:1;transform:translateX(3px)}
+.work-desc{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:12px}
+.work-tags{display:flex;flex-wrap:wrap;gap:6px}
+.work-tag{font-size:11px;padding:4px 10px;border-radius:999px;background:rgba(79,124,255,.06);border:1px solid rgba(79,124,255,.10);color:var(--accent);font-weight:600;transition:transform .2s ease,background var(--transition-med) ease,border-color var(--transition-med) ease}
 
-/* Card is an <a> tag — entire card is clickable */
-.work-card{
-  display:block;
-  border-radius:var(--radius);
-  border:1px solid var(--line);
-  overflow:hidden;
-  box-shadow:var(--shadow2);
-  transition:transform .35s var(--ease-spring),box-shadow .35s ease,border-color var(--transition-med) ease;
-  position:relative;
-  cursor:pointer;
-  text-decoration:none;
-  color:inherit;
-}
-.work-card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 20px 54px rgba(15,23,42,.14);
-  opacity:1;
-}
-
-/* Banner / Thumbnail area */
-.work-banner{
-  position:relative;
-  aspect-ratio:16 / 7;
-  overflow:hidden;
-  background:#1a1510;
-}
-.work-banner-bg{
-  position:absolute;inset:0;
-  transition:transform .5s var(--ease-out-expo);
-}
-.work-card:hover .work-banner-bg{
-  transform:scale(1.04);
-}
-
-/* Overlay gradient */
-.work-banner::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(to top,rgba(0,0,0,.5) 0%,transparent 50%);
-  pointer-events:none;
-}
-
-/* "View" indicator — appears on hover */
-.work-banner-view{
-  position:absolute;bottom:16px;right:16px;z-index:3;
-  display:inline-flex;align-items:center;gap:6px;
-  font-size:12px;font-weight:700;color:#fff;
-  padding:8px 14px;border-radius:10px;
-  background:rgba(0,0,0,.45);
-  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
-  border:1px solid rgba(255,255,255,.12);
-  opacity:0;transform:translateY(6px);
-  transition:opacity .3s ease,transform .3s var(--ease-spring);
-}
-.work-card:hover .work-banner-view{
-  opacity:1;transform:translateY(0);
-}
-
-/* Badge on banner */
-.work-badge{
-  position:absolute;top:14px;left:14px;z-index:2;
-  font-size:11px;font-weight:700;padding:5px 12px;border-radius:8px;
-  backdrop-filter:blur(8px);
-  -webkit-backdrop-filter:blur(8px);
-  border:1px solid rgba(255,255,255,.12);
-  background:rgba(0,0,0,.4);
-  color:#fff;letter-spacing:.02em;
-}
-
-/* Type badge (LP, サイト, 資料 etc.) */
-.work-type{
-  position:absolute;top:14px;right:14px;z-index:2;
-  font-size:10px;font-weight:700;padding:4px 10px;border-radius:6px;
-  background:rgba(79,124,255,.85);color:#fff;
-  letter-spacing:.04em;
-}
-
-/* Info area */
-.work-body{
-  padding:20px 22px;
-  background:var(--surface2);
-  backdrop-filter:blur(10px);
-  transition:background var(--transition-med) ease;
-}
-
-.work-title{
-  font-size:17px;font-weight:800;margin-bottom:4px;
-  display:flex;align-items:center;gap:8px;
-}
-
-/* Arrow that animates on hover */
-.work-title-arrow{
-  display:inline-flex;margin-left:auto;color:var(--accent);
-  opacity:.4;transition:opacity .2s,transform .2s var(--ease-spring);
-  flex-shrink:0;
-}
-.work-card:hover .work-title-arrow{
-  opacity:1;transform:translateX(3px);
-}
-
-.work-desc{
-  font-size:13px;color:var(--muted);line-height:1.7;
-  margin-bottom:12px;
-}
-
-.work-tags{
-  display:flex;flex-wrap:wrap;gap:6px;
-}
-.work-tag{
-  font-size:11px;padding:4px 10px;border-radius:999px;
-  background:rgba(79,124,255,.06);border:1px solid rgba(79,124,255,.10);
-  color:var(--accent);font-weight:600;
-  transition:transform .2s ease,background var(--transition-med) ease,border-color var(--transition-med) ease;
-}
-
-/* ---- Empty / Coming Soon state ---- */
-.empty-state{
-  border-radius:var(--radius);
-  border:1px dashed var(--line);
-  background:rgba(255,255,255,.3);
-  padding:48px 24px;
-  text-align:center;
-  transition:background var(--transition-med) ease,border-color var(--transition-med) ease;
-}
-.empty-icon{
-  width:52px;height:52px;border-radius:16px;
-  background:rgba(79,124,255,.06);
-  display:grid;place-items:center;
-  margin:0 auto 14px;
-}
+/* Empty state */
+.empty-state{border-radius:var(--radius);border:1px dashed var(--line);background:rgba(255,255,255,.3);padding:48px 24px;text-align:center;transition:background var(--transition-med) ease,border-color var(--transition-med) ease}
+.empty-icon{width:52px;height:52px;border-radius:16px;background:rgba(79,124,255,.06);display:grid;place-items:center;margin:0 auto 14px}
 .empty-state h3{font-size:15px;font-weight:700;margin-bottom:4px}
 .empty-state p{font-size:13px;color:var(--muted)}
 
@@ -314,12 +192,35 @@ footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--line-subtle);
 .cta-banner p{position:relative;z-index:1}
 .cta-banner .cta{position:relative;z-index:1;justify-content:center}
 
+/* Hamburger Button */
+.hamburger{display:none;width:38px;height:38px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.5);cursor:pointer;flex-shrink:0;position:relative;transition:all var(--transition-fast) ease}
+.hamburger:hover{transform:scale(1.06);border-color:var(--accent)}.hamburger:active{transform:scale(.95)}
+.hamburger span{display:block;position:absolute;left:50%;top:50%;width:16px;height:2px;border-radius:2px;background:var(--text);transition:transform .3s var(--ease-spring),opacity .2s ease}
+.hamburger span:nth-child(1){transform:translate(-50%,calc(-50% - 4px))}
+.hamburger span:nth-child(2){transform:translate(-50%,-50%)}
+.hamburger span:nth-child(3){transform:translate(-50%,calc(-50% + 4px))}
+.hamburger.open span:nth-child(1){transform:translate(-50%,-50%) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0;transform:translate(-50%,-50%) scaleX(0)}
+.hamburger.open span:nth-child(3){transform:translate(-50%,-50%) rotate(-45deg)}
+[data-theme="dark"] .hamburger{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.10)}
+[data-theme="dark"] .hamburger span{background:var(--text)}
+
+/* Mobile Menu Overlay */
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:29;background:var(--bg-solid);flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:80px 24px 40px;opacity:0;transform:translateY(-10px);transition:opacity .3s ease,transform .3s var(--ease-out-expo);pointer-events:none}
+.mobile-menu.open{display:flex;opacity:1;transform:translateY(0);pointer-events:auto}
+.mobile-menu a{display:block;width:100%;max-width:320px;padding:14px 20px;border-radius:var(--radius-sm);font-size:15px;font-weight:600;color:var(--text);text-align:center;border:1px solid var(--line-subtle);background:var(--surface);transition:all .2s ease}
+.mobile-menu a:hover,.mobile-menu a.active{border-color:var(--accent);background:rgba(79,124,255,.06);color:var(--accent)}
+[data-theme="dark"] .mobile-menu{background:var(--bg-solid)}
+[data-theme="dark"] .mobile-menu a{background:var(--surface);border-color:var(--line)}
+[data-theme="dark"] .mobile-menu a:hover,[data-theme="dark"] .mobile-menu a.active{border-color:var(--accent);background:rgba(79,124,255,.08)}
+
 /* ---- Responsive ---- */
- /* Hamburger */ .hamburger{display:none;width:38px;height:38px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.5);cursor:pointer;flex-shrink:0;position:relative;transition:all var(--transition-fast) ease} .hamburger:hover{transform:scale(1.06);border-color:var(--accent)}.hamburger:active{transform:scale(.95)} .hamburger span{display:block;position:absolute;left:50%;top:50%;width:16px;height:2px;border-radius:2px;background:var(--text);transition:transform .3s var(--ease-spring),opacity .2s ease} .hamburger span:nth-child(1){transform:translate(-50%,calc(-50% - 4px))} .hamburger span:nth-child(2){transform:translate(-50%,-50%)} .hamburger span:nth-child(3){transform:translate(-50%,calc(-50% + 4px))} .hamburger.open span:nth-child(1){transform:translate(-50%,-50%) rotate(45deg)} .hamburger.open span:nth-child(2){opacity:0;transform:translate(-50%,-50%) scaleX(0)} .hamburger.open span:nth-child(3){transform:translate(-50%,-50%) rotate(-45deg)} [data-theme="dark"] .hamburger{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.10)} [data-theme="dark"] .hamburger span{background:var(--text)} .mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:29;background:var(--bg-solid);flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:80px 24px 40px;opacity:0;transform:translateY(-10px);transition:opacity .3s ease,transform .3s var(--ease-out-expo);pointer-events:none} .mobile-menu.open{display:flex;opacity:1;transform:translateY(0);pointer-events:auto} .mobile-menu a{display:block;width:100%;max-width:320px;padding:14px 20px;border-radius:var(--radius-sm);font-size:15px;font-weight:600;color:var(--text);text-align:center;border:1px solid var(--line-subtle);background:var(--surface);transition:all .2s ease} .mobile-menu a:hover,.mobile-menu a.active{border-color:var(--accent);background:rgba(79,124,255,.06);color:var(--accent)} [data-theme="dark"] .mobile-menu{background:var(--bg-solid)} [data-theme="dark"] .mobile-menu a{background:var(--surface);border-color:var(--line)} [data-theme="dark"] .mobile-menu a:hover,[data-theme="dark"] .mobile-menu a.active{border-color:var(--accent);background:rgba(79,124,255,.08)} @media(max-width:520px){
+@media(max-width:520px){
   .wrap{padding:18px 14px 64px}
   .page-hero{padding:24px 18px}
   .btn{width:100%}
-  nav{display:none} .hamburger{display:block}
+  nav{display:none}
+  .hamburger{display:block}
   .work-banner{aspect-ratio:16/9}
   .work-body{padding:16px}
   .scroll-top{bottom:16px;right:16px}
@@ -348,20 +249,21 @@ footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--line-subtle);
       <a href="about.html">プロフィール</a>
       <a href="contact.html">連絡</a>
     </nav>
-   <div style="display:flex;gap:8px;align-items:center;">
-   <button class="hamburger" id="hamburger" aria-label="メニューを開く">
-   <span></span><span></span><span></span>
-   </button>
-   <button class="theme-toggle" id="themeToggle" aria-label="テーマ切替" title="ダーク / ライト切替">
-   <svg class="icon-sun" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-   <svg class="icon-moon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-   </button>
-</div>
+    <div style="display:flex;gap:8px;align-items:center;">
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+      <button class="theme-toggle" id="themeToggle" aria-label="テーマ切替" title="ダーク / ライト切替">
+        <svg class="icon-sun" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg class="icon-moon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+    </div>
   </header>
+
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="index.html">トップ</a>
-    <a class="active"href="works.html">制作例</a>
+    <a class="active" href="works.html">制作例</a>
     <a href="services.html">できること</a>
     <a href="process.html">制作の流れ</a>
     <a href="about.html">プロフィール</a>
@@ -396,31 +298,6 @@ footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--line-subtle);
       </div>
 
       <div class="works-grid" id="worksGrid">
-
-        <!--
-        ╔══════════════════════════════════════════════╗
-        ║  制作例カードの追加方法（コピペテンプレート）      ║
-        ╠══════════════════════════════════════════════╣
-        ║                                              ║
-        ║  1. 下の <a class="work-card"> ブロックを      ║
-        ║     まるごとコピーして、この下に貼り付ける       ║
-        ║                                              ║
-        ║  2. 変更する箇所:                              ║
-        ║     - href="..."     → リンク先ファイル名      ║
-        ║     - data-category  → フィルター用カテゴリ      ║
-        ║       (web / lp / doc をスペース区切り)         ║
-        ║     - work-banner-bg の style → 背景色や画像    ║
-        ║       画像の場合: background:url('img/xxx.jpg') ║
-        ║       center/cover no-repeat;                 ║
-        ║     - work-badge     → 左上ラベル(架空/実案件等) ║
-        ║     - work-type      → 右上タイプ(LP/サイト等)  ║
-        ║     - work-title     → タイトル                ║
-        ║     - work-desc      → 説明文                  ║
-        ║     - work-tag       → 技術タグ(増減自由)       ║
-        ║                                              ║
-        ║  3. 不要なら empty-state を削除してOK           ║
-        ╚══════════════════════════════════════════════╝
-        -->
 
         <!-- ===== WORK 01: 居酒屋LP ===== -->
         <a class="work-card" href="izakaya-lp.html" target="_blank" data-category="web lp">
@@ -538,35 +415,6 @@ footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--line-subtle);
           </div>
         </a>
 
-        <!--
-
-        <a class="work-card" href="ファイル名.html" target="_blank" data-category="web lp">
-          <div class="work-banner">
-            <div class="work-banner-bg" style="background:#eee;display:flex;align-items:center;justify-content:center;">
-              バナー画像 or テキスト
-            </div>
-            <span class="work-badge">ラベル</span>
-            <span class="work-type">LP</span>
-            <div class="work-banner-view">
-              見てみる
-              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </div>
-          </div>
-          <div class="work-body">
-            <div class="work-title">
-              タイトル
-              <svg class="work-title-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-            </div>
-            <p class="work-desc">説明文</p>
-            <div class="work-tags">
-              <span class="work-tag">タグ</span>
-            </div>
-          </div>
-        </a>
-
-        ===== ↑ ここまでコピペ ↑ =====
-        -->
-
       </div>
 
     </section>
@@ -650,7 +498,6 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-
     const filter = btn.dataset.filter;
     let visibleCount = 0;
     document.querySelectorAll('.work-card').forEach(card => {
@@ -663,8 +510,6 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
         card.style.display = 'none';
       }
     });
-
-    // Show empty state only when no cards match
     const empty = document.querySelector('.empty-state');
     if (empty) empty.style.display = visibleCount === 0 ? '' : '';
   });
@@ -699,28 +544,29 @@ document.querySelectorAll('.btn').forEach(btn => {
     this.appendChild(span); span.addEventListener('animationend', () => span.remove());
   });
 });
-* ---- Mobile Hamburger Menu ---- */
+
+/* ---- Mobile Hamburger Menu ---- */
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 if (hamburger && mobileMenu) {
-hamburger.addEventListener('click', () => {
-const isOpen = hamburger.classList.toggle('open');
-mobileMenu.classList.toggle('open');
-hamburger.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
-document.body.style.overflow = isOpen ? 'hidden' : '';
-if (isOpen) {
-mobileMenu.querySelectorAll('a').forEach((a, i) => {
-a.style.animation = 'fadeUp .35s ease ' + (i * .06) + 's both';
-});
-}
-});
-mobileMenu.querySelectorAll('a').forEach(a => {
-a.addEventListener('click', () => {
-hamburger.classList.remove('open');
-mobileMenu.classList.remove('open');
-document.body.style.overflow = '';
-});
-});
+  hamburger.addEventListener('click', () => {
+    const isOpen = hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    if (isOpen) {
+      mobileMenu.querySelectorAll('a').forEach((a, i) => {
+        a.style.animation = 'fadeUp .35s ease ' + (i * .06) + 's both';
+      });
+    }
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
 }
 </script>
 </body>
