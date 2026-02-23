@@ -160,118 +160,49 @@ footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--line-subtle);
 
 /* ---- Service Cards ---- */
 .svc-grid{display:grid;grid-template-columns:1fr;gap:18px}
-
-.svc-card{
-  border-radius:var(--radius);border:1px solid var(--line);
-  background:var(--surface2);backdrop-filter:blur(10px);
-  padding:0;box-shadow:var(--shadow2);
-  display:grid;grid-template-columns:72px 1fr;
-  transition:transform .32s var(--ease-spring),box-shadow .32s ease,background var(--transition-med) ease,border-color var(--transition-med) ease;
-  position:relative;overflow:hidden;
-}
-.svc-card::before{
-  content:'';position:absolute;left:0;top:0;width:3px;height:100%;
-  opacity:0;transition:opacity .3s ease;
-}
+.svc-card{border-radius:var(--radius);border:1px solid var(--line);background:var(--surface2);backdrop-filter:blur(10px);padding:0;box-shadow:var(--shadow2);display:grid;grid-template-columns:72px 1fr;transition:transform .32s var(--ease-spring),box-shadow .32s ease,background var(--transition-med) ease,border-color var(--transition-med) ease;position:relative;overflow:hidden}
+.svc-card::before{content:'';position:absolute;left:0;top:0;width:3px;height:100%;opacity:0;transition:opacity .3s ease}
 .svc-card:nth-child(1)::before{background:linear-gradient(to bottom,var(--accent),var(--accent2))}
 .svc-card:nth-child(2)::before{background:linear-gradient(to bottom,var(--accent2),var(--accent3))}
 .svc-card:nth-child(3)::before{background:linear-gradient(to bottom,var(--accent3),var(--accent))}
 .svc-card:nth-child(4)::before{background:linear-gradient(to bottom,var(--accent),var(--accent3))}
 .svc-card:hover{transform:translateY(-2px);box-shadow:0 16px 44px rgba(15,23,42,.10)}
 .svc-card:hover::before{opacity:1}
-
-.svc-icon-col{
-  display:grid;place-items:center;padding:24px 0;
-}
-.svc-icon{
-  width:48px;height:48px;border-radius:14px;
-  background:linear-gradient(135deg,rgba(79,124,255,.08),rgba(52,211,153,.08));
-  border:1px solid rgba(79,124,255,.10);
-  display:grid;place-items:center;
-  transition:transform .35s var(--ease-spring),background var(--transition-med) ease,border-color var(--transition-med) ease;
-}
+.svc-icon-col{display:grid;place-items:center;padding:24px 0}
+.svc-icon{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,rgba(79,124,255,.08),rgba(52,211,153,.08));border:1px solid rgba(79,124,255,.10);display:grid;place-items:center;transition:transform .35s var(--ease-spring),background var(--transition-med) ease,border-color var(--transition-med) ease}
 .svc-card:hover .svc-icon{transform:scale(1.1) rotate(-4deg)}
-
 .svc-body{padding:22px 22px 22px 0}
 .svc-body h3{font-size:16px;font-weight:800;margin-bottom:6px;display:flex;align-items:center;gap:8px}
 .svc-body p{font-size:14px;color:var(--muted);line-height:1.7}
-
 .svc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
-.svc-tag{
-  font-size:11px;padding:4px 10px;border-radius:999px;
-  background:rgba(79,124,255,.06);border:1px solid rgba(79,124,255,.10);
-  color:var(--accent);font-weight:600;
-  transition:transform .2s ease,background var(--transition-med) ease,border-color var(--transition-med) ease;
-}
+.svc-tag{font-size:11px;padding:4px 10px;border-radius:999px;background:rgba(79,124,255,.06);border:1px solid rgba(79,124,255,.10);color:var(--accent);font-weight:600;transition:transform .2s ease,background var(--transition-med) ease,border-color var(--transition-med) ease}
 .svc-tag:hover{transform:translateY(-1px)}
+.svc-label{font-size:11px;font-weight:700;padding:3px 8px;border-radius:6px;background:linear-gradient(135deg,rgba(79,124,255,.10),rgba(52,211,153,.08));color:var(--accent);letter-spacing:.03em}
 
-/* Label badge on card */
-.svc-label{
-  font-size:11px;font-weight:700;padding:3px 8px;border-radius:6px;
-  background:linear-gradient(135deg,rgba(79,124,255,.10),rgba(52,211,153,.08));
-  color:var(--accent);letter-spacing:.03em;
-}
-
-/* ---- Also Section (additional services) ---- */
+/* ---- Also Section ---- */
 .also-grid{display:grid;gap:0}
-.also-item{
-  display:grid;grid-template-columns:40px 1fr;gap:14px;
-  padding:14px 6px;border-bottom:1px solid var(--line-subtle);
-  transition:background .2s ease,border-color var(--transition-med) ease;
-}
+.also-item{display:grid;grid-template-columns:40px 1fr;gap:14px;padding:14px 6px;border-bottom:1px solid var(--line-subtle);transition:background .2s ease,border-color var(--transition-med) ease}
 .also-item:last-child{border-bottom:none}
 .also-item:hover{background:rgba(255,255,255,.3);border-radius:12px;margin:0 -6px;padding:14px 12px}
-
-.also-icon{
-  width:36px;height:36px;border-radius:10px;
-  background:linear-gradient(135deg,rgba(79,124,255,.08),rgba(52,211,153,.08));
-  border:1px solid rgba(79,124,255,.10);
-  display:grid;place-items:center;
-  transition:transform .3s var(--ease-spring);
-}
+.also-icon{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,rgba(79,124,255,.08),rgba(52,211,153,.08));border:1px solid rgba(79,124,255,.10);display:grid;place-items:center;transition:transform .3s var(--ease-spring)}
 .also-item:hover .also-icon{transform:scale(1.08) rotate(-3deg)}
 .also-content h3{font-size:14px;font-weight:700;margin-bottom:2px}
 .also-content p{font-size:13px;color:var(--muted)}
 
 /* ---- Scope Section ---- */
 .scope-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-
-.scope-card{
-  border-radius:var(--radius);padding:20px;
-  position:relative;overflow:hidden;
-}
-.scope-yes{
-  border:1px solid rgba(52,211,153,.15);
-  background:rgba(52,211,153,.04);
-}
-.scope-no{
-  border:1px solid rgba(239,68,68,.12);
-  background:rgba(239,68,68,.03);
-}
-
+.scope-card{border-radius:var(--radius);padding:20px;position:relative;overflow:hidden}
+.scope-yes{border:1px solid rgba(52,211,153,.15);background:rgba(52,211,153,.04)}
+.scope-no{border:1px solid rgba(239,68,68,.12);background:rgba(239,68,68,.03)}
 .scope-card h3{font-size:15px;font-weight:800;margin-bottom:10px;display:flex;align-items:center;gap:8px}
-.scope-card h3 .scope-badge{
-  font-size:11px;padding:3px 8px;border-radius:6px;font-weight:700;
-}
+.scope-card h3 .scope-badge{font-size:11px;padding:3px 8px;border-radius:6px;font-weight:700}
 .scope-yes h3 .scope-badge{background:rgba(52,211,153,.12);color:#059669}
 .scope-no h3 .scope-badge{background:rgba(239,68,68,.10);color:#dc2626}
-
 .scope-list{list-style:none;padding:0}
-.scope-list li{
-  font-size:13px;color:var(--muted);padding:5px 0;
-  display:flex;align-items:flex-start;gap:8px;line-height:1.6;
-}
-.scope-list li::before{
-  content:'';flex-shrink:0;width:18px;height:18px;margin-top:2px;
-  border-radius:50%;display:grid;place-items:center;
-  font-size:11px;font-weight:800;
-}
-.scope-yes .scope-list li::before{
-  content:'✓';background:rgba(52,211,153,.12);color:#059669;
-}
-.scope-no .scope-list li::before{
-  content:'×';background:rgba(239,68,68,.10);color:#dc2626;
-}
+.scope-list li{font-size:13px;color:var(--muted);padding:5px 0;display:flex;align-items:flex-start;gap:8px;line-height:1.6}
+.scope-list li::before{content:'';flex-shrink:0;width:18px;height:18px;margin-top:2px;border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:800}
+.scope-yes .scope-list li::before{content:'✓';background:rgba(52,211,153,.12);color:#059669}
+.scope-no .scope-list li::before{content:'×';background:rgba(239,68,68,.10);color:#dc2626}
 
 /* FAQ */
 .faq-list{display:grid;gap:0}
@@ -295,6 +226,28 @@ footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--line-subtle);
 .cta-banner p{position:relative;z-index:1}
 .cta-banner .cta{position:relative;z-index:1;justify-content:center}
 
+/* Hamburger Button */
+.hamburger{display:none;width:38px;height:38px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.5);cursor:pointer;flex-shrink:0;position:relative;transition:all var(--transition-fast) ease}
+.hamburger:hover{transform:scale(1.06);border-color:var(--accent)}.hamburger:active{transform:scale(.95)}
+.hamburger span{display:block;position:absolute;left:50%;top:50%;width:16px;height:2px;border-radius:2px;background:var(--text);transition:transform .3s var(--ease-spring),opacity .2s ease}
+.hamburger span:nth-child(1){transform:translate(-50%,calc(-50% - 4px))}
+.hamburger span:nth-child(2){transform:translate(-50%,-50%)}
+.hamburger span:nth-child(3){transform:translate(-50%,calc(-50% + 4px))}
+.hamburger.open span:nth-child(1){transform:translate(-50%,-50%) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0;transform:translate(-50%,-50%) scaleX(0)}
+.hamburger.open span:nth-child(3){transform:translate(-50%,-50%) rotate(-45deg)}
+[data-theme="dark"] .hamburger{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.10)}
+[data-theme="dark"] .hamburger span{background:var(--text)}
+
+/* Mobile Menu Overlay */
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:29;background:var(--bg-solid);flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:80px 24px 40px;opacity:0;transform:translateY(-10px);transition:opacity .3s ease,transform .3s var(--ease-out-expo);pointer-events:none}
+.mobile-menu.open{display:flex;opacity:1;transform:translateY(0);pointer-events:auto}
+.mobile-menu a{display:block;width:100%;max-width:320px;padding:14px 20px;border-radius:var(--radius-sm);font-size:15px;font-weight:600;color:var(--text);text-align:center;border:1px solid var(--line-subtle);background:var(--surface);transition:all .2s ease}
+.mobile-menu a:hover,.mobile-menu a.active{border-color:var(--accent);background:rgba(79,124,255,.06);color:var(--accent)}
+[data-theme="dark"] .mobile-menu{background:var(--bg-solid)}
+[data-theme="dark"] .mobile-menu a{background:var(--surface);border-color:var(--line)}
+[data-theme="dark"] .mobile-menu a:hover,[data-theme="dark"] .mobile-menu a.active{border-color:var(--accent);background:rgba(79,124,255,.08)}
+
 /* ---- Responsive ---- */
 @media(max-width:900px){
   .scope-grid{grid-template-columns:1fr}
@@ -309,6 +262,7 @@ footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--line-subtle);
   .page-hero{padding:24px 18px}
   .btn{width:100%}
   nav{display:none}
+  .hamburger{display:block}
   .scroll-top{bottom:16px;right:16px}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.orb{animation:none}}
@@ -335,11 +289,26 @@ footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--line-subtle);
       <a href="about.html">プロフィール</a>
       <a href="contact.html">連絡</a>
     </nav>
-    <button class="theme-toggle" id="themeToggle" aria-label="テーマ切替" title="ダーク / ライト切替">
-      <svg class="icon-sun" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-      <svg class="icon-moon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-    </button>
+    <div style="display:flex;gap:8px;align-items:center;">
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+      <button class="theme-toggle" id="themeToggle" aria-label="テーマ切替" title="ダーク / ライト切替">
+        <svg class="icon-sun" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg class="icon-moon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+    </div>
   </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">トップ</a>
+    <a href="works.html">制作例</a>
+    <a class="active" href="services.html">できること</a>
+    <a href="process.html">制作の流れ</a>
+    <a href="about.html">プロフィール</a>
+    <a href="contact.html">連絡</a>
+  </div>
 
   <main>
 
@@ -725,6 +694,30 @@ document.querySelectorAll('.btn').forEach(btn => {
     this.appendChild(span); span.addEventListener('animationend', () => span.remove());
   });
 });
+
+/* ---- Mobile Hamburger Menu ---- */
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+if (hamburger && mobileMenu) {
+  hamburger.addEventListener('click', () => {
+    const isOpen = hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    if (isOpen) {
+      mobileMenu.querySelectorAll('a').forEach((a, i) => {
+        a.style.animation = 'fadeUp .35s ease ' + (i * .06) + 's both';
+      });
+    }
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+}
 </script>
 </body>
 </html>
