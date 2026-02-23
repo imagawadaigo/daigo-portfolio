@@ -5,6 +5,55 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>今川大悟 | Web制作・資料作成（クラウドワークス）</title>
 <meta name="description" content="飲食店・個人事業主・プロフィール用途など、目的に合わせたWebページを制作します。ヒアリングで方向性を整理し、構成設計から丁寧に対応。原則24時間以内に返信します。">
+
+<!-- ===== SEO追加ここから ===== -->
+
+<!-- 正規URL -->
+<link rel="canonical" href="https://imagawadaigo.github.io/daigo-portfolio/index.html">
+
+<!-- Google Search Console 所有権確認用（★ 実際の値に差し替えてください） -->
+<!-- <meta name="google-site-verification" content="ここにSearch Consoleで表示された値を貼る"> -->
+
+<!-- OGP（Facebook / LINE / 一般SNS） -->
+<meta property="og:title" content="今川大悟 | Web制作・資料作成">
+<meta property="og:description" content="飲食店・個人事業主向けにWebページを制作。ヒアリングから構成設計まで丁寧に対応します。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://imagawadaigo.github.io/daigo-portfolio/">
+<meta property="og:image" content="https://imagawadaigo.github.io/daigo-portfolio/assets/img/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="今川大悟 Web制作">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="今川大悟 | Web制作・資料作成">
+<meta name="twitter:description" content="飲食店・個人事業主向けにWebページを制作。ヒアリングから構成設計まで丁寧に対応します。">
+<meta name="twitter:image" content="https://imagawadaigo.github.io/daigo-portfolio/assets/img/ogp.png">
+
+<!-- 構造化データ（JSON-LD） -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "今川大悟 Web制作",
+  "url": "https://imagawadaigo.github.io/daigo-portfolio/",
+  "description": "飲食店・個人事業主向けのWeb制作・資料作成サービス。ヒアリングから構成設計まで丁寧に対応。",
+  "provider": {
+    "@type": "Person",
+    "name": "今川大悟",
+    "url": "https://imagawadaigo.github.io/daigo-portfolio/about.html"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "JP"
+  },
+  "serviceType": ["Web制作", "LP制作", "資料作成", "構成設計"]
+}
+</script>
+
+<!-- ===== SEO追加ここまで ===== -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Noto+Sans+JP:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
@@ -880,14 +929,14 @@ footer {
 <div class="scroll-progress" id="scrollProgress"></div>
 
 <!-- Background effects -->
-<div class="bg-canvas">
+<div class="bg-canvas" aria-hidden="true">
   <div class="orb orb--a"></div>
   <div class="orb orb--b"></div>
   <div class="orb orb--c"></div>
 </div>
-<div class="grain"></div>
-<div class="particles" id="particles"></div>
-<div class="cursor-glow" id="cursorGlow"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="particles" id="particles" aria-hidden="true"></div>
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 
 <div class="wrap">
 
@@ -896,7 +945,7 @@ footer {
       <span class="dot" aria-hidden="true"></span>
       <span>今川大悟</span>
     </div>
-    <nav>
+    <nav aria-label="メインナビゲーション">
       <a class="active" href="index.html">トップ</a>
       <a href="works.html">制作例</a>
       <a href="services.html">できること</a>
@@ -920,7 +969,7 @@ footer {
   </header>
 
   <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="モバイルメニュー">
     <a class="active" href="index.html">トップ</a>
     <a href="works.html">制作例</a>
     <a href="services.html">できること</a>
@@ -956,7 +1005,7 @@ footer {
 
         <div class="hero-media">
           <div class="profile-ring">
-            <img class="profile-img" src="assets/img/profile.jpg.png" alt="今川大悟のプロフィール写真">
+            <img class="profile-img" src="assets/img/profile.jpg.png" alt="今川大悟のプロフィール写真" width="220" height="220" loading="eager">
           </div>
           <div class="mini-grid">
             <div class="kpi">
