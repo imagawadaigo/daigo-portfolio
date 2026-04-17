@@ -1,0 +1,8 @@
+---
+layout: none
+permalink: /.well-known/security.txt
+sitemap: false
+---
+Contact: https://imagawadaigo.github.io/daigo-portfolio/contact.html
+Preferred-Languages: ja, en
+Canonical: https://imagawadaigo.github.io/daigo-portfolio/.well-known/security.txt

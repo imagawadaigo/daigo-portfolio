@@ -2,13 +2,22 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#ffffff">
+<meta name="color-scheme" content="light">
+<meta name="format-detection" content="telephone=no,address=no,email=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+{%- comment -%} Content Security Policy (static site, GitHub Pages) {%- endcomment -%}
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self'; connect-src 'self'; frame-ancestors 'none'; form-action 'self' https://script.google.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="permissions-policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()">
 
 <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 <meta name="description" content="{{ page.description | default: site.description }}">
+<meta name="author" content="{{ site.author }}">
 
 <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
 
-{% if page.noindex %}<meta name="robots" content="noindex,nofollow">{% endif %}
+{% if page.noindex %}<meta name="robots" content="noindex,nofollow">{% else %}<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">{% endif %}
 
 <meta name="google-site-verification" content="SmCSO8jRoovedOxzQwAallURRuMJZAoaNwFhObeOWxU">
 
@@ -29,12 +38,60 @@
 
 <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
 <link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
+<link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+<link rel="preload" as="style" href="{{ '/assets/css/style.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
+{%- comment -%} Organization + WebSite JSON-LD (global) {%- endcomment -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "{{ site.url }}{{ site.baseurl }}/#website",
+      "url": "{{ site.url }}{{ site.baseurl }}/",
+      "name": "{{ site.title }}",
+      "description": "{{ site.description }}",
+      "inLanguage": "ja-JP",
+      "publisher": { "@id": "{{ site.url }}{{ site.baseurl }}/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "{{ site.url }}{{ site.baseurl }}/#person",
+      "name": "今川大悟",
+      "alternateName": "Daigo Imagawa",
+      "url": "{{ site.url }}{{ site.baseurl }}/about.html",
+      "image": "{{ site.url }}{{ site.baseurl }}/assets/img/profile.jpg",
+      "sameAs": [
+        "https://github.com/imagawadaigo",
+        "https://crowdworks.jp/public/employees/6829155",
+        "https://www.facebook.com/share/1CJyYa1E9L/"
+      ]
+    }
+  ]
+}
+</script>
+
+{%- comment -%} BreadcrumbList (auto) {%- endcomment -%}
+{% unless page.url == '/' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "トップ", "item": "{{ site.url }}{{ site.baseurl }}/" },
+    { "@type": "ListItem", "position": 2, "name": "{{ page.title }}", "item": "{{ page.url | absolute_url }}" }
+  ]
+}
+</script>
+{% endunless %}
 
 {% if page.jsonld %}{{ page.jsonld }}{% endif %}
 </head>

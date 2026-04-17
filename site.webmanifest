@@ -1,0 +1,19 @@
+---
+layout: none
+permalink: /site.webmanifest
+sitemap: false
+---
+{
+  "name": "今川大悟 | Web制作・資料作成",
+  "short_name": "今川大悟",
+  "description": "飲食店・個人事業主向けのWeb制作と資料作成。",
+  "start_url": "/daigo-portfolio/",
+  "scope": "/daigo-portfolio/",
+  "display": "browser",
+  "background_color": "#fafaf8",
+  "theme_color": "#0f4c81",
+  "lang": "ja",
+  "icons": [
+    { "src": "/daigo-portfolio/assets/img/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
