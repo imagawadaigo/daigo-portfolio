@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Web制作・資料作成
-description: 飲食店・個人事業主向けのWeb制作と資料作成。ヒアリングから構成設計まで、目的が伝わる形に整えます。15件の納品実績と原則24時間以内の返信。
+title: Web制作・LP制作
+description: 飲食店・個人事業主向けのWeb制作・LP制作。WordPress・GitHub Pages・Vercel対応。ヒアリングから構成設計まで、納品実績15件・返信24h以内。
 permalink: /
 jsonld: |
   <script type="application/ld+json">
@@ -10,44 +10,45 @@ jsonld: |
     "@type": "ProfessionalService",
     "name": "今川大悟 Web制作",
     "url": "https://imagawadaigo.github.io/daigo-portfolio/",
-    "description": "飲食店・個人事業主向けのWeb制作・資料作成。ヒアリングから構成設計まで対応。",
+    "description": "飲食店・個人事業主向けのWeb制作・LP制作。WordPress・GitHub Pages・Vercel対応。",
     "provider": {
       "@type": "Person",
       "name": "今川大悟",
       "url": "https://imagawadaigo.github.io/daigo-portfolio/about.html"
     },
     "areaServed": { "@type": "Country", "name": "JP" },
-    "serviceType": ["Web制作", "LP制作", "資料作成", "構成設計"]
+    "serviceType": ["Web制作","LP制作","WordPress構築","GitHub Pages","Vercel"]
   }
   </script>
 ---
 
 <div class="container">
 
+  <!-- Hero -->
   <section class="hero">
     <div class="hero__grid">
       <div>
-        <span class="hero__eyebrow">Web制作・資料作成</span>
-        <h1 class="hero__title"><em>ヒアリング</em>から設計まで、<br>伝わるWebを制作します。</h1>
+        <span class="hero__badge">Web制作・LP制作 — フリーランス</span>
+        <h1 class="hero__title"><em>伝わる</em>Webを、<br>ヒアリングから設計します。</h1>
         <p class="hero__lead">
-          飲食店・個人事業主・フリーランスの方向けに、目的と読み手に合わせたWebページを制作します。
-          自分自身でも事業を運営しているからこそ、受け手ではなく「伝える側」の視点で構成を設計します。
+          飲食店・個人事業主向けに、店舗サイト・LP・プロフィールサイトを制作します。
+          WordPress・GitHub Pages・Vercel に対応。構成設計から納品まで一貫して担当します。
         </p>
 
-        <dl class="hero__meta">
-          <div class="hero__meta-item">
-            <dt class="hero__meta-label">納品実績</dt>
-            <dd class="hero__meta-value">15件</dd>
+        <div class="hero__kpi" role="list" aria-label="実績数字">
+          <div class="hero__kpi-item" role="listitem">
+            <div class="hero__kpi-num">15<span style="font-size:1rem;font-weight:500;">件</span></div>
+            <div class="hero__kpi-label">Web制作 納品実績</div>
           </div>
-          <div class="hero__meta-item">
-            <dt class="hero__meta-label">平均返信</dt>
-            <dd class="hero__meta-value">24時間以内</dd>
+          <div class="hero__kpi-item" role="listitem">
+            <div class="hero__kpi-num">24<span style="font-size:1rem;font-weight:500;">h</span></div>
+            <div class="hero__kpi-label">平均返信時間（原則以内）</div>
           </div>
-          <div class="hero__meta-item">
-            <dt class="hero__meta-label">満足度</dt>
-            <dd class="hero__meta-value">80%</dd>
+          <div class="hero__kpi-item" role="listitem">
+            <div class="hero__kpi-num">80<span style="font-size:1rem;font-weight:500;">%</span></div>
+            <div class="hero__kpi-label">完了後アンケート 満足度</div>
           </div>
-        </dl>
+        </div>
 
         <div class="hero__cta">
           <a class="btn btn--primary" target="_blank" rel="noopener noreferrer"
@@ -67,66 +68,166 @@ jsonld: |
     </div>
   </section>
 
+  <!-- スキルストリップ -->
+  <div class="skill-strip">
+    <span class="skill-strip__label">対応スキル</span>
+    <span class="skill-tag skill-tag--primary">HTML / CSS / JS</span>
+    <span class="skill-tag skill-tag--primary">WordPress</span>
+    <span class="skill-tag skill-tag--primary">LP制作</span>
+    <span class="skill-tag skill-tag--primary">店舗サイト</span>
+    <span class="skill-tag">GitHub Pages</span>
+    <span class="skill-tag">Vercel</span>
+    <span class="skill-tag">SEO設計</span>
+    <span class="skill-tag">レスポンシブ対応</span>
+    <span class="skill-tag">Google Analytics</span>
+  </div>
+
+  <!-- できること -->
   <section class="section" aria-labelledby="services-title">
     <header class="section__header">
       <span class="section__eyebrow">Services</span>
       <h2 class="section__title" id="services-title">できること</h2>
-      <p class="section__lead">店舗サイト・LP・プロフィールサイトなど、目的に合わせて構成から設計します。文章・営業資料の整理もまとめてご相談いただけます。</p>
     </header>
 
     <div class="card-grid">
       <article class="card feature">
-        <h3 class="feature__title">Web制作</h3>
-        <p class="feature__body">店舗サイト・LP・プロフィールサイト。GitHub Pages / Vercel を使った軽量構成での納品が中心です。</p>
+        <div class="feature__icon" aria-hidden="true">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <h3 class="feature__title">Webサイト・LP制作</h3>
+        <p class="feature__body">飲食店・美容室・教室など店舗系から、個人事業主のプロフィールサイト・サービスLPまで対応。WordPress構築と、GitHub Pages / Vercel を使った静的サイトどちらも制作できます。</p>
+        <ul class="tag-list mt-4">
+          <li class="tag">店舗サイト</li><li class="tag">LP</li><li class="tag">プロフィール</li><li class="tag">WordPress</li>
+        </ul>
       </article>
+
       <article class="card feature">
-        <h3 class="feature__title">資料作成</h3>
-        <p class="feature__body">営業資料・サービス紹介・提案書。伝える相手と目的に沿って、構成から作ります。</p>
+        <div class="feature__icon" aria-hidden="true">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <h3 class="feature__title">構成設計・ライティング</h3>
+        <p class="feature__body">「何をどの順番で伝えるか」から設計します。写真や文章がない状態でも、ヒアリングで内容を整理しながら進められます。サービス説明文・自己紹介文の作成もお任せください。</p>
+        <ul class="tag-list mt-4">
+          <li class="tag">構成設計</li><li class="tag">文章作成</li><li class="tag">自己紹介文</li>
+        </ul>
       </article>
+
       <article class="card feature">
-        <h3 class="feature__title">文章整理・構成設計</h3>
-        <p class="feature__body">「言いたいことはあるけど形にならない」段階から、ヒアリングで言語化のお手伝いをします。</p>
+        <div class="feature__icon" aria-hidden="true">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h3 class="feature__title">公開・保守サポート</h3>
+        <p class="feature__body">制作後のドメイン設定・サーバーアップロード・デプロイまで対応します。納品後1ヶ月は軽微な修正に無料で対応。WordPressの場合は管理画面から自分で更新できる形で納品します。</p>
+        <ul class="tag-list mt-4">
+          <li class="tag">ドメイン設定</li><li class="tag">公開サポート</li><li class="tag">修正対応</li>
+        </ul>
       </article>
+    </div>
+
+    <div style="margin-top:20px;padding:16px 20px;background:var(--bg-elev);border:1px solid var(--line);border-radius:var(--radius);font-size:0.9375rem;color:var(--text-muted);">
+      <strong style="color:var(--text);">料金目安：</strong>LP1ページ 3〜8万円、店舗サイト（3〜5P）5〜15万円。お見積もりは無料です。
     </div>
   </section>
 
+  <!-- 制作の流れ -->
   <section class="section" aria-labelledby="process-title">
     <header class="section__header">
       <span class="section__eyebrow">Process</span>
       <h2 class="section__title" id="process-title">制作の流れ</h2>
-      <p class="section__lead">ヒアリングで方向性を揃えてから、短い周期で形にして確認します。ズレが出たら早い段階で調整できる進め方です。</p>
+      <p class="section__lead">全体の目安は1〜2週間。ヒアリングで方向性を固めてから制作に入るので、「完成してみたら違った」が起きにくい進め方です。</p>
     </header>
 
     <ol class="steps">
       <li class="step">
         <h3 class="step__title">ヒアリング</h3>
-        <p class="step__body">目的・ターゲット・素材・希望納期を確認します。</p>
+        <p class="step__body">目的・ターゲット・素材・希望納期を確認します。何も決まっていない段階からでも大丈夫です。</p>
       </li>
       <li class="step">
         <h3 class="step__title">構成提案</h3>
-        <p class="step__body">見出し・順番・文章の方向性をまず紙で整理します。</p>
+        <p class="step__body">ページの見出し・順番・文章の方向性をまとめて提案。確認・合意してから制作に入ります。</p>
       </li>
       <li class="step">
         <h3 class="step__title">初稿提出</h3>
-        <p class="step__body">形にして早めにお見せし、ズレを短距離で調整します。</p>
+        <p class="step__body">実際のページとして早めにお見せします。イメージのズレを小さいうちに調整します。</p>
       </li>
       <li class="step">
         <h3 class="step__title">修正・納品</h3>
-        <p class="step__body">細部を整えて納品。公開までのサポートが必要な場合も対応します。</p>
+        <p class="step__body">2〜3回の修正で仕上げ。公開作業が必要な場合もサポートします。</p>
       </li>
     </ol>
+
+    <p style="margin-top:16px;font-size:var(--step-s);color:var(--text-muted);">
+      メッセージは原則24時間以内に返信します。お急ぎの場合はご相談ください。
+      <a href="{{ '/process.html' | relative_url }}" style="color:var(--accent);">詳細な流れ・よくある質問はこちら →</a>
+    </p>
   </section>
 
+  <!-- 制作例プレビュー -->
+  <section class="section" aria-labelledby="works-preview-title">
+    <header class="section__header">
+      <span class="section__eyebrow">Works</span>
+      <h2 class="section__title" id="works-preview-title">制作例（一部）</h2>
+      <p class="section__lead">架空店舗・サービスを想定したサンプル作例と、自社開発プロダクトを掲載しています。</p>
+    </header>
+
+    <div class="card-grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr));">
+      <a class="card" href="{{ '/izakaya-lp.html' | relative_url }}" target="_blank" rel="noopener noreferrer"
+         style="display:block;padding:0;overflow:hidden;transition:transform 0.15s,border-color 0.15s;">
+        <div style="height:120px;background:#1a1410;display:flex;align-items:center;justify-content:center;">
+          <span style="color:#e8a838;font-weight:700;font-size:1.1rem;letter-spacing:0.04em;">炭火と旬 よりみち</span>
+        </div>
+        <div style="padding:16px 20px;">
+          <span style="font-size:0.75rem;color:var(--accent);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;">LP / 飲食</span>
+          <p style="margin-top:4px;font-size:0.9375rem;font-weight:700;">和食居酒屋LP</p>
+          <p style="margin-top:4px;font-size:0.875rem;color:var(--text-muted);">ダーク基調・タブ切り替えメニュー実装</p>
+        </div>
+      </a>
+
+      <a class="card" href="{{ '/bakery-cafe.html' | relative_url }}" target="_blank" rel="noopener noreferrer"
+         style="display:block;padding:0;overflow:hidden;transition:transform 0.15s,border-color 0.15s;">
+        <div style="height:120px;background:#f0e4d0;display:flex;align-items:center;justify-content:center;">
+          <span style="color:#7c5e3c;font-weight:700;font-size:1.1rem;">粉とひだまり</span>
+        </div>
+        <div style="padding:16px 20px;">
+          <span style="font-size:0.75rem;color:var(--accent);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;">店舗 / カフェ</span>
+          <p style="margin-top:4px;font-size:0.9375rem;font-weight:700;">ベーカリーカフェ店舗サイト</p>
+          <p style="margin-top:4px;font-size:0.875rem;color:var(--text-muted);">温かみのある配色・メニュー・アクセス掲載</p>
+        </div>
+      </a>
+
+      <a class="card" href="{{ '/construction.html' | relative_url }}" target="_blank" rel="noopener noreferrer"
+         style="display:block;padding:0;overflow:hidden;transition:transform 0.15s,border-color 0.15s;">
+        <div style="height:120px;background:#1f2d4a;display:flex;align-items:center;justify-content:center;">
+          <span style="color:#fff;font-weight:700;font-size:1.1rem;">丸正建設株式会社</span>
+        </div>
+        <div style="padding:16px 20px;">
+          <span style="font-size:0.75rem;color:var(--accent);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;">コーポレート / 建設</span>
+          <p style="margin-top:4px;font-size:0.9375rem;font-weight:700;">コーポレートサイト</p>
+          <p style="margin-top:4px;font-size:0.875rem;color:var(--text-muted);">ネイビー基調・実績・採用情報まとめ</p>
+        </div>
+      </a>
+    </div>
+
+    <div style="margin-top:20px;text-align:right;">
+      <a class="btn" href="{{ '/works.html' | relative_url }}">制作例をすべて見る →</a>
+    </div>
+  </section>
+
+  <!-- CTA -->
   <section class="cta-banner" aria-labelledby="cta-title">
-    <h2 class="cta-banner__title" id="cta-title">ご相談は24時間以内に返信します</h2>
-    <p class="cta-banner__body">「こんなこと頼めるかな」程度のご相談から歓迎です。相談内容・予算感・希望納期が分かればすぐ進められます。</p>
+    <h2 class="cta-banner__title" id="cta-title">まずはご相談ください</h2>
+    <p class="cta-banner__body">「こんな感じで作ってほしい」「予算が合うか分からない」——どの段階でもお気軽にどうぞ。相談・見積もりは無料です。</p>
     <div class="cta-banner__actions">
       <a class="btn btn--primary" target="_blank" rel="noopener noreferrer"
          href="https://script.google.com/macros/s/AKfycbwOxPCjVw3v3Uq_KyBdCAxelWmyv54x2AjKVh2bku5fH9iC4zSmc5frJNfPBwme3lyDRw/exec">
         相談フォームを開く
       </a>
-      <a class="btn" href="{{ '/contact.html' | relative_url }}">お問い合わせページ</a>
+      <a class="btn btn--ghost" href="{{ '/contact.html' | relative_url }}">お問い合わせページ</a>
     </div>
+    <p style="margin-top:16px;font-size:0.875rem;color:rgba(255,255,255,0.7);">
+      クラウドワークス経由でも承ります —
+      <a href="https://crowdworks.jp/public/employees/6829155?ref=share_url_wkprofile" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.9);text-decoration:underline;">プロフィールを見る →</a>
+    </p>
   </section>
 
 </div>
