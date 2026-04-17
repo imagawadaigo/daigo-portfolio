@@ -1,8 +1,14 @@
+---
+layout: none
+permalink: /construction.html
+sitemap: false
+---
 <!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
 <title>丸正建設株式会社｜名古屋の総合建設業</title>
 <meta name="description" content="愛知県名古屋市の総合建設会社。住宅・商業施設・公共工事まで、地域に根ざした確かな施工で50年。安全と品質を第一に、街づくりに貢献します。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -198,9 +204,18 @@ body{font-family:var(--font-body);color:var(--text);background:var(--bg);line-he
 
 /* Scroll progress */
 .scroll-progress{position:fixed;top:64px;left:0;z-index:49;width:0%;height:2px;background:linear-gradient(90deg,var(--blue),var(--navy));transition:width .08s linear}
+<style>
+.sample-banner{position:sticky;top:0;z-index:9999;background:#14151a;color:#fff;padding:10px 16px;font:500 13px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.08)}
+.sample-banner__text{opacity:.85}
+.sample-banner__back{color:#fff;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.sample-banner__back:hover{opacity:.8}
 </style>
 </head>
 <body>
+<div class="sample-banner" role="note">
+  <span class="sample-banner__text">これは架空企業を想定した制作サンプルです。掲載情報・リンクはすべてダミーです。</span>
+  <a class="sample-banner__back" href="/daigo-portfolio/works.html">← 制作例一覧に戻る</a>
+</div>
 
 <div class="scroll-progress" id="scrollProgress"></div>
 

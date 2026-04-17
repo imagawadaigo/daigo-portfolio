@@ -1,0 +1,21 @@
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__brand">
+      <span class="site-footer__name">今川大悟</span>
+      <span class="site-footer__tagline">Web制作・資料作成</span>
+    </div>
+    <nav class="site-footer__nav" aria-label="フッターナビゲーション">
+      <ul>
+        <li><a href="{{ '/' | relative_url }}">トップ</a></li>
+        <li><a href="{{ '/works.html' | relative_url }}">制作例</a></li>
+        <li><a href="{{ '/services.html' | relative_url }}">できること</a></li>
+        <li><a href="{{ '/process.html' | relative_url }}">制作の流れ</a></li>
+        <li><a href="{{ '/about.html' | relative_url }}">プロフィール</a></li>
+        <li><a href="{{ '/contact.html' | relative_url }}">お問い合わせ</a></li>
+      </ul>
+    </nav>
+    <p class="site-footer__copy">&copy; <span id="footer-year"></span> Daigo Imagawa</p>
+  </div>
+</footer>
+
+<script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>

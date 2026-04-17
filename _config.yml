@@ -1,0 +1,39 @@
+title: 今川大悟 | Web制作・資料作成
+description: 飲食店・個人事業主向けのWeb制作と資料作成。ヒアリングから構成設計まで、目的が伝わる形に整えます。
+url: https://imagawadaigo.github.io
+baseurl: /daigo-portfolio
+author: 今川大悟
+
+permalink: /:basename.html
+
+include:
+  - robots.txt
+
+exclude:
+  - README.md
+  - CLAUDE.md
+  - .claude
+  - .git
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# jekyll-seo-tag defaults
+logo: /assets/img/ogp.png
+twitter:
+  card: summary_large_image
+social:
+  name: 今川大悟
+  links:
+    - https://github.com/imagawadaigo
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      image: /assets/img/ogp.png

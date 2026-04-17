@@ -1,0 +1,36 @@
+<a class="skip-link" href="#main">本文へスキップ</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="site-header__brand" href="{{ '/' | relative_url }}" aria-label="今川大悟 トップページへ">
+      <span class="site-header__mark" aria-hidden="true"></span>
+      <span class="site-header__name">今川大悟</span>
+    </a>
+
+    <nav class="site-nav" aria-label="メインナビゲーション">
+      <ul>
+        <li><a href="{{ '/' | relative_url }}"{% if page.url == '/' or page.url contains 'index.html' %} aria-current="page"{% endif %}>トップ</a></li>
+        <li><a href="{{ '/works.html' | relative_url }}"{% if page.url contains 'works' %} aria-current="page"{% endif %}>制作例</a></li>
+        <li><a href="{{ '/services.html' | relative_url }}"{% if page.url contains 'services' %} aria-current="page"{% endif %}>できること</a></li>
+        <li><a href="{{ '/process.html' | relative_url }}"{% if page.url contains 'process' %} aria-current="page"{% endif %}>制作の流れ</a></li>
+        <li><a href="{{ '/about.html' | relative_url }}"{% if page.url contains 'about' %} aria-current="page"{% endif %}>プロフィール</a></li>
+        <li><a href="{{ '/contact.html' | relative_url }}"{% if page.url contains 'contact' %} aria-current="page"{% endif %}>お問い合わせ</a></li>
+      </ul>
+    </nav>
+
+    <button class="site-nav__toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <nav class="site-nav-mobile" id="mobile-nav" aria-label="モバイルナビゲーション" hidden>
+    <ul>
+      <li><a href="{{ '/' | relative_url }}">トップ</a></li>
+      <li><a href="{{ '/works.html' | relative_url }}">制作例</a></li>
+      <li><a href="{{ '/services.html' | relative_url }}">できること</a></li>
+      <li><a href="{{ '/process.html' | relative_url }}">制作の流れ</a></li>
+      <li><a href="{{ '/about.html' | relative_url }}">プロフィール</a></li>
+      <li><a href="{{ '/contact.html' | relative_url }}">お問い合わせ</a></li>
+    </ul>
+  </nav>
+</header>

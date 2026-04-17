@@ -1,3 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /izakaya-lp.html
+Disallow: /bakery-cafe.html
+Disallow: /salon-lp.html
+Disallow: /construction.html
+
 Sitemap: https://imagawadaigo.github.io/daigo-portfolio/sitemap.xml
