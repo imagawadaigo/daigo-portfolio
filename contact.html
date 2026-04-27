@@ -1,13 +1,13 @@
 ---
 layout: default
-title: お問い合わせ
-description: Web制作・資料作成のご依頼・ご相談の窓口。相談フォーム、クラウドワークス、Facebookでの連絡に対応。原則24時間以内に返信します。
+title: 相談・お問い合わせ
+description: Web制作・LINE Bot・業務自動化のご依頼・ご相談。まずどんな課題があるか聞かせてください。相談・見積もりは無料です。
 jsonld: |
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    "name": "お問い合わせ",
+    "name": "相談・お問い合わせ",
     "url": "https://imagawadaigo.github.io/daigo-portfolio/contact.html"
   }
   </script>
@@ -18,30 +18,95 @@ jsonld: |
   <section class="section section--first">
     <header class="section__header">
       <span class="section__eyebrow">Contact</span>
-      <h1 class="section__title">お問い合わせ</h1>
-      <p class="section__lead">制作のご依頼・ご相談はお気軽にどうぞ。原則24時間以内に返信します。「まだ具体的じゃない」段階のご相談でも歓迎です。</p>
+      <h1 class="section__title">まず、課題を聞かせてください</h1>
+      <p class="section__lead">「まだ具体的じゃない」「予算が合うか分からない」—— その段階でも大丈夫です。相談・見積もりは無料です。原則24時間以内に返信します。</p>
     </header>
 
-    <div class="card contact-card">
-      <h2 class="feature__title">相談フォーム（推奨）</h2>
-      <p>制作のご依頼・ご相談はこちらから。内容を確認のうえ、原則24時間以内に返信します。</p>
-      <div class="cta-banner__actions" style="justify-content:flex-start;margin-top:20px;">
-        <a class="btn btn--primary" target="_blank" rel="noopener noreferrer"
-           href="https://script.google.com/macros/s/AKfycbwOxPCjVw3v3Uq_KyBdCAxelWmyv54x2AjKVh2bku5fH9iC4zSmc5frJNfPBwme3lyDRw/exec">
-          フォームを開く
-        </a>
-      </div>
-    </div>
+    <div class="card">
+      <form class="contact-form" id="contact-form" novalidate>
 
-    <ul class="contact-list mt-6" aria-label="その他の連絡方法">
+        <div class="form-group">
+          <label class="form-label" for="name">
+            お名前
+            <span class="form-label-note">必須</span>
+          </label>
+          <input class="form-input" type="text" id="name" name="name"
+                 placeholder="山田 太郎" required autocomplete="name">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="contact">
+            連絡先（メールアドレス）
+            <span class="form-label-note">必須</span>
+          </label>
+          <input class="form-input" type="email" id="contact" name="contact"
+                 placeholder="example@gmail.com" required autocomplete="email">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="service">
+            関心があるサービス
+            <span class="form-label-note">任意</span>
+          </label>
+          <select class="form-select" id="service" name="service">
+            <option value="">選択してください</option>
+            <option value="line_bot">LINE Bot開発（顧客対応・予約受付など）</option>
+            <option value="lp_web">Webサイト・LP制作</option>
+            <option value="automation">業務自動化・ダッシュボード構築</option>
+            <option value="mvp">MVP・システム開発</option>
+            <option value="other">その他・まだ決まっていない</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="budget">
+            予算感
+            <span class="form-label-note">任意</span>
+          </label>
+          <select class="form-select" id="budget" name="budget">
+            <option value="">選択してください</option>
+            <option value="under5">〜5万円</option>
+            <option value="5to15">5〜15万円</option>
+            <option value="15to30">15〜30万円</option>
+            <option value="over30">30万円以上</option>
+            <option value="consult">予算は相談したい</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="message">
+            どんな課題がありますか？
+            <span class="form-label-note">必須</span>
+          </label>
+          <textarea class="form-textarea" id="message" name="message"
+                    placeholder="例：問い合わせ対応に追われていて自動化したい、新しいサービスのLPを作りたい、など。どんな内容でも構いません。"
+                    required></textarea>
+        </div>
+
+        <div id="form-msg" class="form-msg" role="alert" aria-live="polite"></div>
+
+        <button class="btn btn--primary" type="submit" style="justify-self:start;">
+          送信する →
+        </button>
+
+      </form>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="alt-contact">
+    <header class="section__header">
+      <span class="section__eyebrow">Other</span>
+      <h2 class="section__title" id="alt-contact">その他の連絡方法</h2>
+    </header>
+    <ul class="contact-list" aria-label="その他の連絡方法">
       <li>
-        <strong>CrowdWorks</strong>（クラウドソーシング）
-        <p class="text-muted" style="margin-top:6px;font-size:.9375rem;">クラウドワークス経由でのご依頼も承ります。実績・評価もご確認いただけます。</p>
+        <strong>CrowdWorks</strong>
+        <p class="text-muted" style="margin-top:6px;font-size:.9375rem;">実績・評価もご確認いただけます。クラウドワークス経由でのご依頼も承ります。</p>
         <a class="btn btn--ghost" href="https://crowdworks.jp/public/employees/6829155?ref=share_url_wkprofile" target="_blank" rel="noopener noreferrer" style="margin-top:8px;padding-left:0;">プロフィールを見る →</a>
       </li>
       <li>
-        <strong>Facebook</strong>（SNS）
-        <p class="text-muted" style="margin-top:6px;font-size:.9375rem;">Messengerでもお気軽にご連絡ください。</p>
+        <strong>Facebook Messenger</strong>
+        <p class="text-muted" style="margin-top:6px;font-size:.9375rem;">Messengerからでもお気軽にどうぞ。</p>
         <a class="btn btn--ghost" href="https://www.facebook.com/share/1CJyYa1E9L/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" style="margin-top:8px;padding-left:0;">プロフィールを見る →</a>
       </li>
     </ul>
@@ -54,10 +119,48 @@ jsonld: |
     </header>
     <dl class="def-list">
       <dt>返信</dt><dd>原則24時間以内</dd>
-      <dt>対応時間</dt><dd>平日 10:00 – 20:00</dd>
+      <dt>対応時間</dt><dd>平日 10:00〜20:00</dd>
       <dt>相談料</dt><dd>無料（お見積もりまで）</dd>
-      <dt>対応範囲</dt><dd>Web制作・資料作成・構成設計</dd>
+      <dt>お断りする可能性があるもの</dt><dd>ロゴ・グラフィックデザイン、動画編集、広告運用、ネイティブアプリ開発</dd>
     </dl>
   </section>
 
 </div>
+
+<script>
+(function () {
+  var GAS_URL = 'https://script.google.com/macros/s/AKfycbwOxPCjVw3v3Uq_KyBdCAxelWmyv54x2AjKVh2bku5fH9iC4zSmc5frJNfPBwme3lyDRw/exec';
+  var form = document.getElementById('contact-form');
+  var msg  = document.getElementById('form-msg');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+
+    var btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = '送信中…';
+    msg.className = 'form-msg';
+    msg.textContent = '';
+
+    fetch(GAS_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: new FormData(form)
+    })
+    .then(function () {
+      msg.className = 'form-msg form-msg--success';
+      msg.textContent = '送信しました。24時間以内にご連絡します。';
+      form.reset();
+    })
+    .catch(function () {
+      msg.className = 'form-msg form-msg--error';
+      msg.textContent = '送信に失敗しました。wishdaigo1458@gmail.com までご連絡ください。';
+    })
+    .finally(function () {
+      btn.disabled = false;
+      btn.textContent = '送信する →';
+    });
+  });
+}());
+</script>

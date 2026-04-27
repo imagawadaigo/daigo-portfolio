@@ -1,7 +1,7 @@
 ---
 layout: default
 title: できること・料金
-description: Web制作・LP制作・LINE Bot開発・業務自動化・SaaSプロトタイプ開発に対応。WordPress・GitHub Pages・Vercel・Cloudflare Workers・Next.js・Supabase・Stripe対応。料金目安と対応範囲を掲載。
+description: LINE Bot開発・Webサイト制作・業務自動化・MVP開発の料金目安と対応範囲。相談・見積もり無料。
 jsonld: |
   <script type="application/ld+json">
   {
@@ -10,13 +10,13 @@ jsonld: |
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "サーバーやドメイン、WordPressなどの「箱」は誰が用意しますか？",
+        "name": "サーバーやドメインはどうすればいいですか？",
         "acceptedAnswer": { "@type": "Answer", "text": "ケースバイケースで対応しています。まだ何もない状態ならこちらで用意・提案できますし、すでにお持ちであればアクセス権をいただいて作業することも可能です。ヒアリング時に一緒に決めましょう。" }
       },
       {
         "@type": "Question",
-        "name": "納品はどんな形式になりますか？",
-        "acceptedAnswer": { "@type": "Answer", "text": "主に3つのパターンがあります。HTMLファイル一式をお渡し、GitHub Pages / Vercel での公開、WordPressへの構築。ご希望やご予算に合わせて提案します。" }
+        "name": "LINE Botや自動化ツールの維持費はかかりますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "Cloudflare Workers（無料プランあり）やSupabaseを使うため、小規模であれば月数百円〜数千円程度に収まることが多いです。設計段階でコスト試算もお伝えします。" }
       },
       {
         "@type": "Question",
@@ -25,8 +25,8 @@ jsonld: |
       },
       {
         "@type": "Question",
-        "name": "LINE Botや自動化ツールの維持費はかかりますか？",
-        "acceptedAnswer": { "@type": "Answer", "text": "Cloudflare Workers（無料プランあり）やSupabaseを使うため、小規模であれば月数百円〜数千円程度に収まることが多いです。設計段階でコスト試算もお伝えします。" }
+        "name": "完成までどのくらいかかりますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "LP1ページで1〜2週間、LINE Botで1〜3週間、SaaSプロトタイプで1〜2ヶ月が目安です。お急ぎの場合はスケジュールのご相談も可能です。" }
       }
     ]
   }
@@ -39,67 +39,30 @@ jsonld: |
     <header class="section__header">
       <span class="section__eyebrow">Services</span>
       <h1 class="section__title">できること・料金</h1>
-      <p class="section__lead">Webサイト制作から、LINE Bot・業務自動化・SaaSプロトタイプ開発まで対応しています。窓口は一本、相談・見積もりは無料です。</p>
+      <p class="section__lead">「こんな課題がある」という段階からご相談ください。何を作るかを一緒に整理するところから始めます。相談・見積もりは無料です。</p>
     </header>
 
-    <!-- Web制作 -->
-    <h2 style="font-size:var(--step-2);margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid var(--line);">Web制作・LP制作</h2>
+    <!-- LINE Bot / 顧客対応自動化 -->
+    <h2 class="service-category">顧客対応・業務の自動化</h2>
     <div class="card-grid">
-      <article class="card feature">
-        <h3 class="feature__title">Webサイト・LP制作</h3>
-        <p class="feature__body">飲食店・美容室・教室・個人事業主向けに、店舗サイト・LP・プロフィールサイトを制作します。ヒアリングで要件を整理し、構成設計からコーディングまで一貫して担当します。</p>
-        <ul class="tag-list mt-4">
-          <li class="tag">店舗サイト</li>
-          <li class="tag">LP</li>
-          <li class="tag">プロフィールサイト</li>
-          <li class="tag">コーポレートサイト</li>
-          <li class="tag">レスポンシブ対応</li>
-          <li class="tag">SEO設計</li>
-        </ul>
-      </article>
-
-      <article class="card feature">
-        <h3 class="feature__title">WordPress構築</h3>
-        <p class="feature__body">テーマを使ったWordPress構築に対応しています。制作後はご自身で更新・管理できる形で納品します。既存サイトのリニューアル・テーマ変更のご相談も可能です。</p>
-        <ul class="tag-list mt-4">
-          <li class="tag">WordPress</li>
-          <li class="tag">テーマカスタマイズ</li>
-          <li class="tag">管理画面での更新対応</li>
-          <li class="tag">リニューアル</li>
-        </ul>
-      </article>
-
-      <article class="card feature">
-        <h3 class="feature__title">静的サイト（GitHub Pages・Vercel）</h3>
-        <p class="feature__body">維持費を抑えたい方向けに、GitHub Pages・Vercel を使った無料・低コスト構成でのWebサイト制作が得意です。表示速度が速く、セキュリティリスクも低い構成です。</p>
-        <ul class="tag-list mt-4">
-          <li class="tag">GitHub Pages</li>
-          <li class="tag">Vercel</li>
-          <li class="tag">HTML / CSS / JS</li>
-          <li class="tag">維持費無料〜低コスト</li>
-        </ul>
-      </article>
-    </div>
-
-    <!-- 開発・自動化 -->
-    <h2 style="font-size:var(--step-2);margin-top:56px;margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid var(--line);">開発・自動化・システム構築</h2>
-    <div class="card-grid">
-      <article class="card feature" style="border-top:3px solid var(--accent);">
+      <article class="card">
+        <p class="problem-q">「問い合わせ対応を自動化したい」「予約をLINEで受け付けたい」</p>
         <h3 class="feature__title">LINE Bot開発</h3>
-        <p class="feature__body">自動応答・予約受付・社内通知・習慣管理など、業務や集客に使えるLINE Botを構築します。Cloudflare Workers + LINE Messaging APIで、低コストかつ高速に本番稼働まで持っていきます。AI（Claude / Gemini）との連携も可能です。</p>
+        <p class="feature__body">自動応答・予約受付・FAQ Bot・一斉配信など、顧客対応をLINEで仕組み化します。Cloudflare Workers + LINE Messaging APIで低コストに本番稼働まで。AI（Claude / Gemini）との連携も可能です。</p>
         <ul class="tag-list mt-4">
           <li class="tag">Cloudflare Workers</li>
           <li class="tag">LINE Messaging API</li>
           <li class="tag">自動応答</li>
-          <li class="tag">予約・問い合わせ</li>
+          <li class="tag">予約受付</li>
           <li class="tag">AI連携</li>
         </ul>
-        <p style="margin-top:12px;font-size:var(--step-s);color:var(--accent);font-weight:600;">¥3万〜10万（相談可）</p>
+        <p class="problem-price">¥3万〜10万（相談可）</p>
       </article>
 
-      <article class="card feature" style="border-top:3px solid var(--accent);">
-        <h3 class="feature__title">Web自動化・ダッシュボード</h3>
-        <p class="feature__body">業務フローをWebで可視化・自動化します。CSV集計・外部API連携・管理画面の構築など。手作業をなくして、判断に使えるデータを整えます。定期実行・通知まで含めて構築可能です。</p>
+      <article class="card">
+        <p class="problem-q">「手作業の集計・通知・管理を仕組み化したい」</p>
+        <h3 class="feature__title">業務自動化・ダッシュボード</h3>
+        <p class="feature__body">CSV集計・外部API連携・管理画面・定期実行・通知の自動化まで対応。手作業をなくして、判断に使えるデータを整えます。</p>
         <ul class="tag-list mt-4">
           <li class="tag">Cloudflare Workers</li>
           <li class="tag">API連携</li>
@@ -107,20 +70,68 @@ jsonld: |
           <li class="tag">データ可視化</li>
           <li class="tag">定期実行</li>
         </ul>
-        <p style="margin-top:12px;font-size:var(--step-s);color:var(--accent);font-weight:600;">¥5万〜15万（相談可）</p>
+        <p class="problem-price">¥5万〜15万（相談可）</p>
+      </article>
+    </div>
+
+    <!-- Web制作 -->
+    <h2 class="service-category">Webサイト・LP制作</h2>
+    <div class="card-grid">
+      <article class="card">
+        <p class="problem-q">「商品・サービスを紹介するLPを作りたい」「店舗サイトを作りたい」</p>
+        <h3 class="feature__title">Webサイト・LP制作</h3>
+        <p class="feature__body">飲食店・美容室・教室・個人事業主向けに、店舗サイト・LP・プロフィールサイトを制作。構成設計からコーディング・公開まで一貫して担当します。</p>
+        <ul class="tag-list mt-4">
+          <li class="tag">店舗サイト</li>
+          <li class="tag">LP</li>
+          <li class="tag">レスポンシブ対応</li>
+          <li class="tag">SEO設計</li>
+        </ul>
+        <p class="problem-price">¥3万〜15万</p>
       </article>
 
-      <article class="card feature" style="border-top:3px solid var(--accent);">
-        <h3 class="feature__title">SaaSプロトタイプ開発</h3>
-        <p class="feature__body">アイデアを動くプロダクトに。認証・決済（Stripe）・AI機能まで含めてフルスタックで実装します。自分自身で法律学習SaaS「Elenco」を一人で本番運用しており、「動くものを0から作る」実績があります。</p>
+      <article class="card">
+        <p class="problem-q">「自分で更新できるサイトにしたい」</p>
+        <h3 class="feature__title">WordPress構築</h3>
+        <p class="feature__body">テーマを使ったWordPress構築に対応。制作後はご自身で更新・管理できる形で納品します。既存サイトのリニューアル・テーマ変更のご相談も可能です。</p>
+        <ul class="tag-list mt-4">
+          <li class="tag">WordPress</li>
+          <li class="tag">テーマカスタマイズ</li>
+          <li class="tag">管理画面での更新対応</li>
+          <li class="tag">リニューアル</li>
+        </ul>
+        <p class="problem-price">¥8万〜20万</p>
+      </article>
+
+      <article class="card">
+        <p class="problem-q">「維持費を抑えてWebサイトを持ちたい」</p>
+        <h3 class="feature__title">静的サイト（維持費無料〜低コスト）</h3>
+        <p class="feature__body">GitHub Pages・Vercel を使った無料・低コスト構成でのWebサイト制作が得意です。表示速度が速く、セキュリティリスクも低い構成です。</p>
+        <ul class="tag-list mt-4">
+          <li class="tag">GitHub Pages</li>
+          <li class="tag">Vercel</li>
+          <li class="tag">HTML / CSS / JS</li>
+          <li class="tag">維持費無料〜低コスト</li>
+        </ul>
+        <p class="problem-price">¥3万〜10万</p>
+      </article>
+    </div>
+
+    <!-- MVP開発 -->
+    <h2 class="service-category">プロダクト・システム開発</h2>
+    <div class="card-grid">
+      <article class="card">
+        <p class="problem-q">「新しいサービスをゼロから立ち上げたい」</p>
+        <h3 class="feature__title">MVP・プロトタイプ開発</h3>
+        <p class="feature__body">アイデアを動くプロダクトに。認証・決済（Stripe）・AI機能まで含めてフルスタックで実装します。自身で法律学習SaaS「Elenco」を本番運用しており、0→1フェーズの実装力があります。</p>
         <ul class="tag-list mt-4">
           <li class="tag">Next.js / TypeScript</li>
           <li class="tag">Supabase</li>
           <li class="tag">Stripe決済</li>
-          <li class="tag">AI機能（Claude / Gemini）</li>
+          <li class="tag">AI機能</li>
           <li class="tag">Vercel</li>
         </ul>
-        <p style="margin-top:12px;font-size:var(--step-s);color:var(--accent);font-weight:600;">¥15万〜30万（相談可）</p>
+        <p class="problem-price">¥15万〜30万（相談可）</p>
       </article>
     </div>
   </section>
@@ -130,70 +141,38 @@ jsonld: |
     <header class="section__header">
       <span class="section__eyebrow">Price</span>
       <h2 class="section__title" id="price-title">料金目安</h2>
-      <p class="section__lead">内容・ページ数・納期によって変動します。まずはご相談ください。お見積もりは無料です。</p>
+      <p class="section__lead">内容・ページ数・納期によって変動します。まずはざっくりした内容でご相談ください。</p>
     </header>
 
-    <div class="card-grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
-      <div class="card" style="border-top:3px solid var(--accent);">
-        <p style="font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);">LP（1ページ）</p>
-        <p style="font-size:var(--step-3);font-weight:700;margin-top:8px;">3〜8万円</p>
-        <p style="font-size:var(--step-s);color:var(--text-muted);margin-top:8px;">納期目安：1〜2週間</p>
+    <div class="stats" style="grid-template-columns:repeat(auto-fit,minmax(160px,1fr));">
+      <div class="stat">
+        <div class="stat__num" style="font-size:var(--step-3);">3〜8万</div>
+        <div class="stat__label">LP（1ページ）納期 1〜2週間</div>
       </div>
-      <div class="card" style="border-top:3px solid var(--accent);">
-        <p style="font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);">店舗サイト（3〜5P）</p>
-        <p style="font-size:var(--step-3);font-weight:700;margin-top:8px;">5〜15万円</p>
-        <p style="font-size:var(--step-s);color:var(--text-muted);margin-top:8px;">納期目安：2〜3週間</p>
+      <div class="stat">
+        <div class="stat__num" style="font-size:var(--step-3);">5〜15万</div>
+        <div class="stat__label">店舗サイト（3〜5P）納期 2〜3週間</div>
       </div>
-      <div class="card" style="border-top:3px solid var(--accent);">
-        <p style="font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);">LINE Bot</p>
-        <p style="font-size:var(--step-3);font-weight:700;margin-top:8px;">3〜10万円</p>
-        <p style="font-size:var(--step-s);color:var(--text-muted);margin-top:8px;">納期目安：1〜3週間</p>
+      <div class="stat">
+        <div class="stat__num" style="font-size:var(--step-3);">3〜10万</div>
+        <div class="stat__label">LINE Bot 納期 1〜3週間</div>
       </div>
-      <div class="card" style="border-top:3px solid var(--accent);">
-        <p style="font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);">Web自動化</p>
-        <p style="font-size:var(--step-3);font-weight:700;margin-top:8px;">5〜15万円</p>
-        <p style="font-size:var(--step-s);color:var(--text-muted);margin-top:8px;">納期目安：1〜3週間</p>
+      <div class="stat">
+        <div class="stat__num" style="font-size:var(--step-3);">5〜15万</div>
+        <div class="stat__label">業務自動化 納期 1〜3週間</div>
       </div>
-      <div class="card" style="border-top:3px solid var(--accent);">
-        <p style="font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);">SaaSプロトタイプ</p>
-        <p style="font-size:var(--step-3);font-weight:700;margin-top:8px;">15〜30万円</p>
-        <p style="font-size:var(--step-s);color:var(--text-muted);margin-top:8px;">納期目安：1〜2ヶ月</p>
+      <div class="stat">
+        <div class="stat__num" style="font-size:var(--step-3);">15〜30万</div>
+        <div class="stat__label">SaaSプロトタイプ 納期 1〜2ヶ月</div>
       </div>
-      <div class="card">
-        <p style="font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-subtle);">WordPress構築</p>
-        <p style="font-size:var(--step-3);font-weight:700;margin-top:8px;">8〜20万円</p>
-        <p style="font-size:var(--step-s);color:var(--text-muted);margin-top:8px;">納期目安：2〜4週間</p>
+      <div class="stat">
+        <div class="stat__num" style="font-size:var(--step-3);">8〜20万</div>
+        <div class="stat__label">WordPress構築 納期 2〜4週間</div>
       </div>
     </div>
     <p style="margin-top:14px;font-size:var(--step-s);color:var(--text-muted);">
-      ※ 上記はあくまで目安です。要件・機能数・素材の有無によって変動します。まずはざっくりした内容でご相談ください。
+      ※ あくまで目安です。要件・機能数・素材の有無によって変動します。
     </p>
-  </section>
-
-  <!-- 技術スタック -->
-  <section class="section" aria-labelledby="stack-title">
-    <header class="section__header">
-      <span class="section__eyebrow">Tech Stack</span>
-      <h2 class="section__title" id="stack-title">使用技術</h2>
-    </header>
-    <div class="card-grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));">
-      <div class="card">
-        <p style="font-size:0.75rem;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px;">Frontend</p>
-        <ul class="tag-list"><li class="tag">Next.js</li><li class="tag">TypeScript</li><li class="tag">React</li><li class="tag">Tailwind CSS</li><li class="tag">HTML / CSS / JS</li></ul>
-      </div>
-      <div class="card">
-        <p style="font-size:0.75rem;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px;">Backend / インフラ</p>
-        <ul class="tag-list"><li class="tag">Cloudflare Workers</li><li class="tag">Next.js API Routes</li><li class="tag">Node.js</li><li class="tag">Vercel</li><li class="tag">GitHub Pages</li></ul>
-      </div>
-      <div class="card">
-        <p style="font-size:0.75rem;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px;">DB / 認証 / 決済</p>
-        <ul class="tag-list"><li class="tag">Supabase (PostgreSQL)</li><li class="tag">Cloudflare D1</li><li class="tag">Cloudflare KV</li><li class="tag">Stripe</li></ul>
-      </div>
-      <div class="card">
-        <p style="font-size:0.75rem;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px;">AI / 外部API</p>
-        <ul class="tag-list"><li class="tag">Anthropic Claude API</li><li class="tag">Google Gemini API</li><li class="tag">LINE Messaging API</li><li class="tag">Resend</li></ul>
-      </div>
-    </div>
   </section>
 
   <!-- 対応範囲 -->
@@ -202,18 +181,17 @@ jsonld: |
       <span class="section__eyebrow">Scope</span>
       <h2 class="section__title" id="scope-title">対応範囲</h2>
     </header>
-
     <div class="card-grid">
       <article class="card">
         <h3 class="feature__title" style="margin-bottom:14px;">対応しているご依頼</h3>
         <ul style="display:grid;gap:8px;font-size:0.9375rem;color:var(--text-muted);">
+          <li>✓ LINE Bot（自動応答・通知・予約受付）</li>
           <li>✓ HTML / CSS / JavaScript でのWeb制作</li>
           <li>✓ WordPressテーマを使ったサイト構築</li>
           <li>✓ GitHub Pages・Vercel への公開・デプロイ</li>
           <li>✓ LP・店舗サイトの構成設計〜制作</li>
-          <li>✓ LINE Bot（自動応答・通知・予約受付）</li>
           <li>✓ 業務自動化・ダッシュボード構築</li>
-          <li>✓ WebアプリケーションのSaaS化（認証・決済・AI機能）</li>
+          <li>✓ WebアプリのSaaS化（認証・決済・AI機能）</li>
           <li>✓ レスポンシブ対応・SEO設計</li>
           <li>✓ ドメイン取得・サーバー設定のサポート</li>
         </ul>
@@ -225,9 +203,36 @@ jsonld: |
           <li>✗ 動画編集・映像制作</li>
           <li>✗ 広告運用・SNS運用代行</li>
           <li>✗ iOS / Androidのネイティブアプリ開発</li>
+          <li>✗ 大規模エンタープライズ開発</li>
         </ul>
-        <p style="margin-top:14px;font-size:var(--step-s);color:var(--text-subtle);">上記以外でも、対応できるか分からない内容はお気軽にご相談ください。</p>
+        <p style="margin-top:14px;font-size:var(--step-s);color:var(--text-subtle);">迷う場合はお気軽にご相談ください。</p>
       </article>
+    </div>
+  </section>
+
+  <!-- 技術スタック -->
+  <section class="section" aria-labelledby="stack-title">
+    <header class="section__header">
+      <span class="section__eyebrow">Tech Stack</span>
+      <h2 class="section__title" id="stack-title">使用技術</h2>
+    </header>
+    <div class="card-grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));">
+      <div class="card">
+        <p class="stack-label">Frontend</p>
+        <ul class="tag-list"><li class="tag">Next.js</li><li class="tag">TypeScript</li><li class="tag">React</li><li class="tag">Tailwind CSS</li><li class="tag">HTML / CSS / JS</li></ul>
+      </div>
+      <div class="card">
+        <p class="stack-label">Backend / インフラ</p>
+        <ul class="tag-list"><li class="tag">Cloudflare Workers</li><li class="tag">Next.js API Routes</li><li class="tag">Node.js</li><li class="tag">Vercel</li><li class="tag">GitHub Pages</li></ul>
+      </div>
+      <div class="card">
+        <p class="stack-label">DB / 認証 / 決済</p>
+        <ul class="tag-list"><li class="tag">Supabase (PostgreSQL)</li><li class="tag">Cloudflare D1</li><li class="tag">Cloudflare KV</li><li class="tag">Stripe</li></ul>
+      </div>
+      <div class="card">
+        <p class="stack-label">AI / 外部API</p>
+        <ul class="tag-list"><li class="tag">Anthropic Claude API</li><li class="tag">Google Gemini API</li><li class="tag">LINE Messaging API</li><li class="tag">Resend</li></ul>
+      </div>
     </div>
   </section>
 
@@ -237,7 +242,6 @@ jsonld: |
       <span class="section__eyebrow">FAQ</span>
       <h2 class="section__title" id="faq-title">よくある質問</h2>
     </header>
-
     <div class="card-grid" style="grid-template-columns:1fr;">
       <details class="card">
         <summary style="font-weight:700;cursor:pointer;font-size:var(--step-1);">サーバーやドメインはどうすればいいですか？</summary>
@@ -266,11 +270,8 @@ jsonld: |
     <h2 class="cta-banner__title">気になるサービスがあれば、まずご相談ください</h2>
     <p class="cta-banner__body">「これって頼めるのかな」程度でも大丈夫です。相談・見積もりは無料です。</p>
     <div class="cta-banner__actions">
-      <a class="btn btn--primary" target="_blank" rel="noopener noreferrer"
-         href="https://script.google.com/macros/s/AKfycbwOxPCjVw3v3Uq_KyBdCAxelWmyv54x2AjKVh2bku5fH9iC4zSmc5frJNfPBwme3lyDRw/exec">
-        相談フォームを開く
-      </a>
-      <a class="btn btn--ghost" href="{{ '/contact.html' | relative_url }}">お問い合わせページ</a>
+      <a class="btn btn--primary" href="{{ '/contact.html' | relative_url }}">相談フォームへ →</a>
+      <a class="btn btn--ghost" href="{{ '/works.html' | relative_url }}">制作実績を見る</a>
     </div>
   </section>
 
