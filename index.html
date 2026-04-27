@@ -1,23 +1,23 @@
 ---
 layout: default
-title: Web制作・LP制作
-description: 飲食店・個人事業主向けのWeb制作・LP制作。WordPress・GitHub Pages・Vercel対応。ヒアリングから構成設計まで、納品実績15件・返信24h以内。
+title: Web制作・LINE Bot・システム開発
+description: LP・店舗サイトの制作から、LINE Bot構築・業務自動化・SaaSプロトタイプ開発まで一貫して対応。自社プロダクトの本番運用実績あり。返信24h以内。
 permalink: /
 jsonld: |
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "今川大悟 Web制作",
+    "name": "今川大悟 Web制作・システム開発",
     "url": "https://imagawadaigo.github.io/daigo-portfolio/",
-    "description": "飲食店・個人事業主向けのWeb制作・LP制作。WordPress・GitHub Pages・Vercel対応。",
+    "description": "LP・店舗サイトの制作から、LINE Bot構築・業務自動化・SaaSプロトタイプ開発まで一貫して対応。",
     "provider": {
       "@type": "Person",
       "name": "今川大悟",
       "url": "https://imagawadaigo.github.io/daigo-portfolio/about.html"
     },
     "areaServed": { "@type": "Country", "name": "JP" },
-    "serviceType": ["Web制作","LP制作","WordPress構築","GitHub Pages","Vercel"]
+    "serviceType": ["Web制作","LP制作","LINE Bot開発","業務自動化","SaaS開発","WordPress構築"]
   }
   </script>
 ---
@@ -28,17 +28,21 @@ jsonld: |
   <section class="hero">
     <div class="hero__grid">
       <div>
-        <span class="hero__badge">Web制作・LP制作 — フリーランス</span>
-        <h1 class="hero__title"><em>伝わる</em>Webを、<br>ヒアリングから設計します。</h1>
+        <span class="hero__badge">Web制作・LINE Bot・システム開発 — フリーランス</span>
+        <h1 class="hero__title">依頼から<em>本番稼働</em>まで、<br>一人で完結させます。</h1>
         <p class="hero__lead">
-          飲食店・個人事業主向けに、店舗サイト・LP・プロフィールサイトを制作します。
-          WordPress・GitHub Pages・Vercel に対応。構成設計から納品まで一貫して担当します。
+          LP・店舗サイトの制作から、LINE Bot構築・業務自動化・SaaSプロトタイプ開発まで一貫して対応します。
+          自分自身でも複数のプロダクトを本番運用しており、「動いて使われるものを作る」実績があります。
         </p>
 
         <div class="hero__kpi" role="list" aria-label="実績数字">
           <div class="hero__kpi-item" role="listitem">
             <div class="hero__kpi-num">15<span style="font-size:1rem;font-weight:500;">件</span></div>
             <div class="hero__kpi-label">Web制作 納品実績</div>
+          </div>
+          <div class="hero__kpi-item" role="listitem">
+            <div class="hero__kpi-num">2<span style="font-size:1rem;font-weight:500;">件</span></div>
+            <div class="hero__kpi-label">本番稼働中プロダクト</div>
           </div>
           <div class="hero__kpi-item" role="listitem">
             <div class="hero__kpi-num">24<span style="font-size:1rem;font-weight:500;">h</span></div>
@@ -55,7 +59,7 @@ jsonld: |
              href="https://script.google.com/macros/s/AKfycbwOxPCjVw3v3Uq_KyBdCAxelWmyv54x2AjKVh2bku5fH9iC4zSmc5frJNfPBwme3lyDRw/exec">
             相談フォームを開く
           </a>
-          <a class="btn" href="{{ '/works.html' | relative_url }}">制作例を見る</a>
+          <a class="btn" href="{{ '/works.html' | relative_url }}">実績を見る</a>
         </div>
       </div>
 
@@ -71,22 +75,26 @@ jsonld: |
   <!-- スキルストリップ -->
   <div class="skill-strip">
     <span class="skill-strip__label">対応スキル</span>
+    <span class="skill-tag skill-tag--primary">LINE Bot</span>
+    <span class="skill-tag skill-tag--primary">Next.js / React</span>
+    <span class="skill-tag skill-tag--primary">業務自動化</span>
     <span class="skill-tag skill-tag--primary">HTML / CSS / JS</span>
-    <span class="skill-tag skill-tag--primary">WordPress</span>
     <span class="skill-tag skill-tag--primary">LP制作</span>
-    <span class="skill-tag skill-tag--primary">店舗サイト</span>
-    <span class="skill-tag">GitHub Pages</span>
+    <span class="skill-tag">TypeScript</span>
+    <span class="skill-tag">Supabase</span>
+    <span class="skill-tag">Cloudflare Workers</span>
+    <span class="skill-tag">Stripe</span>
+    <span class="skill-tag">AI API統合</span>
+    <span class="skill-tag">WordPress</span>
     <span class="skill-tag">Vercel</span>
-    <span class="skill-tag">SEO設計</span>
-    <span class="skill-tag">レスポンシブ対応</span>
-    <span class="skill-tag">Google Analytics</span>
   </div>
 
-  <!-- できること -->
+  <!-- できること（3カテゴリ） -->
   <section class="section" aria-labelledby="services-title">
     <header class="section__header">
       <span class="section__eyebrow">Services</span>
       <h2 class="section__title" id="services-title">できること</h2>
+      <p class="section__lead">小さな修正から大きな開発まで、窓口は一本。必要に応じて最適な提案をします。</p>
     </header>
 
     <div class="card-grid">
@@ -95,82 +103,94 @@ jsonld: |
           <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
         </div>
         <h3 class="feature__title">Webサイト・LP制作</h3>
-        <p class="feature__body">飲食店・美容室・教室など店舗系から、個人事業主のプロフィールサイト・サービスLPまで対応。WordPress構築と、GitHub Pages / Vercel を使った静的サイトどちらも制作できます。</p>
+        <p class="feature__body">飲食店・個人事業主向けの店舗サイト・LP制作。WordPress構築と、GitHub Pages / Vercel を使った低コスト静的サイトどちらも対応。構成設計からコーディング・公開まで一貫して担当します。</p>
         <ul class="tag-list mt-4">
-          <li class="tag">店舗サイト</li><li class="tag">LP</li><li class="tag">プロフィール</li><li class="tag">WordPress</li>
+          <li class="tag">店舗サイト</li><li class="tag">LP</li><li class="tag">WordPress</li><li class="tag">レスポンシブ対応</li>
         </ul>
+        <p style="margin-top:12px;font-size:var(--step-s);color:var(--accent);font-weight:600;">¥3万〜15万</p>
       </article>
 
       <article class="card feature">
         <div class="feature__icon" aria-hidden="true">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         </div>
-        <h3 class="feature__title">構成設計・ライティング</h3>
-        <p class="feature__body">「何をどの順番で伝えるか」から設計します。写真や文章がない状態でも、ヒアリングで内容を整理しながら進められます。サービス説明文・自己紹介文の作成もお任せください。</p>
+        <h3 class="feature__title">LINE Bot開発</h3>
+        <p class="feature__body">自動応答・予約受付・社内通知・習慣管理など、業務や集客に使えるLINE Botを構築します。Cloudflare Workers + LINE Messaging APIで、低コストかつ高速に本番稼働まで持っていきます。</p>
         <ul class="tag-list mt-4">
-          <li class="tag">構成設計</li><li class="tag">文章作成</li><li class="tag">自己紹介文</li>
+          <li class="tag">自動応答</li><li class="tag">予約・問い合わせ</li><li class="tag">社内通知</li><li class="tag">AI連携</li>
         </ul>
+        <p style="margin-top:12px;font-size:var(--step-s);color:var(--accent);font-weight:600;">¥3万〜10万</p>
       </article>
 
       <article class="card feature">
         <div class="feature__icon" aria-hidden="true">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
         </div>
-        <h3 class="feature__title">公開・保守サポート</h3>
-        <p class="feature__body">制作後のドメイン設定・サーバーアップロード・デプロイまで対応します。納品後1ヶ月は軽微な修正に無料で対応。WordPressの場合は管理画面から自分で更新できる形で納品します。</p>
+        <h3 class="feature__title">Web自動化・ダッシュボード</h3>
+        <p class="feature__body">業務フローをWebで可視化・自動化します。CSV集計、外部API連携、管理画面の構築など。手作業をなくして判断に使えるデータを整えます。</p>
         <ul class="tag-list mt-4">
-          <li class="tag">ドメイン設定</li><li class="tag">公開サポート</li><li class="tag">修正対応</li>
+          <li class="tag">業務自動化</li><li class="tag">API連携</li><li class="tag">管理画面</li><li class="tag">データ可視化</li>
         </ul>
+        <p style="margin-top:12px;font-size:var(--step-s);color:var(--accent);font-weight:600;">¥5万〜15万</p>
+      </article>
+
+      <article class="card feature">
+        <div class="feature__icon" aria-hidden="true">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <h3 class="feature__title">SaaSプロトタイプ開発</h3>
+        <p class="feature__body">アイデアを動くプロダクトに。認証・決済（Stripe）・AI機能まで含めてフルスタックで実装します。投資家やユーザーに見せられる形まで作ります。自社で法律学習SaaSを本番運用中。</p>
+        <ul class="tag-list mt-4">
+          <li class="tag">Next.js</li><li class="tag">Supabase</li><li class="tag">Stripe決済</li><li class="tag">AI機能</li>
+        </ul>
+        <p style="margin-top:12px;font-size:var(--step-s);color:var(--accent);font-weight:600;">¥15万〜30万</p>
       </article>
     </div>
 
-    <div style="margin-top:20px;padding:16px 20px;background:var(--bg-elev);border:1px solid var(--line);border-radius:var(--radius);font-size:0.9375rem;color:var(--text-muted);">
-      <strong style="color:var(--text);">料金目安：</strong>LP1ページ 3〜8万円、店舗サイト（3〜5P）5〜15万円。お見積もりは無料です。
+    <div style="margin-top:20px;text-align:right;">
+      <a class="btn" href="{{ '/services.html' | relative_url }}">料金・対応範囲の詳細 →</a>
     </div>
   </section>
 
-  <!-- 制作の流れ -->
-  <section class="section" aria-labelledby="process-title">
-    <header class="section__header">
-      <span class="section__eyebrow">Process</span>
-      <h2 class="section__title" id="process-title">制作の流れ</h2>
-      <p class="section__lead">全体の目安は1〜2週間。ヒアリングで方向性を固めてから制作に入るので、「完成してみたら違った」が起きにくい進め方です。</p>
-    </header>
-
-    <ol class="steps">
-      <li class="step">
-        <h3 class="step__title">ヒアリング</h3>
-        <p class="step__body">目的・ターゲット・素材・希望納期を確認します。何も決まっていない段階からでも大丈夫です。</p>
-      </li>
-      <li class="step">
-        <h3 class="step__title">構成提案</h3>
-        <p class="step__body">ページの見出し・順番・文章の方向性をまとめて提案。確認・合意してから制作に入ります。</p>
-      </li>
-      <li class="step">
-        <h3 class="step__title">初稿提出</h3>
-        <p class="step__body">実際のページとして早めにお見せします。イメージのズレを小さいうちに調整します。</p>
-      </li>
-      <li class="step">
-        <h3 class="step__title">修正・納品</h3>
-        <p class="step__body">2〜3回の修正で仕上げ。公開作業が必要な場合もサポートします。</p>
-      </li>
-    </ol>
-
-    <p style="margin-top:16px;font-size:var(--step-s);color:var(--text-muted);">
-      メッセージは原則24時間以内に返信します。お急ぎの場合はご相談ください。
-      <a href="{{ '/process.html' | relative_url }}" style="color:var(--accent);">詳細な流れ・よくある質問はこちら →</a>
-    </p>
-  </section>
-
-  <!-- 制作例プレビュー -->
+  <!-- 実績プレビュー（開発 + Web制作） -->
   <section class="section" aria-labelledby="works-preview-title">
     <header class="section__header">
       <span class="section__eyebrow">Works</span>
-      <h2 class="section__title" id="works-preview-title">制作例（一部）</h2>
-      <p class="section__lead">架空店舗・サービスを想定したサンプル作例と、自社開発プロダクトを掲載しています。</p>
+      <h2 class="section__title" id="works-preview-title">実績（一部）</h2>
+      <p class="section__lead">自社開発プロダクトと、受注制作の一部を掲載しています。</p>
     </header>
 
     <div class="card-grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr));">
+
+      <!-- Elenco -->
+      <a class="card" href="https://elenco-law.com" target="_blank" rel="noopener noreferrer"
+         style="display:block;padding:0;overflow:hidden;transition:transform 0.15s,border-color 0.15s;">
+        <div style="height:120px;background:#f5efe5;display:flex;align-items:center;justify-content:center;position:relative;">
+          <span style="color:#0f4c81;letter-spacing:0.1em;font-weight:700;font-size:1.25rem;">Elenco</span>
+          <span style="position:absolute;top:10px;right:12px;font-size:0.7rem;background:#0f4c81;color:#fff;padding:2px 8px;border-radius:100px;font-weight:600;">本番稼働中</span>
+        </div>
+        <div style="padding:16px 20px;">
+          <span style="font-size:0.75rem;color:var(--accent);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;">SaaS / 法務</span>
+          <p style="margin-top:4px;font-size:0.9375rem;font-weight:700;">法律学習プラットフォーム</p>
+          <p style="margin-top:4px;font-size:0.875rem;color:var(--text-muted);">条文・判例横断検索・AI演習・Stripe課金まで個人で実装</p>
+        </div>
+      </a>
+
+      <!-- 入退室 -->
+      <div class="card"
+         style="display:block;padding:0;overflow:hidden;">
+        <div style="height:120px;background:#1a2a1a;display:flex;align-items:center;justify-content:center;position:relative;">
+          <span style="color:#6fcf97;font-weight:700;font-size:1rem;text-align:center;padding:0 12px;">入退室管理<br>ダッシュボード</span>
+          <span style="position:absolute;top:10px;right:12px;font-size:0.7rem;background:#27ae60;color:#fff;padding:2px 8px;border-radius:100px;font-weight:600;">本番稼働中</span>
+        </div>
+        <div style="padding:16px 20px;">
+          <span style="font-size:0.75rem;color:var(--accent);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;">LINE Bot / 自動化</span>
+          <p style="margin-top:4px;font-size:0.9375rem;font-weight:700;">LINE通知 + 6軸分析ダッシュボード</p>
+          <p style="margin-top:4px;font-size:0.875rem;color:var(--text-muted);">Cloudflare Workers・D1・LINE APIで構築</p>
+        </div>
+      </div>
+
+      <!-- 居酒屋LP -->
       <a class="card" href="{{ '/izakaya-lp.html' | relative_url }}" target="_blank" rel="noopener noreferrer"
          style="display:block;padding:0;overflow:hidden;transition:transform 0.15s,border-color 0.15s;">
         <div style="height:120px;background:#1a1410;display:flex;align-items:center;justify-content:center;">
@@ -183,6 +203,7 @@ jsonld: |
         </div>
       </a>
 
+      <!-- ベーカリー -->
       <a class="card" href="{{ '/bakery-cafe.html' | relative_url }}" target="_blank" rel="noopener noreferrer"
          style="display:block;padding:0;overflow:hidden;transition:transform 0.15s,border-color 0.15s;">
         <div style="height:120px;background:#f0e4d0;display:flex;align-items:center;justify-content:center;">
@@ -195,28 +216,40 @@ jsonld: |
         </div>
       </a>
 
-      <a class="card" href="{{ '/construction.html' | relative_url }}" target="_blank" rel="noopener noreferrer"
-         style="display:block;padding:0;overflow:hidden;transition:transform 0.15s,border-color 0.15s;">
-        <div style="height:120px;background:#1f2d4a;display:flex;align-items:center;justify-content:center;">
-          <span style="color:#fff;font-weight:700;font-size:1.1rem;">丸正建設株式会社</span>
-        </div>
-        <div style="padding:16px 20px;">
-          <span style="font-size:0.75rem;color:var(--accent);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;">コーポレート / 建設</span>
-          <p style="margin-top:4px;font-size:0.9375rem;font-weight:700;">コーポレートサイト</p>
-          <p style="margin-top:4px;font-size:0.875rem;color:var(--text-muted);">ネイビー基調・実績・採用情報まとめ</p>
-        </div>
-      </a>
     </div>
 
     <div style="margin-top:20px;text-align:right;">
-      <a class="btn" href="{{ '/works.html' | relative_url }}">制作例をすべて見る →</a>
+      <a class="btn" href="{{ '/works.html' | relative_url }}">実績をすべて見る →</a>
+    </div>
+  </section>
+
+  <!-- なぜ任せられるか（信頼補強） -->
+  <section class="section" aria-labelledby="trust-title">
+    <header class="section__header">
+      <span class="section__eyebrow">Why Me</span>
+      <h2 class="section__title" id="trust-title">任せられる理由</h2>
+    </header>
+
+    <div class="card-grid">
+      <article class="card feature">
+        <h3 class="feature__title">自分でプロダクトを本番運用している</h3>
+        <p class="feature__body">受注仕事だけでなく、自社で法律学習SaaS「Elenco」と入退室管理システムを本番運用中。設計・実装・インフラ・セキュリティ・決済を一人で完結させた経験があります。</p>
+      </article>
+      <article class="card feature">
+        <h3 class="feature__title">フロントからバックエンドまで一人で完結</h3>
+        <p class="feature__body">UI設計・DBスキーマ・API設計・認証・決済・外部API連携・デプロイまで一貫して対応します。窓口が複数になって認識がズレる、という問題が起きません。</p>
+      </article>
+      <article class="card feature">
+        <h3 class="feature__title">要件が固まっていなくても動ける</h3>
+        <p class="feature__body">「こういうことがしたい」という段階からヒアリングで整理します。何を作るかを言語化するところから一緒に進められるのが強みです。</p>
+      </article>
     </div>
   </section>
 
   <!-- CTA -->
   <section class="cta-banner" aria-labelledby="cta-title">
     <h2 class="cta-banner__title" id="cta-title">まずはご相談ください</h2>
-    <p class="cta-banner__body">「こんな感じで作ってほしい」「予算が合うか分からない」——どの段階でもお気軽にどうぞ。相談・見積もりは無料です。</p>
+    <p class="cta-banner__body">「こんなことできますか？」「予算が合うか分からない」——どの段階でもお気軽にどうぞ。相談・見積もりは無料です。</p>
     <div class="cta-banner__actions">
       <a class="btn btn--primary" target="_blank" rel="noopener noreferrer"
          href="https://script.google.com/macros/s/AKfycbwOxPCjVw3v3Uq_KyBdCAxelWmyv54x2AjKVh2bku5fH9iC4zSmc5frJNfPBwme3lyDRw/exec">

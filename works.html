@@ -1,26 +1,15 @@
 ---
 layout: default
-title: 制作例
-description: Web制作・LP・店舗サイト・コーポレートサイトの制作例。居酒屋LP・ベーカリーカフェ店舗サイト・建設業コーポレートサイト・美容室プライベートサロンLPなど。
+title: 実績・制作例
+description: Web制作・LINE Bot・SaaS開発の実績。法律学習プラットフォーム「Elenco」・入退室管理ダッシュボード・居酒屋LP・ベーカリーカフェ店舗サイト・建設業コーポレートサイトなど。
 jsonld: |
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "制作例",
-    "description": "Web制作・LP・店舗サイト・コーポレートサイトの制作サンプル集。",
-    "url": "https://imagawadaigo.github.io/daigo-portfolio/works.html",
-    "mainEntity": {
-      "@type": "ItemList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "炭火と旬 よりみち — 和食居酒屋LP", "url": "https://imagawadaigo.github.io/daigo-portfolio/izakaya-lp.html" },
-        { "@type": "ListItem", "position": 2, "name": "丸正建設株式会社 — コーポレートサイト", "url": "https://imagawadaigo.github.io/daigo-portfolio/construction.html" },
-        { "@type": "ListItem", "position": 3, "name": "粉とひだまり — ベーカリーカフェ店舗サイト", "url": "https://imagawadaigo.github.io/daigo-portfolio/bakery-cafe.html" },
-        { "@type": "ListItem", "position": 4, "name": "LUIRE — プライベートヘアサロンLP", "url": "https://imagawadaigo.github.io/daigo-portfolio/salon-lp.html" },
-        { "@type": "ListItem", "position": 5, "name": "Cocoro Letter — 手紙作成支援サービス", "url": "https://imagawadaigo.github.io/cocoro_letter/" },
-        { "@type": "ListItem", "position": 6, "name": "Elenco — 法学学習プラットフォーム", "url": "https://imagawadaigo.github.io/daigo-portfolio/contact.html" }
-      ]
-    }
+    "name": "実績・制作例",
+    "description": "Web制作・LINE Bot・SaaS開発の実績一覧。",
+    "url": "https://imagawadaigo.github.io/daigo-portfolio/works.html"
   }
   </script>
 ---
@@ -30,9 +19,78 @@ jsonld: |
   <section class="section section--first">
     <header class="section__header">
       <span class="section__eyebrow">Works</span>
-      <h1 class="section__title">制作例</h1>
-      <p class="section__lead">これまで制作したページのうち、架空店舗・サービスを想定したサンプル作例を掲載しています。実案件の掲載はお客様の許諾を得たもののみ、順次追加します。</p>
+      <h1 class="section__title">実績・制作例</h1>
+      <p class="section__lead">自社開発プロダクト（本番稼働中）と、受注制作のサンプル作例を掲載しています。実案件の掲載はお客様の許諾を得たもののみ、順次追加します。</p>
     </header>
+
+    <!-- 開発実績 -->
+    <h2 style="font-size:var(--step-2);margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid var(--line);">開発・自動化プロジェクト</h2>
+
+    <div class="works-grid">
+
+      <a class="work-card" href="https://elenco-law.com" target="_blank" rel="noopener noreferrer">
+        <div class="work-card__thumb work-card__thumb--elenco" aria-hidden="true" style="position:relative;">
+          <span>Elenco</span>
+          <span style="position:absolute;top:12px;right:12px;font-size:0.7rem;background:#0f4c81;color:#fff;padding:2px 10px;border-radius:100px;font-weight:600;">本番稼働中</span>
+        </div>
+        <div class="work-card__body">
+          <span class="work-card__tag">SaaS / 法務 / AI</span>
+          <h2 class="work-card__title">Elenco — 法律学習プラットフォーム</h2>
+          <p>条文・判例横断検索、AI演習機能、Stripe課金まで個人でフルスタック実装。本番稼働・βユーザー獲得中。Next.js / Supabase / Anthropic API / Stripe / Vercel で構築。</p>
+          <ul class="tag-list mt-4" style="margin-top:12px;">
+            <li class="tag">Next.js</li><li class="tag">TypeScript</li><li class="tag">Supabase</li><li class="tag">Stripe</li><li class="tag">Anthropic API</li><li class="tag">Vercel</li>
+          </ul>
+        </div>
+      </a>
+
+      <div class="work-card">
+        <div class="work-card__thumb work-card__thumb--entrance" aria-hidden="true" style="position:relative;">
+          <span>入退室ダッシュボード</span>
+          <span style="position:absolute;top:12px;right:12px;font-size:0.7rem;background:#27ae60;color:#fff;padding:2px 10px;border-radius:100px;font-weight:600;">本番稼働中</span>
+        </div>
+        <div class="work-card__body">
+          <span class="work-card__tag">LINE Bot / 自動化 / ダッシュボード</span>
+          <h2 class="work-card__title">入退室管理・分析ダッシュボード</h2>
+          <p>コワーキングスペースの入退室をLINEで通知し、週次・月次・曜日別・時間帯別ヒートマップで6軸分析。Cloudflare Workers + D1 + LINE Messaging APIで構築。</p>
+          <ul class="tag-list mt-4" style="margin-top:12px;">
+            <li class="tag">Cloudflare Workers</li><li class="tag">Cloudflare D1</li><li class="tag">LINE Messaging API</li><li class="tag">JavaScript</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="work-card__thumb work-card__thumb--riz" aria-hidden="true">
+          <span>リズ（習慣Bot）</span>
+        </div>
+        <div class="work-card__body">
+          <span class="work-card__tag">LINE Bot / AI / 習慣管理</span>
+          <h2 class="work-card__title">習慣管理LINE Bot「リズ」</h2>
+          <p>ユーザーの記録から達成率を分析し、翌朝にパーソナライズメッセージを自動送信するAI習慣コーチ。Cloudflare Workers + Supabase + Gemini APIで構築。</p>
+          <ul class="tag-list mt-4" style="margin-top:12px;">
+            <li class="tag">Cloudflare Workers</li><li class="tag">LINE Messaging API</li><li class="tag">Supabase</li><li class="tag">Gemini API</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="work-card__thumb work-card__thumb--survey" aria-hidden="true">
+          <span>仮説検証ダッシュボード</span>
+        </div>
+        <div class="work-card__body">
+          <span class="work-card__tag">自動化 / ダッシュボード / リサーチ</span>
+          <h2 class="work-card__title">仮説検証・リサーチ基盤</h2>
+          <p>アンケートAPIを自作し、回答・面談記録・仮説判定を一元管理するダッシュボードを2日で構築。Cloudflare Workers + KV + Vanilla JSでゼロから設計・実装。</p>
+          <ul class="tag-list mt-4" style="margin-top:12px;">
+            <li class="tag">Cloudflare Workers</li><li class="tag">Cloudflare KV</li><li class="tag">Vanilla JS</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Web制作実績 -->
+    <h2 style="font-size:var(--step-2);margin-top:64px;margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid var(--line);">Web制作・LP制作</h2>
+    <p style="color:var(--text-muted);font-size:var(--step-s);margin-bottom:28px;">架空店舗・サービスを想定したサンプル作例を掲載しています。実案件の掲載はお客様の許諾を得たもののみ、順次追加します。</p>
 
     <div class="works-grid">
 
@@ -91,23 +149,12 @@ jsonld: |
         </div>
       </a>
 
-      <a class="work-card" href="{{ '/contact.html' | relative_url }}">
-        <div class="work-card__thumb work-card__thumb--elenco" aria-hidden="true">
-          <span>Elenco</span>
-        </div>
-        <div class="work-card__body">
-          <span class="work-card__tag">自社プロダクト / 法務</span>
-          <h2 class="work-card__title">Elenco — 法学学習プラットフォーム</h2>
-          <p>条文・判例・論文を横断して扱える、法学領域の学習・調べもの支援プラットフォーム。企画・UI設計・実装まで一貫して担当。現在クローズドβ開発中（デモはお問い合わせより）。</p>
-        </div>
-      </a>
-
     </div>
   </section>
 
   <section class="cta-banner">
     <h2 class="cta-banner__title">こんな形で作ってほしい、というご相談</h2>
-    <p class="cta-banner__body">制作例を参考に「こんな雰囲気で」と伝えていただくだけでも大丈夫です。</p>
+    <p class="cta-banner__body">実績を参考に「こんな感じで」と伝えていただくだけでも大丈夫です。相談・見積もりは無料です。</p>
     <div class="cta-banner__actions">
       <a class="btn btn--primary" target="_blank" rel="noopener noreferrer"
          href="https://script.google.com/macros/s/AKfycbwOxPCjVw3v3Uq_KyBdCAxelWmyv54x2AjKVh2bku5fH9iC4zSmc5frJNfPBwme3lyDRw/exec">
@@ -141,6 +188,12 @@ jsonld: |
   .work-card__thumb--salon span { color: #2a2a2a; letter-spacing: 0.18em; font-family: "Cormorant Garamond", serif; font-weight: 400; }
   .work-card__thumb--cocoro { background: #f4ece0; }
   .work-card__thumb--cocoro span { color: #7a5a3c; font-family: "Noto Serif JP", serif; letter-spacing: 0.08em; }
-  .work-card__thumb--elenco { background: #f5efe5; }
-  .work-card__thumb--elenco span { color: #0f4c81; letter-spacing: 0.1em; font-weight: 600; }
+  .work-card__thumb--elenco { background: #e8f0f8; }
+  .work-card__thumb--elenco span { color: #0f4c81; letter-spacing: 0.1em; font-weight: 700; font-size: 1.5rem; }
+  .work-card__thumb--entrance { background: #1a2a1a; }
+  .work-card__thumb--entrance span { color: #6fcf97; font-size: 1rem; }
+  .work-card__thumb--riz { background: #2c1f3e; }
+  .work-card__thumb--riz span { color: #b39ddb; font-size: 1rem; }
+  .work-card__thumb--survey { background: #1a1a2e; }
+  .work-card__thumb--survey span { color: #90caf9; font-size: 1rem; }
 </style>
