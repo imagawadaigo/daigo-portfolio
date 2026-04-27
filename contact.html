@@ -129,7 +129,7 @@ jsonld: |
 
 <script>
 (function () {
-  var GAS_URL = 'https://script.google.com/macros/s/AKfycbwOxPCjVw3v3Uq_KyBdCAxelWmyv54x2AjKVh2bku5fH9iC4zSmc5frJNfPBwme3lyDRw/exec';
+  var ENDPOINT = 'https://portfolio-contact.wishdaigo1458.workers.dev/contact';
   var form = document.getElementById('contact-form');
   var msg  = document.getElementById('form-msg');
 
@@ -143,15 +143,19 @@ jsonld: |
     msg.className = 'form-msg';
     msg.textContent = '';
 
-    fetch(GAS_URL, {
+    fetch(ENDPOINT, {
       method: 'POST',
-      mode: 'no-cors',
       body: new FormData(form)
     })
-    .then(function () {
-      msg.className = 'form-msg form-msg--success';
-      msg.textContent = '送信しました。24時間以内にご連絡します。';
-      form.reset();
+    .then(function (res) { return res.json(); })
+    .then(function (data) {
+      if (data.ok) {
+        msg.className = 'form-msg form-msg--success';
+        msg.textContent = '送信しました。24時間以内にご連絡します。';
+        form.reset();
+      } else {
+        throw new Error(data.error);
+      }
     })
     .catch(function () {
       msg.className = 'form-msg form-msg--error';
