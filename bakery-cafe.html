@@ -247,9 +247,8 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opa
       </div>
     </div>
     <div class="hero-visual">
-      <div class="hero-visual-card">
-        <div class="hero-visual-icon">🍞</div>
-        <div class="hero-visual-label">写真を差し替え</div>
+      <div class="hero-visual-card" style="padding:0;overflow:hidden;">
+        <img src="{{ '/assets/img/bakery/hero-visual.png' | relative_url }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block;">
       </div>
     </div>
   </div>
@@ -276,7 +275,9 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opa
           お買い物ついでにふらっとお立ち寄りください。
         </p>
       </div>
-      <div class="about-visual">🌿</div>
+      <div class="about-visual" style="padding:0;overflow:hidden;font-size:0;">
+        <img src="{{ '/assets/img/bakery/about.png' | relative_url }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:20px;opacity:1;">
+      </div>
     </div>
   </div>
 </section>
@@ -293,7 +294,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opa
 
     <div class="bread-grid">
       <div class="bread-card">
-        <div class="bread-thumb">🥖</div>
+        <div class="bread-thumb" style="padding:0;overflow:hidden;font-size:0;"><img src="{{ '/assets/img/bakery/bread-shoku.png' | relative_url }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block;opacity:1;"></div>
         <div class="bread-body">
           <h3>山食パン<span class="bread-badge badge-popular">人気</span></h3>
           <p>もっちり食感の定番食パン。トーストしてバターを塗るだけで幸せになれます。</p>
@@ -301,7 +302,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opa
         </div>
       </div>
       <div class="bread-card">
-        <div class="bread-thumb">🥐</div>
+        <div class="bread-thumb" style="padding:0;overflow:hidden;font-size:0;"><img src="{{ '/assets/img/bakery/bread-croissant.png' | relative_url }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block;opacity:1;"></div>
         <div class="bread-body">
           <h3>クロワッサン<span class="bread-badge badge-popular">人気</span></h3>
           <p>北海道産バターをたっぷり折り込んだ、さくさく軽い食感のクロワッサンです。</p>
@@ -309,7 +310,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opa
         </div>
       </div>
       <div class="bread-card">
-        <div class="bread-thumb">🍞</div>
+        <div class="bread-thumb" style="padding:0;overflow:hidden;font-size:0;"><img src="{{ '/assets/img/bakery/bread-campagne.png' | relative_url }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block;opacity:1;"></div>
         <div class="bread-body">
           <h3>カンパーニュ</h3>
           <p>自家製酵母でじっくり発酵。外はパリッと、中はしっとりもちもちの田舎パン。</p>
@@ -317,7 +318,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opa
         </div>
       </div>
       <div class="bread-card">
-        <div class="bread-thumb">🫒</div>
+        <div class="bread-thumb" style="padding:0;overflow:hidden;font-size:0;"><img src="{{ '/assets/img/bakery/bread-souzai.png' | relative_url }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block;opacity:1;"></div>
         <div class="bread-body">
           <h3>オリーブとチーズのフォカッチャ<span class="bread-badge badge-new">NEW</span></h3>
           <p>グリーンオリーブとゴーダチーズを練り込んだ、ワインにも合うフォカッチャ。</p>
@@ -325,7 +326,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opa
         </div>
       </div>
       <div class="bread-card">
-        <div class="bread-thumb">🍫</div>
+        <div class="bread-thumb" style="padding:0;overflow:hidden;font-size:0;"><img src="{{ '/assets/img/bakery/sweets.png' | relative_url }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block;opacity:1;"></div>
         <div class="bread-body">
           <h3>ショコラとくるみ</h3>
           <p>ビターチョコとローストくるみを巻き込んだ、おやつにもぴったりのパン。</p>
@@ -333,7 +334,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opa
         </div>
       </div>
       <div class="bread-card">
-        <div class="bread-thumb">🌾</div>
+        <div class="bread-thumb" style="padding:0;overflow:hidden;font-size:0;"><img src="{{ '/assets/img/bakery/bread-bagel.png' | relative_url }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block;opacity:1;"></div>
         <div class="bread-body">
           <h3>全粒粉ベーグル</h3>
           <p>全粒粉100%のどっしりベーグル。プレーンのほか、レーズン・チーズも。</p>
