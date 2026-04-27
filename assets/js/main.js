@@ -20,8 +20,6 @@
         mobileNav.setAttribute('hidden', '');
       }
     });
-
-    // Close mobile nav when a link is tapped
     mobileNav.querySelectorAll('a').forEach(function (a) {
       a.addEventListener('click', function () {
         toggle.setAttribute('aria-expanded', 'false');
@@ -31,9 +29,9 @@
     });
   }
 
-  // Count-up animation for .stat__num[data-target]
-  var counters = document.querySelectorAll('.stat__num[data-target]');
-  if (counters.length && 'IntersectionObserver' in window) {
+  // Count-up animation — targets both .stat__num and .hero__kpi-num with data-target
+  if ('IntersectionObserver' in window) {
+    var counters = document.querySelectorAll('[data-target]');
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
