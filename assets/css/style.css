@@ -653,3 +653,115 @@ body {
   .hero__title,.section__title,.feature__title,.stat__num{color:#000;}
   .text-muted,.feature__body,.stat__label,.section__lead{color:#555;}
 }
+
+/* ═══════════════════════════════════════════════
+   DESIGN UPGRADE — Ghost text / Marquee / Cards
+   ═══════════════════════════════════════════════ */
+
+/* ── Header home icon ── */
+.site-header__home-icon{
+  display:block;color:var(--text);
+  transition:opacity 0.15s;
+}
+.site-header__brand:hover .site-header__home-icon{opacity:0.55;}
+
+/* ── Marquee ticker ── */
+.marquee-wrap{
+  overflow:hidden;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  background:var(--bg-card);
+  padding:14px 0;
+}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.marquee-track{
+  display:inline-flex;align-items:center;
+  white-space:nowrap;
+  animation:marquee 32s linear infinite;
+  will-change:transform;
+}
+.marquee-track:hover{animation-play-state:paused;}
+.marquee-item{
+  font-size:0.72rem;font-weight:600;
+  color:var(--text-muted);
+  font-family:var(--font-mono);
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  padding:0 18px;
+}
+.marquee-dot{
+  color:var(--text-subtle);
+  font-size:0.45rem;
+  vertical-align:middle;
+}
+
+/* ── Ghost / outline text ── */
+.ghost-text{
+  position:absolute;
+  font-weight:900;
+  color:transparent;
+  -webkit-text-stroke:1.5px rgba(0,0,0,0.055);
+  letter-spacing:0.05em;
+  line-height:1;
+  text-transform:uppercase;
+  user-select:none;
+  pointer-events:none;
+  white-space:nowrap;
+  font-family:var(--font-sans);
+  z-index:0;
+}
+
+/* Hero ghost */
+.hero{position:relative;overflow:hidden;}
+.hero__ghost{
+  position:absolute;
+  font-size:clamp(80px,17vw,220px);
+  font-weight:900;
+  color:transparent;
+  -webkit-text-stroke:1px rgba(0,0,0,0.038);
+  letter-spacing:0.04em;
+  line-height:1;
+  text-transform:uppercase;
+  user-select:none;
+  pointer-events:none;
+  white-space:nowrap;
+  font-family:var(--font-sans);
+  bottom:-24px;
+  right:-10px;
+  z-index:0;
+}
+.hero__grid{position:relative;z-index:1;}
+
+/* Section ghost */
+.section__header{position:relative;}
+.section__ghost{
+  font-size:clamp(52px,10vw,130px);
+  -webkit-text-stroke:1px rgba(0,0,0,0.05);
+  top:-6px;
+  left:-8px;
+}
+
+/* ── Taller work thumb with hover zoom ── */
+.work-thumb__img{height:200px;overflow:hidden;}
+.work-thumb__img img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform 0.45s ease;
+}
+.work-thumb:hover .work-thumb__img img{transform:scale(1.05);}
+.work-thumb:hover{
+  border-color:var(--line-strong);
+  box-shadow:var(--shadow);
+}
+
+/* ── Section ghost text overflow visible ── */
+.section__header{overflow:visible;}
+
+/* ── Larger work cards in works grid ── */
+.work-card__thumb{aspect-ratio:16/10;overflow:hidden;}
+.work-card__thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.45s ease;}
+.work-card:hover .work-card__thumb img{transform:scale(1.04);}
+
+@media(prefers-reduced-motion:reduce){
+  .marquee-track{animation:none;}
+  .work-thumb__img img,.work-card__thumb img{transition:none;}
+}

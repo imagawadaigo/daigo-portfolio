@@ -27,7 +27,8 @@ jsonld: |
 ---
 
 <!-- ── Hero ── -->
-<section class="hero" style="background-image: linear-gradient(to right, #F5F3EE 45%, rgba(245,243,238,0.55) 70%, rgba(245,243,238,0.2) 100%), url('{{ '/assets/img/hero-bg.png' | relative_url }}'); background-size: cover; background-position: right center;">
+<section class="hero">
+  <div class="hero__ghost" aria-hidden="true">CREATOR</div>
   <div class="container">
     <div class="hero__grid">
       <div>
@@ -69,10 +70,37 @@ jsonld: |
   </div>
 </section>
 
+<!-- ── Marquee ticker ── -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item">Web Design</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">LINE Bot</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">LP制作</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">SaaS開発</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Next.js</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Supabase</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">業務自動化</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Stripe</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">AI API統合</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Cloudflare</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Web Design</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">LINE Bot</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">LP制作</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">SaaS開発</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Next.js</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Supabase</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">業務自動化</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Stripe</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">AI API統合</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Cloudflare</span><span class="marquee-dot">◆</span>
+  </div>
+</div>
+
 <!-- ── Services: problem-first ── -->
 <div class="container">
   <section class="section" aria-labelledby="services-title">
     <header class="section__header">
+      <div class="ghost-text section__ghost" aria-hidden="true">SERVICES</div>
       <span class="section__eyebrow">Services</span>
       <h2 class="section__title" id="services-title">こんな課題、対応できます</h2>
     </header>
@@ -176,6 +204,7 @@ jsonld: |
   <!-- Works preview -->
   <section class="section" aria-labelledby="works-preview-title">
     <header class="section__header">
+      <div class="ghost-text section__ghost" aria-hidden="true">WORKS</div>
       <span class="section__eyebrow">Works</span>
       <h2 class="section__title" id="works-preview-title">制作実績（一部）</h2>
       <p class="section__lead">自社開発プロダクトと受注制作の一部を掲載しています。</p>
@@ -208,8 +237,8 @@ jsonld: |
       </div>
 
       <a class="card work-thumb" href="{{ '/izakaya-lp.html' | relative_url }}" target="_blank" rel="noopener noreferrer">
-        <div class="work-thumb__img" style="background:#1a1410;">
-          <span style="color:#e8a838;font-weight:700;font-size:1rem;letter-spacing:0.04em;">炭火と旬 よりみち</span>
+        <div class="work-thumb__img" style="padding:0;">
+          <img src="{{ '/assets/img/works/izakaya-thumb.png' | relative_url }}" alt="炭火と旬 よりみち">
         </div>
         <div class="work-thumb__body">
           <span class="work-card__tag">LP / 飲食</span>
@@ -219,8 +248,8 @@ jsonld: |
       </a>
 
       <a class="card work-thumb" href="{{ '/bakery-cafe.html' | relative_url }}" target="_blank" rel="noopener noreferrer">
-        <div class="work-thumb__img" style="background:#f0e4d0;">
-          <span style="color:#7c5e3c;font-weight:700;font-size:1rem;">粉とひだまり</span>
+        <div class="work-thumb__img" style="padding:0;">
+          <img src="{{ '/assets/img/works/bakery-thumb.png' | relative_url }}" alt="粉とひだまり ベーカリーカフェ">
         </div>
         <div class="work-thumb__body">
           <span class="work-card__tag">店舗 / カフェ</span>
@@ -238,6 +267,7 @@ jsonld: |
   <!-- Process -->
   <section class="section" aria-labelledby="process-title">
     <header class="section__header">
+      <div class="ghost-text section__ghost" aria-hidden="true">PROCESS</div>
       <span class="section__eyebrow">Process</span>
       <h2 class="section__title" id="process-title">制作の流れ</h2>
       <p class="section__lead">「どう進めるか」が見えると、依頼しやすくなります。</p>
