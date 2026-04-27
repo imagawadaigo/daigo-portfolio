@@ -10,8 +10,8 @@ sitemap: false
   "start_url": "/daigo-portfolio/",
   "scope": "/daigo-portfolio/",
   "display": "browser",
-  "background_color": "#fafaf8",
-  "theme_color": "#0f4c81",
+  "background_color": "#F5F3EE",
+  "theme_color": "#1C1C1C",
   "lang": "ja",
   "icons": [
     { "src": "/daigo-portfolio/assets/img/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
