@@ -675,7 +675,10 @@ body {
 }
 @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 .marquee-track{
-  display:inline-flex;align-items:center;
+  display:flex;
+  flex-wrap:nowrap;
+  align-items:center;
+  width:max-content;
   white-space:nowrap;
   animation:marquee 32s linear infinite;
   will-change:transform;
@@ -692,33 +695,26 @@ body {
 .marquee-dot{
   color:var(--text-subtle);
   font-size:0.45rem;
-  vertical-align:middle;
-}
-
-/* ── Ghost / outline text ── */
-.ghost-text{
-  position:absolute;
-  font-weight:900;
-  color:transparent;
-  -webkit-text-stroke:1.5px rgba(0,0,0,0.055);
-  letter-spacing:0.05em;
   line-height:1;
-  text-transform:uppercase;
-  user-select:none;
-  pointer-events:none;
-  white-space:nowrap;
-  font-family:var(--font-sans);
-  z-index:0;
+  flex-shrink:0;
 }
 
-/* Hero ghost */
-.hero{position:relative;overflow:hidden;}
-.hero__ghost{
+/* ── Ghost text via pseudo-elements (data-ghost attribute) ── */
+
+/* Hero: ::after pseudo-element so it never affects flex layout */
+.hero{
+  position:relative;
+  overflow:hidden;
+}
+.hero[data-ghost]::after{
+  content:attr(data-ghost);
   position:absolute;
+  bottom:-0.18em;
+  right:-0.04em;
   font-size:clamp(80px,17vw,220px);
   font-weight:900;
   color:transparent;
-  -webkit-text-stroke:1px rgba(0,0,0,0.038);
+  -webkit-text-stroke:1px rgba(0,0,0,0.045);
   letter-spacing:0.04em;
   line-height:1;
   text-transform:uppercase;
@@ -726,19 +722,36 @@ body {
   pointer-events:none;
   white-space:nowrap;
   font-family:var(--font-sans);
-  bottom:-24px;
-  right:-10px;
   z-index:0;
 }
 .hero__grid{position:relative;z-index:1;}
 
-/* Section ghost */
-.section__header{position:relative;}
-.section__ghost{
+/* Section headers: ::before pseudo-element */
+.section__header{
+  position:relative;
+  overflow:visible;
+}
+.section__header[data-ghost]::before{
+  content:attr(data-ghost);
+  position:absolute;
+  top:-0.18em;
+  left:-0.04em;
   font-size:clamp(52px,10vw,130px);
-  -webkit-text-stroke:1px rgba(0,0,0,0.05);
-  top:-6px;
-  left:-8px;
+  font-weight:900;
+  color:transparent;
+  -webkit-text-stroke:1.5px rgba(0,0,0,0.05);
+  letter-spacing:0.06em;
+  line-height:1;
+  text-transform:uppercase;
+  user-select:none;
+  pointer-events:none;
+  white-space:nowrap;
+  font-family:var(--font-sans);
+  z-index:0;
+}
+.section__header[data-ghost]>*{
+  position:relative;
+  z-index:1;
 }
 
 /* ── Taller work thumb with hover zoom ── */
@@ -752,9 +765,6 @@ body {
   border-color:var(--line-strong);
   box-shadow:var(--shadow);
 }
-
-/* ── Section ghost text overflow visible ── */
-.section__header{overflow:visible;}
 
 /* ── Larger work cards in works grid ── */
 .work-card__thumb{aspect-ratio:16/10;overflow:hidden;}
