@@ -45,6 +45,14 @@
     var p = document.createElement('p');
     p.textContent = text;
     div.appendChild(p);
+    // bot返答に「相談フォーム」が含まれる場合はリンクボタンを追加
+    if (role === 'bot' && text.indexOf('相談フォーム') !== -1) {
+      var link = document.createElement('a');
+      link.href = '/daigo-portfolio/contact.html';
+      link.className = 'chat-contact-link';
+      link.textContent = '→ 相談フォームへ';
+      div.appendChild(link);
+    }
     msgArea.appendChild(div);
     msgArea.scrollTop = msgArea.scrollHeight;
   }
