@@ -57,28 +57,35 @@ jsonld: |
       <p class="section__lead">ヒアリングから納品まで4つのステップで進めます。「何を決めればいいか分からない」という段階からでも大丈夫です。</p>
     </header>
 
-    <ol class="steps" style="grid-template-columns:1fr;">
-      <li class="step">
-        <h2 class="step__title">ヒアリング</h2>
-        <p class="step__body">webフォームまたはメッセージで、目的・ターゲット・ご要望をお聞きします。こちらから質問しながら方向性を整理するので、「何を書けばいいか分からない」状態でも大丈夫です。</p>
-        <p class="text-muted mt-4" style="font-size:.875rem;">目的の確認 / ターゲット整理 / 素材の有無 / 参考サイトの共有 — 目安1〜2日</p>
-      </li>
-      <li class="step">
-        <h2 class="step__title">構成提案</h2>
-        <p class="step__body">ヒアリング内容をもとに、ページの構成案を作成します。見出し・順番・文章の方向性をまとめ、「これで進めていいか」の確認をとってから制作に入ります。</p>
-        <p class="text-muted mt-4" style="font-size:.875rem;">見出し設計 / セクション構成 / 文章の方向性 / ワイヤーフレーム — 目安2〜3日</p>
-      </li>
-      <li class="step">
-        <h2 class="step__title">初稿提出</h2>
-        <p class="step__body">構成が固まったら実際のページを制作し、初稿としてお見せします。早い段階で形にすることで、イメージのズレを最小限にしながら短距離で調整できます。</p>
-        <p class="text-muted mt-4" style="font-size:.875rem;">デザイン実装 / コーディング / プレビュー共有 / フィードバック — 目安3〜5日</p>
-      </li>
-      <li class="step">
-        <h2 class="step__title">修正・納品</h2>
-        <p class="step__body">フィードバックをもとに修正し、最終版を納品します。公開作業が必要な場合は、サーバーへのアップロードやドメイン設定もサポート可能です。</p>
-        <p class="text-muted mt-4" style="font-size:.875rem;">修正対応 / 最終確認 / 納品 / 公開サポート — 目安1〜3日</p>
-      </li>
-    </ol>
+    <div class="flow">
+      <div class="flow-step">
+        <div class="flow-step__num">01</div>
+        <h2 class="flow-step__title">ヒアリング</h2>
+        <p class="flow-step__body">webフォームまたはメッセージで、目的・ターゲット・ご要望をお聞きします。こちらから質問しながら方向性を整理するので、「何を書けばいいか分からない」状態でも大丈夫です。</p>
+        <p class="flow-step__meta">目的の確認 / ターゲット整理 / 素材の有無<br>目安 1〜2日</p>
+      </div>
+      <div class="flow-connector" aria-hidden="true">→</div>
+      <div class="flow-step">
+        <div class="flow-step__num">02</div>
+        <h2 class="flow-step__title">構成提案</h2>
+        <p class="flow-step__body">ヒアリング内容をもとに、ページの構成案を作成します。見出し・順番・文章の方向性をまとめ、「これで進めていいか」の確認をとってから制作に入ります。</p>
+        <p class="flow-step__meta">見出し設計 / セクション構成 / ワイヤーフレーム<br>目安 2〜3日</p>
+      </div>
+      <div class="flow-connector" aria-hidden="true">→</div>
+      <div class="flow-step">
+        <div class="flow-step__num">03</div>
+        <h2 class="flow-step__title">初稿提出</h2>
+        <p class="flow-step__body">構成が固まったら実際のページを制作し、初稿としてお見せします。早い段階で形にすることで、イメージのズレを最小限に抑えながら進めます。</p>
+        <p class="flow-step__meta">デザイン実装 / コーディング / プレビュー共有<br>目安 3〜5日</p>
+      </div>
+      <div class="flow-connector" aria-hidden="true">→</div>
+      <div class="flow-step">
+        <div class="flow-step__num">04</div>
+        <h2 class="flow-step__title">修正・納品</h2>
+        <p class="flow-step__body">フィードバックをもとに修正し、最終版を納品します。公開作業が必要な場合は、サーバーへのアップロードやドメイン設定もサポートします。</p>
+        <p class="flow-step__meta">修正対応 / 最終確認 / 公開サポート<br>目安 1〜3日</p>
+      </div>
+    </div>
 
     <p class="text-muted mt-6" style="font-size:.875rem;">全体の目安は1〜2週間程度です。内容や規模によって変動します。メッセージは原則24時間以内に返信します。</p>
   </section>
@@ -133,11 +140,7 @@ jsonld: |
     <h2 class="cta-banner__title">まずは気軽にご相談ください</h2>
     <p class="cta-banner__body">「相談内容」「予算感」「希望納期」が分かればすぐに進められます。</p>
     <div class="cta-banner__actions">
-      <a class="btn btn--primary" target="_blank" rel="noopener noreferrer"
-         href="https://script.google.com/macros/s/AKfycbwOxPCjVw3v3Uq_KyBdCAxelWmyv54x2AjKVh2bku5fH9iC4zSmc5frJNfPBwme3lyDRw/exec">
-        相談フォームを開く
-      </a>
-      <a class="btn" href="{{ '/contact.html' | relative_url }}">お問い合わせページ</a>
+      <a class="btn btn--primary" href="{{ '/contact.html' | relative_url }}">相談フォームへ →</a>
     </div>
   </section>
 

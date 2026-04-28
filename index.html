@@ -34,8 +34,7 @@ jsonld: |
         <h1 class="hero__title">業務の課題を、<br>Webで解決します。</h1>
         <p class="hero__lead">LINE Botで顧客対応を自動化したい、LPを作りたい、業務を仕組み化したい。まずどんな課題かを聞かせてください。</p>
         <div class="hero__cta">
-          <a class="btn btn--primary" target="_blank" rel="noopener noreferrer"
-             href="https://script.google.com/macros/s/AKfycbwOxPCjVw3v3Uq_KyBdCAxelWmyv54x2AjKVh2bku5fH9iC4zSmc5frJNfPBwme3lyDRw/exec">
+          <a class="btn btn--primary" href="{{ '/contact.html' | relative_url }}">
             課題を相談する（無料）→
           </a>
           <a class="btn" href="{{ '/works.html' | relative_url }}">制作実績を見る</a>
@@ -188,8 +187,7 @@ jsonld: |
     </div>
 
     <div class="linebot-cta">
-      <a class="btn btn--primary" target="_blank" rel="noopener noreferrer"
-         href="https://script.google.com/macros/s/AKfycbwOxPCjVw3v3Uq_KyBdCAxelWmyv54x2AjKVh2bku5fH9iC4zSmc5frJNfPBwme3lyDRw/exec">
+      <a class="btn btn--primary" href="{{ '/contact.html' | relative_url }}">
         LINE Botについて相談する →
       </a>
     </div>
@@ -268,18 +266,23 @@ jsonld: |
       <h2 class="section__title" id="process-title">制作の流れ</h2>
       <p class="section__lead">「どう進めるか」が見えると、依頼しやすくなります。</p>
     </header>
-    <div class="steps">
-      <div class="step">
-        <div class="step__title">ヒアリング・課題整理</div>
-        <p class="step__body">何を作るか、なぜ作るかを一緒に整理します。要件が固まっていない段階でも大丈夫です。</p>
+    <div class="flow flow--3">
+      <div class="flow-step">
+        <div class="flow-step__num">01</div>
+        <p class="flow-step__title">ヒアリング・課題整理</p>
+        <p class="flow-step__body">何を作るか、なぜ作るかを一緒に整理します。要件が固まっていない段階でも大丈夫です。</p>
       </div>
-      <div class="step">
-        <div class="step__title">設計・開発・確認</div>
-        <p class="step__body">動くものを見せながら進めます。認識のズレが起きないよう、こまめに共有します。</p>
+      <div class="flow-connector" aria-hidden="true">→</div>
+      <div class="flow-step">
+        <div class="flow-step__num">02</div>
+        <p class="flow-step__title">設計・開発・確認</p>
+        <p class="flow-step__body">動くものを見せながら進めます。認識のズレが起きないよう、こまめに共有します。</p>
       </div>
-      <div class="step">
-        <div class="step__title">納品・運用サポート</div>
-        <p class="step__body">公開後の調整や機能追加も対応します。「作って終わり」にはしません。</p>
+      <div class="flow-connector" aria-hidden="true">→</div>
+      <div class="flow-step">
+        <div class="flow-step__num">03</div>
+        <p class="flow-step__title">納品・運用サポート</p>
+        <p class="flow-step__body">公開後の調整や機能追加も対応します。「作って終わり」にはしません。</p>
       </div>
     </div>
   </section>
@@ -289,11 +292,7 @@ jsonld: |
     <h2 class="cta-banner__title" id="cta-title">まず、課題を聞かせてください</h2>
     <p class="cta-banner__body">「こんなことできますか？」「予算が合うか分からない」——どの段階でもお気軽にどうぞ。相談・見積もりは無料です。</p>
     <div class="cta-banner__actions">
-      <a class="btn btn--primary" target="_blank" rel="noopener noreferrer"
-         href="https://script.google.com/macros/s/AKfycbwOxPCjVw3v3Uq_KyBdCAxelWmyv54x2AjKVh2bku5fH9iC4zSmc5frJNfPBwme3lyDRw/exec">
-        相談フォームを開く
-      </a>
-      <a class="btn btn--ghost" href="{{ '/contact.html' | relative_url }}">お問い合わせページ</a>
+      <a class="btn btn--primary" href="{{ '/contact.html' | relative_url }}">相談フォームへ →</a>
     </div>
   </section>
 
