@@ -1,0 +1,269 @@
+<!-- ── AI Chat Widget ── -->
+<div id="chat-widget" aria-label="AIチャット相談" role="complementary">
+
+  <!-- Toggle button -->
+  <button id="chat-toggle" aria-expanded="false" aria-controls="chat-panel" aria-label="AIに相談する">
+    <svg id="chat-icon-open" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </svg>
+    <svg id="chat-icon-close" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" style="display:none;">
+      <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+  </button>
+
+  <!-- Chat panel -->
+  <div id="chat-panel" role="dialog" aria-modal="false" aria-label="AI相談チャット" hidden>
+    <div class="chat-header">
+      <div class="chat-header__info">
+        <span class="chat-header__dot" aria-hidden="true"></span>
+        <span class="chat-header__title">AI相談</span>
+      </div>
+      <span class="chat-header__sub">サービス・料金・制作の流れを聞けます</span>
+    </div>
+
+    <div id="chat-messages" class="chat-messages" aria-live="polite" aria-relevant="additions">
+      <div class="chat-msg chat-msg--bot">
+        <p>こんにちは。サービスや料金・制作の流れについてお気軽にどうぞ。</p>
+      </div>
+    </div>
+
+    <form id="chat-form" class="chat-input-area" autocomplete="off">
+      <input
+        id="chat-input"
+        class="chat-input"
+        type="text"
+        placeholder="質問を入力…"
+        maxlength="400"
+        autocomplete="off"
+        spellcheck="false"
+        aria-label="メッセージを入力"
+        required
+      >
+      <button type="submit" class="chat-send" aria-label="送信">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+        </svg>
+      </button>
+    </form>
+  </div>
+</div>
+
+<style>
+/* ── Chat widget ── */
+#chat-widget{
+  position:fixed;bottom:24px;right:24px;
+  z-index:9999;
+  display:flex;flex-direction:column;align-items:flex-end;gap:12px;
+}
+#chat-toggle{
+  width:52px;height:52px;border-radius:50%;
+  background:var(--accent);color:#fff;
+  border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(0,0,0,0.22);
+  transition:transform 0.2s,background 0.15s;
+  flex-shrink:0;
+}
+#chat-toggle:hover{background:var(--accent-hover);transform:scale(1.07);}
+#chat-toggle:active{transform:scale(0.96);}
+
+#chat-panel{
+  width:340px;
+  background:var(--bg-card);
+  border:1px solid var(--line-strong);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-lg);
+  display:flex;flex-direction:column;
+  overflow:hidden;
+  max-height:calc(100dvh - 100px);
+  animation:chat-slide-in 0.22s ease;
+}
+@keyframes chat-slide-in{
+  from{opacity:0;transform:translateY(12px) scale(0.97);}
+  to{opacity:1;transform:translateY(0) scale(1);}
+}
+#chat-panel[hidden]{display:none;}
+
+.chat-header{
+  padding:14px 16px 12px;
+  border-bottom:1px solid var(--line);
+  background:var(--bg);
+  flex-shrink:0;
+}
+.chat-header__info{display:flex;align-items:center;gap:8px;}
+.chat-header__dot{
+  width:8px;height:8px;border-radius:50%;
+  background:#22c55e;flex-shrink:0;
+  box-shadow:0 0 0 2px rgba(34,197,94,0.25);
+}
+.chat-header__title{font-weight:700;font-size:0.9375rem;color:var(--text);}
+.chat-header__sub{
+  display:block;margin-top:2px;
+  font-size:0.75rem;color:var(--text-subtle);
+}
+
+.chat-messages{
+  flex:1;overflow-y:auto;
+  padding:16px;
+  display:flex;flex-direction:column;gap:10px;
+  scroll-behavior:smooth;
+  min-height:200px;
+}
+.chat-msg{max-width:88%;}
+.chat-msg--bot{align-self:flex-start;}
+.chat-msg--user{align-self:flex-end;}
+
+.chat-msg p,.chat-msg span{
+  display:block;
+  padding:10px 13px;
+  border-radius:12px;
+  font-size:0.875rem;
+  line-height:1.65;
+  margin:0;
+  word-break:break-word;
+}
+.chat-msg--bot p,.chat-msg--bot span{
+  background:var(--bg-elev);
+  color:var(--text);
+  border-radius:4px 12px 12px 12px;
+}
+.chat-msg--user p,.chat-msg--user span{
+  background:var(--accent);
+  color:#fff;
+  border-radius:12px 4px 12px 12px;
+}
+.chat-msg--typing span{
+  color:var(--text-subtle);
+  font-style:italic;
+}
+
+.chat-input-area{
+  display:flex;align-items:center;gap:8px;
+  padding:10px 12px;
+  border-top:1px solid var(--line);
+  background:var(--bg);
+  flex-shrink:0;
+}
+.chat-input{
+  flex:1;padding:9px 12px;
+  font-size:0.875rem;font-family:var(--font-sans);
+  background:var(--bg-card);color:var(--text);
+  border:1px solid var(--line-strong);
+  border-radius:var(--radius);
+  min-width:0;
+  transition:border-color 0.15s;
+}
+.chat-input:focus{outline:none;border-color:var(--accent);}
+.chat-send{
+  width:36px;height:36px;border-radius:var(--radius-sm);
+  background:var(--accent);color:#fff;
+  border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+  transition:background 0.15s,transform 0.1s;
+}
+.chat-send:hover{background:var(--accent-hover);}
+.chat-send:active{transform:scale(0.93);}
+.chat-send:disabled{opacity:0.45;cursor:not-allowed;}
+
+@media(max-width:400px){
+  #chat-widget{bottom:16px;right:16px;}
+  #chat-panel{width:calc(100vw - 32px);}
+}
+</style>
+
+<script>
+(function(){
+  var ENDPOINT = 'https://portfolio-chat.wishdaigo1458.workers.dev/chat';
+  var toggle   = document.getElementById('chat-toggle');
+  var panel    = document.getElementById('chat-panel');
+  var messages = document.getElementById('chat-messages');
+  var form     = document.getElementById('chat-form');
+  var input    = document.getElementById('chat-input');
+  var iconOpen = document.getElementById('chat-icon-open');
+  var iconClose= document.getElementById('chat-icon-close');
+
+  var history  = [];  // [{role, content}]
+  var loading  = false;
+
+  // Toggle panel
+  toggle.addEventListener('click', function(){
+    var isOpen = !panel.hidden;
+    panel.hidden = isOpen;
+    toggle.setAttribute('aria-expanded', String(!isOpen));
+    iconOpen.style.display  = isOpen ? '' : 'none';
+    iconClose.style.display = isOpen ? 'none' : '';
+    if(!isOpen){ input.focus(); }
+  });
+
+  // Add message bubble
+  function addMessage(role, text){
+    var div = document.createElement('div');
+    div.className = 'chat-msg chat-msg--' + role;
+    var p = document.createElement('p');
+    p.textContent = text;
+    div.appendChild(p);
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+    return div;
+  }
+
+  // Typing indicator
+  function showTyping(){
+    var div = document.createElement('div');
+    div.className = 'chat-msg chat-msg--bot chat-msg--typing';
+    div.id = 'chat-typing';
+    var s = document.createElement('span');
+    s.textContent = '入力中…';
+    div.appendChild(s);
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+  }
+  function hideTyping(){
+    var el = document.getElementById('chat-typing');
+    if(el) el.remove();
+  }
+
+  // Submit
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var text = input.value.trim();
+    if(!text || loading) return;
+
+    input.value = '';
+    loading = true;
+    form.querySelector('button').disabled = true;
+
+    addMessage('user', text);
+    history.push({ role: 'user', content: text });
+
+    showTyping();
+
+    fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messages: history })
+    })
+    .then(function(res){ return res.json(); })
+    .then(function(data){
+      hideTyping();
+      if(data.ok){
+        addMessage('bot', data.reply);
+        history.push({ role: 'assistant', content: data.reply });
+      } else {
+        addMessage('bot', data.message || 'エラーが発生しました。しばらくしてからお試しください。');
+        if(data.error === 'rate_limited'){ history = []; }
+      }
+    })
+    .catch(function(){
+      hideTyping();
+      addMessage('bot', '通信エラーが発生しました。ページを再読み込みしてお試しください。');
+    })
+    .finally(function(){
+      loading = false;
+      form.querySelector('button').disabled = false;
+      input.focus();
+    });
+  });
+}());
+</script>
