@@ -1,126 +1,165 @@
----
-layout: default
-title: プロフィール
-description: 今川大悟のプロフィール。Web制作15件の納品実績、法律学習SaaSを本番運用中。LINE Bot・LP制作・業務自動化・MVP開発まで一貫して対応するフリーランス開発者。
-jsonld: |
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "今川大悟",
-    "alternateName": "Daigo Imagawa",
-    "url": "https://imagawadaigo.github.io/daigo-portfolio/about.html",
-    "image": "https://imagawadaigo.github.io/daigo-portfolio/assets/img/profile.jpg",
-    "jobTitle": "フリーランス開発者 / LINE Bot・Web制作・業務自動化",
-    "knowsAbout": ["LINE Bot開発","Web制作","LP制作","業務自動化","SaaS開発","Next.js","Supabase","Cloudflare Workers","Stripe","AI API統合"]
-  }
-  </script>
----
+<!doctype html>
+<html lang="ja" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About — 今川大悟 / Daigo Imagawa</title>
+<meta name="description" content="フリーランス開発者 今川大悟のプロフィール。実績数字と、仕事のスタンス。" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300;400;500;600&family=Instrument+Serif:ital@0;1&family=Noto+Sans+JP:wght@200;300;400;500;700&family=Noto+Serif+JP:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
 
-<div class="container">
-
-  <!-- Profile header -->
-  <section class="profile-header" aria-labelledby="profile-name">
-    <img class="profile-header__photo"
-         src="{{ '/assets/img/profile.jpg' | relative_url }}"
-         alt="今川大悟のプロフィール写真"
-         width="180" height="180" loading="eager">
-    <div>
-      <h1 class="profile-header__name" id="profile-name">今川 大悟</h1>
-      <p class="profile-header__tagline">フリーランス開発者 — LINE Bot・Web制作・業務自動化</p>
-      <ul class="tag-list profile-header__tags" aria-label="対応分野">
-        <li class="tag">LINE Bot開発</li>
-        <li class="tag">LP制作</li>
-        <li class="tag">業務自動化</li>
-        <li class="tag">MVP開発</li>
-        <li class="tag">WordPress</li>
-      </ul>
+<nav class="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="index.html"><span class="dot"></span><span>daigo.imagawa</span></a>
+    <div class="nav__links">
+      <a href="index.html">Index</a>
+      <a href="about.html" aria-current="page">About</a>
+      <a href="work.html">Work</a>
+      <a href="index.html#contact">Contact</a>
     </div>
-  </section>
+    <a class="nav__cta" href="index.html#contact"><span class="pulse"></span><span>2026 — 受付中</span></a>
+  </div>
+</nav>
 
-  <!-- Numbers -->
-  <section class="section" aria-labelledby="stats-title">
-    <header class="section__header">
-      <span class="section__eyebrow">Numbers</span>
-      <h2 class="section__title" id="stats-title">数字で見る実績</h2>
-    </header>
-    <div class="stats">
-      <div class="stat">
-        <div class="stat__num" data-target="15" data-unit="件">0件</div>
-        <div class="stat__label">Web制作の納品実績</div>
-      </div>
-      <div class="stat">
-        <div class="stat__num" data-target="2" data-unit="件">0件</div>
-        <div class="stat__label">本番稼働中プロダクト</div>
-      </div>
-      <div class="stat">
-        <div class="stat__num" data-target="24" data-unit="h">0h</div>
-        <div class="stat__label">平均返信時間</div>
-      </div>
-      <div class="stat">
-        <div class="stat__num" data-target="80" data-unit="%">0%</div>
-        <div class="stat__label">完了後アンケート 満足度</div>
+<main>
+
+  <section class="about-hero" data-screen-label="01 About hero">
+    <div class="container">
+      <div class="about-hero__grid">
+        <div class="reveal">
+          <div class="about-hero__name">About — 今川大悟</div>
+          <h1 class="about-hero__title">
+            プロが、<em>偶然</em><br>
+            まだ若い。
+          </h1>
+          <p class="about-hero__lede">
+            法律学習SaaS Elenco と、ボードゲーム EC BoardKit を自分で運用・開発しながら、中小企業向けに受注開発をしています。
+          </p>
+        </div>
+        <div class="about-hero__photo reveal" data-delay="1">
+          <img src="profile.jpg" alt="今川大悟 プロフィール写真" />
+          <div class="badge"><span class="dot"></span><span>Available · 2026 新規受付中</span></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Bio -->
-  <section class="section" aria-labelledby="bio-title">
-    <header class="section__header">
-      <span class="section__eyebrow">About</span>
-      <h2 class="section__title" id="bio-title">プロフィール</h2>
-    </header>
-    <p class="bio">
-      中小企業・個人事業主の「Webで何とかしたい」という課題に、一人で答えています。LINE Botによる顧客対応の自動化から、LP・店舗サイトの制作、業務のシステム化まで。フロントエンドからバックエンド・インフラ・決済まで一貫して対応するので、窓口を複数に分ける必要がありません。
-    </p>
-    <p class="bio">
-      受注の仕事だけでなく、自分自身でもプロダクトを本番運用しています。法律学習SaaS「Elenco」は条文・判例横断検索・AI演習・Stripe課金まで一人でフルスタック実装し稼働中。入退室管理システムもCloudflare WorkersとLINE APIで構築・運用中です。「動いて使われるものを作る」という責任感の根拠が、自分のプロダクトにあります。
-    </p>
-  </section>
-
-  <!-- Stance -->
-  <section class="section card" aria-labelledby="stance-title">
-    <header class="section__header">
-      <span class="section__eyebrow">Stance</span>
-      <h2 class="section__title" id="stance-title">仕事のスタンス</h2>
-    </header>
-    <dl class="def-list">
-      <dt>要件が固まっていなくても動ける</dt>
-      <dd>「こういうことがしたい」という段階からヒアリングで整理します。何を作るかを言語化するところから一緒に進められます。</dd>
-      <dt>窓口は一本、全工程を一人で完結</dt>
-      <dd>UI設計・DBスキーマ・API設計・認証・決済・デプロイまで一貫して対応します。担当が分かれて認識がズレる問題が起きません。</dd>
-      <dt>返信は早く、進捗はこまめに</dt>
-      <dd>原則24時間以内に返信します。「何も連絡がこない」という不安が起きないよう、進捗も随時共有します。</dd>
-      <dt>正直な見積もりと範囲設定</dt>
-      <dd>自分の技量で確実に届けられる範囲のみ受注します。できないことはできないと言います。</dd>
-    </dl>
-  </section>
-
-  <!-- Background -->
-  <section class="section" aria-labelledby="bg-title">
-    <header class="section__header">
-      <span class="section__eyebrow">Background</span>
-      <h2 class="section__title" id="bg-title">主な活動領域</h2>
-    </header>
-    <div class="card-grid">
-      <article class="card feature">
-        <h3 class="feature__title">フリーランス受注</h3>
-        <p class="feature__body">クラウドワークスを中心に、LP・店舗サイト・LINE Bot・業務自動化・SaaS開発を受注。ヒアリングから納品まで一人で完結。</p>
-      </article>
-      <article class="card feature">
-        <h3 class="feature__title">自社プロダクト開発・運用</h3>
-        <p class="feature__body">法律学習SaaS「Elenco」を個人でフルスタック実装・本番運用中。入退室管理ダッシュボードも構築・稼働中。</p>
-      </article>
+  <!-- numbers -->
+  <section data-screen-label="02 Numbers">
+    <div class="container">
+      <div class="numbers">
+        <div class="numbers__item reveal">
+          <span class="v">1<span class="unit">本番運用</span></span>
+          <span class="k">SaaS in Production</span>
+          <span class="note">Elenco（法律学習）</span>
+        </div>
+        <div class="numbers__item reveal" data-delay="1">
+          <span class="v">1<span class="unit">開発中</span></span>
+          <span class="k">EC in Development</span>
+          <span class="note">BoardKit（自作BG）</span>
+        </div>
+        <div class="numbers__item reveal" data-delay="2">
+          <span class="v">15<span class="unit">件</span></span>
+          <span class="k">Web Delivered</span>
+          <span class="note">LP・店舗・自動化</span>
+        </div>
+        <div class="numbers__item reveal" data-delay="3">
+          <span class="v">24<span class="unit">h以内</span></span>
+          <span class="k">First Reply</span>
+          <span class="note">問い合わせから</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="cta-banner" aria-labelledby="about-cta">
-    <h2 class="cta-banner__title" id="about-cta">課題があれば、まず話しましょう</h2>
-    <p class="cta-banner__body">「こんなこと頼めるかな」程度のご相談でも歓迎です。相談・見積もりは無料です。</p>
-    <div class="cta-banner__actions">
-      <a class="btn btn--primary" href="{{ '/contact.html' | relative_url }}">相談フォームへ →</a>
-      <a class="btn btn--ghost" href="{{ '/works.html' | relative_url }}">制作実績を見る</a>
+  <!-- stance -->
+  <section class="section" data-screen-label="03 Stance">
+    <div class="container">
+      <div class="eyebrow reveal"><span class="num">01 / Stance</span><span>仕事のスタンス</span></div>
+      <h2 class="section-title reveal" data-delay="1">
+        何を<em>やるか</em>より、<br>
+        どう<em>やるか</em>を大事にしています。
+      </h2>
+
+      <div class="stance" style="margin-top:80px;">
+        <div class="stance__item reveal">
+          <span class="stance__num">01</span>
+          <h3 class="stance__title">課題から<em>逆算</em>する</h3>
+          <p class="stance__desc">
+            「LINE Botを作りたい」より「問い合わせの何が辛いか」を聞きたい。
+            課題の輪郭をはっきりさせるのが最初の仕事です。
+          </p>
+        </div>
+        <div class="stance__item reveal" data-delay="1">
+          <span class="stance__num">02</span>
+          <h3 class="stance__title">小さく早く<em>渡す</em></h3>
+          <p class="stance__desc">
+            完成形を一気に出さない。動くものを早めに渡して、
+            触りながら方向を決めます。
+          </p>
+        </div>
+        <div class="stance__item reveal" data-delay="2">
+          <span class="stance__num">03</span>
+          <h3 class="stance__title">運用に<em>残せる</em>形で</h3>
+          <p class="stance__desc">
+            自分にしか分からない構成は作らない。
+            運用手順・データの追い方も納品物です。
+          </p>
+        </div>
+        <div class="stance__item reveal" data-delay="3">
+          <span class="stance__num">04</span>
+          <h3 class="stance__title">本番の<em>痛み</em>を経験している</h3>
+          <p class="stance__desc">
+            Elenco の運用で、決済失敗・障害・問い合わせの実物に毎週触れています。
+            「動く」と「運用できる」は違う。
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
-</div>
+  <!-- contact CTA -->
+  <section class="contact" id="contact" data-screen-label="04 Contact">
+    <div class="container--narrow">
+      <h2 class="contact__big reveal">
+        相性、<br>
+        <span class="accent">確かめませんか</span>。
+      </h2>
+      <p class="contact__lede reveal" data-delay="1">
+        30分の壁打ちから。<br>
+        その先は話してから決めましょう。
+      </p>
+      <div class="reveal" data-delay="2" style="display:inline-flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+        <a class="btn" href="mailto:wishdaigo1458@gmail.com" data-magnetic>
+          <span>メールで相談する</span>
+          <span class="arrow">↗</span>
+        </a>
+        <a class="btn btn--ghost" href="work.html" data-magnetic>
+          <span>実績を見る</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot__inner">
+    <div>© 2026 Daigo Imagawa. All rights reserved.</div>
+    <div class="foot__links">
+      <a href="index.html">Index</a>
+      <a href="about.html">About</a>
+      <a href="work.html">Work</a>
+      <a href="https://github.com/imagawadaigo">GitHub ↗</a>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>

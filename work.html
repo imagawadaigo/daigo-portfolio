@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="ja" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Work — 今川大悟 / Selected Projects</title>
+<meta name="description" content="本番稼働中のSaaS・開発中のEC・受託納品実績まで。今川大悟のプロジェクト一覧。" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300;400;500;600&family=Instrument+Serif:ital@0;1&family=Noto+Sans+JP:wght@200;300;400;500;700&family=Noto+Serif+JP:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="index.html"><span class="dot"></span><span>daigo.imagawa</span></a>
+    <div class="nav__links">
+      <a href="index.html">Index</a>
+      <a href="about.html">About</a>
+      <a href="work.html" aria-current="page">Work</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <a class="nav__cta" href="index.html#contact"><span class="pulse"></span><span>2026 — 受付中</span></a>
+  </div>
+</nav>
+
+<main>
+
+  <section class="work-hero" data-screen-label="01 Work hero">
+    <div class="container">
+      <div class="eyebrow reveal"><span class="num">Work · 2024 — 2026</span></div>
+      <h1 class="hero__title reveal" data-delay="1" style="font-size:clamp(56px, 9vw, 128px);">
+        作って、運用して、<br>
+        <em>磨いている</em>もの。
+      </h1>
+      <p class="section-lede reveal" data-delay="2" style="margin-top:48px;">
+        本番稼働中のもの、開発中のもの、納品済みのもの。
+        どれも「一緒に使う人がいる」ことを忘れずに作っています。
+      </p>
+    </div>
+  </section>
+
+  <!-- featured Elenco card (ink, full-width) -->
+  <section style="padding:0 0 32px;">
+    <div class="container">
+      <article class="case case--feature reveal" id="elenco" style="grid-column:span 1;">
+        <div>
+          <div class="case__head">
+            <span class="case__status" data-status="live"><span class="dot"></span>Live · 本番稼働中</span>
+            <span class="case__year">2024 — 現在</span>
+          </div>
+          <h3 class="case__title">Elenco</h3>
+          <p class="case__sub">法律学習 SaaS / Solo-founded</p>
+          <p class="case__desc" style="font-size:17px;line-height:1.7;max-width:48ch;">
+            条文・判例検索、AI による演習生成、Stripe 課金、解約フローまで。
+            設計から運用まで一人で回しています。学習者の理解の癖に合わせて
+            問題を生成する所が、地味だけど一番こだわっている部分。
+          </p>
+          <div class="case__stack">
+            <span>Next.js</span>
+            <span>Supabase</span>
+            <span>Anthropic API</span>
+            <span>Stripe</span>
+            <span>Vercel</span>
+            <span>TypeScript</span>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;justify-content:flex-end;gap:24px;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;font-family:var(--mono);font-size:11px;color:var(--ink-5);letter-spacing:0.04em;">
+            <div>
+              <div style="text-transform:uppercase;color:var(--ink-5);margin-bottom:6px;">Role</div>
+              <div style="color:var(--bg);font-family:var(--sans);font-size:14px;letter-spacing:-0.005em;">設計 / 実装 / 運用</div>
+            </div>
+            <div>
+              <div style="text-transform:uppercase;color:var(--ink-5);margin-bottom:6px;">Stage</div>
+              <div style="color:var(--bg);font-family:var(--sans);font-size:14px;letter-spacing:-0.005em;">課金顧客 獲得中</div>
+            </div>
+            <div>
+              <div style="text-transform:uppercase;color:var(--ink-5);margin-bottom:6px;">Type</div>
+              <div style="color:var(--bg);font-family:var(--sans);font-size:14px;letter-spacing:-0.005em;">B2C SaaS / 月額</div>
+            </div>
+            <div>
+              <div style="text-transform:uppercase;color:var(--ink-5);margin-bottom:6px;">Started</div>
+              <div style="color:var(--bg);font-family:var(--sans);font-size:14px;letter-spacing:-0.005em;">2024.10</div>
+            </div>
+          </div>
+          <a class="case__cta" href="https://elenco.example.com" style="color:var(--bg);align-self:flex-start;">
+            <span>サイトを見る</span><span class="arrow">↗</span>
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- list of all -->
+  <section class="section section--tight" data-screen-label="02 All work">
+    <div class="container">
+      <div class="eyebrow reveal"><span class="num">All / 17 items</span><span>すべての実績</span></div>
+
+      <div class="work-list">
+
+        <article class="work-row reveal" id="nyutaishitsu">
+          <div class="work-row__num">001</div>
+          <div>
+            <h3 class="work-row__title">入退室管理ダッシュボード</h3>
+            <p class="work-row__sub">Cloudflare Workers + LINE API · 受託</p>
+          </div>
+          <p class="work-row__desc">
+            6軸の分析ダッシュボードを構築。LINEで入退室を打刻、Workers でデータを蓄積。
+            運用判断に日常的に使われている。
+          </p>
+          <div class="work-row__meta">
+            <div><span class="label">Year</span><br>2024</div>
+            <div><span class="label">Status</span><br>Live</div>
+          </div>
+          <div class="work-row__arrow">→</div>
+        </article>
+
+        <article class="work-row reveal" id="boardkit" data-delay="1">
+          <div class="work-row__num">002</div>
+          <div>
+            <h3 class="work-row__title">BoardKit</h3>
+            <p class="work-row__sub">自作ボードゲーム EC · Solo-founded</p>
+          </div>
+          <p class="work-row__desc">
+            「友人の家に集まる夜を特別にする」ブランドコンセプトから設計中。
+            物理商品＋PDF 配信の併売 EC として開発中。
+          </p>
+          <div class="work-row__meta">
+            <div><span class="label">Year</span><br>2026</div>
+            <div><span class="label">Status</span><br>In Dev</div>
+          </div>
+          <div class="work-row__arrow">→</div>
+        </article>
+
+        <article class="work-row reveal" data-delay="2">
+          <div class="work-row__num">003</div>
+          <div>
+            <h3 class="work-row__title">飲食店 LINE Bot 予約</h3>
+            <p class="work-row__sub">受託 / 中小飲食</p>
+          </div>
+          <p class="work-row__desc">
+            電話対応の負担を減らすため、LINE 上で席数管理・予約を完結。
+            運用4ヶ月で、電話入電が約半減。
+          </p>
+          <div class="work-row__meta">
+            <div><span class="label">Year</span><br>2025</div>
+            <div><span class="label">Status</span><br>Delivered</div>
+          </div>
+          <div class="work-row__arrow">→</div>
+        </article>
+
+        <article class="work-row reveal" data-delay="3">
+          <div class="work-row__num">004</div>
+          <div>
+            <h3 class="work-row__title">士業事務所 LP リニューアル</h3>
+            <p class="work-row__sub">受託 / 法律事務所</p>
+          </div>
+          <p class="work-row__desc">
+            「相談しづらい」を解消する文章設計と、問い合わせフォームまでの動線を再構築。
+            問い合わせ数が以前の 2.4 倍に。
+          </p>
+          <div class="work-row__meta">
+            <div><span class="label">Year</span><br>2025</div>
+            <div><span class="label">Status</span><br>Delivered</div>
+          </div>
+          <div class="work-row__arrow">→</div>
+        </article>
+
+        <article class="work-row reveal">
+          <div class="work-row__num">005</div>
+          <div>
+            <h3 class="work-row__title">在庫管理スプレッドシート自動化</h3>
+            <p class="work-row__sub">受託 / 小売</p>
+          </div>
+          <p class="work-row__desc">
+            Google Apps Script で日次の発注リスト生成を自動化。
+            毎朝 30 分の作業を、人がやらない仕事に変換。
+          </p>
+          <div class="work-row__meta">
+            <div><span class="label">Year</span><br>2025</div>
+            <div><span class="label">Status</span><br>Delivered</div>
+          </div>
+          <div class="work-row__arrow">→</div>
+        </article>
+
+        <article class="work-row reveal">
+          <div class="work-row__num">006</div>
+          <div>
+            <h3 class="work-row__title">店舗サイト × 多数</h3>
+            <p class="work-row__sub">受託 / 各種業種 · 11件</p>
+          </div>
+          <p class="work-row__desc">
+            飲食・美容・教室など、店舗向けサイトを Jekyll / Astro で複数構築。
+            運用しやすさを最優先に、納品後の更新もこちらで継続中の案件あり。
+          </p>
+          <div class="work-row__meta">
+            <div><span class="label">Year</span><br>2024 — 2025</div>
+            <div><span class="label">Status</span><br>Delivered</div>
+          </div>
+          <div class="work-row__arrow">→</div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- contact -->
+  <section class="contact" id="contact" data-screen-label="03 Contact">
+    <div class="container--narrow">
+      <h2 class="contact__big reveal">
+        次の<em>一つ</em>を、<br>
+        <span class="accent">一緒に</span>。
+      </h2>
+      <p class="contact__lede reveal" data-delay="1">
+        どの規模・どの段階でも、まずは話を聞かせてください。
+      </p>
+      <div class="reveal" data-delay="2" style="display:inline-flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+        <a class="btn" href="mailto:hello@imagawadaigo.dev" data-magnetic>
+          <span>メールで相談する</span><span class="arrow">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot__inner">
+    <div>© 2026 Daigo Imagawa. All rights reserved.</div>
+    <div class="foot__links">
+      <a href="index.html">Index</a>
+      <a href="about.html">About</a>
+      <a href="work.html">Work</a>
+      <a href="https://github.com/imagawadaigo">GitHub ↗</a>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>

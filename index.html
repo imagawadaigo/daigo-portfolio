@@ -1,299 +1,361 @@
----
-layout: default
-title: LINE Bot・Web制作・業務自動化 | 今川大悟
-description: 顧客対応の自動化・LP制作・業務システム開発。中小企業・個人事業主の「Webでどうにかしたい」を形にします。相談・見積もり無料。
-permalink: /
-jsonld: |
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "今川大悟",
-    "alternateName": "Daigo Imagawa",
-    "url": "https://imagawadaigo.github.io/daigo-portfolio/",
-    "image": "https://imagawadaigo.github.io/daigo-portfolio/assets/img/profile.jpg",
-    "jobTitle": "フリーランス開発者 / LINE Bot・Web制作・業務自動化",
-    "description": "顧客対応の自動化・LP制作・業務システム開発。中小企業の課題をWebで解決します。",
-    "email": "mailto:wishdaigo1458@gmail.com",
-    "knowsAbout": ["LINE Bot開発","Web制作","LP制作","業務自動化","MVP開発","Next.js","Supabase","Cloudflare Workers","Stripe","AI API統合"],
-    "makesOffer": [
-      { "@type": "Offer", "name": "LINE Bot開発", "priceCurrency": "JPY", "priceRange": "30000-100000" },
-      { "@type": "Offer", "name": "Webサイト・LP制作", "priceCurrency": "JPY", "priceRange": "30000-150000" },
-      { "@type": "Offer", "name": "業務自動化・ダッシュボード", "priceCurrency": "JPY", "priceRange": "50000-150000" },
-      { "@type": "Offer", "name": "MVP・プロトタイプ開発", "priceCurrency": "JPY", "priceRange": "150000-300000" }
-    ]
-  }
-  </script>
----
+<!doctype html>
+<html lang="ja" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>今川大悟 — Daigo Imagawa / Freelance Developer</title>
+<meta name="description" content="フリーランス開発者。LINE Bot・LP制作・業務自動化・MVP開発。Elenco（法律学習SaaS）を本番運用、BoardKit（EC）を開発中。" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300;400;500;600&family=Instrument+Serif:ital@0;1&family=Noto+Sans+JP:wght@200;300;400;500;700&family=Noto+Serif+JP:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
 
-<!-- ── Hero ── -->
-<section class="hero" data-ghost="CREATOR">
-  <div class="container">
-    <div class="hero__grid">
-      <div>
-        <h1 class="hero__title">業務の課題を、<br>Webで解決します。</h1>
-        <p class="hero__lead">LINE Botで顧客対応を自動化したい、LPを作りたい、業務を仕組み化したい。まずどんな課題かを聞かせてください。</p>
-        <div class="hero__cta">
-          <a class="btn btn--primary" href="{{ '/contact.html' | relative_url }}">
-            課題を相談する（無料）→
-          </a>
-          <a class="btn" href="{{ '/works.html' | relative_url }}">制作実績を見る</a>
+<nav class="nav" data-screen-label="Nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="index.html" aria-label="Home">
+      <span class="dot"></span>
+      <span>daigo.imagawa</span>
+    </a>
+    <div class="nav__links">
+      <a href="index.html" aria-current="page">Index</a>
+      <a href="about.html">About</a>
+      <a href="work.html">Work</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="nav__cta" href="#contact">
+      <span class="pulse"></span>
+      <span>2026 — 受付中</span>
+    </a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ============================ HERO ============================ -->
+  <section class="hero" data-hero="big" data-screen-label="01 Hero">
+    <div class="hero__inner">
+
+      <div class="hero__meta reveal">
+        <div class="row">
+          <span>Freelance Developer</span>
+          <span>Tokyo / Remote · 2026—</span>
         </div>
-        <div class="hero__kpi" role="list" aria-label="実績数字">
-          <div class="hero__kpi-item" role="listitem">
-            <div class="hero__kpi-num mono" data-target="15" data-unit="件">0件</div>
-            <div class="hero__kpi-label">Web制作 納品実績</div>
-          </div>
-          <div class="hero__kpi-item" role="listitem">
-            <div class="hero__kpi-num mono" data-target="2" data-unit="件">0件</div>
-            <div class="hero__kpi-label">本番稼働中プロダクト</div>
-          </div>
-          <div class="hero__kpi-item" role="listitem">
-            <div class="hero__kpi-num mono" data-target="24" data-unit="h">0h</div>
-            <div class="hero__kpi-label">平均返信時間（原則以内）</div>
-          </div>
-          <div class="hero__kpi-item" role="listitem">
-            <div class="hero__kpi-num mono" data-target="80" data-unit="%">0%</div>
-            <div class="hero__kpi-label">完了後アンケート 満足度</div>
-          </div>
+        <div class="row" style="text-align:right">
+          <span>Index</span>
+          <span>00 / 04</span>
         </div>
       </div>
-      <div class="hero__visual">
-        <img class="hero__portrait"
-             src="{{ '/assets/img/profile.jpg' | relative_url }}"
-             alt="今川大悟 — フリーランス開発者"
-             width="340" height="340" loading="eager" fetchpriority="high">
+
+      <h1 class="hero__title reveal" data-delay="1">
+        自分でも<br>
+        <em>作る</em>側の、<br>
+        <span class="accent">開発者</span>。
+      </h1>
+
+      <div class="hero__sub reveal" data-delay="2">
+        <p class="lede">
+          <strong>今川大悟（いまがわ・だいご）。</strong>
+          法律学習SaaS <em>Elenco</em> を一人で本番運用しながら、
+          中小企業・個人事業主向けに LINE Bot / LP / 業務自動化を作っています。
+          技術スタックの羅列より、<strong>あなたの業務の手触り</strong>から考えます。
+        </p>
+        <dl class="meta">
+          <div>
+            <dt>Status</dt>
+            <dd>新規案件 受付中</dd>
+          </div>
+          <div>
+            <dt>Based in</dt>
+            <dd>東京 / フルリモート</dd>
+          </div>
+          <div>
+            <dt>Stack</dt>
+            <dd>Next.js · Supabase · TypeScript</dd>
+          </div>
+          <div>
+            <dt>Since</dt>
+            <dd>独立 2024 — </dd>
+          </div>
+        </dl>
       </div>
+
+      <!-- Photo column appears only in compact layout via CSS -->
+      <div class="hero__photo">
+        <div class="frame">
+          <img src="profile.jpg" alt="今川大悟 プロフィール写真" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ STRIP ============================ -->
+  <div class="strip">
+    <div class="strip__inner">
+      <div class="item reveal"><span class="k">Live SaaS</span><span class="v">1<sup>運用中</sup></span></div>
+      <div class="item reveal" data-delay="1"><span class="k">In Development</span><span class="v">1<sup>EC構築</sup></span></div>
+      <div class="item reveal" data-delay="2"><span class="k">Web 納品</span><span class="v">15<sup>件</sup></span></div>
+      <div class="item reveal" data-delay="3"><span class="k">Response</span><span class="v">24<sup>h以内</sup></span></div>
     </div>
   </div>
-</section>
 
-<!-- ── Marquee ticker ── -->
-<div class="marquee-wrap" aria-hidden="true">
-  <div class="marquee-track">
-    <span class="marquee-item">Web Design</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">LINE Bot</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">LP制作</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">SaaS開発</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Next.js</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Supabase</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">業務自動化</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Stripe</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">AI API統合</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Cloudflare</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Web Design</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">LINE Bot</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">LP制作</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">SaaS開発</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Next.js</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Supabase</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">業務自動化</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Stripe</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">AI API統合</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Cloudflare</span><span class="marquee-dot">◆</span>
+  <!-- ============================ SERVICES ============================ -->
+  <section class="section" id="services" data-screen-label="02 Services">
+    <div class="container">
+      <div class="eyebrow reveal"><span class="num">01 / Services</span><span>提供サービス</span></div>
+      <h2 class="section-title reveal" data-delay="1">
+        作るものは<em>違っても</em>、<br>
+        進め方は<em>変わらない</em>。
+      </h2>
+      <p class="section-lede reveal" data-delay="2">
+        まず1時間ヒアリング。要件と制約を整理してから、見積もりを出します。
+        小さく作って早く触ってもらい、必要な所だけ広げます。
+      </p>
+
+      <div class="services">
+        <article class="service reveal">
+          <div class="service__num">01</div>
+          <div>
+            <div class="service__en">LINE Bot</div>
+            <h3 class="service__title">問い合わせ自動化</h3>
+          </div>
+          <p class="service__desc">
+            よくある質問・予約・在庫照会を LINE 上で完結。
+            既存の業務フローに合わせて作り込みます。
+          </p>
+          <div class="service__price">
+            from
+            <b>¥30,000 — ¥100,000</b>
+          </div>
+        </article>
+
+        <article class="service reveal" data-delay="1">
+          <div class="service__num">02</div>
+          <div>
+            <div class="service__en">Web / LP</div>
+            <h3 class="service__title">サイト・LP制作</h3>
+          </div>
+          <p class="service__desc">
+            「とりあえずキレイ」ではなく、誰に何を伝えるかから組み立てる。
+            運用しやすい構造で納品します。
+          </p>
+          <div class="service__price">
+            from
+            <b>¥30,000 — ¥150,000</b>
+          </div>
+        </article>
+
+        <article class="service reveal" data-delay="2">
+          <div class="service__num">03</div>
+          <div>
+            <div class="service__en">Automation</div>
+            <h3 class="service__title">業務自動化・ダッシュボード</h3>
+          </div>
+          <p class="service__desc">
+            スプレッドシート運用の限界を超える時に。
+            データを集めて、見て、判断できる形に変換します。
+          </p>
+          <div class="service__price">
+            from
+            <b>¥50,000 — ¥150,000</b>
+          </div>
+        </article>
+
+        <article class="service reveal" data-delay="3">
+          <div class="service__num">04</div>
+          <div>
+            <div class="service__en">MVP / Prototype</div>
+            <h3 class="service__title">MVP・プロトタイプ開発</h3>
+          </div>
+          <p class="service__desc">
+            アイデアを2〜4週間で動くプロダクトに。
+            検証に必要な最短経路だけ、本気で作ります。
+          </p>
+          <div class="service__price">
+            from
+            <b>¥150,000 — ¥300,000</b>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ WORK ============================ -->
+  <section class="section" id="work" data-screen-label="03 Work">
+    <div class="container">
+      <div class="eyebrow reveal"><span class="num">02 / Selected Work</span><span>本気で作っているもの</span></div>
+      <h2 class="section-title reveal" data-delay="1">
+        受注の合間ではなく、<br>
+        <em>主戦場として</em>動いているプロダクト。
+      </h2>
+      <p class="section-lede reveal" data-delay="2">
+        本番運用で起きる「決済の失敗」「課金導線の摩擦」「予期しない障害」と日々向き合っています。
+        受注プロダクトにも同じ基準で設計します。
+      </p>
+
+      <div class="cases">
+        <a class="case case--feature reveal" href="work.html#elenco">
+          <div>
+            <img class="case__img" src="img_2026-05-03T11-15-20_01.png" alt="Elenco ダッシュボード" />
+            <div class="case__head">
+              <span class="case__status" data-status="live"><span class="dot"></span>Live · 本番稼働中</span>
+              <span class="case__year">2024 — 現在</span>
+            </div>
+            <h3 class="case__title">Elenco</h3>
+            <p class="case__sub">法律学習 SaaS / Solo-founded</p>
+            <p class="case__desc">
+              条文・判例検索、AI演習、Stripe課金まで一人でフルスタック実装。
+              課金が続く SaaS を、自分で運用しながら磨いている。
+            </p>
+            <div class="case__stack">
+              <span>Next.js</span>
+              <span>Supabase</span>
+              <span>Anthropic API</span>
+              <span>Stripe</span>
+              <span>Vercel</span>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-end;gap:24px;">
+            <div style="font-family:var(--mono);font-size:11px;color:var(--ink-5);letter-spacing:0.06em;text-transform:uppercase;">Role</div>
+            <div style="font-family:var(--serif);font-size:32px;line-height:1.1;color:var(--bg);text-align:right;letter-spacing:-0.02em;">設計・実装・<br>運用・課金導線、<br><em style="color:var(--ink-5);font-style:italic">全部</em></div>
+            <span class="case__cta">
+              <span>詳細を見る</span><span class="arrow">→</span>
+            </span>
+          </div>
+        </a>
+
+        <a class="case reveal" href="work.html#nyutaishitsu" data-delay="1">
+          <img class="case__img" src="img_2026-05-03T11-15-25_01.png" alt="入退室管理ダッシュボード" />
+          <div class="case__head">
+            <span class="case__status" data-status="live"><span class="dot"></span>Live</span>
+            <span class="case__year">2024</span>
+          </div>
+          <h3 class="case__title">入退室管理</h3>
+          <p class="case__sub">ダッシュボード / 受託</p>
+          <p class="case__desc">
+            Cloudflare Workers + LINE API で構築した入退室管理。
+            6軸の分析ダッシュボードで運用判断に使われている。
+          </p>
+          <div class="case__stack">
+            <span>Cloudflare Workers</span>
+            <span>LINE API</span>
+            <span>D1</span>
+          </div>
+          <span class="case__cta"><span>詳細を見る</span><span class="arrow">→</span></span>
+        </a>
+
+        <a class="case reveal" href="work.html#boardkit" data-delay="2">
+          <img class="case__img" src="img_2026-05-03T11-15-24_01.png" alt="BoardKit" />
+          <div class="case__head">
+            <span class="case__status" data-status="dev"><span class="dot"></span>In Development</span>
+            <span class="case__year">2026</span>
+          </div>
+          <h3 class="case__title">BoardKit</h3>
+          <p class="case__sub">自作ボードゲーム EC / Solo-founded</p>
+          <p class="case__desc">
+            「友人の家に集まる夜を特別にする」をコンセプトに、
+            物理商品＋PDF配信の EC として設計中。ブランドから一人で。
+          </p>
+          <div class="case__stack">
+            <span>Next.js</span>
+            <span>Supabase</span>
+            <span>Stripe</span>
+          </div>
+          <span class="case__cta"><span>詳細を見る</span><span class="arrow">→</span></span>
+        </a>
+      </div>
+
+      <div style="margin-top:48px;text-align:center;" class="reveal">
+        <a class="btn btn--ghost" href="work.html" data-magnetic>
+          <span>すべての実績を見る</span>
+          <span class="arrow">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ STANCE ============================ -->
+  <section class="section" id="stance" data-screen-label="04 Stance">
+    <div class="container">
+      <div class="eyebrow reveal"><span class="num">03 / Stance</span><span>仕事の進め方</span></div>
+      <h2 class="section-title reveal" data-delay="1">
+        できます、と言うより、<br>
+        <em>一緒に</em>考えさせてください。
+      </h2>
+
+      <div class="stance" style="margin-top:80px;">
+        <div class="stance__item reveal">
+          <span class="stance__num">01</span>
+          <h3 class="stance__title">「課題」から<em>入る</em></h3>
+          <p class="stance__desc">
+            技術より先に、業務の流れを聞きたい。
+            最適な解は運用の中にある。
+          </p>
+        </div>
+        <div class="stance__item reveal" data-delay="1">
+          <span class="stance__num">02</span>
+          <h3 class="stance__title">小さく作って、<em>早く</em>触る</h3>
+          <p class="stance__desc">
+            一発で完成は狙わない。動くものを早く渡し、
+            触りながら方向を決めます。
+          </p>
+        </div>
+        <div class="stance__item reveal" data-delay="2">
+          <span class="stance__num">03</span>
+          <h3 class="stance__title">納品後も<em>残る</em>形で</h3>
+          <p class="stance__desc">
+            自分以外がメンテできない構造は作らない。
+            ドキュメント・運用手順も納品物です。
+          </p>
+        </div>
+        <div class="stance__item reveal" data-delay="3">
+          <span class="stance__num">04</span>
+          <h3 class="stance__title">本番運用の<em>痛み</em>を知っている</h3>
+          <p class="stance__desc">
+            Elenco を自分で運用しているから、決済失敗・障害・問い合わせ対応の現実を知っている。
+            「動いた」で終わらない設計を選びます。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ CONTACT ============================ -->
+  <section class="contact" id="contact" data-screen-label="05 Contact">
+    <div class="container--narrow">
+      <div class="eyebrow reveal" style="justify-content:center"><span class="num">04 / Contact</span><span>話してみる</span></div>
+      <h2 class="contact__big reveal" data-delay="1">
+        まず<em>30分</em>、<br>
+        <span class="accent">壁打ち</span>から。
+      </h2>
+      <p class="contact__lede reveal" data-delay="2">
+        要件はまだ固まっていなくていい。<br>
+        まず現状を話してください。
+      </p>
+      <div class="reveal" data-delay="3" style="display:inline-flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+        <a class="btn" href="mailto:wishdaigo1458@gmail.com" data-magnetic>
+          <span>メールで相談する</span>
+          <span class="arrow">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot__inner">
+    <div>© 2026 Daigo Imagawa. All rights reserved.</div>
+    <div class="foot__links">
+      <a href="index.html">Index</a>
+      <a href="about.html">About</a>
+      <a href="work.html">Work</a>
+      <a href="https://github.com/imagawadaigo">GitHub ↗</a>
+    </div>
   </div>
-</div>
+</footer>
 
-<!-- ── Services: problem-first ── -->
-<div class="container">
-  <section class="section" aria-labelledby="services-title">
-    <header class="section__header" data-ghost="SERVICES">
-      <span class="section__eyebrow">Services</span>
-      <h2 class="section__title" id="services-title">こんな課題、対応できます</h2>
-    </header>
-
-    <div class="card-grid">
-      <article class="card">
-        <p class="problem-q">「顧客への問い合わせ対応を自動化したい」</p>
-        <h3 class="feature__title">LINE Bot開発</h3>
-        <p class="feature__body">よくある質問の自動返信・予約受付・営業時間外の一次対応。LINEを窓口にした顧客対応を、Botで仕組み化します。</p>
-        <ul class="tag-list mt-4">
-          <li class="tag">自動応答</li><li class="tag">予約受付</li><li class="tag">FAQ Bot</li><li class="tag">AI連携</li>
-        </ul>
-        <p class="problem-price">¥3万〜10万</p>
-      </article>
-
-      <article class="card">
-        <p class="problem-q">「商品・サービスをWebで伝えたい」</p>
-        <h3 class="feature__title">Webサイト・LP制作</h3>
-        <p class="feature__body">集客に使えるLP、店舗の顔になるWebサイトを制作します。構成の整理から公開・運用まで一人で対応。</p>
-        <ul class="tag-list mt-4">
-          <li class="tag">LP制作</li><li class="tag">店舗サイト</li><li class="tag">WordPress</li><li class="tag">レスポンシブ</li>
-        </ul>
-        <p class="problem-price">¥3万〜15万</p>
-      </article>
-
-      <article class="card">
-        <p class="problem-q">「繰り返しの業務作業を仕組み化したい」</p>
-        <h3 class="feature__title">業務自動化・ダッシュボード</h3>
-        <p class="feature__body">手作業でやっている集計・通知・データ管理をWebで自動化します。外部APIとの連携や管理画面の構築も対応。</p>
-        <ul class="tag-list mt-4">
-          <li class="tag">API連携</li><li class="tag">管理画面</li><li class="tag">データ可視化</li><li class="tag">通知自動化</li>
-        </ul>
-        <p class="problem-price">¥5万〜15万</p>
-      </article>
-
-      <article class="card">
-        <p class="problem-q">「新しいサービスをゼロから立ち上げたい」</p>
-        <h3 class="feature__title">MVP・システム開発</h3>
-        <p class="feature__body">アイデアを動くプロダクトに。認証・決済・AI機能を含めてフルスタックで実装。投資家やユーザーに見せられる形まで。</p>
-        <ul class="tag-list mt-4">
-          <li class="tag">Next.js</li><li class="tag">Supabase</li><li class="tag">Stripe</li><li class="tag">AI機能</li>
-        </ul>
-        <p class="problem-price">¥15万〜30万</p>
-      </article>
-    </div>
-
-    <div style="margin-top:20px;text-align:right;">
-      <a class="btn" href="{{ '/services.html' | relative_url }}">料金・技術スタックの詳細 →</a>
-    </div>
-  </section>
-</div>
-
-<!-- ── LINE Bot deep dive ── -->
-<section class="linebot-section" aria-labelledby="linebot-title">
-  <div class="container">
-    <header class="section__header">
-      <span class="section__eyebrow">LINE Bot</span>
-      <h2 class="section__title" id="linebot-title">顧客対応の課題、<br>LINEで解決できます</h2>
-      <p class="section__lead">営業時間外の問い合わせ、毎回同じ質問への返答、予約管理の手間。繰り返す顧客対応をBotに任せて、本来の業務に集中できます。</p>
-    </header>
-
-    <div class="usecase-grid">
-      <div class="usecase-item">
-        <p class="usecase-label">24時間自動返信</p>
-        <p class="usecase-body">「営業時間外のため翌営業日にご連絡します」を自動化。機会損失を防ぎ、顧客の不安を取り除きます。</p>
-      </div>
-      <div class="usecase-item">
-        <p class="usecase-label">FAQ自動回答</p>
-        <p class="usecase-body">「料金は？」「営業時間は？」毎回同じ質問への返答をBotに。スタッフの対応コストを大幅に削減します。</p>
-      </div>
-      <div class="usecase-item">
-        <p class="usecase-label">予約・申込の受付</p>
-        <p class="usecase-body">LINEで予約を受け付け、確認メッセージまで自動送信。電話受付・手入力の手間をなくします。</p>
-      </div>
-      <div class="usecase-item">
-        <p class="usecase-label">リッチメニューの設置</p>
-        <p class="usecase-body">LINEを顧客対応の入口に。「予約する」「問い合わせる」「よくある質問」をボタン一つで案内します。</p>
-      </div>
-      <div class="usecase-item">
-        <p class="usecase-label">お知らせ・一斉配信</p>
-        <p class="usecase-body">セール・新商品・イベント情報をLINEで届ける。既読率の高いLINEで、確実に情報を伝えます。</p>
-      </div>
-      <div class="usecase-item">
-        <p class="usecase-label">スタッフへの即時通知</p>
-        <p class="usecase-body">問い合わせが来たらLINEで担当者へ即通知。見逃しゼロ、対応漏れをなくします。</p>
-      </div>
-    </div>
-
-    <div class="linebot-cta">
-      <a class="btn btn--primary" href="{{ '/contact.html' | relative_url }}">
-        LINE Botについて相談する →
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ── Works + Process + CTA ── -->
-<div class="container">
-
-  <!-- Works preview -->
-  <section class="section" aria-labelledby="works-preview-title">
-    <header class="section__header" data-ghost="WORKS">
-      <span class="section__eyebrow">Works</span>
-      <h2 class="section__title" id="works-preview-title">制作実績（一部）</h2>
-      <p class="section__lead">自社開発プロダクトと受注制作の一部を掲載しています。</p>
-    </header>
-
-    <div class="card-grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr));">
-      <a class="card work-thumb" href="https://elenco-law.com" target="_blank" rel="noopener noreferrer">
-        <div class="work-thumb__img" style="background:#e8f0f8;flex-direction:column;gap:6px;">
-          <span style="color:#0f4c81;font-weight:800;font-size:1.5rem;letter-spacing:0.08em;">Elenco</span>
-          <span style="color:#1a6bc7;font-size:0.72rem;font-weight:500;letter-spacing:0.06em;">法律学習プラットフォーム</span>
-          <span class="work-badge">本番稼働中</span>
-        </div>
-        <div class="work-thumb__body">
-          <span class="work-card__tag">SaaS / 法務 / AI</span>
-          <p class="work-thumb__title">法律学習プラットフォーム</p>
-          <p class="work-thumb__desc">条文・判例検索・AI演習・Stripe課金まで個人で実装</p>
-        </div>
-      </a>
-
-      <div class="card work-thumb">
-        <div class="work-thumb__img" style="position:relative;overflow:hidden;padding:0;">
-          <img src="{{ '/assets/img/entrance.png' | relative_url }}" alt="入退室管理ダッシュボード" style="width:100%;height:100%;object-fit:cover;display:block;">
-          <span class="work-badge">本番稼働中</span>
-        </div>
-        <div class="work-thumb__body">
-          <span class="work-card__tag">LINE Bot / 業務自動化</span>
-          <p class="work-thumb__title">入退室管理 + LINE通知</p>
-          <p class="work-thumb__desc">入退室データをLINEで通知・ダッシュボードで可視化</p>
-        </div>
-      </div>
-
-      <a class="card work-thumb" href="{{ '/izakaya-lp.html' | relative_url }}" target="_blank" rel="noopener noreferrer">
-        <div class="work-thumb__img" style="padding:0;">
-          <img src="{{ '/assets/img/works/izakaya-thumb.png' | relative_url }}" alt="炭火と旬 よりみち">
-        </div>
-        <div class="work-thumb__body">
-          <span class="work-card__tag">LP / 飲食</span>
-          <p class="work-thumb__title">和食居酒屋 LP</p>
-          <p class="work-thumb__desc">ダーク基調・タブ切り替えメニュー実装</p>
-        </div>
-      </a>
-
-      <a class="card work-thumb" href="{{ '/bakery-cafe.html' | relative_url }}" target="_blank" rel="noopener noreferrer">
-        <div class="work-thumb__img" style="padding:0;">
-          <img src="{{ '/assets/img/works/bakery-thumb.png' | relative_url }}" alt="粉とひだまり ベーカリーカフェ">
-        </div>
-        <div class="work-thumb__body">
-          <span class="work-card__tag">店舗 / カフェ</span>
-          <p class="work-thumb__title">ベーカリーカフェ 店舗サイト</p>
-          <p class="work-thumb__desc">温かみのある配色・メニュー・アクセス掲載</p>
-        </div>
-      </a>
-    </div>
-
-    <div style="margin-top:20px;text-align:right;">
-      <a class="btn" href="{{ '/works.html' | relative_url }}">実績をすべて見る →</a>
-    </div>
-  </section>
-
-  <!-- Process -->
-  <section class="section" aria-labelledby="process-title">
-    <header class="section__header" data-ghost="PROCESS">
-      <span class="section__eyebrow">Process</span>
-      <h2 class="section__title" id="process-title">制作の流れ</h2>
-      <p class="section__lead">「どう進めるか」が見えると、依頼しやすくなります。</p>
-    </header>
-    <div class="flow flow--3">
-      <div class="flow-step">
-        <div class="flow-step__num">01</div>
-        <p class="flow-step__title">ヒアリング・課題整理</p>
-        <p class="flow-step__body">何を作るか、なぜ作るかを一緒に整理します。要件が固まっていない段階でも大丈夫です。</p>
-      </div>
-      <div class="flow-connector" aria-hidden="true">→</div>
-      <div class="flow-step">
-        <div class="flow-step__num">02</div>
-        <p class="flow-step__title">設計・開発・確認</p>
-        <p class="flow-step__body">動くものを見せながら進めます。認識のズレが起きないよう、こまめに共有します。</p>
-      </div>
-      <div class="flow-connector" aria-hidden="true">→</div>
-      <div class="flow-step">
-        <div class="flow-step__num">03</div>
-        <p class="flow-step__title">納品・運用サポート</p>
-        <p class="flow-step__body">公開後の調整や機能追加も対応します。「作って終わり」にはしません。</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta-banner" aria-labelledby="cta-title">
-    <h2 class="cta-banner__title" id="cta-title">まず、課題を聞かせてください</h2>
-    <p class="cta-banner__body">「こんなことできますか？」「予算が合うか分からない」——どの段階でもお気軽にどうぞ。相談・見積もりは無料です。</p>
-    <div class="cta-banner__actions">
-      <a class="btn btn--primary" href="{{ '/contact.html' | relative_url }}">相談フォームへ →</a>
-    </div>
-  </section>
-
-</div>
+<script src="site.js"></script>
+</body>
+</html>
