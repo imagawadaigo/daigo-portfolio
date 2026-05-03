@@ -49,7 +49,23 @@ body {
   line-height: 1.55;
   font-feature-settings: "ss01", "cv11";
   letter-spacing: -0.005em;
+  cursor: none;
 }
+.no-js body { cursor: auto; }
+@media (hover: none), (pointer: coarse) { body { cursor: auto; } }
+
+.cursor-dot {
+  position: fixed;
+  top: 0; left: 0;
+  width: 6px; height: 6px;
+  background: var(--ink);
+  border-radius: 50%;
+  margin: -3px 0 0 -3px;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate3d(-100px, -100px, 0);
+}
+@media (hover: none), (pointer: coarse) { .cursor-dot { display: none; } }
 
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }

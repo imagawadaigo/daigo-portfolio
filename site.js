@@ -2,6 +2,14 @@
 (function () {
   document.documentElement.classList.remove("no-js");
 
+  // ----- Custom cursor (simple dot) -----
+  const dot = document.createElement("div");
+  dot.className = "cursor-dot";
+  document.body.appendChild(dot);
+  document.addEventListener("mousemove", (e) => {
+    dot.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+  });
+
   // ----- Nav scroll state -----
   const nav = document.querySelector(".nav");
   if (nav) {
