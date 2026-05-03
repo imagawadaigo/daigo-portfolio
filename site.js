@@ -87,4 +87,38 @@
       el.style.transform = "";
     });
   });
+
+  // ----- Contact form -----
+  const form = document.getElementById("contact-form");
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector(".contact-form__submit");
+      const label = btn.querySelector("span");
+      const errEl = document.getElementById("cf-error");
+      const successEl = document.getElementById("cf-success");
+
+      btn.disabled = true;
+      label.textContent = "送信中…";
+      errEl.hidden = true;
+
+      try {
+        const res = await fetch("https://portfolio-contact.wishdaigo1458.workers.dev/contact", {
+          method: "POST",
+          body: new FormData(form),
+        });
+        const json = await res.json();
+        if (json.ok) {
+          form.hidden = true;
+          successEl.hidden = false;
+        } else {
+          throw new Error(json.error);
+        }
+      } catch {
+        errEl.hidden = false;
+        btn.disabled = false;
+        label.textContent = "送信する";
+      }
+    });
+  }
 })();

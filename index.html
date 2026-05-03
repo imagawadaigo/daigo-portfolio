@@ -333,11 +333,53 @@
         要件はまだ固まっていなくていい。<br>
         まず現状を話してください。
       </p>
-      <div class="reveal" data-delay="3" style="display:inline-flex;gap:12px;flex-wrap:wrap;justify-content:center;">
-        <a class="btn" href="mailto:wishdaigo1458@gmail.com" data-magnetic>
-          <span>メールで相談する</span>
-          <span class="arrow">↗</span>
-        </a>
+      <form class="contact-form reveal" id="contact-form" novalidate data-delay="3">
+        <div class="contact-form__row">
+          <label class="contact-form__label" for="cf-name">お名前 <span class="req">*</span></label>
+          <input class="contact-form__input" id="cf-name" name="name" type="text" required placeholder="山田 太郎" autocomplete="name" />
+        </div>
+        <div class="contact-form__row">
+          <label class="contact-form__label" for="cf-contact">メールアドレス <span class="req">*</span></label>
+          <input class="contact-form__input" id="cf-contact" name="contact" type="email" required placeholder="example@mail.com" autocomplete="email" />
+        </div>
+        <div class="contact-form__row contact-form__row--half">
+          <div>
+            <label class="contact-form__label" for="cf-service">関心サービス</label>
+            <select class="contact-form__input" id="cf-service" name="service">
+              <option value="">未選択</option>
+              <option value="line_bot">LINE Bot開発</option>
+              <option value="lp_web">Webサイト・LP制作</option>
+              <option value="automation">業務自動化・ダッシュボード</option>
+              <option value="mvp">MVP・システム開発</option>
+              <option value="other">まだ決まっていない</option>
+            </select>
+          </div>
+          <div>
+            <label class="contact-form__label" for="cf-budget">予算感</label>
+            <select class="contact-form__input" id="cf-budget" name="budget">
+              <option value="">未選択</option>
+              <option value="under5">〜5万円</option>
+              <option value="5to15">5〜15万円</option>
+              <option value="15to30">15〜30万円</option>
+              <option value="over30">30万円以上</option>
+              <option value="consult">要相談</option>
+            </select>
+          </div>
+        </div>
+        <div class="contact-form__row">
+          <label class="contact-form__label" for="cf-message">相談内容 <span class="req">*</span></label>
+          <textarea class="contact-form__input" id="cf-message" name="message" required placeholder="現状の課題や、やりたいことを教えてください。"></textarea>
+        </div>
+        <div class="contact-form__footer">
+          <button class="btn contact-form__submit" type="submit">
+            <span>送信する</span>
+            <span class="arrow">→</span>
+          </button>
+          <p class="contact-form__error" id="cf-error" hidden>送信に失敗しました。時間をおいて再度お試しください。</p>
+        </div>
+      </form>
+      <div class="contact-form__success" id="cf-success" hidden>
+        <p>送信しました。<br>通常24時間以内にご連絡します。</p>
       </div>
     </div>
   </section>
