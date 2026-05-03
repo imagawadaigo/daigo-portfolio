@@ -1,50 +1,6 @@
-/* Custom cursor + nav scroll state + reveal observer */
+/* Nav scroll state + reveal observer + contact form */
 (function () {
   document.documentElement.classList.remove("no-js");
-
-  // ----- Custom cursor -----
-  const dot = document.createElement("div");
-  const ring = document.createElement("div");
-  dot.className = "cursor-dot";
-  ring.className = "cursor-ring";
-  document.body.appendChild(dot);
-  document.body.appendChild(ring);
-
-  let tx = -100, ty = -100;
-  let rx = -100, ry = -100;
-  let mx = -100, my = -100;
-  document.addEventListener("mousemove", (e) => {
-    mx = e.clientX; my = e.clientY;
-    tx = mx; ty = my;
-  });
-  function tick() {
-    rx += (mx - rx) * 0.18;
-    ry += (my - ry) * 0.18;
-    dot.style.transform = `translate3d(${tx}px, ${ty}px, 0)`;
-    ring.style.transform = `translate3d(${rx}px, ${ry}px, 0)`;
-    requestAnimationFrame(tick);
-  }
-  requestAnimationFrame(tick);
-
-  const hoverSel = "a, button, .case, .service, [data-cursor='hover']";
-  document.addEventListener("mouseover", (e) => {
-    if (e.target.closest && e.target.closest(hoverSel)) {
-      document.body.classList.add("cursor-hover");
-    }
-  });
-  document.addEventListener("mouseout", (e) => {
-    if (e.target.closest && e.target.closest(hoverSel)) {
-      document.body.classList.remove("cursor-hover");
-    }
-  });
-
-  // Hide custom cursor when leaving window
-  document.addEventListener("mouseleave", () => {
-    dot.style.opacity = "0"; ring.style.opacity = "0";
-  });
-  document.addEventListener("mouseenter", () => {
-    dot.style.opacity = "1"; ring.style.opacity = "1";
-  });
 
   // ----- Nav scroll state -----
   const nav = document.querySelector(".nav");
