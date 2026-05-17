@@ -1,16 +1,16 @@
 /* =========================================================================
    今川大悟 — Portfolio
-   Light-only · monochrome + indigo accent · rauno/linear-leaning
+   Light-only · monochrome · editorial / architectural
    ========================================================================= */
 
 :root {
-  /* Accent — overridable via Tweaks */
-  --accent: #5b6cff;
-  --accent-ink: #4a5af0;
-  --accent-tint: rgba(91, 108, 255, 0.08);
+  /* Accent — ink-unified（撤去済み、ink と同色） */
+  --accent: #0a0a0a;
+  --accent-ink: #0a0a0a;
+  --accent-tint: rgba(10, 10, 10, 0.08);
 
-  /* Greyscale (warm-neutral, paper-leaning) */
-  --bg: #fafaf9;
+  /* Greyscale (neutral, slightly cooler paper) */
+  --bg: #f7f6f3;
   --bg-elev: #ffffff;
   --ink: #0a0a0a;
   --ink-2: #1f1f1f;
