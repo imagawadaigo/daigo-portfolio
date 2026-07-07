@@ -3,12 +3,45 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#f7f6f3" />
+<meta name="format-detection" content="telephone=no,address=no,email=no" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; font-src https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self'; connect-src 'self' https://portfolio-contact.wishdaigo1458.workers.dev https://portfolio-chat.wishdaigo1458.workers.dev; form-action 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests" />
 <title>About — 今川大悟 / Daigo Imagawa</title>
 <meta name="description" content="フリーランス開発者 今川大悟のプロフィール。実績数字と、仕事のスタンス。" />
+<meta name="author" content="今川大悟" />
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1" />
+<link rel="canonical" href="https://imagawadaigo.github.io/daigo-portfolio/about.html" />
+<meta property="og:site_name" content="今川大悟 | Web制作・LINE Bot・システム開発" />
+<meta property="og:type" content="profile" />
+<meta property="og:title" content="About — 今川大悟 / Daigo Imagawa" />
+<meta property="og:description" content="フリーランス開発者 今川大悟のプロフィール。実績数字と、仕事のスタンス。" />
+<meta property="og:url" content="https://imagawadaigo.github.io/daigo-portfolio/about.html" />
+<meta property="og:image" content="https://imagawadaigo.github.io/daigo-portfolio/images/profile.jpg" />
+<meta property="og:locale" content="ja_JP" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+<link rel="manifest" href="site.webmanifest" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300;400;500;600&family=Instrument+Serif:ital@0;1&family=Noto+Sans+JP:wght@200;300;400;500;700&family=Noto+Serif+JP:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "今川大悟",
+    "alternateName": "Daigo Imagawa",
+    "url": "https://imagawadaigo.github.io/daigo-portfolio/about.html",
+    "image": "https://imagawadaigo.github.io/daigo-portfolio/images/profile.jpg",
+    "jobTitle": "Freelance Developer",
+    "email": "mailto:wishdaigo1458@gmail.com",
+    "sameAs": ["https://github.com/imagawadaigo"]
+  }
+}
+</script>
 </head>
 <body>
 
@@ -16,10 +49,11 @@
   <div class="nav__inner">
     <a class="nav__brand" href="index.html"><span class="dot"></span><span>daigo.imagawa</span></a>
     <div class="nav__links">
-      <a href="index.html">Index</a>
-      <a href="about.html" aria-current="page">About</a>
+      <a href="index.html" data-home>Index</a>
       <a href="work.html">Work</a>
-      <a href="index.html#contact">Contact</a>
+      <a href="services.html">Services</a>
+      <a href="process.html">Process</a>
+      <a href="about.html" aria-current="page">About</a>
     </div>
     <a class="nav__cta" href="index.html#contact"><span class="pulse"></span><span>2026 — 受付中</span></a>
   </div>
@@ -34,13 +68,42 @@
           <div class="about-hero__name">今川大悟 / Daigo Imagawa</div>
           <h1 class="about-hero__title">About</h1>
           <p class="about-hero__lede">
-            九大法学部に在籍しながら、法律学習SaaS Elenco と、ボードゲームEC BoardKit を自分で運用しています。並行して、知り合い経由で来た中小企業のWebや業務自動化を受けています。<br>
+            九大法学部に在籍しながら、法律学習SaaS Elenco と、ボードゲームEC BoardKit を自分で運用しています。拠点は東京、仕事はフルリモートで全国対応。並行して、知り合い経由で来た中小企業のWebや業務自動化を受けています。<br>
             自分のサービスでも、受注の仕事でも、やってることは同じです。困りごとを聞いて、雑でも動くものを早めに出して、使ってもらいながら直す。
           </p>
         </div>
         <div class="about-hero__photo reveal" data-delay="1">
-          <img src="profile.jpg" alt="今川大悟 プロフィール写真" />
+          <img src="images/profile.jpg" alt="今川大悟 プロフィール写真" />
           <div class="badge"><span class="dot"></span><span>Available · 2026 新規受付中</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- numbers -->
+  <section class="section section--tight section--flush" data-screen-label="02 Numbers">
+    <div class="container">
+      <div class="eyebrow reveal"><span class="num">01 / Numbers</span><span>数字で見る</span></div>
+      <div class="numbers reveal" data-delay="1">
+        <div class="numbers__item">
+          <span class="v">15<span class="unit">件+</span></span>
+          <span class="k">Deliveries</span>
+          <span class="note">受託の納品実績。LP・店舗サイト・LINE Bot・業務自動化</span>
+        </div>
+        <div class="numbers__item">
+          <span class="v">2<span class="unit">本番稼働</span></span>
+          <span class="k">Own Products</span>
+          <span class="note">Elenco（法律学習SaaS）と BoardKit（ボードゲームEC）</span>
+        </div>
+        <div class="numbers__item">
+          <span class="v">3,800<span class="unit">条超</span></span>
+          <span class="k">Data Managed</span>
+          <span class="note">Elenco に収録・運用中の6法令の条文データ</span>
+        </div>
+        <div class="numbers__item">
+          <span class="v">24<span class="unit">h以内</span></span>
+          <span class="k">Reply</span>
+          <span class="note">メッセージへの返信目安。連絡が滞ると不安になるので</span>
         </div>
       </div>
     </div>
@@ -49,7 +112,7 @@
   <!-- stance -->
   <section class="section" data-screen-label="03 Stance">
     <div class="container">
-      <div class="eyebrow reveal"><span class="num">01 / Stance</span><span>仕事のスタンス</span></div>
+      <div class="eyebrow reveal"><span class="num">02 / Stance</span><span>仕事のスタンス</span></div>
 
       <div class="stance" style="margin-top:48px;">
         <div class="stance__item reveal">
@@ -89,16 +152,16 @@
   </section>
 
   <!-- contact CTA -->
-  <section class="contact" id="contact" data-screen-label="04 Contact">
+  <section class="contact" data-screen-label="04 Contact">
     <div class="container--narrow">
       <p class="contact__lede reveal">
         やるかどうかは、話してから決めて大丈夫です。<br>
         合わなさそうなら、それも正直に言います。
       </p>
       <div class="reveal" data-delay="2" style="display:inline-flex;gap:12px;flex-wrap:wrap;justify-content:center;">
-        <a class="btn" href="mailto:wishdaigo1458@gmail.com" data-magnetic>
-          <span>メールで相談する</span>
-          <span class="arrow">↗</span>
+        <a class="btn" href="index.html#contact" data-magnetic>
+          <span>相談フォームへ</span>
+          <span class="arrow">→</span>
         </a>
         <a class="btn btn--ghost" href="work.html" data-magnetic>
           <span>実績を見る</span>
@@ -114,14 +177,16 @@
   <div class="foot__inner">
     <div>© 2026 Daigo Imagawa. All rights reserved.</div>
     <div class="foot__links">
-      <a href="index.html">Index</a>
-      <a href="about.html">About</a>
       <a href="work.html">Work</a>
-      <a href="https://github.com/imagawadaigo">GitHub ↗</a>
+      <a href="services.html">Services</a>
+      <a href="process.html">Process</a>
+      <a href="about.html">About</a>
+      <a href="https://github.com/imagawadaigo" rel="me">GitHub ↗</a>
     </div>
   </div>
 </footer>
 
 <script src="site.js"></script>
+<script src="chat.js" defer></script>
 </body>
 </html>

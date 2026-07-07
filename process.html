@@ -1,147 +1,255 @@
----
-layout: default
-title: 制作の流れ
-description: Web制作・資料作成の4ステップの進め方。ヒアリング→構成提案→初稿提出→修正・納品。全体目安は1〜2週間、原則24時間以内に返信します。
-jsonld: |
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "Web制作・資料作成の進め方",
-    "description": "ヒアリングから納品までの4ステップ。全体目安は1〜2週間。",
-    "totalTime": "P14D",
-    "step": [
-      { "@type": "HowToStep", "position": 1, "name": "ヒアリング", "text": "webフォームまたはメッセージで、目的・ターゲット・ご要望をお聞きします。" },
-      { "@type": "HowToStep", "position": 2, "name": "構成提案", "text": "ヒアリング内容をもとに、ページの構成案を作成します。" },
-      { "@type": "HowToStep", "position": 3, "name": "初稿提出", "text": "構成が固まったら実際のページを制作し、初稿としてお見せします。" },
-      { "@type": "HowToStep", "position": 4, "name": "修正・納品", "text": "フィードバックをもとに修正し、最終版を納品します。" }
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "費用の目安はどれくらいですか？",
-        "acceptedAnswer": { "@type": "Answer", "text": "内容・ページ数によりますが、LP1ページで3〜8万円程度が目安です。お見積もりは無料です。" }
-      },
-      {
-        "@type": "Question",
-        "name": "素材(写真・文章)がなくても依頼できますか？",
-        "acceptedAnswer": { "@type": "Answer", "text": "はい、可能です。フリー素材の提案や、文章の整理・ライティングもお手伝いできます。" }
-      },
-      {
-        "@type": "Question",
-        "name": "修正は何回までできますか？",
-        "acceptedAnswer": { "@type": "Answer", "text": "基本的に2〜3回の修正を想定しています。大幅な方向転換がなければ、追加費用なしで対応します。" }
-      },
-      {
-        "@type": "Question",
-        "name": "納品後のサポートはありますか？",
-        "acceptedAnswer": { "@type": "Answer", "text": "納品後1ヶ月間は軽微な修正に無料で対応します。その後の更新・保守もご相談いただけます。" }
-      }
-    ]
-  }
-  </script>
----
+<!doctype html>
+<html lang="ja" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#f7f6f3" />
+<meta name="format-detection" content="telephone=no,address=no,email=no" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; font-src https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self'; connect-src 'self' https://portfolio-contact.wishdaigo1458.workers.dev https://portfolio-chat.wishdaigo1458.workers.dev; form-action 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests" />
+<title>Process — 今川大悟 / 制作の流れ</title>
+<meta name="description" content="Web制作・開発の4ステップの進め方。ヒアリング→構成提案→初稿提出→修正・納品。全体目安は1〜2週間、原則24時間以内に返信します。" />
+<meta name="author" content="今川大悟" />
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1" />
+<link rel="canonical" href="https://imagawadaigo.github.io/daigo-portfolio/process.html" />
+<meta property="og:site_name" content="今川大悟 | Web制作・LINE Bot・システム開発" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Process — 制作の流れ" />
+<meta property="og:description" content="ヒアリングから納品までの4ステップ。全体目安は1〜2週間。原則24時間以内に返信します。" />
+<meta property="og:url" content="https://imagawadaigo.github.io/daigo-portfolio/process.html" />
+<meta property="og:image" content="https://imagawadaigo.github.io/daigo-portfolio/images/ogp.jpg" />
+<meta property="og:locale" content="ja_JP" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+<link rel="manifest" href="site.webmanifest" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300;400;500;600&family=Instrument+Serif:ital@0;1&family=Noto+Sans+JP:wght@200;300;400;500;700&family=Noto+Serif+JP:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Web制作・開発の進め方",
+  "description": "ヒアリングから納品までの4ステップ。全体目安は1〜2週間。",
+  "totalTime": "P14D",
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "ヒアリング", "text": "webフォームまたはメッセージで、目的・ターゲット・ご要望をお聞きします。" },
+    { "@type": "HowToStep", "position": 2, "name": "構成提案", "text": "ヒアリング内容をもとに、ページの構成案を作成します。" },
+    { "@type": "HowToStep", "position": 3, "name": "初稿提出", "text": "構成が固まったら実際のページを制作し、初稿としてお見せします。" },
+    { "@type": "HowToStep", "position": 4, "name": "修正・納品", "text": "フィードバックをもとに修正し、最終版を納品します。" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "費用の目安はどれくらいですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "内容・ページ数によりますが、LP1ページで3〜8万円程度が目安です。お見積もりは無料です。" }
+    },
+    {
+      "@type": "Question",
+      "name": "素材(写真・文章)がなくても依頼できますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "はい、可能です。フリー素材の提案や、文章の整理・ライティングもお手伝いできます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "修正は何回までできますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "基本的に2〜3回の修正を想定しています。大幅な方向転換がなければ、追加費用なしで対応します。" }
+    },
+    {
+      "@type": "Question",
+      "name": "納品後のサポートはありますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "納品後1ヶ月間は軽微な修正に無料で対応します。その後の更新・保守もご相談いただけます。" }
+    }
+  ]
+}
+</script>
+</head>
+<body>
 
-<div class="container">
-
-  <section class="section section--first">
-    <header class="section__header">
-      <span class="section__eyebrow">Process</span>
-      <h1 class="section__title">制作の流れ</h1>
-      <p class="section__lead">ヒアリングから納品まで4つのステップで進めます。「何を決めればいいか分からない」という段階からでも大丈夫です。</p>
-    </header>
-
-    <div class="flow">
-      <div class="flow-step">
-        <div class="flow-step__num">01</div>
-        <h2 class="flow-step__title">ヒアリング</h2>
-        <p class="flow-step__body">webフォームまたはメッセージで、目的・ターゲット・ご要望をお聞きします。こちらから質問しながら方向性を整理するので、「何を書けばいいか分からない」状態でも大丈夫です。</p>
-        <p class="flow-step__meta">目的の確認 / ターゲット整理 / 素材の有無<br>目安 1〜2日</p>
-      </div>
-      <div class="flow-connector" aria-hidden="true">→</div>
-      <div class="flow-step">
-        <div class="flow-step__num">02</div>
-        <h2 class="flow-step__title">構成提案</h2>
-        <p class="flow-step__body">ヒアリング内容をもとに、ページの構成案を作成します。見出し・順番・文章の方向性をまとめ、「これで進めていいか」の確認をとってから制作に入ります。</p>
-        <p class="flow-step__meta">見出し設計 / セクション構成 / ワイヤーフレーム<br>目安 2〜3日</p>
-      </div>
-      <div class="flow-connector" aria-hidden="true">→</div>
-      <div class="flow-step">
-        <div class="flow-step__num">03</div>
-        <h2 class="flow-step__title">初稿提出</h2>
-        <p class="flow-step__body">構成が固まったら実際のページを制作し、初稿としてお見せします。早い段階で形にすることで、イメージのズレを最小限に抑えながら進めます。</p>
-        <p class="flow-step__meta">デザイン実装 / コーディング / プレビュー共有<br>目安 3〜5日</p>
-      </div>
-      <div class="flow-connector" aria-hidden="true">→</div>
-      <div class="flow-step">
-        <div class="flow-step__num">04</div>
-        <h2 class="flow-step__title">修正・納品</h2>
-        <p class="flow-step__body">フィードバックをもとに修正し、最終版を納品します。公開作業が必要な場合は、サーバーへのアップロードやドメイン設定もサポートします。</p>
-        <p class="flow-step__meta">修正対応 / 最終確認 / 公開サポート<br>目安 1〜3日</p>
-      </div>
+<nav class="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="index.html"><span class="dot"></span><span>daigo.imagawa</span></a>
+    <div class="nav__links">
+      <a href="index.html" data-home>Index</a>
+      <a href="work.html">Work</a>
+      <a href="services.html">Services</a>
+      <a href="process.html" aria-current="page">Process</a>
+      <a href="about.html">About</a>
     </div>
+    <a class="nav__cta" href="index.html#contact"><span class="pulse"></span><span>2026 — 受付中</span></a>
+  </div>
+</nav>
 
-    <p class="text-muted mt-6" style="font-size:.875rem;">全体の目安は1〜2週間程度です。内容や規模によって変動します。メッセージは原則24時間以内に返信します。</p>
-  </section>
+<main>
 
-  <section class="section" aria-labelledby="points-title">
-    <header class="section__header">
-      <span class="section__eyebrow">Points</span>
-      <h2 class="section__title" id="points-title">進め方のポイント</h2>
-    </header>
-    <div class="card-grid">
-      <article class="card feature">
-        <h3 class="feature__title">まず相談からで大丈夫</h3>
-        <p class="feature__body">「何を決めればいいか分からない」という段階でも構いません。会話しながら整理します。</p>
-      </article>
-      <article class="card feature">
-        <h3 class="feature__title">構成→制作の二段階</h3>
-        <p class="feature__body">いきなり作り始めず、まず構成で合意してから制作に入ります。ズレを最小限にする進め方です。</p>
-      </article>
-      <article class="card feature">
-        <h3 class="feature__title">原則24時間以内に返信</h3>
-        <p class="feature__body">連絡が滞ると不安になるもの。メッセージには原則24時間以内に返信するようにしています。</p>
-      </article>
+  <section class="work-hero" data-screen-label="01 Process hero">
+    <div class="container">
+      <div class="eyebrow reveal"><span class="num">Process · 全体目安 1 — 2週間</span></div>
+      <h1 class="hero__title reveal" data-delay="1" style="font-size:clamp(40px, 6vw, 72px);">
+        制作の流れ
+      </h1>
+      <p class="section-lede reveal" data-delay="2" style="margin-top:48px;">
+        ヒアリングから納品まで、4つのステップで進めます。
+        「何を決めればいいか分からない」という段階からでも大丈夫です。
+      </p>
     </div>
   </section>
 
-  <section class="section" aria-labelledby="process-faq-title">
-    <header class="section__header">
-      <span class="section__eyebrow">FAQ</span>
-      <h2 class="section__title" id="process-faq-title">よくある質問</h2>
-    </header>
-    <div class="card-grid" style="grid-template-columns:1fr;">
-      <details class="card">
-        <summary style="font-weight:700;cursor:pointer;">費用の目安はどれくらいですか？</summary>
-        <p class="text-muted mt-4">内容・ページ数によりますが、LP1ページで3〜8万円程度が目安です。お見積もりは無料です。</p>
-      </details>
-      <details class="card">
-        <summary style="font-weight:700;cursor:pointer;">素材（写真・文章）がなくても依頼できますか？</summary>
-        <p class="text-muted mt-4">はい、可能です。フリー素材の提案や、文章の整理・ライティングもお手伝いできます。</p>
-      </details>
-      <details class="card">
-        <summary style="font-weight:700;cursor:pointer;">修正は何回までできますか？</summary>
-        <p class="text-muted mt-4">基本的に2〜3回の修正を想定しています。大幅な方向転換がなければ、追加費用なしで対応します。</p>
-      </details>
-      <details class="card">
-        <summary style="font-weight:700;cursor:pointer;">納品後のサポートはありますか？</summary>
-        <p class="text-muted mt-4">納品後1ヶ月間は軽微な修正に無料で対応します。その後の更新・保守もご相談いただけます。</p>
-      </details>
+  <!-- ============================ STEPS ============================ -->
+  <section class="section section--tight" data-screen-label="02 Steps">
+    <div class="container">
+      <div class="eyebrow reveal"><span class="num">01 / Steps</span><span>4つのステップ</span></div>
+
+      <div class="steps">
+        <div class="step reveal">
+          <div class="step__num">01</div>
+          <h2 class="step__title">ヒアリング</h2>
+          <p class="step__desc">
+            webフォームまたはメッセージで、目的・ターゲット・ご要望をお聞きします。
+            こちらから質問しながら方向性を整理するので、「何を書けばいいか分からない」状態でも大丈夫です。
+          </p>
+          <div class="step__meta">
+            目的の確認 / ターゲット整理<br>素材の有無<br><b>目安 1 — 2日</b>
+          </div>
+        </div>
+        <div class="step reveal" data-delay="1">
+          <div class="step__num">02</div>
+          <h2 class="step__title">構成提案</h2>
+          <p class="step__desc">
+            ヒアリング内容をもとに、ページの構成案を作成します。
+            見出し・順番・文章の方向性をまとめ、「これで進めていいか」の確認をとってから制作に入ります。
+          </p>
+          <div class="step__meta">
+            見出し設計 / セクション構成<br>ワイヤーフレーム<br><b>目安 2 — 3日</b>
+          </div>
+        </div>
+        <div class="step reveal" data-delay="2">
+          <div class="step__num">03</div>
+          <h2 class="step__title">初稿提出</h2>
+          <p class="step__desc">
+            構成が固まったら実際のページを制作し、初稿としてお見せします。
+            早い段階で形にすることで、イメージのズレを最小限に抑えながら進めます。
+          </p>
+          <div class="step__meta">
+            デザイン実装 / コーディング<br>プレビュー共有<br><b>目安 3 — 5日</b>
+          </div>
+        </div>
+        <div class="step reveal" data-delay="3">
+          <div class="step__num">04</div>
+          <h2 class="step__title">修正・納品</h2>
+          <p class="step__desc">
+            フィードバックをもとに修正し、最終版を納品します。
+            公開作業が必要な場合は、サーバーへのアップロードやドメイン設定もサポートします。
+          </p>
+          <div class="step__meta">
+            修正対応 / 最終確認<br>公開サポート<br><b>目安 1 — 3日</b>
+          </div>
+        </div>
+      </div>
+
+      <p class="notice reveal" style="margin-top:24px;">
+        全体の目安は1〜2週間程度です。内容や規模によって変動します。メッセージは原則24時間以内に返信します。
+      </p>
     </div>
   </section>
 
-  <section class="cta-banner">
-    <h2 class="cta-banner__title">まずは気軽にご相談ください</h2>
-    <p class="cta-banner__body">「相談内容」「予算感」「希望納期」が分かればすぐに進められます。</p>
-    <div class="cta-banner__actions">
-      <a class="btn btn--primary" href="{{ '/contact.html' | relative_url }}">相談フォームへ →</a>
+  <!-- ============================ POINTS ============================ -->
+  <section class="section" data-screen-label="03 Points">
+    <div class="container">
+      <div class="eyebrow reveal"><span class="num">02 / Points</span><span>進め方のポイント</span></div>
+
+      <div class="stance" style="margin-top:48px;grid-template-columns:repeat(3,1fr);gap:48px;">
+        <div class="stance__item reveal">
+          <span class="stance__num">01</span>
+          <h3 class="stance__title">まず相談からで大丈夫</h3>
+          <p class="stance__desc">
+            「何を決めればいいか分からない」という段階でも構いません。会話しながら整理します。
+          </p>
+        </div>
+        <div class="stance__item reveal" data-delay="1">
+          <span class="stance__num">02</span>
+          <h3 class="stance__title">構成→制作の二段階</h3>
+          <p class="stance__desc">
+            いきなり作り始めず、まず構成で合意してから制作に入ります。ズレを最小限にする進め方です。
+          </p>
+        </div>
+        <div class="stance__item reveal" data-delay="2">
+          <span class="stance__num">03</span>
+          <h3 class="stance__title">原則24時間以内に返信</h3>
+          <p class="stance__desc">
+            連絡が滞ると不安になるもの。メッセージには原則24時間以内に返信するようにしています。
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
-</div>
+  <!-- ============================ FAQ ============================ -->
+  <section class="section" data-screen-label="04 FAQ">
+    <div class="container--narrow">
+      <div class="eyebrow reveal"><span class="num">03 / FAQ</span><span>よくある質問</span></div>
+
+      <div class="faq reveal" data-delay="1">
+        <details>
+          <summary>費用の目安はどれくらいですか？</summary>
+          <p class="a">内容・ページ数によりますが、LP1ページで3〜8万円程度が目安です。お見積もりは無料です。</p>
+        </details>
+        <details>
+          <summary>素材（写真・文章）がなくても依頼できますか？</summary>
+          <p class="a">はい、可能です。フリー素材の提案や、文章の整理・ライティングもお手伝いできます。</p>
+        </details>
+        <details>
+          <summary>修正は何回までできますか？</summary>
+          <p class="a">基本的に2〜3回の修正を想定しています。大幅な方向転換がなければ、追加費用なしで対応します。</p>
+        </details>
+        <details>
+          <summary>納品後のサポートはありますか？</summary>
+          <p class="a">納品後1ヶ月間は軽微な修正に無料で対応します。その後の更新・保守もご相談いただけます。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- contact -->
+  <section class="contact" data-screen-label="05 Contact">
+    <div class="container--narrow">
+      <p class="contact__lede reveal">
+        まずは気軽にご相談ください。<br>
+        「相談内容」「予算感」「希望納期」が分かればすぐに進められます。
+      </p>
+      <div class="reveal" data-delay="2" style="display:inline-flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+        <a class="btn" href="index.html#contact" data-magnetic>
+          <span>相談フォームへ</span><span class="arrow">→</span>
+        </a>
+        <a class="btn btn--ghost" href="services.html" data-magnetic>
+          <span>料金を見る</span><span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot__inner">
+    <div>© 2026 Daigo Imagawa. All rights reserved.</div>
+    <div class="foot__links">
+      <a href="work.html">Work</a>
+      <a href="services.html">Services</a>
+      <a href="process.html">Process</a>
+      <a href="about.html">About</a>
+      <a href="https://github.com/imagawadaigo" rel="me">GitHub ↗</a>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script src="chat.js" defer></script>
+</body>
+</html>

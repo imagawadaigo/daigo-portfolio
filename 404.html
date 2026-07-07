@@ -1,21 +1,52 @@
----
-layout: default
-title: ページが見つかりません
-description: お探しのページは見つかりませんでした。
-permalink: /404.html
-noindex: true
----
+<!doctype html>
+<html lang="ja" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#f7f6f3" />
+<title>404 — ページが見つかりません | 今川大悟</title>
+<meta name="robots" content="noindex,nofollow" />
+<link rel="icon" href="/daigo-portfolio/assets/img/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300;400;500;600&family=Instrument+Serif:ital@0;1&family=Noto+Sans+JP:wght@200;300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/daigo-portfolio/styles.css" />
+</head>
+<body>
 
-<div class="container container--narrow">
-  <section class="section section--first text-center">
-    <header class="section__header">
-      <span class="section__eyebrow">404</span>
-      <h1 class="section__title">ページが見つかりません</h1>
-      <p class="section__lead" style="margin-left:auto;margin-right:auto;">お探しのページは移動または削除された可能性があります。</p>
-    </header>
-    <div class="cta-banner__actions">
-      <a class="btn btn--primary" href="{{ '/' | relative_url }}">トップへ戻る</a>
-      <a class="btn" href="{{ '/works.html' | relative_url }}">制作例を見る</a>
+<main>
+  <section class="work-hero" style="text-align:center;padding-top:200px;">
+    <div class="container--narrow">
+      <div class="eyebrow" style="justify-content:center;"><span class="num">404 / Not Found</span></div>
+      <h1 class="hero__title" style="font-size:clamp(40px, 6vw, 72px);">
+        ページが<em>見つかりません</em>
+      </h1>
+      <p class="section-lede" style="margin:32px auto 48px;max-width:44ch;">
+        お探しのページは移動または削除された可能性があります。
+      </p>
+      <div style="display:inline-flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+        <a class="btn" href="/daigo-portfolio/">
+          <span>トップへ戻る</span><span class="arrow">→</span>
+        </a>
+        <a class="btn btn--ghost" href="/daigo-portfolio/work.html">
+          <span>実績を見る</span><span class="arrow">→</span>
+        </a>
+      </div>
     </div>
   </section>
-</div>
+</main>
+
+<footer class="foot" style="margin-top:120px;">
+  <div class="foot__inner">
+    <div>© 2026 Daigo Imagawa. All rights reserved.</div>
+    <div class="foot__links">
+      <a href="/daigo-portfolio/work.html">Work</a>
+      <a href="/daigo-portfolio/services.html">Services</a>
+      <a href="/daigo-portfolio/about.html">About</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/daigo-portfolio/site.js"></script>
+</body>
+</html>
