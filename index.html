@@ -25,7 +25,7 @@
 <link rel="manifest" href="site.webmanifest" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300;400;500;600&family=Instrument+Serif:ital@0;1&family=Noto+Sans+JP:wght@200;300;400;500;700&family=Noto+Serif+JP:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500&family=Instrument+Serif:ital@0;1&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
 <script type="application/ld+json">
 {
@@ -91,7 +91,7 @@
       </div>
 
       <figure class="hero__visual reveal" data-delay="1" style="margin:24px 0 32px;max-width:520px;">
-        <img src="images/hero-architecture.jpg" alt="ブルータリズム建築のファサード見上げ、夕方の鋭い影" width="1100" height="600" style="width:100%;height:auto;display:block;filter:grayscale(0.1);" />
+        <img src="images/hero-architecture.jpg" alt="ブルータリズム建築のファサード見上げ、夕方の鋭い影" width="1100" height="600" fetchpriority="high" style="width:100%;height:auto;display:block;filter:grayscale(0.1);" />
       </figure>
 
       <h1 class="hero__title reveal" data-delay="2" style="font-size:clamp(28px, 4.2vw, 52px);font-weight:400;line-height:1.3;letter-spacing:-0.015em;">
@@ -128,7 +128,7 @@
       <!-- Photo column appears only in compact layout via CSS -->
       <div class="hero__photo">
         <div class="frame">
-          <img src="images/profile.jpg" alt="今川大悟 プロフィール写真" />
+          <img src="images/profile.jpg" alt="今川大悟 プロフィール写真" loading="lazy" decoding="async" />
         </div>
       </div>
     </div>
@@ -256,7 +256,7 @@
       <div class="cases">
         <a class="case case--feature reveal" href="work.html#elenco">
           <div>
-            <img class="case__img" src="images/work-elenco.jpg" alt="Elenco ダッシュボード" width="1200" height="654" />
+            <img class="case__img" src="images/work-elenco.jpg" alt="Elenco ダッシュボード" width="1200" height="654" loading="lazy" decoding="async" />
             <div class="case__head">
               <span class="case__status" data-status="live"><span class="dot"></span>Live · 本番稼働中</span>
               <span class="case__year">2024.10 — 現在</span>
@@ -286,7 +286,7 @@
         </a>
 
         <a class="case reveal" href="work.html#nyutaishitsu" data-delay="1">
-          <img class="case__img" src="images/work-nyutaishitsu.jpg" alt="入退室管理ダッシュボード" width="1200" height="654" />
+          <img class="case__img" src="images/work-nyutaishitsu.jpg" alt="入退室管理ダッシュボード" width="1200" height="654" loading="lazy" decoding="async" />
           <div class="case__head">
             <span class="case__status" data-status="live"><span class="dot"></span>Live</span>
             <span class="case__year">2024</span>
@@ -306,7 +306,7 @@
         </a>
 
         <a class="case reveal" href="work.html#boardkit" data-delay="2">
-          <img class="case__img" src="images/work-boardkit.jpg" alt="BoardKit" width="1200" height="654" />
+          <img class="case__img" src="images/work-boardkit.jpg" alt="BoardKit" width="1200" height="654" loading="lazy" decoding="async" />
           <div class="case__head">
             <span class="case__status" data-status="live"><span class="dot"></span>Live · boardkit.jp</span>
             <span class="case__year">2026</span>
