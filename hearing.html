@@ -1,0 +1,264 @@
+---
+layout: default
+title: ご依頼前ヒアリングシート
+description: 業務自動化・ダッシュボード構築などのご依頼にあたり、課題と要件をお聞かせください。回答をもとに最適なご提案とお見積もりをお出しします。
+---
+
+<div class="container container--narrow">
+
+  <section class="section section--first">
+    <header class="section__header">
+      <span class="section__eyebrow">Hearing</span>
+      <h1 class="section__title">ご依頼前ヒアリングシート</h1>
+      <p class="section__lead">より的確なご提案とお見積もりのため、現在の課題についてお聞かせください。所要時間は5分ほどです。分かる範囲で構いません。回答をもとに、原則24時間以内に折り返しご連絡します。</p>
+    </header>
+
+    <div class="card" style="margin-bottom:32px;">
+      <h2 style="font-size:1.0625rem;margin-bottom:16px;">ご依頼の前提条件</h2>
+      <dl class="def-list">
+        <dt>ご依頼形態</dt><dd>要件定義 → 開発 → 納品の<strong>単発（請負）型</strong>のみ。常駐・継続稼働型のご契約はお受けしていません</dd>
+        <dt>料金目安</dt><dd>業務自動化・ダッシュボード構築 5〜15万円（要件により変動・お見積もり無料）</dd>
+        <dt>納期目安</dt><dd>1〜3週間</dd>
+        <dt>修正対応</dt><dd>開発中2〜3回まで無償。納品後1ヶ月間は軽微な修正に無料対応</dd>
+        <dt>納品後の改修</dt><dd>その都度お見積もりのうえ、単発案件として対応可能です</dd>
+        <dt>お支払い</dt><dd>着手金30%＋納品時に残額（初回お取引の場合）。ご発注時に取引条件を書面（メール可）で確認します</dd>
+      </dl>
+    </div>
+
+    <div class="card">
+      <form class="contact-form" id="hearing-form" novalidate>
+
+        <div class="form-group">
+          <label class="form-label" for="company">
+            会社名・部署
+            <span class="form-label-note">任意</span>
+          </label>
+          <input class="form-input" type="text" id="company" name="company"
+                 placeholder="株式会社◯◯ ◯◯部" autocomplete="organization">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="name">
+            ご担当者名
+            <span class="form-label-note">必須</span>
+          </label>
+          <input class="form-input" type="text" id="name" name="name"
+                 placeholder="山田 太郎" required autocomplete="name">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="contact">
+            連絡先（メールアドレス）
+            <span class="form-label-note">必須</span>
+          </label>
+          <input class="form-input" type="email" id="contact" name="contact"
+                 placeholder="example@company.co.jp" required autocomplete="email">
+        </div>
+
+        <div class="form-group">
+          <span class="form-label">
+            ご依頼の形態
+            <span class="form-label-note">必須</span>
+          </span>
+          <div class="form-fieldset" role="radiogroup" aria-label="ご依頼の形態">
+            <label class="form-choice">
+              <input type="radio" name="engagement" value="spot" required>
+              <span>業務課題を解決するツールの単発開発<span class="form-choice-note">要件定義から開発・納品まで。現在お受けしているのはこちらです</span></span>
+            </label>
+            <label class="form-choice">
+              <input type="radio" name="engagement" value="continuous">
+              <span>継続的な開発支援・チーム参画<span class="form-choice-note">常駐・準委任・パートナー登録など。※現在はお受けしていません</span></span>
+            </label>
+            <label class="form-choice">
+              <input type="radio" name="engagement" value="undecided">
+              <span>まだ決まっていない・相談したい</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <span class="form-label">
+            ツールを実際に使う方
+            <span class="form-label-note">任意</span>
+          </span>
+          <div class="form-fieldset" role="radiogroup" aria-label="ツールを実際に使う方">
+            <label class="form-choice">
+              <input type="radio" name="end_user" value="internal">
+              <span>自社のスタッフ</span>
+            </label>
+            <label class="form-choice">
+              <input type="radio" name="end_user" value="client">
+              <span>自社の顧客・取引先（エンドクライアント）</span>
+            </label>
+            <label class="form-choice">
+              <input type="radio" name="end_user" value="both">
+              <span>両方</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="task_detail">
+            解決したい業務課題
+            <span class="form-label-note">必須</span>
+          </label>
+          <textarea class="form-textarea" id="task_detail" name="task_detail"
+                    placeholder="例：毎週の売上集計に半日かかっている、複数のスプレッドシートへの転記でミスが多い、など。現在の業務の流れと、どこに時間・手間がかかっているかをお聞かせください。"
+                    required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="current_tools">
+            現在の運用方法・使用ツール
+            <span class="form-label-note">任意</span>
+          </label>
+          <input class="form-input" type="text" id="current_tools" name="current_tools"
+                 placeholder="例：Excel、Googleスプレッドシート、kintone、LINE公式アカウント、紙 など">
+        </div>
+
+        <div class="form-group">
+          <span class="form-label">
+            完成イメージ（複数選択可）
+            <span class="form-label-note">任意</span>
+          </span>
+          <div class="form-fieldset">
+            <label class="form-choice">
+              <input type="checkbox" name="deliverable" value="dashboard">
+              <span>ダッシュボード（数値の見える化）</span>
+            </label>
+            <label class="form-choice">
+              <input type="checkbox" name="deliverable" value="report">
+              <span>定期レポートの自動作成</span>
+            </label>
+            <label class="form-choice">
+              <input type="checkbox" name="deliverable" value="dataflow">
+              <span>データ集計・転記の自動化</span>
+            </label>
+            <label class="form-choice">
+              <input type="checkbox" name="deliverable" value="linebot">
+              <span>LINE Bot・通知の自動化</span>
+            </label>
+            <label class="form-choice">
+              <input type="checkbox" name="deliverable" value="admin">
+              <span>管理画面・入力フォーム</span>
+            </label>
+            <label class="form-choice">
+              <input type="checkbox" name="deliverable" value="api">
+              <span>外部サービス連携（API）</span>
+            </label>
+            <label class="form-choice">
+              <input type="checkbox" name="deliverable" value="unsure">
+              <span>まだ分からない・提案してほしい</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="usage">
+            利用人数・利用頻度
+            <span class="form-label-note">任意</span>
+          </label>
+          <input class="form-input" type="text" id="usage" name="usage"
+                 placeholder="例：スタッフ5名が毎日使う、月1回のレポート作成に使う など">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="budget">
+            予算感
+            <span class="form-label-note">任意</span>
+          </label>
+          <select class="form-select" id="budget" name="budget">
+            <option value="">選択してください</option>
+            <option value="under5">〜5万円</option>
+            <option value="5to15">5〜15万円</option>
+            <option value="15to30">15〜30万円</option>
+            <option value="over30">30万円以上</option>
+            <option value="consult">予算は相談したい</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="deadline">
+            希望納期
+            <span class="form-label-note">任意</span>
+          </label>
+          <select class="form-select" id="deadline" name="deadline">
+            <option value="">選択してください</option>
+            <option value="2weeks">2週間以内</option>
+            <option value="1month">1ヶ月以内</option>
+            <option value="3months">2〜3ヶ月以内</option>
+            <option value="flexible">特に急がない・未定</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="reference">
+            参考資料・URL
+            <span class="form-label-note">任意</span>
+          </label>
+          <input class="form-input" type="text" id="reference" name="reference"
+                 placeholder="現在お使いのシートや、イメージに近いサービスのURLなど">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="note">
+            その他・補足
+            <span class="form-label-note">任意</span>
+          </label>
+          <textarea class="form-textarea" id="note" name="note" style="min-height:90px;"
+                    placeholder="セキュリティ上の制約、社内の決裁の流れ、その他伝えておきたいことがあればご記入ください。"></textarea>
+        </div>
+
+        <div id="form-msg" class="form-msg" role="alert" aria-live="polite"></div>
+
+        <button class="btn btn--primary" type="submit" style="justify-self:start;">
+          送信する →
+        </button>
+
+      </form>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function () {
+  var ENDPOINT = 'https://portfolio-contact.wishdaigo1458.workers.dev/hearing';
+  var form = document.getElementById('hearing-form');
+  var msg  = document.getElementById('form-msg');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+
+    var btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = '送信中…';
+    msg.className = 'form-msg';
+    msg.textContent = '';
+
+    fetch(ENDPOINT, {
+      method: 'POST',
+      body: new FormData(form)
+    })
+    .then(function (res) { return res.json(); })
+    .then(function (data) {
+      if (data.ok) {
+        msg.className = 'form-msg form-msg--success';
+        msg.textContent = '送信しました。内容を確認のうえ、24時間以内にご連絡します。';
+        form.reset();
+      } else {
+        throw new Error(data.error);
+      }
+    })
+    .catch(function () {
+      msg.className = 'form-msg form-msg--error';
+      msg.textContent = '送信に失敗しました。wishdaigo1458@gmail.com までご連絡ください。';
+    })
+    .finally(function () {
+      btn.disabled = false;
+      btn.textContent = '送信する →';
+    });
+  });
+}());
+</script>

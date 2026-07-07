@@ -522,6 +522,21 @@ body {
 .form-msg--error {
   display:block; background:#fef2f2; color:#991b1b; border:1px solid #fecaca;
 }
+.form-fieldset { border:0; padding:0; margin:0; display:grid; gap:8px; }
+.form-choice {
+  display:flex; align-items:flex-start; gap:10px;
+  padding:10px 14px; cursor:pointer;
+  font-size:0.9375rem; line-height:1.6; color:var(--text);
+  background:var(--bg-card);
+  border:1px solid var(--line-strong);
+  border-radius:var(--radius);
+  transition:border-color 0.15s;
+}
+.form-choice:hover { border-color:var(--accent); }
+.form-choice input { margin-top:4px; accent-color:var(--accent); flex-shrink:0; }
+.form-choice-note {
+  display:block; font-size:0.8125rem; color:var(--text-subtle); margin-top:2px;
+}
 
 /* ── Service category divider ── */
 .service-category {
