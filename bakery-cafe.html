@@ -107,7 +107,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opa
 .section.visible{opacity:1;transform:translateY(0)}
 
 .section-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;color:var(--brown);font-weight:700;letter-spacing:.1em;margin-bottom:6px}
-.section-label::before{content:'🌾';font-size:13px}
+.section-label::before{content:'';display:inline-block;width:14px;height:1px;background:currentColor;opacity:.6}
 .section-title{font-family:var(--font-display);font-size:clamp(22px,3.5vw,30px);font-weight:900;line-height:1.3;color:var(--brown);margin-bottom:8px}
 .section-lead{font-size:14px;color:var(--muted);max-width:52ch;margin-bottom:32px}
 
@@ -116,14 +116,13 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opa
 /* ---- About ---- */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
 .about-text p{font-size:14px;color:var(--text2);line-height:2;margin-bottom:12px}
-.about-visual{border-radius:20px;aspect-ratio:1;background:linear-gradient(145deg,var(--cream),#efe3d0);border:1px solid rgba(124,94,60,.06);display:grid;place-items:center;font-size:48px;opacity:.15;box-shadow:var(--shadow2)}
+.about-visual{border-radius:20px;aspect-ratio:1;background:linear-gradient(145deg,var(--cream),#efe3d0);border:1px solid rgba(124,94,60,.06);display:grid;place-items:center;box-shadow:var(--shadow2)}
 
 /* ---- Menu / Bread Lineup ---- */
 .bread-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .bread-card{background:var(--white);border-radius:var(--radius);border:1px solid var(--line);overflow:hidden;transition:transform .3s var(--ease-spring),box-shadow .3s}
 .bread-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
-.bread-thumb{height:160px;background:var(--bg2);display:grid;place-items:center;font-size:40px;opacity:.15;position:relative;overflow:hidden}
-.bread-thumb::after{content:'📷 写真';position:absolute;bottom:8px;right:10px;font-size:10px;color:var(--muted);opacity:.5}
+.bread-thumb{height:160px;background:var(--bg2);display:grid;place-items:center;position:relative;overflow:hidden}
 .bread-body{padding:16px}
 .bread-body h3{font-family:var(--font-display);font-size:15px;font-weight:700;margin-bottom:3px;color:var(--brown)}
 .bread-body p{font-size:12px;color:var(--muted);line-height:1.65;margin-bottom:8px}
@@ -340,7 +339,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opa
 
     <!-- Cafe menu -->
     <div class="cafe-menu">
-      <h3>☕ カフェメニュー</h3>
+      <h3>カフェメニュー</h3>
       <div class="cafe-grid">
         <div class="cafe-item"><div class="cafe-name">ハンドドリップコーヒー</div><div class="cafe-price">¥450</div></div>
         <div class="cafe-item"><div class="cafe-name">カフェラテ</div><div class="cafe-price">¥500</div></div>
