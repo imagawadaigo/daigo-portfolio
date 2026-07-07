@@ -120,6 +120,7 @@ a { color: inherit; text-decoration: none; }
   position: relative;
   padding: 6px 0;
   transition: color 200ms var(--ease);
+  white-space: nowrap;
 }
 .nav__links a::after {
   content: "";
@@ -141,9 +142,17 @@ a { color: inherit; text-decoration: none; }
   align-items: center;
   gap: 8px;
   font-size: 13px;
-  font-family: var(--mono);
-  color: var(--ink-3);
+  font-weight: 500;
+  font-family: var(--sans);
+  letter-spacing: -0.005em;
+  color: var(--bg);
+  background: var(--ink);
+  padding: 9px 18px;
+  border-radius: 999px;
+  transition: transform 200ms var(--ease-out);
+  white-space: nowrap;
 }
+.nav__cta:hover { transform: translateY(-1px); }
 .nav__cta .pulse {
   width: 6px; height: 6px;
   border-radius: 50%;
@@ -158,8 +167,13 @@ a { color: inherit; text-decoration: none; }
 }
 
 @media (max-width: 720px) {
-  .nav__links { gap: 18px; }
-  .nav__cta { display: none; }
+  .nav__inner { gap: 14px; padding: 14px 20px; }
+  .nav__links { gap: 14px; font-size: 13px; }
+  .nav__cta { padding: 8px 14px; font-size: 12px; }
+}
+@media (max-width: 480px) {
+  .nav__brand > span:last-child { display: none; }
+  .nav__links { gap: 11px; font-size: 12px; }
 }
 
 /* =========================================================================
@@ -278,7 +292,7 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: -0.02em;
 }
 .hero__title em {
-  font-style: italic;
+  font-style: normal;
   color: var(--ink-3);
 }
 .hero__title .accent { color: var(--accent); font-style: italic; }
@@ -612,6 +626,7 @@ a { color: inherit; text-decoration: none; }
 
 .case__img {
   width: 100%;
+  height: auto;
   aspect-ratio: 16 / 10;
   object-fit: cover;
   border-radius: 6px;
@@ -1231,7 +1246,7 @@ select.contact-form__input {
   border-bottom: 1px solid var(--line);
 }
 .price-table .price-col { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; color: var(--ink); }
-.price-note { font-size: 13px; color: var(--ink-4); line-height: 1.8; margin-top: 14px; }
+.price-note { font-size: 14px; color: var(--ink-3); line-height: 1.9; margin-top: 16px; }
 
 .def {
   display: grid;
@@ -1254,7 +1269,14 @@ select.contact-form__input {
 .notice { font-size: 13px; color: var(--ink-4); line-height: 1.7; }
 .contact-form__success[data-state="error"] { color: #dc2626; border-color: #fecaca; }
 
-@media (max-width: 480px) {
-  .nav__links { gap: 12px; font-size: 13px; }
-  .nav__links a[data-home] { display: none; }
+.hero__title,
+.section-title,
+.case__title,
+.work-row__title,
+.service__title,
+.step__title,
+.stance__title,
+.skillgroup__title {
+  text-wrap: balance;
+  word-break: auto-phrase;
 }

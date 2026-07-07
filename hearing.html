@@ -33,13 +33,12 @@
   <div class="nav__inner">
     <a class="nav__brand" href="index.html"><span class="dot"></span><span>daigo.imagawa</span></a>
     <div class="nav__links">
-      <a href="index.html" data-home>Index</a>
-      <a href="work.html">Work</a>
-      <a href="services.html">Services</a>
-      <a href="process.html">Process</a>
-      <a href="about.html">About</a>
+      <a href="work.html">実績</a>
+      <a href="services.html" aria-current="page">料金</a>
+      <a href="process.html">進め方</a>
+      <a href="about.html">プロフィール</a>
     </div>
-    <a class="nav__cta" href="index.html#contact"><span class="pulse"></span><span>2026 — 受付中</span></a>
+    <a class="nav__cta" href="index.html#contact"><span class="pulse"></span><span>相談する</span></a>
   </div>
 </nav>
 
@@ -55,6 +54,10 @@
         より的確なご提案とお見積もりのため、現在の課題についてお聞かせください。
         分かる範囲で構いません。回答をもとに、原則24時間以内に折り返しご連絡します。
       </p>
+      <div class="reveal" data-delay="3" style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;">
+        <a class="btn" href="#sheet"><span>フォームに進む</span><span class="arrow">↓</span></a>
+        <a class="btn btn--ghost" href="index.html#contact"><span>まずは簡単に相談する（30秒）</span><span class="arrow">→</span></a>
+      </div>
     </div>
   </section>
 
@@ -64,7 +67,7 @@
       <div class="eyebrow reveal"><span class="num">01 / Terms</span><span>ご依頼の前提条件</span></div>
 
       <dl class="def reveal" data-delay="1">
-        <dt>ご依頼形態</dt><dd>要件定義 → 開発 → 納品の<strong>単発（請負）型</strong>のみ。常駐・継続稼働型のご契約はお受けしていません</dd>
+        <dt>ご依頼形態</dt><dd>「作る内容の整理 → 開発 → お渡し」までを1回で完結する<strong>単発型（請負）</strong>のみ。毎月の常駐・継続稼働型のご契約はお受けしていません</dd>
         <dt>料金目安</dt><dd>業務自動化・ダッシュボード構築 5〜15万円（要件により変動・お見積もり無料）</dd>
         <dt>納期目安</dt><dd>1〜3週間</dd>
         <dt>修正対応</dt><dd>開発中2〜3回まで無償。納品後1ヶ月間は軽微な修正に無料対応</dd>
@@ -86,7 +89,7 @@
       <table class="price-table reveal" data-delay="2">
         <thead><tr><th>項目</th><th class="price-col">目安</th></tr></thead>
         <tbody>
-          <tr><td><strong>基本料金</strong>　要件定義・設計／動作テスト／操作手順書／納品後1ヶ月の軽微修正サポートを含みます</td><td class="price-col">¥30,000</td></tr>
+          <tr><td><strong>基本料金</strong>　作る内容の整理（要件定義）・設計／動作テスト／操作手順書／納品後1ヶ月の軽微修正サポートを含みます</td><td class="price-col">¥30,000</td></tr>
           <tr><td>データ集計・転記の自動化（スプレッドシート / Excel）</td><td class="price-col">+ ¥15,000〜30,000</td></tr>
           <tr><td>ダッシュボード（数値の見える化・1画面）</td><td class="price-col">+ ¥20,000〜40,000</td></tr>
           <tr><td>定期レポートの自動作成</td><td class="price-col">+ ¥15,000〜30,000</td></tr>
@@ -183,7 +186,7 @@
   </section>
 
   <!-- ============================ FORM ============================ -->
-  <section class="section" data-screen-label="06 Form">
+  <section class="section" id="sheet" data-screen-label="06 Form">
     <div class="container--narrow">
       <div class="eyebrow reveal"><span class="num">05 / Sheet</span><span>ヒアリング項目</span></div>
 
@@ -231,7 +234,7 @@
             </label>
             <label class="choice">
               <input type="radio" name="end_user" value="client">
-              <span>自社の顧客・取引先（エンドクライアント）</span>
+              <span>自社の顧客・取引先</span>
             </label>
             <label class="choice">
               <input type="radio" name="end_user" value="both">
@@ -407,10 +410,11 @@
   <div class="foot__inner">
     <div>© 2026 Daigo Imagawa. All rights reserved.</div>
     <div class="foot__links">
-      <a href="work.html">Work</a>
-      <a href="services.html">Services</a>
-      <a href="process.html">Process</a>
-      <a href="about.html">About</a>
+      <a href="work.html">実績</a>
+      <a href="services.html">料金</a>
+      <a href="process.html">進め方</a>
+      <a href="about.html">プロフィール</a>
+      <a href="index.html#contact">相談する</a>
       <a href="https://github.com/imagawadaigo" rel="me">GitHub ↗</a>
     </div>
   </div>

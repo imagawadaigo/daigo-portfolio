@@ -35,15 +35,15 @@
   ].join('\n');
 
   var html =
-    '<div id="chat-panel" role="dialog" aria-modal="false" aria-label="AI相談チャット">' +
+    '<div id="chat-panel" role="dialog" aria-modal="false" aria-label="AI自動応答チャット">' +
       '<div class="chat-header">' +
-        '<div class="chat-header__info"><span class="chat-header__dot" aria-hidden="true"></span><span class="chat-header__title">AI相談</span></div>' +
+        '<div class="chat-header__info"><span class="chat-header__dot" aria-hidden="true"></span><span class="chat-header__title">AI自動応答</span></div>' +
         '<button id="chat-close" class="chat-close-btn" aria-label="閉じる">' +
           '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>' +
         '</button>' +
       '</div>' +
       '<div id="chat-messages" class="chat-messages" aria-live="polite" aria-relevant="additions">' +
-        '<div class="chat-msg chat-msg--bot"><p>サービス・料金・制作の流れについてお気軽にどうぞ。</p></div>' +
+        '<div class="chat-msg chat-msg--bot"><p>AIが自動でお答えします。料金や制作の流れなど、お気軽にどうぞ。</p></div>' +
       '</div>' +
       '<form id="chat-form" class="chat-input-area" autocomplete="off">' +
         '<input id="chat-input" class="chat-input" type="text" placeholder="質問を入力…" maxlength="400" autocomplete="off" spellcheck="false" aria-label="メッセージを入力" required>' +
@@ -52,9 +52,9 @@
         '</button>' +
       '</form>' +
     '</div>' +
-    '<button id="chat-toggle" aria-expanded="false" aria-controls="chat-panel" aria-label="AIに相談する">' +
+    '<button id="chat-toggle" aria-expanded="false" aria-controls="chat-panel" aria-label="AIに質問する（自動応答）">' +
       '<svg id="chat-icon-open" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>' +
-      '<span id="chat-toggle-label">AIに相談</span>' +
+      '<span id="chat-toggle-label">AIに質問（自動応答）</span>' +
       '<svg id="chat-icon-close" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>' +
     '</button>';
 
